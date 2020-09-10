@@ -286,6 +286,7 @@ namespace SRKSDAQFanuc
 
                                     if (workorderscount == 0 && brkdwnmd == null && EnableLock == 1)
                                     {
+                                        IntoFile("MachineLock Due to No Workorder entry  Macid: " + mcid);
                                         setmachinelock(h, (ushort)MacLockbit, true);
                                     }
 
@@ -3110,11 +3111,24 @@ namespace SRKSDAQFanuc
                                     {
                                         int durationinsec = Convert.ToInt32(nowdate.Subtract(Convert.ToDateTime(StartTime)).TotalSeconds);
                                         double DurinMin = durationinsec / 60;
+                                        var lossofentry = new tbllivelossofentry();
+                                        string crrctd = correctedDate.ToString("yyyy-MM-dd");
+                                        //double DurinMinloss = 0;
+                                        //using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
+                                        //{
+                                        //    lossofentry = db.tbllivelossofentries.Where(m => m.MachineID == MacID && m.CorrectedDate== crrctd).OrderByDescending(m => m.LossID).FirstOrDefault();
+                                        //}
+                                        //if (lossofentry != null)
+                                        //{
+                                        //    durationinsec = Convert.ToInt32(nowdate.Subtract(Convert.ToDateTime(lossofentry.EndDateTime)).TotalSeconds);
+                                        //    DurinMinloss = durationinsec / 60;
+                                        //}
                                         if (DurinMin >= MachineIdleMin)
                                         {
                                             UpdatetbllivemodeDetails(1, ModeID);
                                             if (EnableLock == 1)
                                             {
+                                                IntoFile("Machine Locked during idle " + MacID);
                                                 setmachinelock(h, (ushort)MachineLockBit, true);
                                             }
                                         }

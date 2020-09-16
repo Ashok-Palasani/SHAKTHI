@@ -4378,13 +4378,14 @@ namespace SRKSDAQFanuc
                 {
                     short wrretLOCK = Focas1.pmc_wrpmcrng(h, length, wrpmcdata);
                 }
+                IntoFile("Machine Locked: " + LockDBit + "\t Handler: " + h);
             }
         }
 
         //New Unlocking Logic for Shakti - 2020-08-30 Pavan V To be Used
         private void setmachineUnlock(ushort h, ushort LockDBit, bool LockStatus)
         {
-            if (!LockStatus)
+            //if (!LockStatus)
             {
                 //Locking D Bit Parameters
                 Focas1.IODBPMC0 rdpmcdataLockBit = new Focas1.IODBPMC0();
@@ -4401,6 +4402,8 @@ namespace SRKSDAQFanuc
                 {
                     short wrretLOCK = Focas1.pmc_wrpmcrng(h, length, wrpmcdata);
                 }
+                IntoFile("Machine Un-Locked with Lockbit: " + LockDBit + "\t Handler: " + h);
+                //IntoFile("Machine Lock bit : " + LockDBit + " Handler : " + h);
             }
         }
 

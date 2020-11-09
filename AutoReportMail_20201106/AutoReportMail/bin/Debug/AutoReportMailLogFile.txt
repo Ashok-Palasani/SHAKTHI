@@ -1,0 +1,127 @@
+2020-10-21 15:20:02:  ReportId :1
+2020-10-21 15:21:28:  OEE Report: System.InvalidOperationException: Error saving file C:\TataReport\AutoReportFiles\2020-10-21\OEEReportGodHoursA81\102020-10-21.xlsx ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\TataReport\AutoReportFiles\2020-10-21\OEEReportGodHoursA81\102020-10-21.xlsx'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at OfficeOpenXml.ExcelPackage.Save()
+   --- End of inner exception stack trace ---
+   at OfficeOpenXml.ExcelPackage.Save()
+   at AutoReportMail.Form1.<OEEReportExcel>d__4.MoveNext() in D:\Aswini\shakthi\AutoReportMail\AutoReportMail\Form1.cs:line 2816
+2020-10-21 15:21:32:  Error While Sending Mail System.ArgumentNullException: Value cannot be null.
+Parameter name: fileName
+   at System.Net.Mail.AttachmentBase.SetContentFromFile(String fileName, String mediaType)
+   at System.Net.Mail.AttachmentBase..ctor(String fileName)
+   at System.Net.Mail.Attachment..ctor(String fileName)
+   at AutoReportMail.Form1.<sendMail>d__62.MoveNext() in D:\Aswini\shakthi\AutoReportMail\AutoReportMail\Form1.cs:line 14171
+2020-10-21 15:21:32:  Mail Send Failed.
+2020-10-21 15:21:32:  ReportId :3
+2020-10-21 15:23:36:  ReportId :1
+2020-10-21 15:25:22:  OEE Report: System.InvalidOperationException: Error saving file C:\TataReport\AutoReportFiles\2020-10-21\OEEReportGodHoursA81\102020-10-21.xlsx ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\TataReport\AutoReportFiles\2020-10-21\OEEReportGodHoursA81\102020-10-21.xlsx'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at OfficeOpenXml.ExcelPackage.Save()
+   --- End of inner exception stack trace ---
+   at OfficeOpenXml.ExcelPackage.Save()
+   at AutoReportMail.Form1.<OEEReportExcel>d__4.MoveNext() in D:\Aswini\shakthi\AutoReportMail\AutoReportMail\Form1.cs:line 2816
+2020-10-21 15:29:04:  ReportId :1
+2020-10-21 15:30:21:  OEE Report: System.InvalidOperationException: Error saving file C:\TataReport\AutoReportFiles\2020-10-21\OEEReportGodHoursA81\102020-10-21.xlsx ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\TataReport\AutoReportFiles\2020-10-21\OEEReportGodHoursA81\102020-10-21.xlsx'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at OfficeOpenXml.ExcelPackage.Save()
+   --- End of inner exception stack trace ---
+   at OfficeOpenXml.ExcelPackage.Save()
+   at AutoReportMail.Form1.<OEEReportExcel>d__4.MoveNext() in D:\Aswini\shakthi\AutoReportMail\AutoReportMail\Form1.cs:line 2816
+2020-10-21 15:31:31:  ReportId :1
+2020-10-21 15:34:56:  OEE Report: System.InvalidOperationException: Error saving file C:\TataReport\AutoReportFiles\2020-10-21\OEEReportGodHoursA81\102020-10-21.xlsx ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\TataReport\AutoReportFiles\2020-10-21\OEEReportGodHoursA81\102020-10-21.xlsx'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at OfficeOpenXml.ExcelPackage.Save()
+   --- End of inner exception stack trace ---
+   at OfficeOpenXml.ExcelPackage.Save()
+   at AutoReportMail.Form1.<OEEReportExcel>d__4.MoveNext() in D:\Aswini\shakthi\AutoReportMail\AutoReportMail\Form1.cs:line 2816
+2020-10-21 15:36:57:  ReportId :1
+2020-10-21 15:40:32:  OEE Report: System.InvalidOperationException: Error saving file C:\TataReport\AutoReportFiles\2020-10-21\OEEReportGodHoursA81\102020-10-21.xlsx ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\TataReport\AutoReportFiles\2020-10-21\OEEReportGodHoursA81\102020-10-21.xlsx'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at OfficeOpenXml.ExcelPackage.Save()
+   --- End of inner exception stack trace ---
+   at OfficeOpenXml.ExcelPackage.Save()
+   at AutoReportMail.Form1.<OEEReportExcel>d__4.MoveNext() in D:\Aswini\shakthi\AutoReportMail\AutoReportMail\Form1.cs:line 2816
+2020-10-21 15:41:16:  Error While Sending Mail System.ArgumentNullException: Value cannot be null.
+Parameter name: fileName
+   at System.Net.Mail.AttachmentBase.SetContentFromFile(String fileName, String mediaType)
+   at System.Net.Mail.AttachmentBase..ctor(String fileName)
+   at System.Net.Mail.Attachment..ctor(String fileName)
+   at AutoReportMail.Form1.<sendMail>d__62.MoveNext() in D:\Aswini\shakthi\AutoReportMail\AutoReportMail\Form1.cs:line 14171
+2020-10-21 15:41:22:  Mail Send Failed.
+2020-10-21 15:41:22:  ReportId :3
+2020-10-21 15:55:02:  Error While Sending Mail System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values.
+Parameter name: value
+   at System.Net.Mail.SmtpClient.set_Port(Int32 value)
+   at AutoReportMail.Form1.<sendMail>d__62.MoveNext() in D:\Aswini\shakthi\AutoReportMail\AutoReportMail\Form1.cs:line 14192
+2020-10-21 15:55:02:  Mail Send Failed.
+2020-10-22 17:12:04:  ReportId :1
+2020-10-22 17:15:23:  OEE Report: System.InvalidOperationException: Error saving file C:\TataReport\AutoReportFiles\2020-10-22\OEEReportGodHoursA81\102020-10-22.xlsx ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\TataReport\AutoReportFiles\2020-10-22\OEEReportGodHoursA81\102020-10-22.xlsx'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at OfficeOpenXml.ExcelPackage.Save()
+   --- End of inner exception stack trace ---
+   at OfficeOpenXml.ExcelPackage.Save()
+   at AutoReportMail.Form1.<OEEReportExcel>d__4.MoveNext() in D:\Aswini\shakthi\AutoReportMail\AutoReportMail\Form1.cs:line 2816
+2020-10-22 17:18:17:  ReportId :1
+2020-10-22 17:24:59:  OEE Report: System.InvalidOperationException: Error saving file C:\TataReport\AutoReportFiles\2020-10-22\OEEReportGodHoursA81\102020-10-22.xlsx ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\TataReport\AutoReportFiles\2020-10-22\OEEReportGodHoursA81\102020-10-22.xlsx'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at OfficeOpenXml.ExcelPackage.Save()
+   --- End of inner exception stack trace ---
+   at OfficeOpenXml.ExcelPackage.Save()
+   at AutoReportMail.Form1.<OEEReportExcel>d__4.MoveNext() in D:\Aswini\shakthi\AutoReportMail\AutoReportMail\Form1.cs:line 2816
+2020-10-22 17:26:24:  Error While Sending Mail System.ArgumentNullException: Value cannot be null.
+Parameter name: fileName
+   at System.Net.Mail.AttachmentBase.SetContentFromFile(String fileName, String mediaType)
+   at System.Net.Mail.AttachmentBase..ctor(String fileName)
+   at System.Net.Mail.Attachment..ctor(String fileName)
+   at AutoReportMail.Form1.<sendMail>d__62.MoveNext() in D:\Aswini\shakthi\AutoReportMail\AutoReportMail\Form1.cs:line 14171
+2020-10-22 17:26:28:  Mail Send Failed.
+2020-10-22 17:26:36:  ReportId :3
+2020-11-06 19:38:12:  ReportId :1
+2020-11-06 19:41:44:  ReportId :1
+2020-11-06 19:48:33:  OEE Report: System.InvalidOperationException: Error saving file C:\TataReport\AutoReportFiles\2020-11-06\OEEReportGodHoursA81\102020-11-06.xlsx ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\TataReport\AutoReportFiles\2020-11-06\OEEReportGodHoursA81\102020-11-06.xlsx'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at OfficeOpenXml.ExcelPackage.Save()
+   --- End of inner exception stack trace ---
+   at OfficeOpenXml.ExcelPackage.Save()
+   at AutoReportMail.Form1.<OEEReportExcel>d__4.MoveNext()
+2020-11-06 19:48:53:  Error While Sending Mail System.ArgumentNullException: Value cannot be null.
+Parameter name: fileName
+   at System.Net.Mail.AttachmentBase.SetContentFromFile(String fileName, String mediaType)
+   at System.Net.Mail.AttachmentBase..ctor(String fileName)
+   at System.Net.Mail.Attachment..ctor(String fileName)
+   at AutoReportMail.Form1.<sendMail>d__55.MoveNext()
+2020-11-06 19:48:53:  Mail Send Failed.
+2020-11-06 19:57:45:  ReportId :1
+2020-11-06 19:59:02:  OEE Report: System.InvalidOperationException: Error saving file C:\TataReport\AutoReportFiles\2020-11-06\OEEReportGodHoursA81\102020-11-06.xlsx ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\TataReport\AutoReportFiles\2020-11-06\OEEReportGodHoursA81\102020-11-06.xlsx'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at OfficeOpenXml.ExcelPackage.Save()
+   --- End of inner exception stack trace ---
+   at OfficeOpenXml.ExcelPackage.Save()
+   at AutoReportMail.Form1.<OEEReportExcel>d__4.MoveNext() in D:\Aswini\shakthi\AutoReportMail\AutoReportMail\Form1.cs:line 2818

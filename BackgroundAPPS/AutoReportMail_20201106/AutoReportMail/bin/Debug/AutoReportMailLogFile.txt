@@ -1,0 +1,144 @@
+2020-11-26 12:31:01:  ReportId :1
+2020-11-26 14:49:39:  ReportId :1
+2020-11-26 15:05:06:  ReportId :8
+2020-11-26 15:05:06:  ReportId :3
+2020-11-26 15:05:06:  ReportId :4
+2020-11-26 15:08:31:  ReportId :1
+2020-11-26 15:08:44:  ReportId :8
+2020-11-26 15:08:44:  ReportId :3
+2020-11-26 15:08:44:  ReportId :4
+2020-11-26 15:09:36:  ReportId :1
+2020-11-26 15:09:36:  ReportId :8
+2020-11-26 15:09:36:  ReportId :3
+2020-11-26 15:09:36:  ReportId :4
+2020-11-26 15:30:29:  ReportId :1
+2020-11-26 15:30:30:  ReportId :8
+2020-11-26 15:30:30:  ReportId :3
+2020-11-26 15:30:30:  ReportId :4
+2020-11-26 15:55:55:  ReportId :1
+2020-11-26 15:55:55:  ReportId :8
+2020-11-26 15:55:55:  ReportId :3
+2020-11-26 15:55:55:  ReportId :4
+2020-11-26 15:58:56:  ReportId :1
+2020-11-26 15:58:56:  ReportId :8
+2020-11-26 15:58:56:  ReportId :3
+2020-11-26 15:58:56:  ReportId :4
+2020-11-26 15:59:53:  One of the AutoReports Failed. System.AggregateException: One or more errors occurred. ---> System.Exception: ColumnMax can not span over existing column 21.
+   at OfficeOpenXml.ExcelColumn.set_ColumnMax(Int32 value)
+   at OfficeOpenXml.ExcelWorksheet.CopyColumn(ExcelColumn c, Int32 col, Int32 maxCol)
+   at OfficeOpenXml.ExcelWorksheet.Column(Int32 col)
+   at OfficeOpenXml.ExcelRangeBase.AutoFitColumns(Double MinimumWidth, Double MaximumWidth)
+   at OfficeOpenXml.ExcelRangeBase.AutoFitColumns()
+   at AutoReportMail.Form1.<UtilizationReportExcel>d__8.MoveNext() in D:\Aswini\shakthi\AutoReportMail_20201106\AutoReportMail\Form1.cs:line 6433
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at AutoReportMail.Form1.<CallMethod>d__3.MoveNext() in D:\Aswini\shakthi\AutoReportMail_20201106\AutoReportMail\Form1.cs:line 198
+---> (Inner Exception #0) System.Exception: ColumnMax can not span over existing column 21.
+   at OfficeOpenXml.ExcelColumn.set_ColumnMax(Int32 value)
+   at OfficeOpenXml.ExcelWorksheet.CopyColumn(ExcelColumn c, Int32 col, Int32 maxCol)
+   at OfficeOpenXml.ExcelWorksheet.Column(Int32 col)
+   at OfficeOpenXml.ExcelRangeBase.AutoFitColumns(Double MinimumWidth, Double MaximumWidth)
+   at OfficeOpenXml.ExcelRangeBase.AutoFitColumns()
+   at AutoReportMail.Form1.<UtilizationReportExcel>d__8.MoveNext() in D:\Aswini\shakthi\AutoReportMail_20201106\AutoReportMail\Form1.cs:line 6433<---
+
+2020-11-26 15:59:53:  ReportId :5
+2020-11-26 16:02:16:  ReportId :1
+2020-11-26 16:02:16:  ReportId :8
+2020-11-26 16:02:16:  ReportId :3
+2020-11-26 16:02:16:  ReportId :4
+2020-11-26 16:03:56:  One of the AutoReports Failed. System.AggregateException: One or more errors occurred. ---> System.Exception: ColumnMax can not span over existing column 21.
+   at OfficeOpenXml.ExcelColumn.set_ColumnMax(Int32 value)
+   at OfficeOpenXml.ExcelWorksheet.CopyColumn(ExcelColumn c, Int32 col, Int32 maxCol)
+   at OfficeOpenXml.ExcelWorksheet.Column(Int32 col)
+   at OfficeOpenXml.ExcelRangeBase.AutoFitColumns(Double MinimumWidth, Double MaximumWidth)
+   at OfficeOpenXml.ExcelRangeBase.AutoFitColumns()
+   at AutoReportMail.Form1.<UtilizationReportExcel>d__8.MoveNext() in D:\Aswini\shakthi\AutoReportMail_20201106\AutoReportMail\Form1.cs:line 6433
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at AutoReportMail.Form1.<CallMethod>d__3.MoveNext() in D:\Aswini\shakthi\AutoReportMail_20201106\AutoReportMail\Form1.cs:line 198
+---> (Inner Exception #0) System.Exception: ColumnMax can not span over existing column 21.
+   at OfficeOpenXml.ExcelColumn.set_ColumnMax(Int32 value)
+   at OfficeOpenXml.ExcelWorksheet.CopyColumn(ExcelColumn c, Int32 col, Int32 maxCol)
+   at OfficeOpenXml.ExcelWorksheet.Column(Int32 col)
+   at OfficeOpenXml.ExcelRangeBase.AutoFitColumns(Double MinimumWidth, Double MaximumWidth)
+   at OfficeOpenXml.ExcelRangeBase.AutoFitColumns()
+   at AutoReportMail.Form1.<UtilizationReportExcel>d__8.MoveNext() in D:\Aswini\shakthi\AutoReportMail_20201106\AutoReportMail\Form1.cs:line 6433<---
+
+2020-11-26 16:03:56:  ReportId :5
+2020-11-26 16:06:03:  ReportId :1
+2020-11-26 16:06:03:  ReportId :8
+2020-11-26 16:06:03:  ReportId :3
+2020-11-26 16:06:03:  ReportId :4
+2020-11-26 16:07:01:  ReportId :1
+2020-11-26 16:07:01:  ReportId :8
+2020-11-26 16:07:01:  ReportId :3
+2020-11-26 16:07:01:  ReportId :4
+2020-11-26 16:10:46:  ReportId :1
+2020-11-26 16:10:46:  ReportId :8
+2020-11-26 16:10:46:  ReportId :3
+2020-11-26 16:10:46:  ReportId :4
+2020-11-26 16:21:08:  ReportId :1
+2020-11-26 16:21:08:  ReportId :8
+2020-11-26 16:21:08:  ReportId :3
+2020-11-26 16:21:08:  ReportId :4
+2020-12-02 19:17:58:  ReportId :1
+2020-12-02 19:19:46:  ReportId :1
+2020-12-02 19:20:31:  ReportId :1
+2020-12-02 21:43:12:  ReportId :1
+2020-12-02 21:46:28:  ReportId :8
+2020-12-02 21:46:28:  ReportId :3
+2020-12-02 21:46:28:  ReportId :4
+2020-12-02 21:48:45:  One of the AutoReports Failed. System.AggregateException: One or more errors occurred. ---> System.Exception: ColumnMax can not span over existing column 21.
+   at OfficeOpenXml.ExcelColumn.set_ColumnMax(Int32 value)
+   at OfficeOpenXml.ExcelWorksheet.CopyColumn(ExcelColumn c, Int32 col, Int32 maxCol)
+   at OfficeOpenXml.ExcelWorksheet.Column(Int32 col)
+   at OfficeOpenXml.ExcelRangeBase.AutoFitColumns(Double MinimumWidth, Double MaximumWidth)
+   at OfficeOpenXml.ExcelRangeBase.AutoFitColumns()
+   at AutoReportMail.Form1.<UtilizationReportExcel>d__8.MoveNext() in D:\Aswini\shakthi\AutoReportMail_20201106\AutoReportMail\Form1.cs:line 6433
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at AutoReportMail.Form1.<CallMethod>d__3.MoveNext() in D:\Aswini\shakthi\AutoReportMail_20201106\AutoReportMail\Form1.cs:line 198
+---> (Inner Exception #0) System.Exception: ColumnMax can not span over existing column 21.
+   at OfficeOpenXml.ExcelColumn.set_ColumnMax(Int32 value)
+   at OfficeOpenXml.ExcelWorksheet.CopyColumn(ExcelColumn c, Int32 col, Int32 maxCol)
+   at OfficeOpenXml.ExcelWorksheet.Column(Int32 col)
+   at OfficeOpenXml.ExcelRangeBase.AutoFitColumns(Double MinimumWidth, Double MaximumWidth)
+   at OfficeOpenXml.ExcelRangeBase.AutoFitColumns()
+   at AutoReportMail.Form1.<UtilizationReportExcel>d__8.MoveNext() in D:\Aswini\shakthi\AutoReportMail_20201106\AutoReportMail\Form1.cs:line 6433<---
+
+2020-12-02 21:48:45:  ReportId :5
+2020-12-02 22:13:09:  ReportId :1
+2020-12-02 22:13:09:  ReportId :8
+2020-12-02 22:13:09:  ReportId :3
+2020-12-02 22:17:53:  ReportId :1
+2020-12-02 22:17:57:  ReportId :8
+2020-12-02 22:17:57:  ReportId :3
+2020-12-03 12:04:11:  ReportId :1
+2020-12-03 12:05:19:  ReportId :8
+2020-12-03 12:06:26:  ReportId :3
+2020-12-03 12:28:43:  ReportId :1
+2020-12-03 12:28:43:  ReportId :8
+2020-12-03 12:28:43:  ReportId :3
+2020-12-03 12:33:43:  ReportId :1
+2020-12-03 12:33:43:  ReportId :8
+2020-12-03 12:33:43:  ReportId :3
+2020-12-03 12:40:10:  ReportId :1
+2020-12-03 12:40:10:  ReportId :8
+2020-12-03 12:40:10:  ReportId :3
+2020-12-03 12:42:19:  ReportId :4
+2020-12-03 13:00:04:  ReportId :1
+2020-12-03 13:00:04:  ReportId :8
+2020-12-03 13:00:04:  ReportId :3
+2020-12-03 13:00:04:  ReportId :4
+2020-12-03 13:01:57:  ReportId :5
+2020-12-03 13:03:29:  ReportId :1
+2020-12-03 13:03:29:  ReportId :8
+2020-12-03 13:03:29:  ReportId :3
+2020-12-03 13:03:29:  ReportId :4
+2020-12-03 13:03:29:  ReportId :5

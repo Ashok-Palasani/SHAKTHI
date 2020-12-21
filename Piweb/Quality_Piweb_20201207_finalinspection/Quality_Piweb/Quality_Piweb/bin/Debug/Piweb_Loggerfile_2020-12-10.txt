@@ -1,0 +1,990 @@
+2020-12-10 00:50:36:  Fetching service information from data service.
+2020-12-10 00:50:36:  Error fetching service information from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/ServiceInformation]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformationInternal>d__50.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformation>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<CheckConnection>d__7.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 43
+2020-12-10 00:50:36:  Fetching configuration from data service.
+2020-12-10 00:50:36:  Error fetching configuration from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/configuration]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchConfiguration>d__8.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 82
+2020-12-10 00:50:36:  Fetching catalogs from data service.
+2020-12-10 00:50:36:  Error fetching catalogs from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/catalogs]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchCatalogs>d__9.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 105
+2020-12-10 00:50:36:  Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/parts]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetParts>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Quality_Piweb.<InitializeControlQuality>d__14.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Quality_Piweb.cs:line 66
+2020-12-10 01:00:36:  Fetching service information from data service.
+2020-12-10 01:00:36:  Error fetching service information from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/ServiceInformation]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformationInternal>d__50.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformation>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<CheckConnection>d__7.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 43
+2020-12-10 01:00:36:  Fetching configuration from data service.
+2020-12-10 01:00:36:  Error fetching configuration from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/configuration]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchConfiguration>d__8.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 82
+2020-12-10 01:00:36:  Fetching catalogs from data service.
+2020-12-10 01:00:36:  Error fetching catalogs from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/catalogs]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchCatalogs>d__9.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 105
+2020-12-10 01:00:36:  Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/parts]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetParts>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Quality_Piweb.<InitializeControlQuality>d__14.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Quality_Piweb.cs:line 66
+2020-12-10 01:10:36:  Fetching service information from data service.
+2020-12-10 01:10:36:  Error fetching service information from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/ServiceInformation]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformationInternal>d__50.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformation>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<CheckConnection>d__7.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 43
+2020-12-10 01:10:36:  Fetching configuration from data service.
+2020-12-10 01:10:36:  Error fetching configuration from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/configuration]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchConfiguration>d__8.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 82
+2020-12-10 01:10:36:  Fetching catalogs from data service.
+2020-12-10 01:10:36:  Error fetching catalogs from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/catalogs]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchCatalogs>d__9.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 105
+2020-12-10 01:10:36:  Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/parts]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetParts>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Quality_Piweb.<InitializeControlQuality>d__14.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Quality_Piweb.cs:line 66
+2020-12-10 01:20:36:  Fetching service information from data service.
+2020-12-10 01:20:36:  Error fetching service information from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/ServiceInformation]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformationInternal>d__50.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformation>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<CheckConnection>d__7.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 43
+2020-12-10 01:20:36:  Fetching configuration from data service.
+2020-12-10 01:20:36:  Error fetching configuration from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/configuration]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchConfiguration>d__8.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 82
+2020-12-10 01:20:36:  Fetching catalogs from data service.
+2020-12-10 01:20:36:  Error fetching catalogs from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/catalogs]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchCatalogs>d__9.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 105
+2020-12-10 01:20:36:  Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/parts]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetParts>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Quality_Piweb.<InitializeControlQuality>d__14.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Quality_Piweb.cs:line 66
+2020-12-10 01:30:36:  Fetching service information from data service.
+2020-12-10 01:30:36:  Error fetching service information from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/ServiceInformation]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformationInternal>d__50.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformation>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<CheckConnection>d__7.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 43
+2020-12-10 01:30:36:  Fetching configuration from data service.
+2020-12-10 01:30:36:  Error fetching configuration from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/configuration]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchConfiguration>d__8.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 82
+2020-12-10 01:30:36:  Fetching catalogs from data service.
+2020-12-10 01:30:36:  Error fetching catalogs from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/catalogs]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchCatalogs>d__9.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 105
+2020-12-10 01:30:36:  Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/parts]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetParts>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Quality_Piweb.<InitializeControlQuality>d__14.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Quality_Piweb.cs:line 66
+2020-12-10 01:40:36:  Fetching service information from data service.
+2020-12-10 01:40:36:  Error fetching service information from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/ServiceInformation]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformationInternal>d__50.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformation>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<CheckConnection>d__7.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 43
+2020-12-10 01:40:36:  Fetching configuration from data service.
+2020-12-10 01:40:36:  Error fetching configuration from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/configuration]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchConfiguration>d__8.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 82
+2020-12-10 01:40:36:  Fetching catalogs from data service.
+2020-12-10 01:40:36:  Error fetching catalogs from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/catalogs]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchCatalogs>d__9.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 105
+2020-12-10 01:40:36:  Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/parts]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetParts>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Quality_Piweb.<InitializeControlQuality>d__14.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Quality_Piweb.cs:line 66
+2020-12-10 01:50:36:  Fetching service information from data service.
+2020-12-10 01:50:36:  Error fetching service information from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/ServiceInformation]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformationInternal>d__50.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformation>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<CheckConnection>d__7.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 43
+2020-12-10 01:50:36:  Fetching configuration from data service.
+2020-12-10 01:50:36:  Error fetching configuration from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/configuration]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchConfiguration>d__8.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 82
+2020-12-10 01:50:36:  Fetching catalogs from data service.
+2020-12-10 01:50:36:  Error fetching catalogs from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/catalogs]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchCatalogs>d__9.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 105
+2020-12-10 01:50:36:  Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/parts]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetParts>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Quality_Piweb.<InitializeControlQuality>d__14.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Quality_Piweb.cs:line 66
+2020-12-10 02:00:36:  Fetching service information from data service.
+2020-12-10 02:00:36:  Error fetching service information from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/ServiceInformation]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformationInternal>d__50.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformation>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<CheckConnection>d__7.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 43
+2020-12-10 02:00:36:  Fetching configuration from data service.
+2020-12-10 02:00:36:  Error fetching configuration from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/configuration]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchConfiguration>d__8.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 82
+2020-12-10 02:00:36:  Fetching catalogs from data service.
+2020-12-10 02:00:36:  Error fetching catalogs from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/catalogs]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchCatalogs>d__9.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 105
+2020-12-10 02:00:36:  Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/parts]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetParts>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Quality_Piweb.<InitializeControlQuality>d__14.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Quality_Piweb.cs:line 66
+2020-12-10 02:10:36:  Fetching service information from data service.
+2020-12-10 02:10:36:  Error fetching service information from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/ServiceInformation]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformationInternal>d__50.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformation>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<CheckConnection>d__7.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 43
+2020-12-10 02:10:36:  Fetching configuration from data service.
+2020-12-10 02:10:36:  Error fetching configuration from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/configuration]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchConfiguration>d__8.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 82
+2020-12-10 02:10:36:  Fetching catalogs from data service.
+2020-12-10 02:10:36:  Error fetching catalogs from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/catalogs]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchCatalogs>d__9.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 105
+2020-12-10 02:10:36:  Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/parts]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetParts>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Quality_Piweb.<InitializeControlQuality>d__14.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Quality_Piweb.cs:line 66
+2020-12-10 02:20:36:  Fetching service information from data service.
+2020-12-10 02:20:36:  Error fetching service information from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/ServiceInformation]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformationInternal>d__50.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformation>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<CheckConnection>d__7.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 43
+2020-12-10 02:20:36:  Fetching configuration from data service.
+2020-12-10 02:20:36:  Error fetching configuration from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/configuration]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchConfiguration>d__8.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 82
+2020-12-10 02:20:36:  Fetching catalogs from data service.
+2020-12-10 02:20:36:  Error fetching catalogs from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/catalogs]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchCatalogs>d__9.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 105
+2020-12-10 02:20:36:  Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/parts]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetParts>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Quality_Piweb.<InitializeControlQuality>d__14.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Quality_Piweb.cs:line 66
+2020-12-10 02:30:36:  Fetching service information from data service.
+2020-12-10 02:30:36:  Error fetching service information from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/ServiceInformation]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformationInternal>d__50.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetServiceInformation>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<CheckConnection>d__7.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 43
+2020-12-10 02:30:36:  Fetching configuration from data service.
+2020-12-10 02:30:36:  Error fetching configuration from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/configuration]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchConfiguration>d__8.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 82
+2020-12-10 02:30:36:  Fetching catalogs from data service.
+2020-12-10 02:30:36:  Error fetching catalogs from data service: '{0}'.
+Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/catalogs]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Form1.<FetchCatalogs>d__9.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Form1.cs:line 105
+2020-12-10 02:30:36:  Zeiss.IMT.PiWeb.Api.Common.Client.RestClientException: Error fetching web service response for request [http://192.168.0.3:8080/DataServiceRest/parts]: An error occurred while sending the request. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A socket operation was attempted to an unreachable host 192.168.0.3:8080
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at Zeiss.IMT.PiWeb.Api.Common.Client.RestClientBase.<PerformRequestAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Zeiss.IMT.PiWeb.Api.DataService.Rest.DataServiceRestClient.<GetParts>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Quality_PiwebApp.Quality_Piweb.<InitializeControlQuality>d__14.MoveNext() in D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\Quality_Piweb.cs:line 66

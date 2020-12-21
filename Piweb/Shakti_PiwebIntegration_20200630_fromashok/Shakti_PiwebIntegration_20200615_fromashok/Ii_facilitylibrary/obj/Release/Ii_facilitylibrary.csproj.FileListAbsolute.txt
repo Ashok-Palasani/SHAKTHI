@@ -1,0 +1,8 @@
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\bin\Release\Ii_facilitylibrary.dll
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\bin\Release\Ii_facilitylibrary.pdb
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\bin\Release\Dapper.dll
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\bin\Release\Dapper.xml
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\obj\Release\Ii_facilitylibrary.csproj.CoreCompileInputs.cache
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\obj\Release\Ii_facilitylibrary.csproj.CopyComplete
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\obj\Release\Ii_facilitylibrary.dll
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\obj\Release\Ii_facilitylibrary.pdb

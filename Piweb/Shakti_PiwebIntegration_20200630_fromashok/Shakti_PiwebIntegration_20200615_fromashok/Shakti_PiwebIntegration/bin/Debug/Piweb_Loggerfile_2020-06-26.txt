@@ -1,0 +1,185 @@
+2020-06-26 13:06:31:  Fetching service information from data service.
+2020-06-26 13:07:01:  Fetching service information from data service.
+2020-06-26 13:07:01:  Successfully fetched service information from data service in {0} ms: '{1}'.
+30623PiWebDB Edition (WSDL: 2.9)
+2020-06-26 13:07:01:  Fetching configuration from data service.
+2020-06-26 13:07:02:  Successfully fetched service information from data service in {0} ms: '{1}'.
+546PiWebDB Edition (WSDL: 2.9)
+2020-06-26 13:07:02:  Fetching configuration from data service.
+2020-06-26 13:07:02:  Successfully fetched configuration with {1} attribute definitions from data service in {0} ms.
+7401096
+2020-06-26 13:07:02:  Fetching catalogs from data service.
+2020-06-26 13:07:02:  Successfully fetched configuration with {1} attribute definitions from data service in {0} ms.
+3741096
+2020-06-26 13:07:02:  Fetching catalogs from data service.
+2020-06-26 13:07:02:  Successfully fetched {1} catalogs from data service in {0} ms: '{2}'.
+200161NC Approved by-Production, DIR-Deviation approval , List of defets-C90-Final Inspection, Cavity catalog, (Lead-) auditor see comment field, DESIGNATION, vendor name, Classification catalog with limits and colors, Inward Inspector, Machine Name, List of defects-1710-Final Inspection, Leak test operator, List of defects-8501-Final Inspection, Potential Failure Mode Catalog, List of defects-6093-Final Inspection, List Of Defects-FC C90, List of defects-6101, List of defects-7420, NC Approval By-QA, List of defects-1710, Reason for tool change, List of defects-6093, Potential Causes of Failure Catalog, List Of Defects-4649,  Deviations observed  during layout inspection, Machine Down Time, Sample type catalog, Limit type catalog, QA APPROVAL, List of defects-7180-Final inspection,  Deviations observed  during Product audit, OPERATOR NAME-CATERPILLAR , HUSCO QUALITY, QC Name, Section, OP-40-Shift, SMS Sent, Deviations  observed during CMM, OP-20 OEE, Deviation observed during dock audit, LIST OF DEFECTS INWARD-AFTER NUMBERING, List of defects-7432-Final inspection, PUQ Auditor-Koordinator, Changes during tool change/tool wear, List of defects-7431-Final inspection, Characteristic type catalog, Evaluation mode catalog, OP-30-CAT-OPERATOR NAME, Part status, Operation Confirmation, Answer, List of defects-0133-Final Inspection, List of defects-7432, Long-term measurement catalog, Thru, LIST OF DEFECTS LINE-CASTING, Month, Complaint Type, PLANNED / NOT PLANNED, Hystat Rear Case Part No, PART STATUS BY LINE QC, Work center-OP-20, Production People, Tool No.7041, Reason for test catalog, Distribution catalog, Machine Name catalog, Activity Type, Direction catalog, Washing Result, Machine-OP-40, NC status, Tool change comp. status, DEPT_, The parts produced earlier to be held , Reaction plan, List of defects-9372-Final inspection, BIN LAYER, QC Name for mail sheet, Location catalog, 8D STATUS, Machine-OP-20, HUSCO OPERATOR, lEAK TEST SHIFT, Hourly Production, FINAL INSPECTOR NAME, MachineID-OEE, 100% Checking/Rework/Rectification to be done, First off Report, List of defects-8492-Final Inspection, FSIR REASON, SHIFT-Final Inspection, Cell Leader-Report Verification, Group catalog, Control method, Shift, Dock Audit-QC, Operator catalog, List of defects-9425-Final Inspection, PDI Component status, OP-30 OEE, Process Flow Symbol, LIST OF DEFECTS FINAL-VISUAL, Topic of Training, OP-40-CAT-OPERATOR NAME, SUPPLIER, NC Remarks, GO NO-GO, OK/NOT OK, Incoming sources of variations, AUDIT_ACUTAL, Alignment, Responsible, Recurrence, INSP, Orientation catalog, priority, OP-30-Shift, Machine-OP-30, Reconfirmation after interruption, quater, Machine down time 2, Yes/No catalog, Deviations observed during final inspection, LIST OF DEFECTS-INWARD RAW CAST, CORRECTIVE ACTION TEAKEN OPERATOR, DEFECT ORIGIN-DIR, Audit catalog, Lot-Quality Status, Gage catalog, Current Process Controls Prevention Catalog, leak Test Result, Record, Classification catalog yes/no with colors, FPA/LPA, DIR-Incharge, List Of Defects-7431, Trainer, OP-20-Shift, NA For This Part, OP-20-CAT-OPERATOR NAME, Method Of Inspection, Potential Failure Effects Catalog, Frequency, DIR ENTRY, OP-10 OEE, Remeasured, Result catalog, WASHING SHIFT, PROCESS, Operation Number, Daily Plan Status, Measured quantity catalog, Deviation observed during PIR, Not able to check, List of defects-0141-Final Inspection, SAMPLE, Current Process Control Detection Catalog, Measurement status catalog, AUDIT_PLAN, List of defects-8445-Final Inspection
+2020-06-26 13:07:05:  Successfully fetched {1} catalogs from data service in {0} ms: '{2}'.
+2510161NC Approved by-Production, DIR-Deviation approval , List of defets-C90-Final Inspection, Cavity catalog, (Lead-) auditor see comment field, DESIGNATION, vendor name, Classification catalog with limits and colors, Inward Inspector, Machine Name, List of defects-1710-Final Inspection, Leak test operator, List of defects-8501-Final Inspection, Potential Failure Mode Catalog, List of defects-6093-Final Inspection, List Of Defects-FC C90, List of defects-6101, List of defects-7420, NC Approval By-QA, List of defects-1710, Reason for tool change, List of defects-6093, Potential Causes of Failure Catalog, List Of Defects-4649,  Deviations observed  during layout inspection, Machine Down Time, Sample type catalog, Limit type catalog, QA APPROVAL, List of defects-7180-Final inspection,  Deviations observed  during Product audit, OPERATOR NAME-CATERPILLAR , HUSCO QUALITY, QC Name, Section, OP-40-Shift, SMS Sent, Deviations  observed during CMM, OP-20 OEE, Deviation observed during dock audit, LIST OF DEFECTS INWARD-AFTER NUMBERING, List of defects-7432-Final inspection, PUQ Auditor-Koordinator, Changes during tool change/tool wear, List of defects-7431-Final inspection, Characteristic type catalog, Evaluation mode catalog, OP-30-CAT-OPERATOR NAME, Part status, Operation Confirmation, Answer, List of defects-0133-Final Inspection, List of defects-7432, Long-term measurement catalog, Thru, LIST OF DEFECTS LINE-CASTING, Month, Complaint Type, PLANNED / NOT PLANNED, Hystat Rear Case Part No, PART STATUS BY LINE QC, Work center-OP-20, Production People, Tool No.7041, Reason for test catalog, Distribution catalog, Machine Name catalog, Activity Type, Direction catalog, Washing Result, Machine-OP-40, NC status, Tool change comp. status, DEPT_, The parts produced earlier to be held , Reaction plan, List of defects-9372-Final inspection, BIN LAYER, QC Name for mail sheet, Location catalog, 8D STATUS, Machine-OP-20, HUSCO OPERATOR, lEAK TEST SHIFT, Hourly Production, FINAL INSPECTOR NAME, MachineID-OEE, 100% Checking/Rework/Rectification to be done, First off Report, List of defects-8492-Final Inspection, FSIR REASON, SHIFT-Final Inspection, Cell Leader-Report Verification, Group catalog, Control method, Shift, Dock Audit-QC, Operator catalog, List of defects-9425-Final Inspection, PDI Component status, OP-30 OEE, Process Flow Symbol, LIST OF DEFECTS FINAL-VISUAL, Topic of Training, OP-40-CAT-OPERATOR NAME, SUPPLIER, NC Remarks, GO NO-GO, OK/NOT OK, Incoming sources of variations, AUDIT_ACUTAL, Alignment, Responsible, Recurrence, INSP, Orientation catalog, priority, OP-30-Shift, Machine-OP-30, Reconfirmation after interruption, quater, Machine down time 2, Yes/No catalog, Deviations observed during final inspection, LIST OF DEFECTS-INWARD RAW CAST, CORRECTIVE ACTION TEAKEN OPERATOR, DEFECT ORIGIN-DIR, Audit catalog, Lot-Quality Status, Gage catalog, Current Process Controls Prevention Catalog, leak Test Result, Record, Classification catalog yes/no with colors, FPA/LPA, DIR-Incharge, List Of Defects-7431, Trainer, OP-20-Shift, NA For This Part, OP-20-CAT-OPERATOR NAME, Method Of Inspection, Potential Failure Effects Catalog, Frequency, DIR ENTRY, OP-10 OEE, Remeasured, Result catalog, WASHING SHIFT, PROCESS, Operation Number, Daily Plan Status, Measured quantity catalog, Deviation observed during PIR, Not able to check, List of defects-0141-Final Inspection, SAMPLE, Current Process Control Detection Catalog, Measurement status catalog, AUDIT_PLAN, List of defects-8445-Final Inspection
+2020-06-26 13:08:23:  Creating a utilization measurement and Its values
+2020-06-26 13:08:27:  UTILIZATION for Machineid4is : 80%
+2020-06-26 13:08:36:  Creating a utilization measurement and Its values
+2020-06-26 13:08:37:  UTILIZATION for Machineid5is : 75%
+2020-06-26 13:08:43:  Creating a utilization measurement and Its values
+2020-06-26 13:08:44:  UTILIZATION for Machineid6is : 74%
+2020-06-26 13:08:50:  Creating a utilization measurement and Its values
+2020-06-26 13:08:51:  UTILIZATION for Machineid7is : 94%
+2020-06-26 13:08:52:  Creating a utilization measurement and Its values
+2020-06-26 13:08:53:  UTILIZATION for Machineid8is : 2%
+2020-06-26 13:08:53:  Creating a utilization measurement and Its values
+2020-06-26 13:08:54:  UTILIZATION for Machineid9is : 17%
+2020-06-26 13:08:55:  Creating a utilization measurement and Its values
+2020-06-26 13:08:56:  UTILIZATION for Machineid10is : 92%
+2020-06-26 13:08:56:  Creating a utilization measurement and Its values
+2020-06-26 13:08:57:  UTILIZATION for Machineid15is : 97%
+2020-06-26 13:08:58:  Creating a utilization measurement and Its values
+2020-06-26 13:08:59:  UTILIZATION for Machineid18is : 0%
+2020-06-26 13:08:59:  Creating a utilization measurement and Its values
+2020-06-26 13:09:00:  UTILIZATION for Machineid19is : 99%
+2020-06-26 13:09:01:  Creating a utilization measurement and Its values
+2020-06-26 13:09:02:  UTILIZATION for Machineid20is : 60%
+2020-06-26 13:09:02:  Creating a utilization measurement and Its values
+2020-06-26 13:09:03:  UTILIZATION for Machineid21is : 52%
+2020-06-26 13:09:03:  Creating a utilization measurement and Its values
+2020-06-26 13:09:04:  UTILIZATION for Machineid22is : 70%
+2020-06-26 13:09:05:  Creating a utilization measurement and Its values
+2020-06-26 13:09:06:  UTILIZATION for Machineid23is : 92%
+2020-06-26 13:09:06:  Creating a utilization measurement and Its values
+2020-06-26 13:09:07:  UTILIZATION for Machineid28is : 75%
+2020-06-26 13:09:08:  Creating a utilization measurement and Its values
+2020-06-26 13:09:09:  UTILIZATION for Machineid31is : 73%
+2020-06-26 13:09:09:  Creating a utilization measurement and Its values
+2020-06-26 13:09:10:  UTILIZATION for Machineid32is : 28%
+2020-06-26 13:09:11:  Creating a utilization measurement and Its values
+2020-06-26 13:09:12:  UTILIZATION for Machineid36is : 0%
+2020-06-26 13:09:12:  Creating a utilization measurement and Its values
+2020-06-26 13:09:13:  UTILIZATION for Machineid37is : 0%
+2020-06-26 13:09:14:  Creating a utilization measurement and Its values
+2020-06-26 13:09:15:  UTILIZATION for Machineid38is : 0%
+2020-06-26 13:09:15:  Creating a utilization measurement and Its values
+2020-06-26 13:09:16:  UTILIZATION for Machineid39is : 0%
+2020-06-26 13:09:17:  Creating a utilization measurement and Its values
+2020-06-26 13:09:18:  UTILIZATION for Machineid40is : 0%
+2020-06-26 13:09:18:  Creating a utilization measurement and Its values
+2020-06-26 13:09:19:  UTILIZATION for Machineid41is : 80%
+2020-06-26 13:09:19:  Creating a utilization measurement and Its values
+2020-06-26 13:09:20:  UTILIZATION for Machineid46is : 17%
+2020-06-26 13:09:21:  Creating a utilization measurement and Its values
+2020-06-26 13:09:22:  UTILIZATION for Machineid51is : 95%
+2020-06-26 13:09:22:  Creating a utilization measurement and Its values
+2020-06-26 13:09:23:  UTILIZATION for Machineid55is : 20%
+2020-06-26 13:09:24:  Creating a utilization measurement and Its values
+2020-06-26 13:09:25:  UTILIZATION for Machineid56is : 43%
+2020-06-26 13:09:25:  Creating a utilization measurement and Its values
+2020-06-26 13:09:26:  UTILIZATION for Machineid64is : 0%
+2020-06-26 13:09:27:  Creating a utilization measurement and Its values
+2020-06-26 13:09:28:  UTILIZATION for Machineid65is : 0%
+2020-06-26 13:09:28:  Creating a utilization measurement and Its values
+2020-06-26 13:09:29:  UTILIZATION for Machineid66is : 0%
+2020-06-26 13:09:30:  Creating a utilization measurement and Its values
+2020-06-26 13:09:31:  UTILIZATION for Machineid71is : 78%
+2020-06-26 13:09:31:  Creating a utilization measurement and Its values
+2020-06-26 13:09:32:  UTILIZATION for Machineid72is : 90%
+2020-06-26 13:09:33:  Creating a utilization measurement and Its values
+2020-06-26 13:09:34:  UTILIZATION for Machineid73is : 98%
+2020-06-26 13:09:35:  Creating a utilization measurement and Its values
+2020-06-26 13:09:36:  UTILIZATION for Machineid74is : 0%
+2020-06-26 13:09:43:  Getting into method
+2020-06-26 13:09:44:  start 335
+2020-06-26 13:09:46:  Intialize control OEE calling
+2020-06-26 13:09:46:  Calling OEE_Piweb 
+2020-06-26 13:09:49:  OEECalculations started 
+2020-06-26 13:09:49:  OEE Machines count34
+2020-06-26 13:10:04:  after calculation  OEE Machine id :4
+2020-06-26 13:10:05:  Create OEE Machine id :4
+2020-06-26 13:10:05:  Creating a OEE measurement and Its values
+2020-06-26 13:10:08:  after calculation  OEE Machine id :5
+2020-06-26 13:10:08:  Create OEE Machine id :5
+2020-06-26 13:10:08:  Creating a OEE measurement and Its values
+2020-06-26 13:10:11:  after calculation  OEE Machine id :6
+2020-06-26 13:10:11:  Create OEE Machine id :6
+2020-06-26 13:10:11:  Creating a OEE measurement and Its values
+2020-06-26 13:10:14:  after calculation  OEE Machine id :7
+2020-06-26 13:10:14:  Create OEE Machine id :7
+2020-06-26 13:10:14:  Creating a OEE measurement and Its values
+2020-06-26 13:10:17:  after calculation  OEE Machine id :8
+2020-06-26 13:10:17:  Create OEE Machine id :8
+2020-06-26 13:10:17:  Creating a OEE measurement and Its values
+2020-06-26 13:10:20:  after calculation  OEE Machine id :9
+2020-06-26 13:10:20:  Create OEE Machine id :9
+2020-06-26 13:10:20:  Creating a OEE measurement and Its values
+2020-06-26 13:10:24:  after calculation  OEE Machine id :10
+2020-06-26 13:10:24:  Create OEE Machine id :10
+2020-06-26 13:10:24:  Creating a OEE measurement and Its values
+2020-06-26 13:10:27:  after calculation  OEE Machine id :15
+2020-06-26 13:10:27:  Create OEE Machine id :15
+2020-06-26 13:10:27:  Creating a OEE measurement and Its values
+2020-06-26 13:10:29:  after calculation  OEE Machine id :18
+2020-06-26 13:10:30:  Create OEE Machine id :18
+2020-06-26 13:10:30:  Creating a OEE measurement and Its values
+2020-06-26 13:10:33:  after calculation  OEE Machine id :19
+2020-06-26 13:10:33:  Create OEE Machine id :19
+2020-06-26 13:10:33:  Creating a OEE measurement and Its values
+2020-06-26 13:10:37:  after calculation  OEE Machine id :20
+2020-06-26 13:10:37:  Create OEE Machine id :20
+2020-06-26 13:10:37:  Creating a OEE measurement and Its values
+2020-06-26 13:10:40:  after calculation  OEE Machine id :21
+2020-06-26 13:10:40:  Create OEE Machine id :21
+2020-06-26 13:10:40:  Creating a OEE measurement and Its values
+2020-06-26 13:10:43:  after calculation  OEE Machine id :22
+2020-06-26 13:10:44:  Create OEE Machine id :22
+2020-06-26 13:10:44:  Creating a OEE measurement and Its values
+2020-06-26 13:10:46:  after calculation  OEE Machine id :23
+2020-06-26 13:10:46:  Create OEE Machine id :23
+2020-06-26 13:10:46:  Creating a OEE measurement and Its values
+2020-06-26 13:10:50:  after calculation  OEE Machine id :28
+2020-06-26 13:10:50:  Create OEE Machine id :28
+2020-06-26 13:10:50:  Creating a OEE measurement and Its values
+2020-06-26 13:10:53:  after calculation  OEE Machine id :31
+2020-06-26 13:10:53:  Create OEE Machine id :31
+2020-06-26 13:10:53:  Creating a OEE measurement and Its values
+2020-06-26 13:10:55:  after calculation  OEE Machine id :32
+2020-06-26 13:10:55:  Create OEE Machine id :32
+2020-06-26 13:10:55:  Creating a OEE measurement and Its values
+2020-06-26 13:10:58:  after calculation  OEE Machine id :36
+2020-06-26 13:10:58:  Create OEE Machine id :36
+2020-06-26 13:10:58:  Creating a OEE measurement and Its values
+2020-06-26 13:11:00:  after calculation  OEE Machine id :37
+2020-06-26 13:11:00:  Create OEE Machine id :37
+2020-06-26 13:11:00:  Creating a OEE measurement and Its values
+2020-06-26 13:11:03:  after calculation  OEE Machine id :38
+2020-06-26 13:11:03:  Create OEE Machine id :38
+2020-06-26 13:11:03:  Creating a OEE measurement and Its values
+2020-06-26 13:11:06:  after calculation  OEE Machine id :39
+2020-06-26 13:11:06:  Create OEE Machine id :39
+2020-06-26 13:11:06:  Creating a OEE measurement and Its values
+2020-06-26 13:11:08:  after calculation  OEE Machine id :40
+2020-06-26 13:11:08:  Create OEE Machine id :40
+2020-06-26 13:11:08:  Creating a OEE measurement and Its values
+2020-06-26 13:11:11:  after calculation  OEE Machine id :41
+2020-06-26 13:11:11:  Create OEE Machine id :41
+2020-06-26 13:11:11:  Creating a OEE measurement and Its values
+2020-06-26 13:11:14:  after calculation  OEE Machine id :46
+2020-06-26 13:11:14:  Create OEE Machine id :46
+2020-06-26 13:11:14:  Creating a OEE measurement and Its values
+2020-06-26 13:11:17:  after calculation  OEE Machine id :51
+2020-06-26 13:11:17:  Create OEE Machine id :51
+2020-06-26 13:11:17:  Creating a OEE measurement and Its values
+2020-06-26 13:11:20:  after calculation  OEE Machine id :55
+2020-06-26 13:11:20:  Create OEE Machine id :55
+2020-06-26 13:11:20:  Creating a OEE measurement and Its values
+2020-06-26 13:11:22:  after calculation  OEE Machine id :56
+2020-06-26 13:11:23:  Create OEE Machine id :56
+2020-06-26 13:11:23:  Creating a OEE measurement and Its values
+2020-06-26 13:11:25:  after calculation  OEE Machine id :64
+2020-06-26 13:11:25:  Create OEE Machine id :64
+2020-06-26 13:11:25:  Creating a OEE measurement and Its values
+2020-06-26 13:11:28:  after calculation  OEE Machine id :65
+2020-06-26 13:11:29:  Create OEE Machine id :65
+2020-06-26 13:11:29:  Creating a OEE measurement and Its values
+2020-06-26 13:11:31:  after calculation  OEE Machine id :66
+2020-06-26 13:11:31:  Create OEE Machine id :66
+2020-06-26 13:11:31:  Creating a OEE measurement and Its values
+2020-06-26 13:11:33:  after calculation  OEE Machine id :71
+2020-06-26 13:11:34:  Create OEE Machine id :71
+2020-06-26 13:11:34:  Creating a OEE measurement and Its values

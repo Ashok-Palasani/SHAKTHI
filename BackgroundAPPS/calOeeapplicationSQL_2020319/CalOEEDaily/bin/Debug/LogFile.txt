@@ -1,0 +1,148 @@
+2019-10-24 16:34:31:  StartTime 
+2019-10-24 16:38:30:  EndTime 
+2019-10-24 16:38:30:  StartTime WODetails 
+2019-10-24 16:44:20:  StartTime 
+2019-10-24 16:47:31:  EndTime 
+2019-10-24 16:47:31:  StartTime WODetails 
+2019-10-24 16:50:46:  WorkOrder Block System.Reflection.TargetException: Non-static field requires a target.
+   at System.Reflection.RtFieldInfo.CheckConsistency(Object target)
+   at System.Reflection.RtFieldInfo.InternalGetValue(Object obj, StackCrawlMark& stackMark)
+   at System.Reflection.RtFieldInfo.GetValue(Object obj)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryGetFieldOrPropertyValue(MemberExpression me, Object instance, Object& memberValue)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryEvaluatePath(Expression expression, ConstantExpression& constantExpression)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.EvaluateParameter(Object[] arguments)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__a()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__21.MoveNext()
+2019-10-24 16:50:52:  Losses Block System.Reflection.TargetException: Non-static field requires a target.
+   at System.Reflection.RtFieldInfo.CheckConsistency(Object target)
+   at System.Reflection.RtFieldInfo.InternalGetValue(Object obj, StackCrawlMark& stackMark)
+   at System.Reflection.RtFieldInfo.GetValue(Object obj)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryGetFieldOrPropertyValue(MemberExpression me, Object instance, Object& memberValue)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryEvaluatePath(Expression expression, ConstantExpression& constantExpression)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.EvaluateParameter(Object[] arguments)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__a()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__21.MoveNext()
+2019-10-24 16:51:01:  StartTime 
+2019-10-24 16:51:16:  EndTime 
+2019-10-24 16:51:16:  StartTime WODetails 
+2019-10-24 16:54:39:  WorkOrder Block System.Reflection.TargetException: Non-static field requires a target.
+   at System.Reflection.RtFieldInfo.CheckConsistency(Object target)
+   at System.Reflection.RtFieldInfo.InternalGetValue(Object obj, StackCrawlMark& stackMark)
+   at System.Reflection.RtFieldInfo.GetValue(Object obj)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryGetFieldOrPropertyValue(MemberExpression me, Object instance, Object& memberValue)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryEvaluatePath(Expression expression, ConstantExpression& constantExpression)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.EvaluateParameter(Object[] arguments)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__a()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__21.MoveNext()
+2019-10-24 16:54:42:  Losses Block System.Reflection.TargetException: Non-static field requires a target.
+   at System.Reflection.RtFieldInfo.CheckConsistency(Object target)
+   at System.Reflection.RtFieldInfo.InternalGetValue(Object obj, StackCrawlMark& stackMark)
+   at System.Reflection.RtFieldInfo.GetValue(Object obj)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryGetFieldOrPropertyValue(MemberExpression me, Object instance, Object& memberValue)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryEvaluatePath(Expression expression, ConstantExpression& constantExpression)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.EvaluateParameter(Object[] arguments)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__a()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__21.MoveNext()
+2019-10-24 16:54:52:  StartTime 
+2019-10-24 16:55:04:  EndTime 
+2019-10-24 16:55:04:  StartTime WODetails 
+2019-10-24 16:57:17:  StartTime 
+2019-10-24 16:57:30:  EndTime 
+2019-10-24 16:57:30:  StartTime WODetails 
+2019-10-24 16:58:25:  StartTime 
+2019-10-24 16:58:37:  EndTime 
+2019-10-24 16:58:37:  StartTime WODetails 
+2019-10-24 17:06:26:  EndTime WODetails 
+2019-10-24 17:45:37:  StartTime 
+2019-10-24 19:06:06:  StartTime 
+2019-10-24 19:06:16:  EndTime 
+2019-10-24 19:06:17:  StartTime WODetails 
+2019-10-30 12:13:55:  StartTime 
+2020-03-19 11:56:50:  StartTime 
+2020-03-19 11:57:00:  Machineid1
+2020-03-19 11:59:11:  cmdInsertRows: System.Data.SqlClient.SqlCommand
+2020-12-10 12:58:59:  StartTime 
+2020-12-10 12:59:10:  Machineid4
+2020-12-10 12:59:10:  Machineid5
+2020-12-10 12:59:10:  Machineid6
+2020-12-10 12:59:11:  Machineid7
+2020-12-10 12:59:11:  Machineid8
+2020-12-10 12:59:11:  Machineid9
+2020-12-10 12:59:11:  Machineid10
+2020-12-10 12:59:11:  Machineid15
+2020-12-10 12:59:12:  Machineid18
+2020-12-10 12:59:12:  Machineid19
+2020-12-10 12:59:13:  Machineid20
+2020-12-10 12:59:13:  Machineid21
+2020-12-10 12:59:13:  Machineid22
+2020-12-10 12:59:13:  Machineid23
+2020-12-10 12:59:13:  Machineid28
+2020-12-10 12:59:13:  Machineid31
+2020-12-10 12:59:14:  Machineid32
+2020-12-10 12:59:14:  Machineid36
+2020-12-10 12:59:15:  Machineid37
+2020-12-10 12:59:15:  Machineid38
+2020-12-10 12:59:15:  Machineid39
+2020-12-10 12:59:15:  Machineid40
+2020-12-10 12:59:15:  Machineid41
+2020-12-10 12:59:16:  Machineid46
+2020-12-10 12:59:16:  Machineid51
+2020-12-10 12:59:16:  Machineid55
+2020-12-10 12:59:16:  Machineid56
+2020-12-10 12:59:17:  Machineid64
+2020-12-10 12:59:17:  Machineid65
+2020-12-10 12:59:17:  Machineid66
+2020-12-10 12:59:18:  Machineid71
+2020-12-10 12:59:18:  Machineid72
+2020-12-10 12:59:18:  Machineid73
+2020-12-10 12:59:19:  Machineid74
+2020-12-10 12:59:19:  EndTime 
+2020-12-10 12:59:19:  StartTime WODetails 

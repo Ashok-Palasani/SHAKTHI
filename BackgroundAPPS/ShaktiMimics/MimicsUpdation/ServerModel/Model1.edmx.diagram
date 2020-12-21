@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3cfad8bdbfaa42baadce1d97d404dbf3" Name="Diagram1" ZoomLevel="35">
+        <EntityTypeShape EntityType="i_facility_tealModel.alarm_history_master" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.configuration_tblpmchecklist" Width="1.5" PointX="15.75" PointY="133.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.configuration_tblpmcheckpoint" Width="1.5" PointX="13.5" PointY="128.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.configuration_tblprimitivemaintainancescheduling" Width="1.5" PointX="10.5" PointY="139.375" />
+        <EntityTypeShape EntityType="i_facility_tealModel.configuration_tblsensorgroup" Width="1.5" PointX="21.5" PointY="150.5" />
+        <EntityTypeShape EntityType="i_facility_tealModel.configurationtblmachinesensor" Width="1.5" PointX="23.75" PointY="143.375" />
+        <EntityTypeShape EntityType="i_facility_tealModel.configurationtblsensordatalink" Width="1.5" PointX="23" PointY="197.875" />
+        <EntityTypeShape EntityType="i_facility_tealModel.configurationtblsensormaster" Width="1.5" PointX="23.75" PointY="171.875" />
+        <EntityTypeShape EntityType="i_facility_tealModel.frommail" Width="1.5" PointX="10.75" PointY="10.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.Graph_Data" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.handle_no_ping" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.jobcard_details" Width="1.5" PointX="2.75" PointY="11.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.LossDetail" Width="1.5" PointX="4.75" PointY="11.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.mailmaster" Width="1.5" PointX="6.75" PointY="11.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.message_code_master" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.message_history_master" Width="1.5" PointX="12.75" PointY="5.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.monthdata" Width="1.5" PointX="12.75" PointY="10.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.operationlog" Width="1.5" PointX="8.75" PointY="13.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.parameter" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.parameters_master" Width="1.5" PointX="14.75" PointY="4.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.pcb_details" Width="1.5" PointX="4.75" PointY="14.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.pcb_parameters" Width="1.5" PointX="14.75" PointY="9.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.pcbdaq" Width="1.5" PointX="10.75" PointY="14.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.pcbdaqin_tbl" Width="1.5" PointX="12.75" PointY="14.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.pcbdps_master" Width="1.5" PointX="14.75" PointY="14.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.program_master" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.sharathtable" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.smtpdetail" Width="1.5" PointX="16.75" PointY="7.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_autoreport_log" Width="1.5" PointX="7.5" PointY="140.625" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_autoreportbasedon" Width="1.5" PointX="3" PointY="131" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_autoreportsetting" Width="1.5" PointX="5.25" PointY="133.25" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_autoreporttime" Width="1.5" PointX="3" PointY="138.375" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_axisdet" Width="1.5" PointX="20.75" PointY="199" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_axisdetails1" Width="1.5" PointX="16.75" PointY="11.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_axisdetails2" Width="1.5" PointX="16.75" PointY="15.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_CycleTimeAnalysis" Width="1.5" PointX="20.75" PointY="215.875" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_deletedProgDet" Width="1.5" PointX="6.75" PointY="17.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_genericfilepath" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_livecbmparameters" Width="1.5" PointX="2.75" PointY="18.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_OEEDetails" Width="1.5" PointX="20.75" PointY="231.5" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_oeereportasdivision" Width="1.5" PointX="18.75" PointY="4.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_ProdAndonDisp" Width="1.5" PointX="20.75" PointY="173.375" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_ProdManMachine" Width="1.5" PointX="20.75" PointY="107.125" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_ProdOrderLosses" Width="1.5" PointX="20.75" PointY="146.25" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_reportmaster" Width="1.5" PointX="3" PointY="134.5" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_SaveNCProgVer" Width="1.5" PointX="18.75" PointY="8.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_servodetails" Width="1.5" PointX="8.75" PointY="18.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_UtilReport" Width="1.5" PointX="20.75" PointY="141.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblactivitylog" Width="1.5" PointX="10.75" PointY="18.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblAndonDispDet" Width="1.5" PointX="13.5" PointY="134.25" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblAndonImageTextScheduledDisplay" Width="1.5" PointX="10.5" PointY="133.5" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblapp_paths" Width="1.5" PointX="18.75" PointY="12.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblatccounter" Width="1.5" PointX="18.75" PointY="15.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblbottelneck" Width="1.5" PointX="10.5" PointY="127.5" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblbreakdown" Width="1.5" PointX="24.5" PointY="124.25" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblBreakdowncode" Width="1.5" PointX="18.5" PointY="113" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblBreakDownTickect" Width="1.5" PointX="20.75" PointY="124.5" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblcell" Width="1.5" PointX="8.25" PointY="133" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblcellpart" Width="1.5" PointX="10.5" PointY="123.375" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblcustomer" Width="1.5" PointX="12.75" PointY="19.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbldailyprodstatu" Width="1.5" PointX="20.75" PointY="227.375" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbldaytiming" Width="1.5" PointX="14.75" PointY="19.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbldowntimecategory" Width="1.5" PointX="7.75" PointY="1.125" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbldowntimedetail" Width="1.5" PointX="10" PointY="1" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblemailescalation" Width="1.5" PointX="20.75" PointY="132.875" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblendcode" Width="1.5" PointX="16.75" PointY="19.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblescalationlog" Width="1.5" PointX="20.75" PointY="154.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblgenericworkcode" Width="1.5" PointX="5.75" PointY="7" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblgenericworkentry" Width="1.5" PointX="8" PointY="7.375" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblhistpm" Width="1.5" PointX="18.75" PointY="19.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblholdcode" Width="1.5" PointX="20.75" PointY="0.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblHolidayManagment" Width="1.5" PointX="20.75" PointY="6.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblholiday" Width="1.5" PointX="20.75" PointY="11.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblHolidayTypeMaster" Width="1.5" PointX="20.75" PointY="15.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbllivedailyprodstatu" Width="1.5" PointX="20.75" PointY="211.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbllivemode" Width="1.5" PointX="29.75" PointY="138.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbllossescode" Width="1.5" PointX="18.5" PointY="118.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbllossofentry" Width="1.5" PointX="20.75" PointY="88.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblmachineaxisdetail" Width="1.5" PointX="20.75" PointY="19.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblmachinecategory" Width="1.5" PointX="4.75" PointY="21.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblmachinedetail" Width="1.5" PointX="18.5" PointY="127" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblmailid" Width="1.5" PointX="22.75" PointY="0.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblmaintainanceProdBrDetail" Width="1.5" PointX="22.75" PointY="4.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblmasterparts_st_sw" Width="1.5" PointX="6.75" PointY="22.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblmimic" Width="1.5" PointX="20.75" PointY="203" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblmode" Width="1.5" PointX="26.75" PointY="132.875" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblmodetemp" Width="1.5" PointX="26.75" PointY="126" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblmodulehelper" Width="1.5" PointX="22.75" PointY="10.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblmodulemaster" Width="1.5" PointX="22.75" PointY="14.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblmodule" Width="1.5" PointX="29.75" PointY="123.5" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblmultipleworkorder" Width="1.5" PointX="26.75" PointY="139.875" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblNcProgramTransferMain" Width="1.5" PointX="20.75" PointY="94" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbloeedashboardfinalvariable" Width="1.5" PointX="22.75" PointY="19.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbloeedashboardvariable" Width="1.5" PointX="0.75" PointY="23.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbloeedashboardvariablestoday" Width="1.5" PointX="8.75" PointY="23.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblOperatorDashboard" Width="1.5" PointX="20.75" PointY="207.125" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblOperatorHeader" Width="1.5" PointX="20.75" PointY="97.625" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblOperatorLoginDetail" Width="1.5" PointX="18.5" PointY="146.375" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblOperatorMachineDetail" Width="1.5" PointX="23.75" PointY="139.5" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblpartlearningreport" Width="1.5" PointX="14.75" PointY="23.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblpart" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblpartscountandcutting" Width="1.5" PointX="20.75" PointY="101.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblplannedbreak" Width="1.5" PointX="3" PointY="7.125" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblplant" Width="1.5" PointX="0.75" PointY="110.625" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblpmsdetail" Width="1.5" PointX="16.75" PointY="23.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblPrecentColour" Width="1.5" PointX="18.75" PointY="23.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblPresentTool" Width="1.5" PointX="24.75" PointY="0.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblpriorityalarm" Width="1.5" PointX="24.75" PointY="3.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblProdPlanMaster" Width="1.5" PointX="24.75" PointY="8.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblprogramtransferhistory" Width="1.5" PointX="24.75" PointY="12.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblrejectqty" Width="1.5" PointX="32" PointY="134.125" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblrejectreason" Width="1.5" PointX="29.75" PointY="134.125" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblreportholder" Width="1.5" PointX="24.75" PointY="16.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblReworkReason" Width="1.5" PointX="24.75" PointY="19.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblrolemodulelink" Width="1.5" PointX="32" PointY="128.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblrole" Width="1.5" PointX="16.25" PointY="146.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblSAPInput" Width="1.5" PointX="24.75" PointY="22.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblsendermailid" Width="1.5" PointX="2.75" PointY="25.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblSetupMaint" Width="1.5" PointX="23.75" PointY="134.125" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblshift_breaks" Width="1.5" PointX="10.75" PointY="25.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblshift_mstr" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblshiftdetail" Width="1.5" PointX="5" PointY="1" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblshiftdetails_machinewise" Width="1.5" PointX="20.75" PointY="187.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblshiftmethod" Width="1.5" PointX="2.75" PointY="1.5" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblshiftplanner" Width="1.5" PointX="29.75" PointY="127.375" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblShiftUtilReport" Width="1.5" PointX="20.75" PointY="236.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblshop" Width="1.5" PointX="3" PointY="156" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblStdToolLife" Width="1.5" PointX="26.75" PointY="0.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblToolCounter" Width="1.5" PointX="26.75" PointY="5.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbltoollifeoperator" Width="1.5" PointX="20.75" PointY="221.625" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbltosapfilepath" Width="1.5" PointX="26.75" PointY="10.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbltosapshopname" Width="1.5" PointX="26.75" PointY="14.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblunit" Width="1.5" PointX="20.75" PointY="195" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbluser" Width="1.5" PointX="23.75" PointY="128.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblwolossess" Width="1.5" PointX="26.75" PointY="18.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblworeport" Width="1.5" PointX="26.75" PointY="23.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblworkorderentry" Width="1.5" PointX="20.75" PointY="112" />
+        <EntityTypeShape EntityType="i_facility_tealModel.weekdata" Width="1.5" PointX="16.75" PointY="27.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.shift_master" Width="1.5" PointX="18.75" PointY="27.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_livecbmdetails" Width="1.5" PointX="20.75" PointY="27.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tbl_livetblsensorvalue" Width="1.5" PointX="22.75" PointY="27.75" />
+        <EntityTypeShape EntityType="i_facility_tealModel.tblAndonDisplayRotate" Width="1.5" PointX="28.75" PointY="0.75" />
+        <AssociationConnector Association="i_facility_tealModel.cellID_tblcell_tblpmchecklist" />
+        <AssociationConnector Association="i_facility_tealModel.plantID_FK" />
+        <AssociationConnector Association="i_facility_tealModel.pmcpID_FK" />
+        <AssociationConnector Association="i_facility_tealModel.shopID_FK" />
+        <AssociationConnector Association="i_facility_tealModel.FK_cellID" />
+        <AssociationConnector Association="i_facility_tealModel.plantid_tblplant" />
+        <AssociationConnector Association="i_facility_tealModel.shopid_tblshop" />
+        <AssociationConnector Association="i_facility_tealModel.cellid_tblprimitivemaintainancescheduling2223" />
+        <AssociationConnector Association="i_facility_tealModel.machineID_tblprimitivemaintainancescheduling2223" />
+        <AssociationConnector Association="i_facility_tealModel.PlantID_tblprimitivemaintainancescheduling2223" />
+        <AssociationConnector Association="i_facility_tealModel.ShopID_tblprimitivemaintainancescheduling2223" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblkl_tblMachineSensor" />
+        <AssociationConnector Association="i_facility_tealModel.SID_FK_ID" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tbllk_tblMachineSensor" />
+        <AssociationConnector Association="i_facility_tealModel.axisid" />
+        <AssociationConnector Association="i_facility_tealModel.logfreqid" />
+        <AssociationConnector Association="i_facility_tealModel.unit" />
+        <AssociationConnector Association="i_facility_tealModel.uid" />
+        <AssociationConnector Association="i_facility_tealModel.tbl_autoreport_log_AutoReportID" />
+        <AssociationConnector Association="i_facility_tealModel.tbl_autoreportsetting_BasedOnID" />
+        <AssociationConnector Association="i_facility_tealModel.tbl_autoreportsetting_ReportCellID" />
+        <AssociationConnector Association="i_facility_tealModel.tbl_autoreportsetting_ReportID" />
+        <AssociationConnector Association="i_facility_tealModel.tbl_autoreportsetting_ReportPlantID" />
+        <AssociationConnector Association="i_facility_tealModel.tbl_autoreportsetting_ReportShopID" />
+        <AssociationConnector Association="i_facility_tealModel.tbl_autoreportsetting_ReportTimeID" />
+        <AssociationConnector Association="i_facility_tealModel.tbl_autoreportsetting_ReportWorkCentreID" />
+        <AssociationConnector Association="i_facility_tealModel.tbl_axisdet_AxisMachineIDIdx" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tbl_CycleTimeAnalysis_tblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tbl_OEEDetails_tbl_MachineDetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tbl_ProdAndonDisp_tblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tbl_ProdManMachine_tblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tbl_ProdOrderLosses_tblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tbl_UtilReport_tblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblAndonDispDEt_tblcell" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblAndonDispDEt_tblplant" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblAndonDispDEt_tblshop" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblAndonImageTextScheduledDisplay_tblcell" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblAndonImageTextScheduledDisplay_tblplant" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblAndonImageTextScheduledDisplay_tblshop" />
+        <AssociationConnector Association="i_facility_tealModel.CellID" />
+        <AssociationConnector Association="i_facility_tealModel.cpid" />
+        <AssociationConnector Association="i_facility_tealModel.MachineID" />
+        <AssociationConnector Association="i_facility_tealModel.PlantID" />
+        <AssociationConnector Association="i_facility_tealModel.ShopID" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblmode_tblbreakdown1" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblmodetemp_tblbreakdown" />
+        <AssociationConnector Association="i_facility_tealModel.tblbreakdown_BreakdowncodeId" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblBreakDownTickect_tbllossescodes" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblBreakDownTickect_tblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblBreakDownTickect_tblOperatorLoginDetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblBreakDownTickect_tblOperatorLoginDetails1" />
+        <AssociationConnector Association="i_facility_tealModel.CellID_FK" />
+        <AssociationConnector Association="i_facility_tealModel.tblcell_PlantsId" />
+        <AssociationConnector Association="i_facility_tealModel.tblcell_ShopId" />
+        <AssociationConnector Association="i_facility_tealModel.tblemailescalation_CellIDFK" />
+        <AssociationConnector Association="i_facility_tealModel.tblmachinedetails_CellIDtblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.tblmultipleworkorder_CellIDtblMWO" />
+        <AssociationConnector Association="i_facility_tealModel.tblrejectreason_ibfk_1" />
+        <AssociationConnector Association="i_facility_tealModel.tblshiftplanner_CellIDshiftplanner" />
+        <AssociationConnector Association="i_facility_tealModel.tbldailyprodstatus_MachineID1" />
+        <AssociationConnector Association="i_facility_tealModel.tbldowntimedetails_tbldowntimedetails_ibfk_1" />
+        <AssociationConnector Association="i_facility_tealModel.tblemailescalation_PlantIDFK" />
+        <AssociationConnector Association="i_facility_tealModel.tblemailescalation_ReasonLevel1FK" />
+        <AssociationConnector Association="i_facility_tealModel.tblemailescalation_ReasonLevel2FK" />
+        <AssociationConnector Association="i_facility_tealModel.tblemailescalation_ReasonLevel3FK" />
+        <AssociationConnector Association="i_facility_tealModel.tblemailescalation_ShopIDFK" />
+        <AssociationConnector Association="i_facility_tealModel.tblemailescalation_WCIDFK" />
+        <AssociationConnector Association="i_facility_tealModel.tblescalationlog_EscalationLossCodeID" />
+        <AssociationConnector Association="i_facility_tealModel.tblgenericworkentry_GenericWorkID" />
+        <AssociationConnector Association="i_facility_tealModel.tbllivedailyprodstatus_MachineIDLDPS" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblmode_tbllossescodes1" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblmode_tblmachinedetails1" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblmode_tblbreakdown" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblmode_tbllossescodes" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblmodetemp_tbllossescodes" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblSetupMaint_tbllossescodes" />
+        <AssociationConnector Association="i_facility_tealModel.tbllossofentry_LossCodeID" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblmode_tblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblmodetemp_tblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblNcProgramTransferMain_tblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblOperatorDashboard_tblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblOperatorHeader_tblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblOperatorMachineDetails_tblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblSetupMaint_tblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblShiftUtilReport_tblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tbltoollifeoperator_tblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblworkorderentry_tblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.MachineID_fk" />
+        <AssociationConnector Association="i_facility_tealModel.tblmachinedetails_PlantIDtblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.tblmachinedetails_ShopIDtblmachinedetails" />
+        <AssociationConnector Association="i_facility_tealModel.tblmimics_MachineID" />
+        <AssociationConnector Association="i_facility_tealModel.tblmultipleworkorder_WCIDtblMWO" />
+        <AssociationConnector Association="i_facility_tealModel.tblrejectreason_ibfk_2" />
+        <AssociationConnector Association="i_facility_tealModel.tblshiftdetails_machinewise_MachineIDShiftWise" />
+        <AssociationConnector Association="i_facility_tealModel.tblshiftplanner_MachineIDshiftplanner" />
+        <AssociationConnector Association="i_facility_tealModel.tblusers_MachineFkforUser" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblrolemodulelink_tblmodules" />
+        <AssociationConnector Association="i_facility_tealModel.tblmultipleworkorder_PlantIDtblMWO" />
+        <AssociationConnector Association="i_facility_tealModel.tblmultipleworkorder_ShopIdtblMWO" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblOperatorLoginDetails_tblroles" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblOperatorMachineDetails_tblOperatorLoginDetails" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblparts_tblparts" />
+        <AssociationConnector Association="i_facility_tealModel.tblplannedbreak_shiftbreak" />
+        <AssociationConnector Association="i_facility_tealModel.tblshiftplanner_PlantIDshiftplanner" />
+        <AssociationConnector Association="i_facility_tealModel.tblshop_PlantID" />
+        <AssociationConnector Association="i_facility_tealModel.tblrejectqty_ibfk_1" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblrolemodulelink_tblroles" />
+        <AssociationConnector Association="i_facility_tealModel.tblrolemodulelink_InsertedBy_Id" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblusers_primaryrole" />
+        <AssociationConnector Association="i_facility_tealModel.FK_tblusers_secondary" />
+        <AssociationConnector Association="i_facility_tealModel.tblusers_PrimaryRole" />
+        <AssociationConnector Association="i_facility_tealModel.tblusers_SecondaryRole" />
+        <AssociationConnector Association="i_facility_tealModel.tblshiftdetails_ShiftMethodIDshiftmethod" />
+        <AssociationConnector Association="i_facility_tealModel.tblshiftplanner_ShopIDshiftplanner" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

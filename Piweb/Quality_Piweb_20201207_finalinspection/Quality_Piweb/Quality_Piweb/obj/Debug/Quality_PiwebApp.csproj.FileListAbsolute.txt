@@ -1,0 +1,128 @@
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.csprojAssemblyReference.cache
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.Properties.Resources.resources
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.csproj.GenerateResource.cache
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.csproj.CoreCompileInputs.cache
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\Quality_PiwebApp.exe.config
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\Quality_PiwebApp.exe
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\Quality_PiwebApp.pdb
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\EntityFramework.dll
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\EntityFramework.SqlServer.dll
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\IdentityModel.dll
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\JetBrains.Annotations.dll
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.Bson.dll
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.dll
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\PiWeb.Api.dll
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\EntityFramework.xml
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\EntityFramework.SqlServer.xml
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\IdentityModel.pdb
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\JetBrains.Annotations.xml
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.pdb
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.xml
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.Bson.pdb
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.Bson.xml
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\PiWeb.Api.xml
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.csproj.CopyComplete
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.exe
+D:\Ashok\Shakti\aswini\2020-06-30\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.pdb
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\Quality_PiwebApp.exe.config
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\Quality_PiwebApp.exe
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\Quality_PiwebApp.pdb
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\EntityFramework.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\EntityFramework.SqlServer.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\IdentityModel.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\JetBrains.Annotations.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.Bson.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\PiWeb.Api.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\EntityFramework.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\EntityFramework.SqlServer.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\IdentityModel.pdb
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\JetBrains.Annotations.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.pdb
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.Bson.pdb
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.Bson.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\PiWeb.Api.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.csprojAssemblyReference.cache
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.Properties.Resources.resources
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.csproj.GenerateResource.cache
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.csproj.CoreCompileInputs.cache
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.csproj.CopyComplete
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.exe
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200630\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.pdb
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\Quality_PiwebApp.exe.config
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\Quality_PiwebApp.exe
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\Quality_PiwebApp.pdb
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\EntityFramework.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\EntityFramework.SqlServer.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\IdentityModel.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\JetBrains.Annotations.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.Bson.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\PiWeb.Api.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\EntityFramework.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\EntityFramework.SqlServer.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\IdentityModel.pdb
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\JetBrains.Annotations.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.pdb
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.Bson.pdb
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.Bson.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\PiWeb.Api.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.csprojAssemblyReference.cache
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.Properties.Resources.resources
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.csproj.GenerateResource.cache
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.csproj.CoreCompileInputs.cache
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.csproj.CopyComplete
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.exe
+D:\Aswini\shakthi\PIWEB latest from Ashok_20200630\Quality_Piweb_20200725_backup\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.pdb
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\Quality_PiwebApp.exe.config
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\Quality_PiwebApp.exe
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\Quality_PiwebApp.pdb
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\EntityFramework.dll
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\EntityFramework.SqlServer.dll
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\IdentityModel.dll
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\JetBrains.Annotations.dll
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.Bson.dll
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.dll
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\PiWeb.Api.dll
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\EntityFramework.xml
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\EntityFramework.SqlServer.xml
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\IdentityModel.pdb
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\JetBrains.Annotations.xml
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.pdb
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.xml
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.Bson.pdb
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\Newtonsoft.Json.Bson.xml
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\PiWeb.Api.xml
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.csprojAssemblyReference.cache
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.Properties.Resources.resources
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.csproj.GenerateResource.cache
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.csproj.CoreCompileInputs.cache
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.csproj.CopyComplete
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.exe
+D:\Github_Ashok\Shakti\Piweb\Quality_Piweb_20201207_finalinspection\Quality_Piweb\Quality_Piweb\obj\Debug\Quality_PiwebApp.pdb

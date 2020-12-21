@@ -1,0 +1,79 @@
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.dll
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.pdb
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\bin\Debug\Dapper.dll
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\bin\Debug\Dapper.xml
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csprojAssemblyReference.cache
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CoreCompileInputs.cache
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CopyComplete
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.dll
+D:\Ashok\Shakti\PiwebIntegration\Shakti_PiwebIntegration\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.pdb
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.dll
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.pdb
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\bin\Debug\Dapper.dll
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\bin\Debug\Dapper.xml
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csprojAssemblyReference.cache
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CoreCompileInputs.cache
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CopyComplete
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.dll
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.pdb
+D:\Ashok\Shakti\PiwebIntegration\aswini\Shakti_PiwebIntegration_20200518\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.dll
+D:\Ashok\Shakti\PiwebIntegration\aswini\Shakti_PiwebIntegration_20200518\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.pdb
+D:\Ashok\Shakti\PiwebIntegration\aswini\Shakti_PiwebIntegration_20200518\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\bin\Debug\Dapper.dll
+D:\Ashok\Shakti\PiwebIntegration\aswini\Shakti_PiwebIntegration_20200518\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\bin\Debug\Dapper.xml
+D:\Ashok\Shakti\PiwebIntegration\aswini\Shakti_PiwebIntegration_20200518\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CoreCompileInputs.cache
+D:\Ashok\Shakti\PiwebIntegration\aswini\Shakti_PiwebIntegration_20200518\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CopyComplete
+D:\Ashok\Shakti\PiwebIntegration\aswini\Shakti_PiwebIntegration_20200518\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.dll
+D:\Ashok\Shakti\PiwebIntegration\aswini\Shakti_PiwebIntegration_20200518\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.pdb
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200518_Latest\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.dll
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200518_Latest\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.pdb
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200518_Latest\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\bin\Debug\Dapper.dll
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200518_Latest\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\bin\Debug\Dapper.xml
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200518_Latest\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csprojAssemblyReference.cache
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200518_Latest\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CoreCompileInputs.cache
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200518_Latest\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CopyComplete
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200518_Latest\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.dll
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200518_Latest\Shakti_PiwebIntegration_20200512\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.pdb
+D:\Ashok\Shakti\PiwebIntegration\aswini\Shakti_PiwebIntegration_20200611\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.dll
+D:\Ashok\Shakti\PiwebIntegration\aswini\Shakti_PiwebIntegration_20200611\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.pdb
+D:\Ashok\Shakti\PiwebIntegration\aswini\Shakti_PiwebIntegration_20200611\Ii_facilitylibrary\bin\Debug\Dapper.dll
+D:\Ashok\Shakti\PiwebIntegration\aswini\Shakti_PiwebIntegration_20200611\Ii_facilitylibrary\bin\Debug\Dapper.xml
+D:\Ashok\Shakti\PiwebIntegration\aswini\Shakti_PiwebIntegration_20200611\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CoreCompileInputs.cache
+D:\Ashok\Shakti\PiwebIntegration\aswini\Shakti_PiwebIntegration_20200611\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CopyComplete
+D:\Ashok\Shakti\PiwebIntegration\aswini\Shakti_PiwebIntegration_20200611\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.dll
+D:\Ashok\Shakti\PiwebIntegration\aswini\Shakti_PiwebIntegration_20200611\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.pdb
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200611_fromashok\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.dll
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200611_fromashok\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.pdb
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200611_fromashok\Ii_facilitylibrary\bin\Debug\Dapper.dll
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200611_fromashok\Ii_facilitylibrary\bin\Debug\Dapper.xml
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200611_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csprojAssemblyReference.cache
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200611_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CoreCompileInputs.cache
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200611_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CopyComplete
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200611_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.dll
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200611_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.pdb
+D:\Ashok\Shakti\aswini\2020-06-15\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.dll
+D:\Ashok\Shakti\aswini\2020-06-15\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.pdb
+D:\Ashok\Shakti\aswini\2020-06-15\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\bin\Debug\Dapper.dll
+D:\Ashok\Shakti\aswini\2020-06-15\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\bin\Debug\Dapper.xml
+D:\Ashok\Shakti\aswini\2020-06-15\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csprojAssemblyReference.cache
+D:\Ashok\Shakti\aswini\2020-06-15\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CoreCompileInputs.cache
+D:\Ashok\Shakti\aswini\2020-06-15\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CopyComplete
+D:\Ashok\Shakti\aswini\2020-06-15\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.dll
+D:\Ashok\Shakti\aswini\2020-06-15\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.pdb
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200616_Quality with hmi partnum\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.dll
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200616_Quality with hmi partnum\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.pdb
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200616_Quality with hmi partnum\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\bin\Debug\Dapper.dll
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200616_Quality with hmi partnum\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\bin\Debug\Dapper.xml
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200616_Quality with hmi partnum\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csprojAssemblyReference.cache
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200616_Quality with hmi partnum\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CoreCompileInputs.cache
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200616_Quality with hmi partnum\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CopyComplete
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200616_Quality with hmi partnum\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.dll
+D:\Aswini\shakthi\Shakti_PiwebIntegration_20200616_Quality with hmi partnum\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.pdb
+D:\Ashok\Shakti\aswini\2020-06-19\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.dll
+D:\Ashok\Shakti\aswini\2020-06-19\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\bin\Debug\Ii_facilitylibrary.pdb
+D:\Ashok\Shakti\aswini\2020-06-19\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\bin\Debug\Dapper.dll
+D:\Ashok\Shakti\aswini\2020-06-19\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\bin\Debug\Dapper.xml
+D:\Ashok\Shakti\aswini\2020-06-19\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csprojAssemblyReference.cache
+D:\Ashok\Shakti\aswini\2020-06-19\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CoreCompileInputs.cache
+D:\Ashok\Shakti\aswini\2020-06-19\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.csproj.CopyComplete
+D:\Ashok\Shakti\aswini\2020-06-19\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.dll
+D:\Ashok\Shakti\aswini\2020-06-19\Shakti_PiwebIntegration_20200615_fromashok\Ii_facilitylibrary\obj\Debug\Ii_facilitylibrary.pdb

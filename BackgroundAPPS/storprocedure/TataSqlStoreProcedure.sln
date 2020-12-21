@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TataSqlStoreProcedure", "TataSqlStoreProcedure\TataSqlStoreProcedure.csproj", "{E849BB11-25B9-4781-8F20-B02758C04B1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E849BB11-25B9-4781-8F20-B02758C04B1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E849BB11-25B9-4781-8F20-B02758C04B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E849BB11-25B9-4781-8F20-B02758C04B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E849BB11-25B9-4781-8F20-B02758C04B1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4178C197-D946-4347-85E3-3D6E89F9921B}
+	EndGlobalSection
+EndGlobal

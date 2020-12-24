@@ -40,24 +40,24 @@ namespace AutoReportMail
                 //MessageBox.Show(exception.ToString());
                 IntoFile("Main :" + exception);
             }
-            //Process[] GetMyProc = Process.GetProcessesByName("AutoReportMail");
-            //if (GetMyProc.Count() > 0)
-            //{
-            //    try
-            //    {
-            //        //MessageBox.Show("ablut to close");
-            //        GetMyProc[0].CloseMainWindow();
-            //        System.Threading.Thread.Sleep(10000);
-            //        GetMyProc[0].Kill();
-            //    }
-            //    catch (Exception eclose)
-            //    {
-            //        //MessageBox.Show("ablut to close");
-            //        IntoFile(" " + eclose);
-            //        System.Threading.Thread.Sleep(10000);
-            //        GetMyProc[0].Kill();
-            //    }
-            //}
+            Process[] GetMyProc = Process.GetProcessesByName("AutoReportMail");
+            if (GetMyProc.Count() > 0)
+            {
+                try
+                {
+                    //MessageBox.Show("ablut to close");
+                    GetMyProc[0].CloseMainWindow();
+                    System.Threading.Thread.Sleep(10000);
+                    GetMyProc[0].Kill();
+                }
+                catch (Exception eclose)
+                {
+                    //MessageBox.Show("ablut to close");
+                    IntoFile(" " + eclose);
+                    System.Threading.Thread.Sleep(10000);
+                    GetMyProc[0].Kill();
+                }
+            }
         }
 
         private void MyTimer_Tick()

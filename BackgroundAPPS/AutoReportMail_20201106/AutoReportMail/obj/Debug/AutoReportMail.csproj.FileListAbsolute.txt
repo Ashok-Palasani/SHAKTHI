@@ -142,3 +142,4 @@ D:\Github_Ashok\Shakti_latest\BackgroundAPPS\AutoReportMail_20201106\AutoReportM
 D:\Github_Ashok\Shakti_latest\BackgroundAPPS\AutoReportMail_20201106\AutoReportMail\obj\Debug\AutoReportMail.csproj.CopyComplete
 D:\Github_Ashok\Shakti_latest\BackgroundAPPS\AutoReportMail_20201106\AutoReportMail\obj\Debug\AutoReportMail.exe
 D:\Github_Ashok\Shakti_latest\BackgroundAPPS\AutoReportMail_20201106\AutoReportMail\obj\Debug\AutoReportMail.pdb
+D:\Github_Ashok\Shakti_latest\BackgroundAPPS\AutoReportMail_20201106\AutoReportMail\obj\Debug\AutoReportMail.csprojAssemblyReference.cache

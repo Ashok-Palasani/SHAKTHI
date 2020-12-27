@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="i_facility_tealModelStoreContainer" CdmEntityContainer="i_facility_tealEntities1">
+  <EntityContainerMapping StorageEntityContainer="i_facility_shaktiModelStoreContainer" CdmEntityContainer="i_facility_shaktiEntities">
     <EntitySetMapping Name="alarm_history_master">
-      <EntityTypeMapping TypeName="i_facility_tealModel.alarm_history_master">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.alarm_history_master">
         <MappingFragment StoreEntitySet="alarm_history_master">
+          <ScalarProperty Name="IsPiWeb" ColumnName="IsPiWeb" />
           <ScalarProperty Name="AlarmID" ColumnName="AlarmID" />
           <ScalarProperty Name="AlarmMessage" ColumnName="AlarmMessage" />
           <ScalarProperty Name="AlarmDateTime" ColumnName="AlarmDateTime" />
@@ -26,7 +27,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="configuration_tblpmchecklist">
-      <EntityTypeMapping TypeName="i_facility_tealModel.configuration_tblpmchecklist">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.configuration_tblpmchecklist">
         <MappingFragment StoreEntitySet="configuration_tblpmchecklist">
           <ScalarProperty Name="pmcid" ColumnName="pmcid" />
           <ScalarProperty Name="pmcpID" ColumnName="pmcpID" />
@@ -46,7 +47,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="configuration_tblpmcheckpoint">
-      <EntityTypeMapping TypeName="i_facility_tealModel.configuration_tblpmcheckpoint">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.configuration_tblpmcheckpoint">
         <MappingFragment StoreEntitySet="configuration_tblpmcheckpoint">
           <ScalarProperty Name="pmcpID" ColumnName="pmcpID" />
           <ScalarProperty Name="TypeofCheckpoint" ColumnName="TypeofCheckpoint" />
@@ -66,7 +67,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="configuration_tblprimitivemaintainancescheduling">
-      <EntityTypeMapping TypeName="i_facility_tealModel.configuration_tblprimitivemaintainancescheduling">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.configuration_tblprimitivemaintainancescheduling">
         <MappingFragment StoreEntitySet="configuration_tblprimitivemaintainancescheduling">
           <ScalarProperty Name="pmid" ColumnName="pmid" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -84,13 +85,13 @@
           <ScalarProperty Name="ShopID" ColumnName="ShopID" />
           <ScalarProperty Name="plantName" ColumnName="plantName" />
           <ScalarProperty Name="shopname" ColumnName="shopname" />
-          <ScalarProperty Name="MonthID" ColumnName="MonthID" />
           <ScalarProperty Name="WeekID" ColumnName="WeekID" />
+          <ScalarProperty Name="MonthID" ColumnName="MonthID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="configuration_tblsensorgroup">
-      <EntityTypeMapping TypeName="i_facility_tealModel.configuration_tblsensorgroup">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.configuration_tblsensorgroup">
         <MappingFragment StoreEntitySet="configuration_tblsensorgroup">
           <ScalarProperty Name="SID" ColumnName="SID" />
           <ScalarProperty Name="SensorGroupName" ColumnName="SensorGroupName" />
@@ -104,7 +105,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="configurationtblmachinesensors">
-      <EntityTypeMapping TypeName="i_facility_tealModel.configurationtblmachinesensor">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.configurationtblmachinesensor">
         <MappingFragment StoreEntitySet="configurationtblmachinesensor">
           <ScalarProperty Name="MSID" ColumnName="MSID" />
           <ScalarProperty Name="MachineId" ColumnName="MachineId" />
@@ -120,7 +121,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="configurationtblsensordatalinks">
-      <EntityTypeMapping TypeName="i_facility_tealModel.configurationtblsensordatalink">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.configurationtblsensordatalink">
         <MappingFragment StoreEntitySet="configurationtblsensordatalink">
           <ScalarProperty Name="ParameterTypeID" ColumnName="ParameterTypeID" />
           <ScalarProperty Name="Element" ColumnName="Element" />
@@ -146,7 +147,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="configurationtblsensormasters">
-      <EntityTypeMapping TypeName="i_facility_tealModel.configurationtblsensormaster">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.configurationtblsensormaster">
         <MappingFragment StoreEntitySet="configurationtblsensormaster">
           <ScalarProperty Name="SMID" ColumnName="SMID" />
           <ScalarProperty Name="IsAnalog" ColumnName="IsAnalog" />
@@ -170,7 +171,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="frommails">
-      <EntityTypeMapping TypeName="i_facility_tealModel.frommail">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.frommail">
         <MappingFragment StoreEntitySet="frommail">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="FromEmailAdd" ColumnName="FromEmailAdd" />
@@ -181,8 +182,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Graph_Data">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.Graph_Data">
+        <MappingFragment StoreEntitySet="Graph_Data">
+          <ScalarProperty Name="Gid" ColumnName="Gid" />
+          <ScalarProperty Name="OperatingTime" ColumnName="OperatingTime" />
+          <ScalarProperty Name="PowerOFF" ColumnName="PowerOFF" />
+          <ScalarProperty Name="MinTime" ColumnName="MinTime" />
+          <ScalarProperty Name="MinorLossTime" ColumnName="MinorLossTime" />
+          <ScalarProperty Name="LossTime" ColumnName="LossTime" />
+          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+          <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
+          <ScalarProperty Name="ScrapQty" ColumnName="ScrapQty" />
+          <ScalarProperty Name="PerformanceFactor" ColumnName="PerformanceFactor" />
+          <ScalarProperty Name="YeildQty" ColumnName="YeildQty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="handle_no_ping">
-      <EntityTypeMapping TypeName="i_facility_tealModel.handle_no_ping">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.handle_no_ping">
         <MappingFragment StoreEntitySet="handle_no_ping">
           <ScalarProperty Name="NoPingID" ColumnName="NoPingID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -192,7 +210,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="jobcard_details">
-      <EntityTypeMapping TypeName="i_facility_tealModel.jobcard_details">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.jobcard_details">
         <MappingFragment StoreEntitySet="jobcard_details">
           <ScalarProperty Name="JobcardID" ColumnName="JobcardID" />
           <ScalarProperty Name="slno" ColumnName="slno" />
@@ -213,8 +231,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="LossDetails">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.LossDetail">
+        <MappingFragment StoreEntitySet="LossDetails">
+          <ScalarProperty Name="Lid" ColumnName="Lid" />
+          <ScalarProperty Name="losscodeid" ColumnName="losscodeid" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
+          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="mailmasters">
-      <EntityTypeMapping TypeName="i_facility_tealModel.mailmaster">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.mailmaster">
         <MappingFragment StoreEntitySet="mailmaster">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="EmailID" ColumnName="EmailID" />
@@ -226,7 +255,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="message_code_master">
-      <EntityTypeMapping TypeName="i_facility_tealModel.message_code_master">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.message_code_master">
         <MappingFragment StoreEntitySet="message_code_master">
           <ScalarProperty Name="MessageCodeID" ColumnName="MessageCodeID" />
           <ScalarProperty Name="MessageCode" ColumnName="MessageCode" />
@@ -244,7 +273,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="message_history_master">
-      <EntityTypeMapping TypeName="i_facility_tealModel.message_history_master">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.message_history_master">
         <MappingFragment StoreEntitySet="message_history_master">
           <ScalarProperty Name="MessageID" ColumnName="MessageID" />
           <ScalarProperty Name="Meassage" ColumnName="Meassage" />
@@ -263,7 +292,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="monthdatas">
-      <EntityTypeMapping TypeName="i_facility_tealModel.monthdata">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.monthdata">
         <MappingFragment StoreEntitySet="monthdata">
           <ScalarProperty Name="MonthID" ColumnName="MonthID" />
           <ScalarProperty Name="Text" ColumnName="Text" />
@@ -277,7 +306,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="operationlogs">
-      <EntityTypeMapping TypeName="i_facility_tealModel.operationlog">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.operationlog">
         <MappingFragment StoreEntitySet="operationlog">
           <ScalarProperty Name="idoperationlog" ColumnName="idoperationlog" />
           <ScalarProperty Name="OpMsg" ColumnName="OpMsg" />
@@ -290,7 +319,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="parameters">
-      <EntityTypeMapping TypeName="i_facility_tealModel.parameter">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.parameter">
         <MappingFragment StoreEntitySet="parameters">
           <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
           <ScalarProperty Name="ParameterType" ColumnName="ParameterType" />
@@ -304,7 +333,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="parameters_master">
-      <EntityTypeMapping TypeName="i_facility_tealModel.parameters_master">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.parameters_master">
         <MappingFragment StoreEntitySet="parameters_master">
           <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
           <ScalarProperty Name="SetupTime" ColumnName="SetupTime" />
@@ -324,7 +353,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="pcb_details">
-      <EntityTypeMapping TypeName="i_facility_tealModel.pcb_details">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.pcb_details">
         <MappingFragment StoreEntitySet="pcb_details">
           <ScalarProperty Name="PCBID" ColumnName="PCBID" />
           <ScalarProperty Name="PCBNo" ColumnName="PCBNo" />
@@ -340,7 +369,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="pcb_parameters">
-      <EntityTypeMapping TypeName="i_facility_tealModel.pcb_parameters">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.pcb_parameters">
         <MappingFragment StoreEntitySet="pcb_parameters">
           <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
           <ScalarProperty Name="ParameterType" ColumnName="ParameterType" />
@@ -360,7 +389,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="pcbdaqs">
-      <EntityTypeMapping TypeName="i_facility_tealModel.pcbdaq">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.pcbdaq">
         <MappingFragment StoreEntitySet="pcbdaq">
           <ScalarProperty Name="PCBDAQID" ColumnName="PCBDAQID" />
           <ScalarProperty Name="PCBIPAddress" ColumnName="PCBIPAddress" />
@@ -376,7 +405,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="pcbdaqin_tbl">
-      <EntityTypeMapping TypeName="i_facility_tealModel.pcbdaqin_tbl">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.pcbdaqin_tbl">
         <MappingFragment StoreEntitySet="pcbdaqin_tbl">
           <ScalarProperty Name="DAQINID" ColumnName="DAQINID" />
           <ScalarProperty Name="PCBIPAddress" ColumnName="PCBIPAddress" />
@@ -388,7 +417,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="pcbdps_master">
-      <EntityTypeMapping TypeName="i_facility_tealModel.pcbdps_master">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.pcbdps_master">
         <MappingFragment StoreEntitySet="pcbdps_master">
           <ScalarProperty Name="PcbDpsMasterID" ColumnName="PcbDpsMasterID" />
           <ScalarProperty Name="Pin17" ColumnName="Pin17" />
@@ -408,7 +437,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="program_master">
-      <EntityTypeMapping TypeName="i_facility_tealModel.program_master">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.program_master">
         <MappingFragment StoreEntitySet="program_master">
           <ScalarProperty Name="ProgramID" ColumnName="ProgramID" />
           <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
@@ -441,7 +470,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sharathtables">
-      <EntityTypeMapping TypeName="i_facility_tealModel.sharathtable">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.sharathtable">
         <MappingFragment StoreEntitySet="sharathtable">
           <ScalarProperty Name="sharathid" ColumnName="sharathid" />
           <ScalarProperty Name="sharathname" ColumnName="sharathname" />
@@ -453,7 +482,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="smtpdetails">
-      <EntityTypeMapping TypeName="i_facility_tealModel.smtpdetail">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.smtpdetail">
         <MappingFragment StoreEntitySet="smtpdetails">
           <ScalarProperty Name="smtpID" ColumnName="smtpID" />
           <ScalarProperty Name="Port" ColumnName="Port" />
@@ -470,7 +499,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_autoreport_log">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_autoreport_log">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_autoreport_log">
         <MappingFragment StoreEntitySet="tbl_autoreport_log">
           <ScalarProperty Name="AutoReportLogID" ColumnName="AutoReportLogID" />
           <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
@@ -484,7 +513,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_autoreportbasedon">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_autoreportbasedon">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_autoreportbasedon">
         <MappingFragment StoreEntitySet="tbl_autoreportbasedon">
           <ScalarProperty Name="BasedOnID" ColumnName="BasedOnID" />
           <ScalarProperty Name="BasedOn" ColumnName="BasedOn" />
@@ -498,7 +527,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_autoreportsetting">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_autoreportsetting">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_autoreportsetting">
         <MappingFragment StoreEntitySet="tbl_autoreportsetting">
           <ScalarProperty Name="AutoReportID" ColumnName="AutoReportID" />
           <ScalarProperty Name="ReportID" ColumnName="ReportID" />
@@ -520,7 +549,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_autoreporttime">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_autoreporttime">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_autoreporttime">
         <MappingFragment StoreEntitySet="tbl_autoreporttime">
           <ScalarProperty Name="AutoReportTimeID" ColumnName="AutoReportTimeID" />
           <ScalarProperty Name="AutoReportTime" ColumnName="AutoReportTime" />
@@ -534,7 +563,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_axisdet">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_axisdet">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_axisdet">
         <MappingFragment StoreEntitySet="tbl_axisdet">
           <ScalarProperty Name="AxisDetID" ColumnName="AxisDetID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -550,7 +579,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_axisdetails1">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_axisdetails1">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_axisdetails1">
         <MappingFragment StoreEntitySet="tbl_axisdetails1">
           <ScalarProperty Name="ADID" ColumnName="ADID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -567,8 +596,9 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_axisdetails2">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_axisdetails2">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_axisdetails2">
         <MappingFragment StoreEntitySet="tbl_axisdetails2">
+          <ScalarProperty Name="IsPiWeb" ColumnName="IsPiWeb" />
           <ScalarProperty Name="AD2ID" ColumnName="AD2ID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
           <ScalarProperty Name="StartTime" ColumnName="StartTime" />
@@ -582,7 +612,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_CycleTimeAnalysis">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_CycleTimeAnalysis">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_CycleTimeAnalysis">
         <MappingFragment StoreEntitySet="tbl_CycleTimeAnalysis">
           <ScalarProperty Name="CTAID" ColumnName="CTAID" />
           <ScalarProperty Name="PartNum" ColumnName="PartNum" />
@@ -608,7 +638,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_deletedProgDet">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_deletedProgDet">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_deletedProgDet">
         <MappingFragment StoreEntitySet="tbl_deletedProgDet">
           <ScalarProperty Name="ProgDeletedID" ColumnName="ProgDeletedID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -623,7 +653,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_genericfilepath">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_genericfilepath">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_genericfilepath">
         <MappingFragment StoreEntitySet="tbl_genericfilepath">
           <ScalarProperty Name="FilePathID" ColumnName="FilePathID" />
           <ScalarProperty Name="CompleteFilePath" ColumnName="CompleteFilePath" />
@@ -639,7 +669,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_livecbmparameters">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_livecbmparameters">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_livecbmparameters">
         <MappingFragment StoreEntitySet="tbl_livecbmparameters">
           <ScalarProperty Name="cbmpID" ColumnName="cbmpID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -657,8 +687,45 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_machinestatusrealtime">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_machinestatusrealtime">
+        <MappingFragment StoreEntitySet="tbl_machinestatusrealtime">
+          <ScalarProperty Name="MachineStatusID" ColumnName="MachineStatusID" />
+          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+          <ScalarProperty Name="MachineStatus" ColumnName="MachineStatus" />
+          <ScalarProperty Name="MachineEmergency" ColumnName="MachineEmergency" />
+          <ScalarProperty Name="MachineAlarm" ColumnName="MachineAlarm" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_multiwoselection">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_multiwoselection">
+        <MappingFragment StoreEntitySet="tbl_multiwoselection">
+          <ScalarProperty Name="MultiWOID" ColumnName="MultiWOID" />
+          <ScalarProperty Name="WorkOrder" ColumnName="WorkOrder" />
+          <ScalarProperty Name="PartNo" ColumnName="PartNo" />
+          <ScalarProperty Name="OperationNo" ColumnName="OperationNo" />
+          <ScalarProperty Name="TargetQty" ColumnName="TargetQty" />
+          <ScalarProperty Name="DeliveredQty" ColumnName="DeliveredQty" />
+          <ScalarProperty Name="HMIID" ColumnName="HMIID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="ProcessQty" ColumnName="ProcessQty" />
+          <ScalarProperty Name="DDLWorkCentre" ColumnName="DDLWorkCentre" />
+          <ScalarProperty Name="IsSubmit" ColumnName="IsSubmit" />
+          <ScalarProperty Name="ScrapQty" ColumnName="ScrapQty" />
+          <ScalarProperty Name="SplitWO" ColumnName="SplitWO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tbl_OEEDetails">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_OEEDetails">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_OEEDetails">
         <MappingFragment StoreEntitySet="tbl_OEEDetails">
           <ScalarProperty Name="OEEID" ColumnName="OEEID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -681,7 +748,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_oeereportasdivision">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_oeereportasdivision">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_oeereportasdivision">
         <MappingFragment StoreEntitySet="tbl_oeereportasdivision">
           <ScalarProperty Name="LID" ColumnName="LID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -694,7 +761,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_ProdAndonDisp">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_ProdAndonDisp">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_ProdAndonDisp">
         <MappingFragment StoreEntitySet="tbl_ProdAndonDisp">
           <ScalarProperty Name="ProdDashboardID" ColumnName="ProdDashboardID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -709,7 +776,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_ProdManMachine">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_ProdManMachine">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_ProdManMachine">
         <MappingFragment StoreEntitySet="tbl_ProdManMachine">
           <ScalarProperty Name="ProdManMachineID" ColumnName="ProdManMachineID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -730,7 +797,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_ProdOrderLosses">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_ProdOrderLosses">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_ProdOrderLosses">
         <MappingFragment StoreEntitySet="tbl_ProdOrderLosses">
           <ScalarProperty Name="ProdOrderlossID" ColumnName="ProdOrderlossID" />
           <ScalarProperty Name="WOID" ColumnName="WOID" />
@@ -744,7 +811,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_reportmaster">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_reportmaster">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_reportmaster">
         <MappingFragment StoreEntitySet="tbl_reportmaster">
           <ScalarProperty Name="ReportID" ColumnName="ReportID" />
           <ScalarProperty Name="ReportName" ColumnName="ReportName" />
@@ -760,7 +827,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_SaveNCProgVer">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_SaveNCProgVer">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_SaveNCProgVer">
         <MappingFragment StoreEntitySet="tbl_SaveNCProgVer">
           <ScalarProperty Name="NCProgVerID" ColumnName="NCProgVerID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -776,7 +843,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_servodetails">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_servodetails">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_servodetails">
         <MappingFragment StoreEntitySet="tbl_servodetails">
           <ScalarProperty Name="SDID" ColumnName="SDID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -792,7 +859,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_UtilReport">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_UtilReport">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_UtilReport">
         <MappingFragment StoreEntitySet="tbl_UtilReport">
           <ScalarProperty Name="UtilReportID" ColumnName="UtilReportID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -811,7 +878,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblactivitylogs">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblactivitylog">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblactivitylog">
         <MappingFragment StoreEntitySet="tblactivitylog">
           <ScalarProperty Name="TrackID" ColumnName="TrackID" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
@@ -829,7 +896,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblAndonDispDets">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblAndonDispDet">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblAndonDispDet">
         <MappingFragment StoreEntitySet="tblAndonDispDet">
           <ScalarProperty Name="ANDONDISPID" ColumnName="ANDONDISPID" />
           <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
@@ -845,7 +912,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblAndonImageTextScheduledDisplays">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblAndonImageTextScheduledDisplay">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblAndonImageTextScheduledDisplay">
         <MappingFragment StoreEntitySet="tblAndonImageTextScheduledDisplay">
           <ScalarProperty Name="TextImageAndonId" ColumnName="TextImageAndonId" />
           <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
@@ -869,7 +936,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblapp_paths">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblapp_paths">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblapp_paths">
         <MappingFragment StoreEntitySet="tblapp_paths">
           <ScalarProperty Name="AppPathsID" ColumnName="AppPathsID" />
           <ScalarProperty Name="AppName" ColumnName="AppName" />
@@ -880,7 +947,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblatccounters">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblatccounter">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblatccounter">
         <MappingFragment StoreEntitySet="tblatccounter">
           <ScalarProperty Name="ATCID" ColumnName="ATCID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -894,7 +961,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblbottelnecks">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblbottelneck">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblbottelneck">
         <MappingFragment StoreEntitySet="tblbottelneck">
           <ScalarProperty Name="Bid" ColumnName="Bid" />
           <ScalarProperty Name="PlantName" ColumnName="PlantName" />
@@ -916,7 +983,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblbreakdowns">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblbreakdown">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblbreakdown">
         <MappingFragment StoreEntitySet="tblbreakdown">
           <ScalarProperty Name="BreakdownID" ColumnName="BreakdownID" />
           <ScalarProperty Name="StartTime" ColumnName="StartTime" />
@@ -932,7 +999,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblBreakdowncodes">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblBreakdowncode">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblBreakdowncode">
         <MappingFragment StoreEntitySet="tblBreakdowncodes">
           <ScalarProperty Name="BreakdownID" ColumnName="BreakdownID" />
           <ScalarProperty Name="BreakdownCode" ColumnName="BreakdownCode" />
@@ -956,7 +1023,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblBreakDownTickects">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblBreakDownTickect">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblBreakDownTickect">
         <MappingFragment StoreEntitySet="tblBreakDownTickect">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="machineId" ColumnName="machineId" />
@@ -983,13 +1050,13 @@
           <ScalarProperty Name="MaintFlage" ColumnName="MaintFlage" />
           <ScalarProperty Name="MaintFinished" ColumnName="MaintFinished" />
           <ScalarProperty Name="ProdFinished" ColumnName="ProdFinished" />
-          <ScalarProperty Name="maintRejId" ColumnName="maintRejId" />
           <ScalarProperty Name="prodRejId" ColumnName="prodRejId" />
+          <ScalarProperty Name="maintRejId" ColumnName="maintRejId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblcells">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblcell">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblcell">
         <MappingFragment StoreEntitySet="tblcell">
           <ScalarProperty Name="CellID" ColumnName="CellID" />
           <ScalarProperty Name="CellName" ColumnName="CellName" />
@@ -1006,7 +1073,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblcellparts">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblcellpart">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblcellpart">
         <MappingFragment StoreEntitySet="tblcellpart">
           <ScalarProperty Name="cpID" ColumnName="cpID" />
           <ScalarProperty Name="CellID" ColumnName="CellID" />
@@ -1022,7 +1089,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblcustomers">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblcustomer">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblcustomer">
         <MappingFragment StoreEntitySet="tblcustomer">
           <ScalarProperty Name="CID" ColumnName="CID" />
           <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
@@ -1050,7 +1117,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbldailyprodstatus">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbldailyprodstatu">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbldailyprodstatu">
         <MappingFragment StoreEntitySet="tbldailyprodstatus">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -1067,7 +1134,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbldaytimings">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbldaytiming">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbldaytiming">
         <MappingFragment StoreEntitySet="tbldaytiming">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="StartTime" ColumnName="StartTime" />
@@ -1080,8 +1147,41 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tblddls">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblddl">
+        <MappingFragment StoreEntitySet="tblddl">
+          <ScalarProperty Name="DDLID" ColumnName="DDLID" />
+          <ScalarProperty Name="WorkCenter" ColumnName="WorkCenter" />
+          <ScalarProperty Name="WorkOrder" ColumnName="WorkOrder" />
+          <ScalarProperty Name="OperationNo" ColumnName="OperationNo" />
+          <ScalarProperty Name="OperationDesc" ColumnName="OperationDesc" />
+          <ScalarProperty Name="MaterialDesc" ColumnName="MaterialDesc" />
+          <ScalarProperty Name="PartName" ColumnName="PartName" />
+          <ScalarProperty Name="TargetQty" ColumnName="TargetQty" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="MADDate" ColumnName="MADDate" />
+          <ScalarProperty Name="MADDateInd" ColumnName="MADDateInd" />
+          <ScalarProperty Name="PreOpnEndDate" ColumnName="PreOpnEndDate" />
+          <ScalarProperty Name="DaysAgeing" ColumnName="DaysAgeing" />
+          <ScalarProperty Name="OperationsOnHold" ColumnName="OperationsOnHold" />
+          <ScalarProperty Name="ReasonForHold" ColumnName="ReasonForHold" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="FlagRushInd" ColumnName="FlagRushInd" />
+          <ScalarProperty Name="SplitWO" ColumnName="SplitWO" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DeliveredQty" ColumnName="DeliveredQty" />
+          <ScalarProperty Name="ScrapQty" ColumnName="ScrapQty" />
+          <ScalarProperty Name="InsertedOn" ColumnName="InsertedOn" />
+          <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
+          <ScalarProperty Name="IsWOSelected" ColumnName="IsWOSelected" />
+          <ScalarProperty Name="BHMIID" ColumnName="BHMIID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tbldowntimecategories">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbldowntimecategory">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbldowntimecategory">
         <MappingFragment StoreEntitySet="tbldowntimecategory">
           <ScalarProperty Name="DTC_ID" ColumnName="DTC_ID" />
           <ScalarProperty Name="DTCategory" ColumnName="DTCategory" />
@@ -1095,7 +1195,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbldowntimedetails">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbldowntimedetail">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbldowntimedetail">
         <MappingFragment StoreEntitySet="tbldowntimedetails">
           <ScalarProperty Name="DT_ID" ColumnName="DT_ID" />
           <ScalarProperty Name="DTCategoryID" ColumnName="DTCategoryID" />
@@ -1110,7 +1210,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblemailescalations">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblemailescalation">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblemailescalation">
         <MappingFragment StoreEntitySet="tblemailescalation">
           <ScalarProperty Name="EMailEscalationID" ColumnName="EMailEscalationID" />
           <ScalarProperty Name="EMailEscalationName" ColumnName="EMailEscalationName" />
@@ -1136,7 +1236,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblendcodes">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblendcode">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblendcode">
         <MappingFragment StoreEntitySet="tblendcodes">
           <ScalarProperty Name="EndCodeID" ColumnName="EndCodeID" />
           <ScalarProperty Name="EndCode" ColumnName="EndCode" />
@@ -1151,7 +1251,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblescalationlogs">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblescalationlog">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblescalationlog">
         <MappingFragment StoreEntitySet="tblescalationlog">
           <ScalarProperty Name="ELID" ColumnName="ELID" />
           <ScalarProperty Name="EscalationID" ColumnName="EscalationID" />
@@ -1169,7 +1269,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblgenericworkcodes">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblgenericworkcode">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblgenericworkcode">
         <MappingFragment StoreEntitySet="tblgenericworkcodes">
           <ScalarProperty Name="GenericWorkID" ColumnName="GenericWorkID" />
           <ScalarProperty Name="GenericWorkCode" ColumnName="GenericWorkCode" />
@@ -1189,7 +1289,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblgenericworkentries">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblgenericworkentry">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblgenericworkentry">
         <MappingFragment StoreEntitySet="tblgenericworkentry">
           <ScalarProperty Name="GWEntryID" ColumnName="GWEntryID" />
           <ScalarProperty Name="GWCodeID" ColumnName="GWCodeID" />
@@ -1205,7 +1305,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblhistpms">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblhistpm">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblhistpm">
         <MappingFragment StoreEntitySet="tblhistpms">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="Machineid" ColumnName="Machineid" />
@@ -1219,8 +1319,50 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tblhmiscreens">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblhmiscreen">
+        <MappingFragment StoreEntitySet="tblhmiscreen">
+          <ScalarProperty Name="HMIID" ColumnName="HMIID" />
+          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+          <ScalarProperty Name="OperatiorID" ColumnName="OperatiorID" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="PartNo" ColumnName="PartNo" />
+          <ScalarProperty Name="OperationNo" ColumnName="OperationNo" />
+          <ScalarProperty Name="Rej_Qty" ColumnName="Rej_Qty" />
+          <ScalarProperty Name="Work_Order_No" ColumnName="Work_Order_No" />
+          <ScalarProperty Name="Target_Qty" ColumnName="Target_Qty" />
+          <ScalarProperty Name="Delivered_Qty" ColumnName="Delivered_Qty" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
+          <ScalarProperty Name="Prod_FAI" ColumnName="Prod_FAI" />
+          <ScalarProperty Name="isUpdate" ColumnName="isUpdate" />
+          <ScalarProperty Name="DoneWithRow" ColumnName="DoneWithRow" />
+          <ScalarProperty Name="isWorkInProgress" ColumnName="isWorkInProgress" />
+          <ScalarProperty Name="isWorkOrder" ColumnName="isWorkOrder" />
+          <ScalarProperty Name="OperatorDet" ColumnName="OperatorDet" />
+          <ScalarProperty Name="PEStartTime" ColumnName="PEStartTime" />
+          <ScalarProperty Name="ProcessQty" ColumnName="ProcessQty" />
+          <ScalarProperty Name="DDLWokrCentre" ColumnName="DDLWokrCentre" />
+          <ScalarProperty Name="IsMultiWO" ColumnName="IsMultiWO" />
+          <ScalarProperty Name="IsHold" ColumnName="IsHold" />
+          <ScalarProperty Name="SplitWO" ColumnName="SplitWO" />
+          <ScalarProperty Name="HMIMonth" ColumnName="HMIMonth" />
+          <ScalarProperty Name="HMIYear" ColumnName="HMIYear" />
+          <ScalarProperty Name="HMIWeekNumber" ColumnName="HMIWeekNumber" />
+          <ScalarProperty Name="HMIQuarter" ColumnName="HMIQuarter" />
+          <ScalarProperty Name="batchCount" ColumnName="batchCount" />
+          <ScalarProperty Name="IsSync" ColumnName="IsSync" />
+          <ScalarProperty Name="SheetNoList" ColumnName="SheetNoList" />
+          <ScalarProperty Name="isSplitSapUpdated" ColumnName="isSplitSapUpdated" />
+          <ScalarProperty Name="prevQty" ColumnName="prevQty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tblholdcodes">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblholdcode">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblholdcode">
         <MappingFragment StoreEntitySet="tblholdcodes">
           <ScalarProperty Name="HoldCodeID" ColumnName="HoldCodeID" />
           <ScalarProperty Name="HoldCode" ColumnName="HoldCode" />
@@ -1239,11 +1381,12 @@
           <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
           <ScalarProperty Name="ServerTabFlagSync" ColumnName="ServerTabFlagSync" />
           <ScalarProperty Name="ServerTabCheck" ColumnName="ServerTabCheck" />
+          <ScalarProperty Name="Sync" ColumnName="Sync" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblHolidayManagments">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblHolidayManagment">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblHolidayManagment">
         <MappingFragment StoreEntitySet="tblHolidayManagment">
           <ScalarProperty Name="HolidayManagmentId" ColumnName="HolidayManagmentId" />
           <ScalarProperty Name="HolidayManagmentName" ColumnName="HolidayManagmentName" />
@@ -1262,7 +1405,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblholidays">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblholiday">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblholiday">
         <MappingFragment StoreEntitySet="tblholidays">
           <ScalarProperty Name="HolidayId" ColumnName="HolidayId" />
           <ScalarProperty Name="HolidayDate" ColumnName="HolidayDate" />
@@ -1276,7 +1419,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblHolidayTypeMasters">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblHolidayTypeMaster">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblHolidayTypeMaster">
         <MappingFragment StoreEntitySet="tblHolidayTypeMasters">
           <ScalarProperty Name="HolidayTypeId" ColumnName="HolidayTypeId" />
           <ScalarProperty Name="HolidayTypeName" ColumnName="HolidayTypeName" />
@@ -1291,7 +1434,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbllivedailyprodstatus">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbllivedailyprodstatu">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbllivedailyprodstatu">
         <MappingFragment StoreEntitySet="tbllivedailyprodstatus">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -1307,8 +1450,91 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbllivehmiscreens">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbllivehmiscreen">
+        <MappingFragment StoreEntitySet="tbllivehmiscreen">
+          <ScalarProperty Name="HMIID" ColumnName="HMIID" />
+          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+          <ScalarProperty Name="OperatiorID" ColumnName="OperatiorID" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="PartNo" ColumnName="PartNo" />
+          <ScalarProperty Name="OperationNo" ColumnName="OperationNo" />
+          <ScalarProperty Name="Rej_Qty" ColumnName="Rej_Qty" />
+          <ScalarProperty Name="Work_Order_No" ColumnName="Work_Order_No" />
+          <ScalarProperty Name="Target_Qty" ColumnName="Target_Qty" />
+          <ScalarProperty Name="Delivered_Qty" ColumnName="Delivered_Qty" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
+          <ScalarProperty Name="Prod_FAI" ColumnName="Prod_FAI" />
+          <ScalarProperty Name="isUpdate" ColumnName="isUpdate" />
+          <ScalarProperty Name="DoneWithRow" ColumnName="DoneWithRow" />
+          <ScalarProperty Name="isWorkInProgress" ColumnName="isWorkInProgress" />
+          <ScalarProperty Name="isWorkOrder" ColumnName="isWorkOrder" />
+          <ScalarProperty Name="OperatorDet" ColumnName="OperatorDet" />
+          <ScalarProperty Name="PEStartTime" ColumnName="PEStartTime" />
+          <ScalarProperty Name="ProcessQty" ColumnName="ProcessQty" />
+          <ScalarProperty Name="DDLWokrCentre" ColumnName="DDLWokrCentre" />
+          <ScalarProperty Name="IsMultiWO" ColumnName="IsMultiWO" />
+          <ScalarProperty Name="IsHold" ColumnName="IsHold" />
+          <ScalarProperty Name="SplitWO" ColumnName="SplitWO" />
+          <ScalarProperty Name="batchNo" ColumnName="batchNo" />
+          <ScalarProperty Name="IsSync" ColumnName="IsSync" />
+          <ScalarProperty Name="SheetNoList" ColumnName="SheetNoList" />
+          <ScalarProperty Name="autoBatchNumber" ColumnName="autoBatchNumber" />
+          <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+          <ScalarProperty Name="IsBatchStart" ColumnName="IsBatchStart" />
+          <ScalarProperty Name="BatchHMIID" ColumnName="BatchHMIID" />
+          <ScalarProperty Name="prevQty" ColumnName="prevQty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbllivelossofentries">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbllivelossofentry">
+        <MappingFragment StoreEntitySet="tbllivelossofentry">
+          <ScalarProperty Name="LossID" ColumnName="LossID" />
+          <ScalarProperty Name="MessageCodeID" ColumnName="MessageCodeID" />
+          <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+          <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+          <ScalarProperty Name="EntryTime" ColumnName="EntryTime" />
+          <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
+          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="MessageDesc" ColumnName="MessageDesc" />
+          <ScalarProperty Name="MessageCode" ColumnName="MessageCode" />
+          <ScalarProperty Name="IsUpdate" ColumnName="IsUpdate" />
+          <ScalarProperty Name="DoneWithRow" ColumnName="DoneWithRow" />
+          <ScalarProperty Name="IsStart" ColumnName="IsStart" />
+          <ScalarProperty Name="IsScreen" ColumnName="IsScreen" />
+          <ScalarProperty Name="ForRefresh" ColumnName="ForRefresh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbllivemanuallossofentries">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbllivemanuallossofentry">
+        <MappingFragment StoreEntitySet="tbllivemanuallossofentry">
+          <ScalarProperty Name="MLossID" ColumnName="MLossID" />
+          <ScalarProperty Name="MessageCodeID" ColumnName="MessageCodeID" />
+          <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+          <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
+          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="MessageDesc" ColumnName="MessageDesc" />
+          <ScalarProperty Name="MessageCode" ColumnName="MessageCode" />
+          <ScalarProperty Name="HMIID" ColumnName="HMIID" />
+          <ScalarProperty Name="PartNo" ColumnName="PartNo" />
+          <ScalarProperty Name="OpNo" ColumnName="OpNo" />
+          <ScalarProperty Name="WONo" ColumnName="WONo" />
+          <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+          <ScalarProperty Name="EndHMIID" ColumnName="EndHMIID" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tbllivemodes">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbllivemode">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbllivemode">
         <MappingFragment StoreEntitySet="tbllivemode">
           <ScalarProperty Name="ModeID" ColumnName="ModeID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -1339,8 +1565,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbllivemultiwoselections">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbllivemultiwoselection">
+        <MappingFragment StoreEntitySet="tbllivemultiwoselection">
+          <ScalarProperty Name="MultiWOID" ColumnName="MultiWOID" />
+          <ScalarProperty Name="WorkOrder" ColumnName="WorkOrder" />
+          <ScalarProperty Name="PartNo" ColumnName="PartNo" />
+          <ScalarProperty Name="OperationNo" ColumnName="OperationNo" />
+          <ScalarProperty Name="TargetQty" ColumnName="TargetQty" />
+          <ScalarProperty Name="DeliveredQty" ColumnName="DeliveredQty" />
+          <ScalarProperty Name="HMIID" ColumnName="HMIID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="ProcessQty" ColumnName="ProcessQty" />
+          <ScalarProperty Name="DDLWorkCentre" ColumnName="DDLWorkCentre" />
+          <ScalarProperty Name="IsSubmit" ColumnName="IsSubmit" />
+          <ScalarProperty Name="ScrapQty" ColumnName="ScrapQty" />
+          <ScalarProperty Name="SplitWO" ColumnName="SplitWO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tbllossescodes">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbllossescode">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbllossescode">
         <MappingFragment StoreEntitySet="tbllossescodes">
           <ScalarProperty Name="LossCodeID" ColumnName="LossCodeID" />
           <ScalarProperty Name="LossCode" ColumnName="LossCode" />
@@ -1364,7 +1610,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbllossofentries">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbllossofentry">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbllossofentry">
         <MappingFragment StoreEntitySet="tbllossofentry">
           <ScalarProperty Name="LossID" ColumnName="LossID" />
           <ScalarProperty Name="MessageCodeID" ColumnName="MessageCodeID" />
@@ -1381,12 +1627,31 @@
           <ScalarProperty Name="IsStart" ColumnName="IsStart" />
           <ScalarProperty Name="IsScreen" ColumnName="IsScreen" />
           <ScalarProperty Name="ForRefresh" ColumnName="ForRefresh" />
-          <ScalarProperty Name="HMIID" ColumnName="HMIID" />
+          <ScalarProperty Name="LossMonth" ColumnName="LossMonth" />
+          <ScalarProperty Name="LossYear" ColumnName="LossYear" />
+          <ScalarProperty Name="LossWeekNumber" ColumnName="LossWeekNumber" />
+          <ScalarProperty Name="LossQuarter" ColumnName="LossQuarter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblmachineallocations">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblmachineallocation">
+        <MappingFragment StoreEntitySet="tblmachineallocation">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+          <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+          <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblmachineaxisdetails">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblmachineaxisdetail">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblmachineaxisdetail">
         <MappingFragment StoreEntitySet="tblmachineaxisdetails">
           <ScalarProperty Name="MacAxisID" ColumnName="MacAxisID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -1401,7 +1666,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblmachinecategories">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblmachinecategory">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblmachinecategory">
         <MappingFragment StoreEntitySet="tblmachinecategory">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="category" ColumnName="category" />
@@ -1414,7 +1679,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblmachinedetails">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblmachinedetail">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblmachinedetail">
         <MappingFragment StoreEntitySet="tblmachinedetails">
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
           <ScalarProperty Name="InsertedOn" ColumnName="InsertedOn" />
@@ -1468,18 +1733,11 @@
           <ScalarProperty Name="OperationNumber" ColumnName="OperationNumber" />
           <ScalarProperty Name="IsShiftWise" ColumnName="IsShiftWise" />
           <ScalarProperty Name="LossFlag" ColumnName="LossFlag" />
-          <ScalarProperty Name="MachineInvNo" ColumnName="MachineInvNo" />
-          <ScalarProperty Name="IsJobCard" ColumnName="IsJobCard" />
-          <ScalarProperty Name="OpDBit" ColumnName="OpDBit" />
-          <ScalarProperty Name="LogDBit" ColumnName="LogDBit" />
-          <ScalarProperty Name="LogDBitReset" ColumnName="LogDBitReset" />
-          <ScalarProperty Name="LogEnable" ColumnName="LogEnable" />
-          <ScalarProperty Name="PSFilePath" ColumnName="PSFilePath" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblmailids">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblmailid">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblmailid">
         <MappingFragment StoreEntitySet="tblmailids">
           <ScalarProperty Name="MailIDsID" ColumnName="MailIDsID" />
           <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
@@ -1495,8 +1753,58 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tblmaintainanceProdBrDetails">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblmaintainanceProdBrDetail">
+        <MappingFragment StoreEntitySet="tblmaintainanceProdBrDetails">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="roleId" ColumnName="roleId" />
+          <ScalarProperty Name="machineName" ColumnName="machineName" />
+          <ScalarProperty Name="reasonName" ColumnName="reasonName" />
+          <ScalarProperty Name="operatorName" ColumnName="operatorName" />
+          <ScalarProperty Name="maintainanceOperatorName" ColumnName="maintainanceOperatorName" />
+          <ScalarProperty Name="breakdownReasonDateTime" ColumnName="breakdownReasonDateTime" />
+          <ScalarProperty Name="maintainanceRemarks" ColumnName="maintainanceRemarks" />
+          <ScalarProperty Name="productionRemarks" ColumnName="productionRemarks" />
+          <ScalarProperty Name="maintainanceStatus" ColumnName="maintainanceStatus" />
+          <ScalarProperty Name="productionStatus" ColumnName="productionStatus" />
+          <ScalarProperty Name="acceptanceTime" ColumnName="acceptanceTime" />
+          <ScalarProperty Name="closureTime" ColumnName="closureTime" />
+          <ScalarProperty Name="rejectReason" ColumnName="rejectReason" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="createdOn" ColumnName="createdOn" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="modifiedBy" ColumnName="modifiedBy" />
+          <ScalarProperty Name="modifiedOn" ColumnName="modifiedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblmanuallossofentries">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblmanuallossofentry">
+        <MappingFragment StoreEntitySet="tblmanuallossofentry">
+          <ScalarProperty Name="MLossID" ColumnName="MLossID" />
+          <ScalarProperty Name="MessageCodeID" ColumnName="MessageCodeID" />
+          <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+          <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
+          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="MessageDesc" ColumnName="MessageDesc" />
+          <ScalarProperty Name="MessageCode" ColumnName="MessageCode" />
+          <ScalarProperty Name="HMIID" ColumnName="HMIID" />
+          <ScalarProperty Name="PartNo" ColumnName="PartNo" />
+          <ScalarProperty Name="OpNo" ColumnName="OpNo" />
+          <ScalarProperty Name="WONo" ColumnName="WONo" />
+          <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+          <ScalarProperty Name="EndHMIID" ColumnName="EndHMIID" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="ManualLossMonth" ColumnName="ManualLossMonth" />
+          <ScalarProperty Name="ManualLossYear" ColumnName="ManualLossYear" />
+          <ScalarProperty Name="ManualLossWeekNumber" ColumnName="ManualLossWeekNumber" />
+          <ScalarProperty Name="ManualLossQuarter" ColumnName="ManualLossQuarter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tblmasterparts_st_sw">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblmasterparts_st_sw">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblmasterparts_st_sw">
         <MappingFragment StoreEntitySet="tblmasterparts_st_sw">
           <ScalarProperty Name="PARTSSTSWID" ColumnName="PARTSSTSWID" />
           <ScalarProperty Name="PartNo" ColumnName="PartNo" />
@@ -1523,7 +1831,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblmimics">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblmimic">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblmimic">
         <MappingFragment StoreEntitySet="tblmimics">
           <ScalarProperty Name="mid" ColumnName="mid" />
           <ScalarProperty Name="MachineOnTime" ColumnName="MachineOnTime" />
@@ -1540,8 +1848,12 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblmodes">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblmode">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblmode">
         <MappingFragment StoreEntitySet="tblmode">
+          <ScalarProperty Name="ModeQuarter" ColumnName="ModeQuarter" />
+          <ScalarProperty Name="ModeWeekNumber" ColumnName="ModeWeekNumber" />
+          <ScalarProperty Name="ModeYear" ColumnName="ModeYear" />
+          <ScalarProperty Name="ModeMonth" ColumnName="ModeMonth" />
           <ScalarProperty Name="ModeID" ColumnName="ModeID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
           <ScalarProperty Name="MacMode" ColumnName="MacMode" />
@@ -1570,7 +1882,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblmodetemps">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblmodetemp">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblmodetemp">
         <MappingFragment StoreEntitySet="tblmodetemp">
           <ScalarProperty Name="ModeID" ColumnName="ModeID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -1599,7 +1911,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblmodulehelpers">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblmodulehelper">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblmodulehelper">
         <MappingFragment StoreEntitySet="tblmodulehelper">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
@@ -1615,7 +1927,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblmodulemasters">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblmodulemaster">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblmodulemaster">
         <MappingFragment StoreEntitySet="tblmodulemaster">
           <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
           <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
@@ -1634,7 +1946,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblmodules">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblmodule">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblmodule">
         <MappingFragment StoreEntitySet="tblmodules">
           <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
           <ScalarProperty Name="Module" ColumnName="Module" />
@@ -1649,7 +1961,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblmultipleworkorders">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblmultipleworkorder">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblmultipleworkorder">
         <MappingFragment StoreEntitySet="tblmultipleworkorder">
           <ScalarProperty Name="MWOID" ColumnName="MWOID" />
           <ScalarProperty Name="PlantID" ColumnName="PlantID" />
@@ -1668,7 +1980,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblNcProgramTransferMains">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblNcProgramTransferMain">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblNcProgramTransferMain">
         <MappingFragment StoreEntitySet="tblNcProgramTransferMain">
           <ScalarProperty Name="NcProgramTransferId" ColumnName="NcProgramTransferId" />
           <ScalarProperty Name="McId" ColumnName="McId" />
@@ -1682,8 +1994,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tblnetworkdetailsforddls">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblnetworkdetailsforddl">
+        <MappingFragment StoreEntitySet="tblnetworkdetailsforddl">
+          <ScalarProperty Name="NPFDDLID" ColumnName="NPFDDLID" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ISINCDDL" ColumnName="ISINCDDL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tbloeedashboardfinalvariables">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbloeedashboardfinalvariable">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbloeedashboardfinalvariable">
         <MappingFragment StoreEntitySet="tbloeedashboardfinalvariables">
           <ScalarProperty Name="OEEDashboardID" ColumnName="OEEDashboardID" />
           <ScalarProperty Name="PlantID" ColumnName="PlantID" />
@@ -1719,7 +2048,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbloeedashboardvariables">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbloeedashboardvariable">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbloeedashboardvariable">
         <MappingFragment StoreEntitySet="tbloeedashboardvariables">
           <ScalarProperty Name="OEEVariablesID" ColumnName="OEEVariablesID" />
           <ScalarProperty Name="PlantID" ColumnName="PlantID" />
@@ -1754,7 +2083,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbloeedashboardvariablestodays">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbloeedashboardvariablestoday">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbloeedashboardvariablestoday">
         <MappingFragment StoreEntitySet="tbloeedashboardvariablestoday">
           <ScalarProperty Name="OEEVariablesID" ColumnName="OEEVariablesID" />
           <ScalarProperty Name="PlantID" ColumnName="PlantID" />
@@ -1791,7 +2120,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblOperatorDashboards">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblOperatorDashboard">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblOperatorDashboard">
         <MappingFragment StoreEntitySet="tblOperatorDashboard">
           <ScalarProperty Name="OperatorDashboardID" ColumnName="OperatorDashboardID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -1811,7 +2140,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblOperatorHeaders">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblOperatorHeader">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblOperatorHeader">
         <MappingFragment StoreEntitySet="tblOperatorHeader">
           <ScalarProperty Name="OperatorID" ColumnName="OperatorID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -1828,7 +2157,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblOperatorLoginDetails">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblOperatorLoginDetail">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblOperatorLoginDetail">
         <MappingFragment StoreEntitySet="tblOperatorLoginDetails">
           <ScalarProperty Name="operatorLoginId" ColumnName="operatorLoginId" />
           <ScalarProperty Name="operatorUserName" ColumnName="operatorUserName" />
@@ -1849,7 +2178,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblOperatorMachineDetails">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblOperatorMachineDetail">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblOperatorMachineDetail">
         <MappingFragment StoreEntitySet="tblOperatorMachineDetails">
           <ScalarProperty Name="opertorMacDetId" ColumnName="opertorMacDetId" />
           <ScalarProperty Name="operatorLoginId" ColumnName="operatorLoginId" />
@@ -1863,7 +2192,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblpartlearningreports">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblpartlearningreport">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblpartlearningreport">
         <MappingFragment StoreEntitySet="tblpartlearningreport">
           <ScalarProperty Name="PLReportID" ColumnName="PLReportID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -1895,7 +2224,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblparts">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblpart">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblpart">
         <MappingFragment StoreEntitySet="tblparts">
           <ScalarProperty Name="PartID" ColumnName="PartID" />
           <ScalarProperty Name="FGCode" ColumnName="FGCode" />
@@ -1917,11 +2246,12 @@
           <ScalarProperty Name="StdMinorLoss" ColumnName="StdMinorLoss" />
           <ScalarProperty Name="StdLoadingTime" ColumnName="StdLoadingTime" />
           <ScalarProperty Name="StdUnLoadingTime" ColumnName="StdUnLoadingTime" />
+          <ScalarProperty Name="StdCycleTime" ColumnName="StdCycleTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblpartscountandcuttings">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblpartscountandcutting">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblpartscountandcutting">
         <MappingFragment StoreEntitySet="tblpartscountandcutting">
           <ScalarProperty Name="pcid" ColumnName="pcid" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -1945,7 +2275,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblplannedbreaks">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblplannedbreak">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblplannedbreak">
         <MappingFragment StoreEntitySet="tblplannedbreak">
           <ScalarProperty Name="BreakID" ColumnName="BreakID" />
           <ScalarProperty Name="BreakReason" ColumnName="BreakReason" />
@@ -1962,7 +2292,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblplants">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblplant">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblplant">
         <MappingFragment StoreEntitySet="tblplant">
           <ScalarProperty Name="PlantID" ColumnName="PlantID" />
           <ScalarProperty Name="PlantName" ColumnName="PlantName" />
@@ -1977,7 +2307,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblpmsdetails">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblpmsdetail">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblpmsdetail">
         <MappingFragment StoreEntitySet="tblpmsdetails">
           <ScalarProperty Name="pmsid" ColumnName="pmsid" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -1994,7 +2324,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblPrecentColours">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblPrecentColour">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblPrecentColour">
         <MappingFragment StoreEntitySet="tblPrecentColour">
           <ScalarProperty Name="ColourID" ColumnName="ColourID" />
           <ScalarProperty Name="Colour" ColumnName="Colour" />
@@ -2007,7 +2337,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblPresentTools">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblPresentTool">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblPresentTool">
         <MappingFragment StoreEntitySet="tblPresentTool">
           <ScalarProperty Name="PreToolID" ColumnName="PreToolID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -2016,7 +2346,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblpriorityalarms">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblpriorityalarm">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblpriorityalarm">
         <MappingFragment StoreEntitySet="tblpriorityalarms">
           <ScalarProperty Name="AlarmID" ColumnName="AlarmID" />
           <ScalarProperty Name="AlarmNumber" ColumnName="AlarmNumber" />
@@ -2036,7 +2366,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblProdPlanMasters">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblProdPlanMaster">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblProdPlanMaster">
         <MappingFragment StoreEntitySet="tblProdPlanMasters">
           <ScalarProperty Name="ProdPlanID" ColumnName="ProdPlanID" />
           <ScalarProperty Name="WorkCenter" ColumnName="WorkCenter" />
@@ -2052,7 +2382,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblprogramtransferhistories">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblprogramtransferhistory">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblprogramtransferhistory">
         <MappingFragment StoreEntitySet="tblprogramtransferhistory">
           <ScalarProperty Name="PTHID" ColumnName="PTHID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -2069,7 +2399,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblrejectqties">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblrejectqty">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblrejectqty">
         <MappingFragment StoreEntitySet="tblrejectqty">
           <ScalarProperty Name="RQID" ColumnName="RQID" />
           <ScalarProperty Name="StartTime" ColumnName="StartTime" />
@@ -2089,7 +2419,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblrejectreasons">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblrejectreason">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblrejectreason">
         <MappingFragment StoreEntitySet="tblrejectreason">
           <ScalarProperty Name="RID" ColumnName="RID" />
           <ScalarProperty Name="RejectName" ColumnName="RejectName" />
@@ -2102,13 +2432,11 @@
           <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
           <ScalarProperty Name="Cellid" ColumnName="Cellid" />
           <ScalarProperty Name="Machineid" ColumnName="Machineid" />
-          <ScalarProperty Name="IsMaint" ColumnName="IsMaint" />
-          <ScalarProperty Name="IsProd" ColumnName="IsProd" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblreportholders">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblreportholder">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblreportholder">
         <MappingFragment StoreEntitySet="tblreportholder">
           <ScalarProperty Name="RHID" ColumnName="RHID" />
           <ScalarProperty Name="FromDate" ColumnName="FromDate" />
@@ -2120,8 +2448,8 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblReworkReasons">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblReworkReason">
-        <MappingFragment StoreEntitySet="tblReworkReasons">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblReworkReason">
+        <MappingFragment StoreEntitySet="tblReworkReason">
           <ScalarProperty Name="ReWorkID" ColumnName="ReWorkID" />
           <ScalarProperty Name="ReworkName" ColumnName="ReworkName" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
@@ -2131,7 +2459,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblrolemodulelinks">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblrolemodulelink">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblrolemodulelink">
         <MappingFragment StoreEntitySet="tblrolemodulelink">
           <ScalarProperty Name="MRMLID" ColumnName="MRMLID" />
           <ScalarProperty Name="RoleID" ColumnName="RoleID" />
@@ -2152,7 +2480,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblroles">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblrole">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblrole">
         <MappingFragment StoreEntitySet="tblroles">
           <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
           <ScalarProperty Name="RoleName" ColumnName="RoleName" />
@@ -2167,7 +2495,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblSAPInputs">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblSAPInput">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblSAPInput">
         <MappingFragment StoreEntitySet="tblSAPInput">
           <ScalarProperty Name="SapInputID" ColumnName="SapInputID" />
           <ScalarProperty Name="PathLocation" ColumnName="PathLocation" />
@@ -2181,7 +2509,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblsendermailids">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblsendermailid">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblsendermailid">
         <MappingFragment StoreEntitySet="tblsendermailid">
           <ScalarProperty Name="SE_ID" ColumnName="SE_ID" />
           <ScalarProperty Name="PrimaryMailID" ColumnName="PrimaryMailID" />
@@ -2197,7 +2525,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblSetupMaints">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblSetupMaint">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblSetupMaint">
         <MappingFragment StoreEntitySet="tblSetupMaint">
           <ScalarProperty Name="SetMainID" ColumnName="SetMainID" />
           <ScalarProperty Name="LossCodeID" ColumnName="LossCodeID" />
@@ -2216,7 +2544,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblshift_breaks">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblshift_breaks">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblshift_breaks">
         <MappingFragment StoreEntitySet="tblshift_breaks">
           <ScalarProperty Name="BreakID" ColumnName="BreakID" />
           <ScalarProperty Name="BreakReason" ColumnName="BreakReason" />
@@ -2233,7 +2561,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblshift_mstr">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblshift_mstr">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblshift_mstr">
         <MappingFragment StoreEntitySet="tblshift_mstr">
           <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
           <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
@@ -2251,7 +2579,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblshiftdetails">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblshiftdetail">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblshiftdetail">
         <MappingFragment StoreEntitySet="tblshiftdetails">
           <ScalarProperty Name="ShiftDetailsID" ColumnName="ShiftDetailsID" />
           <ScalarProperty Name="ShiftDetailsName" ColumnName="ShiftDetailsName" />
@@ -2273,7 +2601,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblshiftdetails_machinewise">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblshiftdetails_machinewise">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblshiftdetails_machinewise">
         <MappingFragment StoreEntitySet="tblshiftdetails_machinewise">
           <ScalarProperty Name="ShiftDetailsMacID" ColumnName="ShiftDetailsMacID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -2289,7 +2617,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblshiftmethods">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblshiftmethod">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblshiftmethod">
         <MappingFragment StoreEntitySet="tblshiftmethod">
           <ScalarProperty Name="ShiftMethodID" ColumnName="ShiftMethodID" />
           <ScalarProperty Name="ShiftMethodName" ColumnName="ShiftMethodName" />
@@ -2306,7 +2634,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblshiftplanners">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblshiftplanner">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblshiftplanner">
         <MappingFragment StoreEntitySet="tblshiftplanner">
           <ScalarProperty Name="ShiftPlannerID" ColumnName="ShiftPlannerID" />
           <ScalarProperty Name="ShiftPlannerName" ColumnName="ShiftPlannerName" />
@@ -2329,8 +2657,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tblShiftUtilReports">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblShiftUtilReport">
+        <MappingFragment StoreEntitySet="tblShiftUtilReport">
+          <ScalarProperty Name="ShiftUtilReportID" ColumnName="ShiftUtilReportID" />
+          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+          <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
+          <ScalarProperty Name="TotalTime" ColumnName="TotalTime" />
+          <ScalarProperty Name="OperatingTime" ColumnName="OperatingTime" />
+          <ScalarProperty Name="PowerOnTime" ColumnName="PowerOnTime" />
+          <ScalarProperty Name="CuttingTime" ColumnName="CuttingTime" />
+          <ScalarProperty Name="OperatingTimePrecent" ColumnName="OperatingTimePrecent" />
+          <ScalarProperty Name="PowerOnTimePrecent" ColumnName="PowerOnTimePrecent" />
+          <ScalarProperty Name="CuttingTimePrecent" ColumnName="CuttingTimePrecent" />
+          <ScalarProperty Name="InsertedOn" ColumnName="InsertedOn" />
+          <ScalarProperty Name="shift" ColumnName="shift" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tblshops">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblshop">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblshop">
         <MappingFragment StoreEntitySet="tblshop">
           <ScalarProperty Name="ShopID" ColumnName="ShopID" />
           <ScalarProperty Name="ShopName" ColumnName="ShopName" />
@@ -2346,7 +2692,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblStdToolLives">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblStdToolLife">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblStdToolLife">
         <MappingFragment StoreEntitySet="tblStdToolLife">
           <ScalarProperty Name="StdToolLifeId" ColumnName="StdToolLifeId" />
           <ScalarProperty Name="FGCode" ColumnName="FGCode" />
@@ -2365,7 +2711,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblToolCounters">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblToolCounter">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblToolCounter">
         <MappingFragment StoreEntitySet="tblToolCounter">
           <ScalarProperty Name="ToolCounterID" ColumnName="ToolCounterID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -2383,7 +2729,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbltoollifeoperators">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbltoollifeoperator">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbltoollifeoperator">
         <MappingFragment StoreEntitySet="tbltoollifeoperator">
           <ScalarProperty Name="ToolLifeID" ColumnName="ToolLifeID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -2409,7 +2755,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbltosapfilepaths">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbltosapfilepath">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbltosapfilepath">
         <MappingFragment StoreEntitySet="tbltosapfilepath">
           <ScalarProperty Name="toSAPFilePathID" ColumnName="toSAPFilePathID" />
           <ScalarProperty Name="PathName" ColumnName="PathName" />
@@ -2422,7 +2768,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbltosapshopnames">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbltosapshopname">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbltosapshopname">
         <MappingFragment StoreEntitySet="tbltosapshopnames">
           <ScalarProperty Name="toSAPShopNamesID" ColumnName="toSAPShopNamesID" />
           <ScalarProperty Name="ShopId" ColumnName="ShopId" />
@@ -2437,7 +2783,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblunits">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblunit">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblunit">
         <MappingFragment StoreEntitySet="tblunit">
           <ScalarProperty Name="U_ID" ColumnName="U_ID" />
           <ScalarProperty Name="Unit" ColumnName="Unit" />
@@ -2451,7 +2797,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblusers">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbluser">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbluser">
         <MappingFragment StoreEntitySet="tblusers">
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
@@ -2469,7 +2815,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblwolossesses">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblwolossess">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblwolossess">
         <MappingFragment StoreEntitySet="tblwolossess">
           <ScalarProperty Name="WOLossesID" ColumnName="WOLossesID" />
           <ScalarProperty Name="HMIID" ColumnName="HMIID" />
@@ -2487,7 +2833,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblworeports">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblworeport">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblworeport">
         <MappingFragment StoreEntitySet="tblworeport">
           <ScalarProperty Name="WOReportID" ColumnName="WOReportID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -2531,7 +2877,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblworkorderentries">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblworkorderentry">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblworkorderentry">
         <MappingFragment StoreEntitySet="tblworkorderentry">
           <ScalarProperty Name="HMIID" ColumnName="HMIID" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -2565,9 +2911,9 @@
           <ScalarProperty Name="CellID" ColumnName="CellID" />
           <ScalarProperty Name="SyncInsert" ColumnName="SyncInsert" />
           <ScalarProperty Name="PartsPerCycle" ColumnName="PartsPerCycle" />
-          <ScalarProperty Name="IsReWork" ColumnName="IsReWork" />
           <ScalarProperty Name="ReWorkStart" ColumnName="ReWorkStart" />
           <ScalarProperty Name="ReWorkEnd" ColumnName="ReWorkEnd" />
+          <ScalarProperty Name="IsReWork" ColumnName="IsReWork" />
           <ScalarProperty Name="ReWorkReasonID" ColumnName="ReWorkReasonID" />
           <ScalarProperty Name="reworkStartTime" ColumnName="reworkStartTime" />
           <ScalarProperty Name="reworkEndTime" ColumnName="reworkEndTime" />
@@ -2575,7 +2921,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="weekdatas">
-      <EntityTypeMapping TypeName="i_facility_tealModel.weekdata">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.weekdata">
         <MappingFragment StoreEntitySet="weekdata">
           <ScalarProperty Name="WeekID" ColumnName="WeekID" />
           <ScalarProperty Name="value" ColumnName="value" />
@@ -2588,7 +2934,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="shift_master">
-      <EntityTypeMapping TypeName="i_facility_tealModel.shift_master">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.shift_master">
         <MappingFragment StoreEntitySet="shift_master">
           <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
           <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
@@ -2604,7 +2950,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_livecbmdetails">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_livecbmdetails">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_livecbmdetails">
         <MappingFragment StoreEntitySet="tbl_livecbmdetails">
           <ScalarProperty Name="cbmdetailsid" ColumnName="cbmdetailsid" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -2619,7 +2965,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbl_livetblsensorvalue">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tbl_livetblsensorvalue">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_livetblsensorvalue">
         <MappingFragment StoreEntitySet="tbl_livetblsensorvalue">
           <ScalarProperty Name="sensorvalueid" ColumnName="sensorvalueid" />
           <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -2635,7 +2981,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblAndonDisplayRotates">
-      <EntityTypeMapping TypeName="i_facility_tealModel.tblAndonDisplayRotate">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblAndonDisplayRotate">
         <MappingFragment StoreEntitySet="tblAndonDisplayRotate">
           <ScalarProperty Name="AndOnDisplID" ColumnName="AndOnDisplID" />
           <ScalarProperty Name="PageName" ColumnName="PageName" />
@@ -2643,6 +2989,18 @@
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
           <ScalarProperty Name="CellID" ColumnName="CellID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Temp_tblmode">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.Temp_tblmode">
+        <MappingFragment StoreEntitySet="Temp_tblmode">
+          <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="startTime" ColumnName="startTime" />
+          <ScalarProperty Name="ModeType" ColumnName="ModeType" />
+          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+          <ScalarProperty Name="tempModeID" ColumnName="tempModeID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

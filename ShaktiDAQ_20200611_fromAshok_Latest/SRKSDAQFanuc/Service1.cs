@@ -32,7 +32,7 @@ namespace SRKSDAQFanuc
             MsqlConnection mc = new MsqlConnection();
             conn = mc.msqlConnection;
             port = 8193;
-            timeout = 2;
+            timeout = 2;           
         }
         protected override void OnStart(string[] args)
         {
@@ -292,7 +292,7 @@ namespace SRKSDAQFanuc
 
                                     #endregion
 
-                                    IntoFile("IsShiftWise +" + IsShiftWise);
+                                    IntoFile("IsShiftWise + " + IsShiftWise +" shiftid : "+shiftid);
                                     if (IsShiftWise == 1)
                                     {
                                         getmachinemode(mcid, ip, h, MacLockbit, MacIdlebit, MacUnlockbit, MacIdleMin, ConnectionRet, ConnectionRetErr, EnableLock, shiftmasterdet, ParameterExcep);
@@ -3178,7 +3178,7 @@ namespace SRKSDAQFanuc
                 {
                     List<tbllivemode> dtModeMultiple = new List<tbllivemode>();
                     List<tbllivemode> dtMode1 = new List<tbllivemode>();
-
+                    
                     using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                     {
                         dtModeMultiple = db.tbllivemodes.Where(m => m.IsCompleted == 0 && m.MachineID == MacID && m.CorrectedDate <= correctedDate).OrderBy(m => m.ModeID).ToList();
@@ -3189,6 +3189,11 @@ namespace SRKSDAQFanuc
                     {
                         if (dtModeMultiple[i].MacMode.ToString() == dtModeMultiple[i + 1].MacMode.ToString())
                         {
+                            DeleteModeDetails(dtModeMultiple[i].ModeID);
+                        }
+                        else  // if extra mode 
+                        {
+                            IntoFile("Extramode " + dtModeMultiple[i].ModeID);
                             DeleteModeDetails(dtModeMultiple[i].ModeID);
                         }
                     }
@@ -4537,28 +4542,35 @@ namespace SRKSDAQFanuc
                 using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                 {
                     rowupdate = db.tbllivemodes.Find(ModeID);
-                }
-
-                DateTime startDateTime = Convert.ToDateTime(rowupdate.StartTime);
 
 
-                rowupdate.EndTime = nowdate;
-                rowupdate.DurationInSec = durationinsec;
-                rowupdate.IsCompleted = 1;
-                rowupdate.ModeTypeEnd = 1;
-                //rowupdate.CuttingDuration = cuttingTime;
-                rowupdate.StartIdle = StartIDLE;
+                    DateTime startDateTime = Convert.ToDateTime(rowupdate.StartTime);
 
-                using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
-                {
-                    db1.Entry(rowupdate).State = System.Data.Entity.EntityState.Modified;
-                    db1.SaveChanges();
+
+                    rowupdate.EndTime = nowdate;
+                    rowupdate.DurationInSec = durationinsec;
+                    rowupdate.IsCompleted = 1;
+                    rowupdate.ModeTypeEnd = 1;
+                    //rowupdate.CuttingDuration = cuttingTime;
+                    rowupdate.StartIdle = StartIDLE;
+                    db.Entry(rowupdate).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
                     IntoFile("Update Mode:" + ModeID);
-
                 }
+
+                //using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
+                //{
+                //    db1.Entry(rowupdate).State = System.Data.Entity.EntityState.Modified;
+                //    db1.SaveChanges();
+                //    IntoFile("Update Mode:" + ModeID);
+
+                //}
+
+                DateTime startDateTime1 = Convert.ToDateTime(rowupdate.StartTime);
+
                 try
                 {
-                    CalculateCuttingTime(startDateTime, nowdate, rowupdate.MachineID, ModeID);
+                    CalculateCuttingTime(startDateTime1, nowdate, rowupdate.MachineID, ModeID);
                 }
                 catch (Exception ex)
                 {
@@ -4579,16 +4591,20 @@ namespace SRKSDAQFanuc
                 using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                 {
                     rowupdate = db.tbllivemodes.Find(ModeID);
-                }
-
-                rowupdate.StartIdle = StartIDLE;
-
-                using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
-                {
-                    db1.Entry(rowupdate).State = System.Data.Entity.EntityState.Modified;
-                    db1.SaveChanges();
+                    rowupdate.StartIdle = StartIDLE;
+                    db.Entry(rowupdate).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
                     IntoFile("Update Mode:" + ModeID);
                 }
+
+
+
+                //using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
+                //{
+                //    db.Entry(rowupdate).State = System.Data.Entity.EntityState.Modified;
+                //    db.SaveChanges();
+                //    IntoFile("Update Mode:" + ModeID);
+                //}
             }
             catch (Exception ex)
             {
@@ -4604,25 +4620,27 @@ namespace SRKSDAQFanuc
                 using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                 {
                     rowupdate = db.tbllivemodes.Find(ModeID);
-                }
-
-                DateTime startDateTime = Convert.ToDateTime(rowupdate.StartTime);
-
-
-                rowupdate.EndTime = nowdate;
-                rowupdate.DurationInSec = durationinsec;
-                rowupdate.IsCompleted = 1;
-                rowupdate.ModeTypeEnd = 1;
-                //rowupdate.CuttingDuration = cuttingTime;
-                using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
-                {
-                    db1.Entry(rowupdate).State = System.Data.Entity.EntityState.Modified;
-                    db1.SaveChanges();
+                    DateTime startDateTime = Convert.ToDateTime(rowupdate.StartTime);
+                    rowupdate.EndTime = nowdate;
+                    rowupdate.DurationInSec = durationinsec;
+                    rowupdate.IsCompleted = 1;
+                    rowupdate.ModeTypeEnd = 1;
+                    db.Entry(rowupdate).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
                     IntoFile("Update Mode:" + ModeID);
                 }
+
+                ////rowupdate.CuttingDuration = cuttingTime;
+                //using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
+                //{
+                //    db1.Entry(rowupdate).State = System.Data.Entity.EntityState.Modified;
+                //    db1.SaveChanges();
+                //    IntoFile("Update Mode:" + ModeID);
+                //}
+                DateTime startDateTime1 = Convert.ToDateTime(rowupdate.StartTime);
                 try
                 {
-                    CalculateCuttingTime(startDateTime, nowdate, rowupdate.MachineID, ModeID);
+                    CalculateCuttingTime(startDateTime1, nowdate, rowupdate.MachineID, ModeID);
                 }
                 catch (Exception ex)
                 {

@@ -19,10 +19,20 @@ namespace SRKSDAQFanuc
         static String password = ConfigurationManager.AppSettings["password"];
         //static String port = "3306";
         static String DB = ConfigurationManager.AppSettings["DB"];
+        static string Poolsize = ConfigurationManager.AppSettings["Poolsize"];
 
+        static string ispool = ConfigurationManager.AppSettings["Ispool"];
+        
+        bool ispoolenabled =Convert.ToBoolean( Convert.ToInt32(ispool));
         //  public MySqlConnection msqlConnection = new MySqlConnection("server = " + ServerName + ";userid = " + username + ";Password = " + password + ";database = " + DB + ";port = " + port + ";persist security info=False");
+       
+        public SqlConnection msqlConnection = new SqlConnection(@"Data Source = " + ServerName + ";User ID = " + username + ";Password = " + password + ";Initial Catalog = " + DB + ";Persist Security Info=True;");
+        public MsqlConnection()
+        {
+            if(ispoolenabled)
+                msqlConnection = new SqlConnection(@"Data Source = " + ServerName + ";User ID = " + username + ";Password = " + password + ";Initial Catalog = " + DB + ";Persist Security Info=True;pooling=true;Max Pool Size="+Poolsize+"");
 
-        public SqlConnection msqlConnection = new SqlConnection(@"Data Source = " + ServerName + ";User ID = " + username + ";Password = " + password + ";Initial Catalog = " + DB + ";Persist Security Info=True");
+        }
 
         public void open()
         {

@@ -17,14 +17,19 @@ namespace SRKSDAQFanuc.ServerModel
     {
         public i_facility_shaktiEntities()
             : base("name=i_facility_shaktiEntities")
-        {
+        {         
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+        protected override void Dispose(Boolean  IsDispose)
+        {            
+            GC.SuppressFinalize(this);
+        }      
+
+
         public virtual DbSet<alarm_history_master> alarm_history_master { get; set; }
         public virtual DbSet<configuration_tblpmchecklist> configuration_tblpmchecklist { get; set; }
         public virtual DbSet<configuration_tblpmcheckpoint> configuration_tblpmcheckpoint { get; set; }

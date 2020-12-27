@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="i_facility_tealModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="i_facility_shaktiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="alarm_history_master">
     <Key>
       <PropertyRef Name="AlarmID" />
@@ -10,7 +10,7 @@
     <Property Name="InsertedOn" Type="datetime2" Precision="0" />
     <Property Name="MachineID" Type="int" />
     <Property Name="Shift" Type="nvarchar" MaxLength="4" />
-    <Property Name="CorrectedDate" Type="date" />
+    <Property Name="CorrectedDate" Type="nvarchar" MaxLength="50" />
     <Property Name="ErrorNum" Type="nvarchar" MaxLength="45" />
     <Property Name="Status" Type="nvarchar" MaxLength="45" />
     <Property Name="DetailCode1" Type="nvarchar" MaxLength="45" />
@@ -22,6 +22,7 @@
     <Property Name="Axis_No" Type="varchar" MaxLength="45" />
     <Property Name="Axis_Num" Type="varchar" MaxLength="45" />
     <Property Name="Abs_Pos" Type="varchar" MaxLength="45" />
+    <Property Name="IsPiWeb" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="configuration_tblpmchecklist">
     <Key>
@@ -68,7 +69,7 @@
     <Property Name="pmid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MachineID" Type="int" Nullable="false" />
     <Property Name="MachineName" Type="varchar" MaxLength="45" />
-    <Property Name="Month" Type="int" />
+    <Property Name="Month" Type="varchar" MaxLength="200" />
     <Property Name="Week" Type="int" />
     <Property Name="IsDeleted" Type="int" />
     <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
@@ -81,8 +82,8 @@
     <Property Name="ShopID" Type="int" />
     <Property Name="plantName" Type="varchar" MaxLength="45" />
     <Property Name="shopname" Type="varchar" MaxLength="45" />
-    <Property Name="MonthID" Type="int" Nullable="false" />
     <Property Name="WeekID" Type="int" Nullable="false" />
+    <Property Name="MonthID" Type="int" />
   </EntityType>
   <EntityType Name="configuration_tblsensorgroup">
     <Key>
@@ -171,6 +172,22 @@
     <Property Name="username" Type="nvarchar" MaxLength="45" />
     <Property Name="domain" Type="nvarchar" MaxLength="45" />
   </EntityType>
+  <EntityType Name="Graph_Data">
+    <Key>
+      <PropertyRef Name="Gid" />
+    </Key>
+    <Property Name="Gid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OperatingTime" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PowerOFF" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MinTime" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MinorLossTime" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="LossTime" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MachineID" Type="int" Nullable="false" />
+    <Property Name="CorrectedDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScrapQty" Type="int" />
+    <Property Name="PerformanceFactor" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="YeildQty" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="handle_no_ping">
     <Key>
       <PropertyRef Name="NoPingID" />
@@ -200,6 +217,16 @@
     <Property Name="Shift" Type="nvarchar" MaxLength="45" />
     <Property Name="JobCardDate" Type="nvarchar" MaxLength="45" />
     <Property Name="Fromdatetime" Type="datetime2" Precision="0" />
+  </EntityType>
+  <EntityType Name="LossDetails">
+    <Key>
+      <PropertyRef Name="Lid" />
+    </Key>
+    <Property Name="Lid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="losscodeid" Type="int" Nullable="false" />
+    <Property Name="Duration" Type="int" Nullable="false" />
+    <Property Name="CorrectedDate" Type="datetime2" Precision="7" />
+    <Property Name="MachineID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="mailmaster">
     <Key>
@@ -426,8 +453,6 @@
     <Property Name="MCID" Type="int" Nullable="false" />
     <Property Name="TabSharathID" Type="int" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'i_facility_teal.dbo.shift_master' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="shift_master">
     <Key>
       <PropertyRef Name="ShiftID" />
@@ -563,6 +588,7 @@ warning 6002: The table/view 'i_facility_teal.dbo.shift_master' does not have a 
     <Property Name="SpindleSpeed" Type="decimal" Precision="10" Scale="3" />
     <Property Name="IsDeleted" Type="int" Nullable="false" />
     <Property Name="InsertedOn" Type="datetime2" Precision="0" />
+    <Property Name="IsPiWeb" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="tbl_CycleTimeAnalysis">
     <Key>
@@ -619,7 +645,7 @@ warning 6002: The table/view 'i_facility_teal.dbo.shift_master' does not have a 
     <Property Name="TypeofFilePath" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'i_facility_teal.dbo.tbl_livecbmdetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'i_facility_shakti.dbo.tbl_livecbmdetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="tbl_livecbmdetails">
     <Key>
       <PropertyRef Name="cbmdetailsid" />
@@ -653,7 +679,7 @@ warning 6002: The table/view 'i_facility_teal.dbo.tbl_livecbmdetails' does not h
     <Property Name="IsConverted" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'i_facility_teal.dbo.tbl_livetblsensorvalue' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'i_facility_shakti.dbo.tbl_livetblsensorvalue' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="tbl_livetblsensorvalue">
     <Key>
       <PropertyRef Name="sensorvalueid" />
@@ -668,6 +694,41 @@ warning 6002: The table/view 'i_facility_teal.dbo.tbl_livetblsensorvalue' does n
     <Property Name="ValueDateTime" Type="datetime2" Precision="7" />
     <Property Name="CorrectedDate" Type="nvarchar" MaxLength="50" />
     <Property Name="IsConverted" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_machinestatusrealtime">
+    <Key>
+      <PropertyRef Name="MachineStatusID" />
+    </Key>
+    <Property Name="MachineStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MachineID" Type="int" />
+    <Property Name="MachineStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="MachineEmergency" Type="nvarchar" MaxLength="50" />
+    <Property Name="MachineAlarm" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="IsDeleted" Type="int" Nullable="false" />
+    <Property Name="CorrectedDate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_multiwoselection">
+    <Key>
+      <PropertyRef Name="MultiWOID" />
+    </Key>
+    <Property Name="MultiWOID" Type="int" Nullable="false" />
+    <Property Name="WorkOrder" Type="varchar" MaxLength="45" />
+    <Property Name="PartNo" Type="varchar" MaxLength="45" />
+    <Property Name="OperationNo" Type="varchar" MaxLength="45" />
+    <Property Name="TargetQty" Type="int" />
+    <Property Name="DeliveredQty" Type="int" />
+    <Property Name="HMIID" Type="int" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" />
+    <Property Name="IsCompleted" Type="int" />
+    <Property Name="ProcessQty" Type="int" />
+    <Property Name="DDLWorkCentre" Type="varchar" MaxLength="45" />
+    <Property Name="IsSubmit" Type="int" Nullable="false" />
+    <Property Name="ScrapQty" Type="int" Nullable="false" />
+    <Property Name="SplitWO" Type="varchar" MaxLength="45" />
   </EntityType>
   <EntityType Name="tbl_OEEDetails">
     <Key>
@@ -846,7 +907,7 @@ warning 6002: The table/view 'i_facility_teal.dbo.tbl_livetblsensorvalue' does n
     <Property Name="IsDeleted" Type="int" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="tblAndonDisplayRotate">
     <Key>
       <PropertyRef Name="AndOnDisplID" />
@@ -949,17 +1010,17 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Key>
       <PropertyRef Name="BreakdownID" />
     </Key>
-    <Property Name="BreakdownID" Type="int" Nullable="false" />
-    <Property Name="BreakdownCode" Type="nvarchar" MaxLength="500" />
-    <Property Name="BreakdownDesc" Type="nvarchar" MaxLength="450" />
-    <Property Name="MessageType" Type="nvarchar" MaxLength="450" />
+    <Property Name="BreakdownID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BreakdownCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="BreakdownDesc" Type="nvarchar" MaxLength="45" />
+    <Property Name="MessageType" Type="nvarchar" MaxLength="45" />
     <Property Name="BreakdownLevel" Type="int" Nullable="false" />
     <Property Name="BreakdownLevel1ID" Type="int" />
     <Property Name="BreakdownLevel2ID" Type="int" />
     <Property Name="ContributeTo" Type="nvarchar" MaxLength="30" />
     <Property Name="IsDeleted" Type="int" Nullable="false" />
     <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
-    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
     <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="EndCode" Type="int" />
@@ -997,8 +1058,8 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Property Name="MaintFlage" Type="int" />
     <Property Name="MaintFinished" Type="int" />
     <Property Name="ProdFinished" Type="int" />
-    <Property Name="maintRejId" Type="int" />
     <Property Name="prodRejId" Type="int" />
+    <Property Name="maintRejId" Type="int" />
   </EntityType>
   <EntityType Name="tblcell">
     <Key>
@@ -1086,6 +1147,38 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Property Name="CreatedBy" Type="int" />
     <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="tblddl">
+    <Key>
+      <PropertyRef Name="DDLID" />
+    </Key>
+    <Property Name="DDLID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkCenter" Type="varchar" MaxLength="45" />
+    <Property Name="WorkOrder" Type="varchar" MaxLength="100" />
+    <Property Name="OperationNo" Type="varchar" MaxLength="45" />
+    <Property Name="OperationDesc" Type="varchar" MaxLength="200" />
+    <Property Name="MaterialDesc" Type="varchar" MaxLength="200" />
+    <Property Name="PartName" Type="varchar" MaxLength="100" />
+    <Property Name="TargetQty" Type="varchar" MaxLength="45" />
+    <Property Name="Type" Type="varchar" MaxLength="45" />
+    <Property Name="Project" Type="varchar" MaxLength="45" />
+    <Property Name="MADDate" Type="varchar" MaxLength="45" />
+    <Property Name="MADDateInd" Type="varchar" MaxLength="45" />
+    <Property Name="PreOpnEndDate" Type="varchar" MaxLength="45" />
+    <Property Name="DaysAgeing" Type="varchar" MaxLength="45" />
+    <Property Name="OperationsOnHold" Type="varchar" MaxLength="45" />
+    <Property Name="ReasonForHold" Type="varchar" MaxLength="200" />
+    <Property Name="DueDate" Type="varchar" MaxLength="45" />
+    <Property Name="FlagRushInd" Type="varchar" MaxLength="45" />
+    <Property Name="SplitWO" Type="varchar" MaxLength="45" />
+    <Property Name="IsCompleted" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="int" Nullable="false" />
+    <Property Name="DeliveredQty" Type="int" Nullable="false" />
+    <Property Name="ScrapQty" Type="int" Nullable="false" />
+    <Property Name="InsertedOn" Type="datetime2" Precision="0" />
+    <Property Name="CorrectedDate" Type="varchar" MaxLength="25" />
+    <Property Name="IsWOSelected" Type="int" />
+    <Property Name="BHMIID" Type="int" />
   </EntityType>
   <EntityType Name="tbldowntimecategory">
     <Key>
@@ -1218,6 +1311,47 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Property Name="CorrectedDate" Type="varchar" MaxLength="45" />
     <Property Name="Cellid" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="tblhmiscreen">
+    <Key>
+      <PropertyRef Name="HMIID" />
+    </Key>
+    <Property Name="HMIID" Type="int" Nullable="false" />
+    <Property Name="MachineID" Type="int" Nullable="false" />
+    <Property Name="OperatiorID" Type="int" Nullable="false" />
+    <Property Name="Shift" Type="varchar" MaxLength="45" />
+    <Property Name="Date" Type="datetime2" Precision="0" />
+    <Property Name="Time" Type="datetime2" Precision="0" />
+    <Property Name="Project" Type="varchar" MaxLength="45" />
+    <Property Name="PartNo" Type="varchar" MaxLength="45" />
+    <Property Name="OperationNo" Type="varchar" MaxLength="45" />
+    <Property Name="Rej_Qty" Type="int" />
+    <Property Name="Work_Order_No" Type="varchar" MaxLength="45" />
+    <Property Name="Target_Qty" Type="int" />
+    <Property Name="Delivered_Qty" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CorrectedDate" Type="varchar" MaxLength="45" />
+    <Property Name="Prod_FAI" Type="varchar" MaxLength="45" />
+    <Property Name="isUpdate" Type="int" Nullable="false" />
+    <Property Name="DoneWithRow" Type="int" Nullable="false" />
+    <Property Name="isWorkInProgress" Type="int" Nullable="false" />
+    <Property Name="isWorkOrder" Type="int" Nullable="false" />
+    <Property Name="OperatorDet" Type="varchar" MaxLength="45" />
+    <Property Name="PEStartTime" Type="datetime2" Precision="0" />
+    <Property Name="ProcessQty" Type="int" Nullable="false" />
+    <Property Name="DDLWokrCentre" Type="varchar" MaxLength="45" />
+    <Property Name="IsMultiWO" Type="int" Nullable="false" />
+    <Property Name="IsHold" Type="int" Nullable="false" />
+    <Property Name="SplitWO" Type="varchar" MaxLength="10" />
+    <Property Name="HMIMonth" Type="int" />
+    <Property Name="HMIYear" Type="int" />
+    <Property Name="HMIWeekNumber" Type="int" />
+    <Property Name="HMIQuarter" Type="int" />
+    <Property Name="batchCount" Type="int" />
+    <Property Name="IsSync" Type="int" Nullable="false" />
+    <Property Name="SheetNoList" Type="int" />
+    <Property Name="isSplitSapUpdated" Type="int" />
+    <Property Name="prevQty" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="tblholdcodes">
     <Key>
       <PropertyRef Name="HoldCodeID" />
@@ -1239,6 +1373,7 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Property Name="DeletedDate" Type="datetime2" Precision="0" />
     <Property Name="ServerTabFlagSync" Type="int" Nullable="false" />
     <Property Name="ServerTabCheck" Type="int" Nullable="false" />
+    <Property Name="Sync" Type="int" />
   </EntityType>
   <EntityType Name="tblHolidayManagment">
     <Key>
@@ -1301,6 +1436,86 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Property Name="CorrectedDate" Type="nvarchar" MaxLength="45" />
     <Property Name="ColorCode" Type="nvarchar" MaxLength="45" />
   </EntityType>
+  <EntityType Name="tbllivehmiscreen">
+    <Key>
+      <PropertyRef Name="HMIID" />
+    </Key>
+    <Property Name="HMIID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MachineID" Type="int" Nullable="false" />
+    <Property Name="OperatiorID" Type="int" Nullable="false" />
+    <Property Name="Shift" Type="varchar" MaxLength="45" />
+    <Property Name="Date" Type="datetime2" Precision="0" />
+    <Property Name="Time" Type="datetime2" Precision="0" />
+    <Property Name="Project" Type="varchar" MaxLength="45" />
+    <Property Name="PartNo" Type="varchar" MaxLength="45" />
+    <Property Name="OperationNo" Type="varchar" MaxLength="45" />
+    <Property Name="Rej_Qty" Type="int" />
+    <Property Name="Work_Order_No" Type="varchar" MaxLength="45" />
+    <Property Name="Target_Qty" Type="int" />
+    <Property Name="Delivered_Qty" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CorrectedDate" Type="varchar" MaxLength="45" />
+    <Property Name="Prod_FAI" Type="varchar" MaxLength="45" />
+    <Property Name="isUpdate" Type="int" Nullable="false" />
+    <Property Name="DoneWithRow" Type="int" Nullable="false" />
+    <Property Name="isWorkInProgress" Type="int" Nullable="false" />
+    <Property Name="isWorkOrder" Type="int" Nullable="false" />
+    <Property Name="OperatorDet" Type="varchar" MaxLength="100" />
+    <Property Name="PEStartTime" Type="datetime2" Precision="7" />
+    <Property Name="ProcessQty" Type="int" Nullable="false" />
+    <Property Name="DDLWokrCentre" Type="varchar" MaxLength="45" />
+    <Property Name="IsMultiWO" Type="int" Nullable="false" />
+    <Property Name="IsHold" Type="int" Nullable="false" />
+    <Property Name="SplitWO" Type="varchar" MaxLength="10" />
+    <Property Name="batchNo" Type="int" />
+    <Property Name="IsSync" Type="int" Nullable="false" />
+    <Property Name="SheetNoList" Type="int" />
+    <Property Name="autoBatchNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActivityName" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsBatchStart" Type="int" Nullable="false" />
+    <Property Name="BatchHMIID" Type="int" Nullable="false" />
+    <Property Name="prevQty" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbllivelossofentry">
+    <Key>
+      <PropertyRef Name="LossID" />
+    </Key>
+    <Property Name="LossID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MessageCodeID" Type="int" Nullable="false" />
+    <Property Name="StartDateTime" Type="datetime2" Precision="0" />
+    <Property Name="EndDateTime" Type="datetime2" Precision="0" />
+    <Property Name="EntryTime" Type="datetime2" Precision="0" />
+    <Property Name="CorrectedDate" Type="varchar" MaxLength="45" />
+    <Property Name="MachineID" Type="int" Nullable="false" />
+    <Property Name="Shift" Type="varchar" MaxLength="45" />
+    <Property Name="MessageDesc" Type="varchar" MaxLength="45" />
+    <Property Name="MessageCode" Type="varchar" MaxLength="45" />
+    <Property Name="IsUpdate" Type="int" Nullable="false" />
+    <Property Name="DoneWithRow" Type="int" Nullable="false" />
+    <Property Name="IsStart" Type="int" />
+    <Property Name="IsScreen" Type="int" />
+    <Property Name="ForRefresh" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbllivemanuallossofentry">
+    <Key>
+      <PropertyRef Name="MLossID" />
+    </Key>
+    <Property Name="MLossID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MessageCodeID" Type="int" Nullable="false" />
+    <Property Name="StartDateTime" Type="datetime2" Precision="0" />
+    <Property Name="CorrectedDate" Type="varchar" MaxLength="45" />
+    <Property Name="MachineID" Type="int" Nullable="false" />
+    <Property Name="Shift" Type="varchar" MaxLength="45" />
+    <Property Name="MessageDesc" Type="varchar" MaxLength="145" />
+    <Property Name="MessageCode" Type="varchar" MaxLength="145" />
+    <Property Name="HMIID" Type="int" />
+    <Property Name="PartNo" Type="varchar" MaxLength="45" />
+    <Property Name="OpNo" Type="int" />
+    <Property Name="WONo" Type="varchar" MaxLength="45" />
+    <Property Name="EndDateTime" Type="datetime2" Precision="0" />
+    <Property Name="EndHMIID" Type="int" />
+    <Property Name="DeletedDate" Type="datetime2" Precision="0" />
+  </EntityType>
   <EntityType Name="tbllivemode">
     <Key>
       <PropertyRef Name="ModeID" />
@@ -1332,6 +1547,25 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Property Name="IsShiftEnd" Type="int" Nullable="false" />
     <Property Name="breakDownCodeID" Type="int" />
   </EntityType>
+  <EntityType Name="tbllivemultiwoselection">
+    <Key>
+      <PropertyRef Name="MultiWOID" />
+    </Key>
+    <Property Name="MultiWOID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkOrder" Type="varchar" MaxLength="45" />
+    <Property Name="PartNo" Type="varchar" MaxLength="45" />
+    <Property Name="OperationNo" Type="varchar" MaxLength="45" />
+    <Property Name="TargetQty" Type="int" />
+    <Property Name="DeliveredQty" Type="int" />
+    <Property Name="HMIID" Type="int" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" />
+    <Property Name="IsCompleted" Type="int" />
+    <Property Name="ProcessQty" Type="int" />
+    <Property Name="DDLWorkCentre" Type="varchar" MaxLength="45" />
+    <Property Name="IsSubmit" Type="int" Nullable="false" />
+    <Property Name="ScrapQty" Type="int" Nullable="false" />
+    <Property Name="SplitWO" Type="varchar" MaxLength="45" />
+  </EntityType>
   <EntityType Name="tbllossescodes">
     <Key>
       <PropertyRef Name="LossCodeID" />
@@ -1359,22 +1593,40 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Key>
       <PropertyRef Name="LossID" />
     </Key>
-    <Property Name="LossID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LossID" Type="int" Nullable="false" />
     <Property Name="MessageCodeID" Type="int" Nullable="false" />
     <Property Name="StartDateTime" Type="datetime2" Precision="0" />
     <Property Name="EndDateTime" Type="datetime2" Precision="0" />
     <Property Name="EntryTime" Type="datetime2" Precision="0" />
-    <Property Name="CorrectedDate" Type="nvarchar" MaxLength="45" />
+    <Property Name="CorrectedDate" Type="varchar" MaxLength="45" />
     <Property Name="MachineID" Type="int" Nullable="false" />
-    <Property Name="Shift" Type="nvarchar" MaxLength="45" />
-    <Property Name="MessageDesc" Type="nvarchar" MaxLength="45" />
-    <Property Name="MessageCode" Type="nvarchar" MaxLength="45" />
+    <Property Name="Shift" Type="varchar" MaxLength="45" />
+    <Property Name="MessageDesc" Type="varchar" MaxLength="45" />
+    <Property Name="MessageCode" Type="varchar" MaxLength="45" />
     <Property Name="IsUpdate" Type="int" Nullable="false" />
     <Property Name="DoneWithRow" Type="int" Nullable="false" />
     <Property Name="IsStart" Type="int" />
     <Property Name="IsScreen" Type="int" />
     <Property Name="ForRefresh" Type="int" Nullable="false" />
-    <Property Name="HMIID" Type="int" />
+    <Property Name="LossMonth" Type="int" />
+    <Property Name="LossYear" Type="int" />
+    <Property Name="LossWeekNumber" Type="int" />
+    <Property Name="LossQuarter" Type="int" />
+  </EntityType>
+  <EntityType Name="tblmachineallocation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="MachineID" Type="int" />
+    <Property Name="ShiftID" Type="int" />
+    <Property Name="CorrectedDate" Type="varchar" MaxLength="45" />
+    <Property Name="IsDeleted" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
   </EntityType>
   <EntityType Name="tblmachineaxisdetails">
     <Key>
@@ -1458,13 +1710,6 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Property Name="OperationNumber" Type="int" />
     <Property Name="IsShiftWise" Type="int" Nullable="false" />
     <Property Name="LossFlag" Type="int" />
-    <Property Name="MachineInvNo" Type="nvarchar" MaxLength="50" />
-    <Property Name="IsJobCard" Type="int" />
-    <Property Name="OpDBit" Type="int" />
-    <Property Name="LogDBit" Type="int" />
-    <Property Name="LogDBitReset" Type="int" />
-    <Property Name="LogEnable" Type="int" />
-    <Property Name="PSFilePath" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="tblmailids">
     <Key>
@@ -1481,6 +1726,54 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="EmployeeCode" Type="nvarchar" MaxLength="45" />
     <Property Name="EmployeeDesignation" Type="nvarchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="tblmaintainanceProdBrDetails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="roleId" Type="int" />
+    <Property Name="machineName" Type="nvarchar" MaxLength="200" />
+    <Property Name="reasonName" Type="nvarchar" MaxLength="500" />
+    <Property Name="operatorName" Type="varchar" MaxLength="200" />
+    <Property Name="maintainanceOperatorName" Type="varchar" MaxLength="200" />
+    <Property Name="breakdownReasonDateTime" Type="datetime" />
+    <Property Name="maintainanceRemarks" Type="nvarchar" MaxLength="500" />
+    <Property Name="productionRemarks" Type="nvarchar" MaxLength="500" />
+    <Property Name="maintainanceStatus" Type="bit" />
+    <Property Name="productionStatus" Type="bit" />
+    <Property Name="acceptanceTime" Type="datetime" />
+    <Property Name="closureTime" Type="datetime" />
+    <Property Name="rejectReason" Type="nvarchar" MaxLength="500" />
+    <Property Name="isDeleted" Type="int" />
+    <Property Name="createdOn" Type="datetime" />
+    <Property Name="createdBy" Type="varchar" MaxLength="500" />
+    <Property Name="modifiedBy" Type="varchar" MaxLength="500" />
+    <Property Name="modifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblmanuallossofentry">
+    <Key>
+      <PropertyRef Name="MLossID" />
+    </Key>
+    <Property Name="MLossID" Type="int" Nullable="false" />
+    <Property Name="MessageCodeID" Type="int" Nullable="false" />
+    <Property Name="StartDateTime" Type="datetime2" Precision="0" />
+    <Property Name="CorrectedDate" Type="varchar" MaxLength="45" />
+    <Property Name="MachineID" Type="int" Nullable="false" />
+    <Property Name="Shift" Type="varchar" MaxLength="45" />
+    <Property Name="MessageDesc" Type="varchar" MaxLength="145" />
+    <Property Name="MessageCode" Type="varchar" MaxLength="145" />
+    <Property Name="HMIID" Type="int" />
+    <Property Name="PartNo" Type="varchar" MaxLength="45" />
+    <Property Name="OpNo" Type="int" />
+    <Property Name="WONo" Type="varchar" MaxLength="45" />
+    <Property Name="EndDateTime" Type="datetime2" Precision="0" />
+    <Property Name="EndHMIID" Type="int" />
+    <Property Name="DeletedDate" Type="datetime2" Precision="0" />
+    <Property Name="ManualLossMonth" Type="int" />
+    <Property Name="ManualLossYear" Type="int" />
+    <Property Name="ManualLossWeekNumber" Type="int" />
+    <Property Name="ManualLossQuarter" Type="int" />
   </EntityType>
   <EntityType Name="tblmasterparts_st_sw">
     <Key>
@@ -1552,6 +1845,10 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Property Name="IsInserted" Type="int" Nullable="false" />
     <Property Name="IsPiWeb" Type="int" />
     <Property Name="Sync" Type="int" Nullable="false" />
+    <Property Name="ModeMonth" Type="int" />
+    <Property Name="ModeYear" Type="int" />
+    <Property Name="ModeWeekNumber" Type="int" />
+    <Property Name="ModeQuarter" Type="int" />
   </EntityType>
   <EntityType Name="tblmodetemp">
     <Key>
@@ -1659,6 +1956,22 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Property Name="CreatedBy" Type="int" />
     <Property Name="IsDeleted" Type="bit" />
     <Property Name="FromCNC" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblnetworkdetailsforddl">
+    <Key>
+      <PropertyRef Name="NPFDDLID" />
+    </Key>
+    <Property Name="NPFDDLID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Path" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="Password" Type="varchar" MaxLength="100" />
+    <Property Name="DomainName" Type="varchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ISINCDDL" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="tbloeedashboardfinalvariables">
     <Key>
@@ -1888,6 +2201,7 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Property Name="StdMinorLoss" Type="nvarchar" MaxLength="50" />
     <Property Name="StdLoadingTime" Type="decimal" Precision="8" Scale="3" />
     <Property Name="StdUnLoadingTime" Type="decimal" Precision="8" Scale="3" />
+    <Property Name="StdCycleTime" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="tblpartscountandcutting">
     <Key>
@@ -1910,7 +2224,7 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Property Name="WoPartCount" Type="int" />
     <Property Name="ShiftName" Type="varchar" MaxLength="50" />
     <Property Name="CuttingTimeInSec" Type="int" />
-    <Property Name="woTargetQty" Type="int" Nullable="false" />
+    <Property Name="woTargetQty" Type="int" />
   </EntityType>
   <EntityType Name="tblplannedbreak">
     <Key>
@@ -2062,8 +2376,6 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Property Name="CorrectedDate" Type="varchar" MaxLength="25" />
     <Property Name="Cellid" Type="int" />
     <Property Name="Machineid" Type="int" />
-    <Property Name="IsMaint" Type="int" Nullable="false" />
-    <Property Name="IsProd" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="tblreportholder">
     <Key>
@@ -2076,13 +2388,13 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Property Name="ShopNo" Type="nvarchar" MaxLength="100" />
     <Property Name="WorkCenter" Type="nvarchar" MaxLength="100" />
   </EntityType>
-  <EntityType Name="tblReworkReasons">
+  <EntityType Name="tblReworkReason">
     <Key>
       <PropertyRef Name="ReWorkID" />
     </Key>
     <Property Name="ReWorkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ReworkName" Type="nvarchar" MaxLength="50" />
-    <Property Name="IsDeleted" Type="int" Nullable="false" />
+    <Property Name="ReworkName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="IsDeleted" Type="int" />
     <Property Name="CreatedBy" Type="int" />
     <Property Name="CreatedOn" Type="datetime" />
   </EntityType>
@@ -2110,7 +2422,7 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Key>
       <PropertyRef Name="Role_ID" />
     </Key>
-    <Property Name="Role_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role_ID" Type="int" Nullable="false" />
     <Property Name="RoleName" Type="nvarchar" MaxLength="60" Nullable="false" />
     <Property Name="RoleDisplayName" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="IsDeleted" Type="int" Nullable="false" />
@@ -2274,6 +2586,23 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="ModifiedBy" Type="int" />
   </EntityType>
+  <EntityType Name="tblShiftUtilReport">
+    <Key>
+      <PropertyRef Name="ShiftUtilReportID" />
+    </Key>
+    <Property Name="ShiftUtilReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MachineID" Type="int" Nullable="false" />
+    <Property Name="CorrectedDate" Type="date" Nullable="false" />
+    <Property Name="TotalTime" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="OperatingTime" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="PowerOnTime" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="CuttingTime" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="OperatingTimePrecent" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="PowerOnTimePrecent" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="CuttingTimePrecent" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="InsertedOn" Type="datetime" Nullable="false" />
+    <Property Name="shift" Type="nvarchar" MaxLength="25" />
+  </EntityType>
   <EntityType Name="tblshop">
     <Key>
       <PropertyRef Name="ShopID" />
@@ -2392,7 +2721,7 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Key>
       <PropertyRef Name="UserID" />
     </Key>
-    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
     <Property Name="UserName" Type="nvarchar" MaxLength="45" Nullable="false" />
     <Property Name="Password" Type="nvarchar" MaxLength="45" Nullable="false" />
     <Property Name="PrimaryRole" Type="int" Nullable="false" />
@@ -2500,13 +2829,24 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <Property Name="isSplit" Type="bit" />
     <Property Name="CellID" Type="int" />
     <Property Name="SyncInsert" Type="int" />
-    <Property Name="PartsPerCycle" Type="int" />
-    <Property Name="IsReWork" Type="int" Nullable="false" />
+    <Property Name="PartsPerCycle" Type="int" Nullable="false" />
     <Property Name="ReWorkStart" Type="int" Nullable="false" />
     <Property Name="ReWorkEnd" Type="int" Nullable="false" />
+    <Property Name="IsReWork" Type="int" Nullable="false" />
     <Property Name="ReWorkReasonID" Type="int" />
     <Property Name="reworkStartTime" Type="datetime" />
     <Property Name="reworkEndTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Temp_tblmode">
+    <Key>
+      <PropertyRef Name="tempModeID" />
+    </Key>
+    <Property Name="tempModeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MachineID" Type="int" />
+    <Property Name="ModeType" Type="nvarchar" MaxLength="50" />
+    <Property Name="startTime" Type="datetime" />
+    <Property Name="isdeleted" Type="int" />
+    <Property Name="CorrectedDate" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="weekdata">
     <Key>
@@ -2613,6 +2953,18 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       </Principal>
       <Dependent Role="tbl_CycleTimeAnalysis">
         <PropertyRef Name="MachineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_machinestatusrealtime_tbl_machinestatusrealtime">
+    <End Role="tbl_machinestatusrealtime" Type="Self.tbl_machinestatusrealtime" Multiplicity="1" />
+    <End Role="tbl_machinestatusrealtime1" Type="Self.tbl_machinestatusrealtime" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_machinestatusrealtime">
+        <PropertyRef Name="MachineStatusID" />
+      </Principal>
+      <Dependent Role="tbl_machinestatusrealtime1">
+        <PropertyRef Name="MachineStatusID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -2796,15 +3148,27 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblBreakDownTickect_tblworkorderentry">
-    <End Role="tblworkorderentry" Type="Self.tblworkorderentry" Multiplicity="0..1" />
+  <Association Name="FK_tblBreakDownTickect_tblOperatorLoginDetails">
+    <End Role="tblOperatorLoginDetails" Type="Self.tblOperatorLoginDetails" Multiplicity="0..1" />
     <End Role="tblBreakDownTickect" Type="Self.tblBreakDownTickect" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tblworkorderentry">
-        <PropertyRef Name="HMIID" />
+      <Principal Role="tblOperatorLoginDetails">
+        <PropertyRef Name="operatorLoginId" />
       </Principal>
       <Dependent Role="tblBreakDownTickect">
-        <PropertyRef Name="woId" />
+        <PropertyRef Name="mntOpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBreakDownTickect_tblOperatorLoginDetails1">
+    <End Role="tblOperatorLoginDetails" Type="Self.tblOperatorLoginDetails" Multiplicity="0..1" />
+    <End Role="tblBreakDownTickect" Type="Self.tblBreakDownTickect" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOperatorLoginDetails">
+        <PropertyRef Name="operatorLoginId" />
+      </Principal>
+      <Dependent Role="tblBreakDownTickect">
+        <PropertyRef Name="prodOpId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -2817,6 +3181,18 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       </Principal>
       <Dependent Role="configurationtblmachinesensor">
         <PropertyRef Name="Sid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbllivehmiscreen_tblmachinedetails">
+    <End Role="tblmachinedetails" Type="Self.tblmachinedetails" Multiplicity="1" />
+    <End Role="tbllivehmiscreen" Type="Self.tbllivehmiscreen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblmachinedetails">
+        <PropertyRef Name="MachineID" />
+      </Principal>
+      <Dependent Role="tbllivehmiscreen">
+        <PropertyRef Name="MachineID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -3024,6 +3400,18 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tblparts_tblunit">
+    <End Role="tblunit" Type="Self.tblunit" Multiplicity="1" />
+    <End Role="tblparts" Type="Self.tblparts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblunit">
+        <PropertyRef Name="U_ID" />
+      </Principal>
+      <Dependent Role="tblparts">
+        <PropertyRef Name="UnitDesc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tblrolemodulelink_tblmodules">
     <End Role="tblmodules" Type="Self.tblmodules" Multiplicity="0..1" />
     <End Role="tblrolemodulelink" Type="Self.tblrolemodulelink" Multiplicity="*" />
@@ -3072,6 +3460,18 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tblShiftUtilReport_tblmachinedetails">
+    <End Role="tblmachinedetails" Type="Self.tblmachinedetails" Multiplicity="1" />
+    <End Role="tblShiftUtilReport" Type="Self.tblShiftUtilReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblmachinedetails">
+        <PropertyRef Name="MachineID" />
+      </Principal>
+      <Dependent Role="tblShiftUtilReport">
+        <PropertyRef Name="MachineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tbltoollifeoperator_tblmachinedetails">
     <End Role="tblmachinedetails" Type="Self.tblmachinedetails" Multiplicity="1" />
     <End Role="tbltoollifeoperator" Type="Self.tbltoollifeoperator" Multiplicity="*" />
@@ -3108,6 +3508,42 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tblworkorderentry_tblmachinedetails">
+    <End Role="tblmachinedetails" Type="Self.tblmachinedetails" Multiplicity="1" />
+    <End Role="tblworkorderentry" Type="Self.tblworkorderentry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblmachinedetails">
+        <PropertyRef Name="MachineID" />
+      </Principal>
+      <Dependent Role="tblworkorderentry">
+        <PropertyRef Name="MachineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkHMIID">
+    <End Role="tblhmiscreen" Type="Self.tblhmiscreen" Multiplicity="0..1" />
+    <End Role="tbl_multiwoselection" Type="Self.tbl_multiwoselection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblhmiscreen">
+        <PropertyRef Name="HMIID" />
+      </Principal>
+      <Dependent Role="tbl_multiwoselection">
+        <PropertyRef Name="HMIID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkwoliveHMIID">
+    <End Role="tbllivehmiscreen" Type="Self.tbllivehmiscreen" Multiplicity="0..1" />
+    <End Role="tbllivemultiwoselection" Type="Self.tbllivemultiwoselection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbllivehmiscreen">
+        <PropertyRef Name="HMIID" />
+      </Principal>
+      <Dependent Role="tbllivemultiwoselection">
+        <PropertyRef Name="HMIID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="logfreqid">
     <End Role="tblunit" Type="Self.tblunit" Multiplicity="1" />
     <End Role="configurationtblsensordatalink" Type="Self.configurationtblsensordatalink" Multiplicity="*" />
@@ -3117,6 +3553,30 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       </Principal>
       <Dependent Role="configurationtblsensordatalink">
         <PropertyRef Name="LogFreqUnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LossCodeID">
+    <End Role="tbllossescodes" Type="Self.tbllossescodes" Multiplicity="1" />
+    <End Role="tbllossofentry" Type="Self.tbllossofentry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbllossescodes">
+        <PropertyRef Name="LossCodeID" />
+      </Principal>
+      <Dependent Role="tbllossofentry">
+        <PropertyRef Name="MessageCodeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LossCodeIDLiveLoss">
+    <End Role="tbllossescodes" Type="Self.tbllossescodes" Multiplicity="1" />
+    <End Role="tbllivelossofentry" Type="Self.tbllivelossofentry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbllossescodes">
+        <PropertyRef Name="LossCodeID" />
+      </Principal>
+      <Dependent Role="tbllivelossofentry">
+        <PropertyRef Name="MessageCodeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -3153,6 +3613,54 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       </Principal>
       <Dependent Role="configuration_tblprimitivemaintainancescheduling">
         <PropertyRef Name="MachineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MachineIDhmi">
+    <End Role="tblmachinedetails" Type="Self.tblmachinedetails" Multiplicity="1" />
+    <End Role="tblhmiscreen" Type="Self.tblhmiscreen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblmachinedetails">
+        <PropertyRef Name="MachineID" />
+      </Principal>
+      <Dependent Role="tblhmiscreen">
+        <PropertyRef Name="MachineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="macid">
+    <End Role="tblmachinedetails" Type="Self.tblmachinedetails" Multiplicity="0..1" />
+    <End Role="tblmachineallocation" Type="Self.tblmachineallocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblmachinedetails">
+        <PropertyRef Name="MachineID" />
+      </Principal>
+      <Dependent Role="tblmachineallocation">
+        <PropertyRef Name="MachineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ManualLossCodeID">
+    <End Role="tbllossescodes" Type="Self.tbllossescodes" Multiplicity="1" />
+    <End Role="tblmanuallossofentry" Type="Self.tblmanuallossofentry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbllossescodes">
+        <PropertyRef Name="LossCodeID" />
+      </Principal>
+      <Dependent Role="tblmanuallossofentry">
+        <PropertyRef Name="MessageCodeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ManualLossCodeIDLive">
+    <End Role="tbllossescodes" Type="Self.tbllossescodes" Multiplicity="1" />
+    <End Role="tbllivemanuallossofentry" Type="Self.tbllivemanuallossofentry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbllossescodes">
+        <PropertyRef Name="LossCodeID" />
+      </Principal>
+      <Dependent Role="tbllivemanuallossofentry">
+        <PropertyRef Name="MessageCodeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -3213,6 +3721,18 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       </Principal>
       <Dependent Role="configuration_tblpmchecklist">
         <PropertyRef Name="pmcpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="shiftid">
+    <End Role="tblshift_mstr" Type="Self.tblshift_mstr" Multiplicity="0..1" />
+    <End Role="tblmachineallocation" Type="Self.tblmachineallocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblshift_mstr">
+        <PropertyRef Name="ShiftID" />
+      </Principal>
+      <Dependent Role="tblmachineallocation">
+        <PropertyRef Name="ShiftID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -3564,18 +4084,6 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="tbllossofentry$LossCodeID">
-    <End Role="tbllossescodes" Type="Self.tbllossescodes" Multiplicity="1" />
-    <End Role="tbllossofentry" Type="Self.tbllossofentry" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tbllossescodes">
-        <PropertyRef Name="LossCodeID" />
-      </Principal>
-      <Dependent Role="tbllossofentry">
-        <PropertyRef Name="MessageCodeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="tblmachinedetails$CellIDtblmachinedetails">
     <End Role="tblcell" Type="Self.tblcell" Multiplicity="0..1" />
     <End Role="tblmachinedetails" Type="Self.tblmachinedetails" Multiplicity="*" />
@@ -3693,18 +4201,6 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       </Principal>
       <Dependent Role="tblrejectqty">
         <PropertyRef Name="RID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="tblrejectqty_ibfk_2">
-    <End Role="tblworkorderentry" Type="Self.tblworkorderentry" Multiplicity="0..1" />
-    <End Role="tblrejectqty" Type="Self.tblrejectqty" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblworkorderentry">
-        <PropertyRef Name="HMIID" />
-      </Principal>
-      <Dependent Role="tblrejectqty">
-        <PropertyRef Name="WOID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -3894,7 +4390,19 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="i_facility_tealModelStoreContainer">
+  <Association Name="userid">
+    <End Role="tblusers" Type="Self.tblusers" Multiplicity="0..1" />
+    <End Role="tblmachineallocation" Type="Self.tblmachineallocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblusers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblmachineallocation">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="i_facility_shaktiModelStoreContainer">
     <EntitySet Name="alarm_history_master" EntityType="Self.alarm_history_master" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="configuration_tblpmchecklist" EntityType="Self.configuration_tblpmchecklist" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="configuration_tblpmcheckpoint" EntityType="Self.configuration_tblpmcheckpoint" Schema="dbo" store:Type="Tables" />
@@ -3904,8 +4412,10 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <EntitySet Name="configurationtblsensordatalink" EntityType="Self.configurationtblsensordatalink" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="configurationtblsensormaster" EntityType="Self.configurationtblsensormaster" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="frommail" EntityType="Self.frommail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Graph_Data" EntityType="Self.Graph_Data" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="handle_no_ping" EntityType="Self.handle_no_ping" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="jobcard_details" EntityType="Self.jobcard_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LossDetails" EntityType="Self.LossDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mailmaster" EntityType="Self.mailmaster" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="message_code_master" EntityType="Self.message_code_master" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="message_history_master" EntityType="Self.message_history_master" Schema="dbo" store:Type="Tables" />
@@ -3920,6 +4430,7 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <EntitySet Name="pcbdps_master" EntityType="Self.pcbdps_master" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="program_master" EntityType="Self.program_master" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sharathtable" EntityType="Self.sharathtable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="shift_master" EntityType="Self.shift_master" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="smtpdetails" EntityType="Self.smtpdetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_autoreport_log" EntityType="Self.tbl_autoreport_log" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_autoreportbasedon" EntityType="Self.tbl_autoreportbasedon" Schema="dbo" store:Type="Tables" />
@@ -3932,6 +4443,8 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <EntitySet Name="tbl_deletedProgDet" EntityType="Self.tbl_deletedProgDet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_genericfilepath" EntityType="Self.tbl_genericfilepath" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_livecbmparameters" EntityType="Self.tbl_livecbmparameters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_machinestatusrealtime" EntityType="Self.tbl_machinestatusrealtime" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_multiwoselection" EntityType="Self.tbl_multiwoselection" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_OEEDetails" EntityType="Self.tbl_OEEDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_oeereportasdivision" EntityType="Self.tbl_oeereportasdivision" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_ProdAndonDisp" EntityType="Self.tbl_ProdAndonDisp" Schema="dbo" store:Type="Tables" />
@@ -3955,6 +4468,7 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <EntitySet Name="tblcustomer" EntityType="Self.tblcustomer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbldailyprodstatus" EntityType="Self.tbldailyprodstatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbldaytiming" EntityType="Self.tbldaytiming" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblddl" EntityType="Self.tblddl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbldowntimecategory" EntityType="Self.tbldowntimecategory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbldowntimedetails" EntityType="Self.tbldowntimedetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblemailescalation" EntityType="Self.tblemailescalation" Schema="dbo" store:Type="Tables" />
@@ -3963,18 +4477,26 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <EntitySet Name="tblgenericworkcodes" EntityType="Self.tblgenericworkcodes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblgenericworkentry" EntityType="Self.tblgenericworkentry" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblhistpms" EntityType="Self.tblhistpms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblhmiscreen" EntityType="Self.tblhmiscreen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblholdcodes" EntityType="Self.tblholdcodes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblHolidayManagment" EntityType="Self.tblHolidayManagment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblholidays" EntityType="Self.tblholidays" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblHolidayTypeMasters" EntityType="Self.tblHolidayTypeMasters" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbllivedailyprodstatus" EntityType="Self.tbllivedailyprodstatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbllivehmiscreen" EntityType="Self.tbllivehmiscreen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbllivelossofentry" EntityType="Self.tbllivelossofentry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbllivemanuallossofentry" EntityType="Self.tbllivemanuallossofentry" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbllivemode" EntityType="Self.tbllivemode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbllivemultiwoselection" EntityType="Self.tbllivemultiwoselection" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbllossescodes" EntityType="Self.tbllossescodes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbllossofentry" EntityType="Self.tbllossofentry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblmachineallocation" EntityType="Self.tblmachineallocation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblmachineaxisdetails" EntityType="Self.tblmachineaxisdetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblmachinecategory" EntityType="Self.tblmachinecategory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblmachinedetails" EntityType="Self.tblmachinedetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblmailids" EntityType="Self.tblmailids" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblmaintainanceProdBrDetails" EntityType="Self.tblmaintainanceProdBrDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblmanuallossofentry" EntityType="Self.tblmanuallossofentry" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblmasterparts_st_sw" EntityType="Self.tblmasterparts_st_sw" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblmimics" EntityType="Self.tblmimics" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblmode" EntityType="Self.tblmode" Schema="dbo" store:Type="Tables" />
@@ -3984,6 +4506,7 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <EntitySet Name="tblmodules" EntityType="Self.tblmodules" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblmultipleworkorder" EntityType="Self.tblmultipleworkorder" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblNcProgramTransferMain" EntityType="Self.tblNcProgramTransferMain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblnetworkdetailsforddl" EntityType="Self.tblnetworkdetailsforddl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbloeedashboardfinalvariables" EntityType="Self.tbloeedashboardfinalvariables" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbloeedashboardvariables" EntityType="Self.tbloeedashboardvariables" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbloeedashboardvariablestoday" EntityType="Self.tbloeedashboardvariablestoday" Schema="dbo" store:Type="Tables" />
@@ -4005,7 +4528,7 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <EntitySet Name="tblrejectqty" EntityType="Self.tblrejectqty" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblrejectreason" EntityType="Self.tblrejectreason" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblreportholder" EntityType="Self.tblreportholder" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tblReworkReasons" EntityType="Self.tblReworkReasons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblReworkReason" EntityType="Self.tblReworkReason" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblrolemodulelink" EntityType="Self.tblrolemodulelink" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblroles" EntityType="Self.tblroles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblSAPInput" EntityType="Self.tblSAPInput" Schema="dbo" store:Type="Tables" />
@@ -4017,6 +4540,7 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <EntitySet Name="tblshiftdetails_machinewise" EntityType="Self.tblshiftdetails_machinewise" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblshiftmethod" EntityType="Self.tblshiftmethod" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblshiftplanner" EntityType="Self.tblshiftplanner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblShiftUtilReport" EntityType="Self.tblShiftUtilReport" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblshop" EntityType="Self.tblshop" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblStdToolLife" EntityType="Self.tblStdToolLife" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblToolCounter" EntityType="Self.tblToolCounter" Schema="dbo" store:Type="Tables" />
@@ -4028,21 +4552,8 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <EntitySet Name="tblwolossess" EntityType="Self.tblwolossess" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblworeport" EntityType="Self.tblworeport" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblworkorderentry" EntityType="Self.tblworkorderentry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Temp_tblmode" EntityType="Self.Temp_tblmode" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="weekdata" EntityType="Self.weekdata" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="shift_master" EntityType="Self.shift_master" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [shift_master].[ShiftID] AS [ShiftID], 
-    [shift_master].[ShiftName] AS [ShiftName], 
-    [shift_master].[StartTime] AS [StartTime], 
-    [shift_master].[EndTime] AS [EndTime], 
-    [shift_master].[InsertedOn] AS [InsertedOn], 
-    [shift_master].[InsertedBy] AS [InsertedBy], 
-    [shift_master].[ModifiedOn] AS [ModifiedOn], 
-    [shift_master].[ModifiedBy] AS [ModifiedBy], 
-    [shift_master].[IsDeleted] AS [IsDeleted], 
-    [shift_master].[Duration] AS [Duration]
-    FROM [dbo].[shift_master] AS [shift_master]</DefiningQuery>
-    </EntitySet>
     <EntitySet Name="tbl_livecbmdetails" EntityType="Self.tbl_livecbmdetails" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [tbl_livecbmdetails].[cbmdetailsid] AS [cbmdetailsid], 
@@ -4112,6 +4623,10 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
       <End Role="tbl_CycleTimeAnalysis" EntitySet="tbl_CycleTimeAnalysis" />
     </AssociationSet>
+    <AssociationSet Name="FK_tbl_machinestatusrealtime_tbl_machinestatusrealtime" Association="Self.FK_tbl_machinestatusrealtime_tbl_machinestatusrealtime">
+      <End Role="tbl_machinestatusrealtime" EntitySet="tbl_machinestatusrealtime" />
+      <End Role="tbl_machinestatusrealtime1" EntitySet="tbl_machinestatusrealtime" />
+    </AssociationSet>
     <AssociationSet Name="FK_tbl_OEEDetails_tbl_MachineDetails" Association="Self.FK_tbl_OEEDetails_tbl_MachineDetails">
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
       <End Role="tbl_OEEDetails" EntitySet="tbl_OEEDetails" />
@@ -4172,13 +4687,21 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
       <End Role="tblBreakDownTickect" EntitySet="tblBreakDownTickect" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblBreakDownTickect_tblworkorderentry" Association="Self.FK_tblBreakDownTickect_tblworkorderentry">
-      <End Role="tblworkorderentry" EntitySet="tblworkorderentry" />
+    <AssociationSet Name="FK_tblBreakDownTickect_tblOperatorLoginDetails" Association="Self.FK_tblBreakDownTickect_tblOperatorLoginDetails">
+      <End Role="tblOperatorLoginDetails" EntitySet="tblOperatorLoginDetails" />
+      <End Role="tblBreakDownTickect" EntitySet="tblBreakDownTickect" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBreakDownTickect_tblOperatorLoginDetails1" Association="Self.FK_tblBreakDownTickect_tblOperatorLoginDetails1">
+      <End Role="tblOperatorLoginDetails" EntitySet="tblOperatorLoginDetails" />
       <End Role="tblBreakDownTickect" EntitySet="tblBreakDownTickect" />
     </AssociationSet>
     <AssociationSet Name="FK_tblkl_tblMachineSensor" Association="Self.FK_tblkl_tblMachineSensor">
       <End Role="configuration_tblsensorgroup" EntitySet="configuration_tblsensorgroup" />
       <End Role="configurationtblmachinesensor" EntitySet="configurationtblmachinesensor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbllivehmiscreen_tblmachinedetails" Association="Self.FK_tbllivehmiscreen_tblmachinedetails">
+      <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
+      <End Role="tbllivehmiscreen" EntitySet="tbllivehmiscreen" />
     </AssociationSet>
     <AssociationSet Name="FK_tbllk_tblMachineSensor" Association="Self.FK_tbllk_tblMachineSensor">
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
@@ -4248,6 +4771,10 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       <End Role="tblparts" EntitySet="tblparts" />
       <End Role="tblparts1" EntitySet="tblparts" />
     </AssociationSet>
+    <AssociationSet Name="FK_tblparts_tblunit" Association="Self.FK_tblparts_tblunit">
+      <End Role="tblunit" EntitySet="tblunit" />
+      <End Role="tblparts" EntitySet="tblparts" />
+    </AssociationSet>
     <AssociationSet Name="FK_tblrolemodulelink_tblmodules" Association="Self.FK_tblrolemodulelink_tblmodules">
       <End Role="tblmodules" EntitySet="tblmodules" />
       <End Role="tblrolemodulelink" EntitySet="tblrolemodulelink" />
@@ -4264,6 +4791,10 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
       <End Role="tblSetupMaint" EntitySet="tblSetupMaint" />
     </AssociationSet>
+    <AssociationSet Name="FK_tblShiftUtilReport_tblmachinedetails" Association="Self.FK_tblShiftUtilReport_tblmachinedetails">
+      <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
+      <End Role="tblShiftUtilReport" EntitySet="tblShiftUtilReport" />
+    </AssociationSet>
     <AssociationSet Name="FK_tbltoollifeoperator_tblmachinedetails" Association="Self.FK_tbltoollifeoperator_tblmachinedetails">
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
       <End Role="tbltoollifeoperator" EntitySet="tbltoollifeoperator" />
@@ -4276,9 +4807,29 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       <End Role="tblroles" EntitySet="tblroles" />
       <End Role="tblusers" EntitySet="tblusers" />
     </AssociationSet>
+    <AssociationSet Name="FK_tblworkorderentry_tblmachinedetails" Association="Self.FK_tblworkorderentry_tblmachinedetails">
+      <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
+      <End Role="tblworkorderentry" EntitySet="tblworkorderentry" />
+    </AssociationSet>
+    <AssociationSet Name="fkHMIID" Association="Self.fkHMIID">
+      <End Role="tblhmiscreen" EntitySet="tblhmiscreen" />
+      <End Role="tbl_multiwoselection" EntitySet="tbl_multiwoselection" />
+    </AssociationSet>
+    <AssociationSet Name="fkwoliveHMIID" Association="Self.fkwoliveHMIID">
+      <End Role="tbllivehmiscreen" EntitySet="tbllivehmiscreen" />
+      <End Role="tbllivemultiwoselection" EntitySet="tbllivemultiwoselection" />
+    </AssociationSet>
     <AssociationSet Name="logfreqid" Association="Self.logfreqid">
       <End Role="tblunit" EntitySet="tblunit" />
       <End Role="configurationtblsensordatalink" EntitySet="configurationtblsensordatalink" />
+    </AssociationSet>
+    <AssociationSet Name="LossCodeID" Association="Self.LossCodeID">
+      <End Role="tbllossescodes" EntitySet="tbllossescodes" />
+      <End Role="tbllossofentry" EntitySet="tbllossofentry" />
+    </AssociationSet>
+    <AssociationSet Name="LossCodeIDLiveLoss" Association="Self.LossCodeIDLiveLoss">
+      <End Role="tbllossescodes" EntitySet="tbllossescodes" />
+      <End Role="tbllivelossofentry" EntitySet="tbllivelossofentry" />
     </AssociationSet>
     <AssociationSet Name="MachineID" Association="Self.MachineID">
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
@@ -4291,6 +4842,22 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <AssociationSet Name="machineID_tblprimitivemaintainancescheduling2223" Association="Self.machineID_tblprimitivemaintainancescheduling2223">
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
       <End Role="configuration_tblprimitivemaintainancescheduling" EntitySet="configuration_tblprimitivemaintainancescheduling" />
+    </AssociationSet>
+    <AssociationSet Name="MachineIDhmi" Association="Self.MachineIDhmi">
+      <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
+      <End Role="tblhmiscreen" EntitySet="tblhmiscreen" />
+    </AssociationSet>
+    <AssociationSet Name="macid" Association="Self.macid">
+      <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
+      <End Role="tblmachineallocation" EntitySet="tblmachineallocation" />
+    </AssociationSet>
+    <AssociationSet Name="ManualLossCodeID" Association="Self.ManualLossCodeID">
+      <End Role="tbllossescodes" EntitySet="tbllossescodes" />
+      <End Role="tblmanuallossofentry" EntitySet="tblmanuallossofentry" />
+    </AssociationSet>
+    <AssociationSet Name="ManualLossCodeIDLive" Association="Self.ManualLossCodeIDLive">
+      <End Role="tbllossescodes" EntitySet="tbllossescodes" />
+      <End Role="tbllivemanuallossofentry" EntitySet="tbllivemanuallossofentry" />
     </AssociationSet>
     <AssociationSet Name="PlantID" Association="Self.PlantID">
       <End Role="tblplant" EntitySet="tblplant" />
@@ -4311,6 +4878,10 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <AssociationSet Name="pmcpID_FK" Association="Self.pmcpID_FK">
       <End Role="configuration_tblpmcheckpoint" EntitySet="configuration_tblpmcheckpoint" />
       <End Role="configuration_tblpmchecklist" EntitySet="configuration_tblpmchecklist" />
+    </AssociationSet>
+    <AssociationSet Name="shiftid" Association="Self.shiftid">
+      <End Role="tblshift_mstr" EntitySet="tblshift_mstr" />
+      <End Role="tblmachineallocation" EntitySet="tblmachineallocation" />
     </AssociationSet>
     <AssociationSet Name="ShopID" Association="Self.ShopID">
       <End Role="tblshop" EntitySet="tblshop" />
@@ -4428,10 +4999,6 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
       <End Role="tbllivedailyprodstatus" EntitySet="tbllivedailyprodstatus" />
     </AssociationSet>
-    <AssociationSet Name="tbllossofentry$LossCodeID" Association="Self.tbllossofentry$LossCodeID">
-      <End Role="tbllossescodes" EntitySet="tbllossescodes" />
-      <End Role="tbllossofentry" EntitySet="tbllossofentry" />
-    </AssociationSet>
     <AssociationSet Name="tblmachinedetails$CellIDtblmachinedetails" Association="Self.tblmachinedetails$CellIDtblmachinedetails">
       <End Role="tblcell" EntitySet="tblcell" />
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
@@ -4470,10 +5037,6 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     </AssociationSet>
     <AssociationSet Name="tblrejectqty_ibfk_1" Association="Self.tblrejectqty_ibfk_1">
       <End Role="tblrejectreason" EntitySet="tblrejectreason" />
-      <End Role="tblrejectqty" EntitySet="tblrejectqty" />
-    </AssociationSet>
-    <AssociationSet Name="tblrejectqty_ibfk_2" Association="Self.tblrejectqty_ibfk_2">
-      <End Role="tblworkorderentry" EntitySet="tblworkorderentry" />
       <End Role="tblrejectqty" EntitySet="tblrejectqty" />
     </AssociationSet>
     <AssociationSet Name="tblrejectreason_ibfk_1" Association="Self.tblrejectreason_ibfk_1">
@@ -4535,6 +5098,10 @@ warning 6002: The table/view 'i_facility_teal.dbo.tblAndonDisplayRotate' does no
     <AssociationSet Name="unit" Association="Self.unit">
       <End Role="tblunit" EntitySet="tblunit" />
       <End Role="configurationtblsensordatalink" EntitySet="configurationtblsensordatalink" />
+    </AssociationSet>
+    <AssociationSet Name="userid" Association="Self.userid">
+      <End Role="tblusers" EntitySet="tblusers" />
+      <End Role="tblmachineallocation" EntitySet="tblmachineallocation" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -34,3 +34,15 @@ E:\Vignesh\Titan_Fanuc\20191010TitanAdditionalDAQ\SRKSDAQFanuc\obj\Release\SRKSD
 E:\Vignesh\Titan_Fanuc\20191010TitanAdditionalDAQ\SRKSDAQFanuc\obj\Release\SRKSDAQFanuc.csproj.CoreCompileInputs.cache
 E:\Vignesh\Titan_Fanuc\20191010TitanAdditionalDAQ\SRKSDAQFanuc\obj\Release\SRKSDAQFanuc.exe
 E:\Vignesh\Titan_Fanuc\20191010TitanAdditionalDAQ\SRKSDAQFanuc\obj\Release\SRKSDAQFanuc.pdb
+D:\Github_Ashok\Latest_DAQ\ShaktiDAQ_20200611_fromAshok_Latest\SRKSDAQFanuc\bin\Release\SRKSDAQFanuc.exe.config
+D:\Github_Ashok\Latest_DAQ\ShaktiDAQ_20200611_fromAshok_Latest\SRKSDAQFanuc\bin\Release\SRKSDAQFanuc.exe
+D:\Github_Ashok\Latest_DAQ\ShaktiDAQ_20200611_fromAshok_Latest\SRKSDAQFanuc\bin\Release\SRKSDAQFanuc.pdb
+D:\Github_Ashok\Latest_DAQ\ShaktiDAQ_20200611_fromAshok_Latest\SRKSDAQFanuc\bin\Release\EntityFramework.dll
+D:\Github_Ashok\Latest_DAQ\ShaktiDAQ_20200611_fromAshok_Latest\SRKSDAQFanuc\bin\Release\EntityFramework.SqlServer.dll
+D:\Github_Ashok\Latest_DAQ\ShaktiDAQ_20200611_fromAshok_Latest\SRKSDAQFanuc\bin\Release\Google.Protobuf.dll
+D:\Github_Ashok\Latest_DAQ\ShaktiDAQ_20200611_fromAshok_Latest\SRKSDAQFanuc\obj\Release\SRKSDAQFanuc.ProjectInstaller.resources
+D:\Github_Ashok\Latest_DAQ\ShaktiDAQ_20200611_fromAshok_Latest\SRKSDAQFanuc\obj\Release\SRKSDAQFanuc.csproj.GenerateResource.cache
+D:\Github_Ashok\Latest_DAQ\ShaktiDAQ_20200611_fromAshok_Latest\SRKSDAQFanuc\obj\Release\SRKSDAQFanuc.csproj.CoreCompileInputs.cache
+D:\Github_Ashok\Latest_DAQ\ShaktiDAQ_20200611_fromAshok_Latest\SRKSDAQFanuc\obj\Release\SRKSDAQFanuc.csproj.CopyComplete
+D:\Github_Ashok\Latest_DAQ\ShaktiDAQ_20200611_fromAshok_Latest\SRKSDAQFanuc\obj\Release\SRKSDAQFanuc.exe
+D:\Github_Ashok\Latest_DAQ\ShaktiDAQ_20200611_fromAshok_Latest\SRKSDAQFanuc\obj\Release\SRKSDAQFanuc.pdb

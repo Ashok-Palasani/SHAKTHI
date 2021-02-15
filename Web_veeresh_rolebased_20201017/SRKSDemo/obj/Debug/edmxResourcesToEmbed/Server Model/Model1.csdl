@@ -285,6 +285,21 @@
     <Property Name="styleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="isDeleted" Type="Int32" />
   </EntityType>
+  <EntityType Name="menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsDashboard" Type="Int32" />
+    <Property Name="IsSideMenubar" Type="Int32" />
+    <Property Name="DisplayOrder" Type="Int32" />
+    <Property Name="IsDeleted" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+  </EntityType>
   <EntityType Name="message_code_master">
     <Key>
       <PropertyRef Name="MessageCodeID" />
@@ -505,6 +520,7 @@
     <Property Name="Status" Type="Int32" />
     <Property Name="IsPiweb" Type="Int32" />
     <Property Name="Meas_DateTime" Type="DateTime" Precision="3" />
+    <Property Name="OP40" Type="Int32" />
   </EntityType>
   <EntityType Name="sharathtable">
     <Key>
@@ -850,8 +866,6 @@
     <Property Name="TotalOperatingTime" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
     <Property Name="InsertedOn" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Work_Order_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tbl_ProdAndonDisp1" Relationship="Self.FK_tbl_ProdAndonDisp_tbl_ProdAndonDisp" FromRole="tbl_ProdAndonDisp" ToRole="tbl_ProdAndonDisp1" />
-    <NavigationProperty Name="tbl_ProdAndonDisp2" Relationship="Self.FK_tbl_ProdAndonDisp_tbl_ProdAndonDisp" FromRole="tbl_ProdAndonDisp1" ToRole="tbl_ProdAndonDisp" />
     <NavigationProperty Name="tblmachinedetail" Relationship="Self.FK_tbl_ProdAndonDisp_tblmachinedetails" FromRole="tbl_ProdAndonDisp" ToRole="tblmachinedetails" />
     <NavigationProperty Name="tbllivehmiscreen" Relationship="Self.FK_tbl_ProdAndonDisp_tblworkorderentry" FromRole="tbl_ProdAndonDisp" ToRole="tbllivehmiscreen" />
   </EntityType>
@@ -2110,7 +2124,7 @@
     <Property Name="InsertedBy" Type="Int32" Nullable="false" />
     <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
     <Property Name="ModifiedBy" Type="Int32" />
-    <Property Name="CorrectedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CorrectedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="IsDeleted" Type="Int32" Nullable="false" />
     <Property Name="StartTime" Type="DateTime" Precision="0" />
     <Property Name="EndTime" Type="DateTime" Precision="0" />
@@ -3939,18 +3953,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tbl_ProdAndonDisp_tbl_ProdAndonDisp">
-    <End Role="tbl_ProdAndonDisp" Type="Self.tbl_ProdAndonDisp" Multiplicity="1" />
-    <End Role="tbl_ProdAndonDisp1" Type="Self.tbl_ProdAndonDisp" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="tbl_ProdAndonDisp">
-        <PropertyRef Name="ProdDashboardID" />
-      </Principal>
-      <Dependent Role="tbl_ProdAndonDisp1">
-        <PropertyRef Name="ProdDashboardID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_tbl_ProdAndonDisp_tblmachinedetails">
     <End Role="tblmachinedetails" Type="Self.tblmachinedetail" Multiplicity="1" />
     <End Role="tbl_ProdAndonDisp" Type="Self.tbl_ProdAndonDisp" Multiplicity="*" />
@@ -5157,7 +5159,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="i_facility_shaktiEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="i_facility_shaktiEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="alarm_history_master" EntityType="Self.alarm_history_master" />
     <EntitySet Name="configuration_tblpmchecklist" EntityType="Self.configuration_tblpmchecklist" />
     <EntitySet Name="configuration_tblpmcheckpoint" EntityType="Self.configuration_tblpmcheckpoint" />
@@ -5174,6 +5176,7 @@
     <EntitySet Name="LossDetails" EntityType="Self.LossDetail" />
     <EntitySet Name="mailmasters" EntityType="Self.mailmaster" />
     <EntitySet Name="menu_styles" EntityType="Self.menu_styles" />
+    <EntitySet Name="menus" EntityType="Self.menu" />
     <EntitySet Name="message_code_master" EntityType="Self.message_code_master" />
     <EntitySet Name="message_history_master" EntityType="Self.message_history_master" />
     <EntitySet Name="monthdatas" EntityType="Self.monthdata" />
@@ -5459,10 +5462,6 @@
     <AssociationSet Name="FK_tbl_OEEDetails_tbl_MachineDetails" Association="Self.FK_tbl_OEEDetails_tbl_MachineDetails">
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
       <End Role="tbl_OEEDetails" EntitySet="tbl_OEEDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tbl_ProdAndonDisp_tbl_ProdAndonDisp" Association="Self.FK_tbl_ProdAndonDisp_tbl_ProdAndonDisp">
-      <End Role="tbl_ProdAndonDisp" EntitySet="tbl_ProdAndonDisp" />
-      <End Role="tbl_ProdAndonDisp1" EntitySet="tbl_ProdAndonDisp" />
     </AssociationSet>
     <AssociationSet Name="FK_tbl_ProdAndonDisp_tblmachinedetails" Association="Self.FK_tbl_ProdAndonDisp_tblmachinedetails">
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
@@ -5864,125 +5863,5 @@
       <End Role="tblshop" EntitySet="tblshops" />
       <End Role="tblshiftplanner" EntitySet="tblshiftplanners" />
     </AssociationSet>
-    <FunctionImport Name="DashboardLiveHMIMWOSTblINUP" />
-    <FunctionImport Name="DashboardLiveLossManualTblINUP" />
-    <FunctionImport Name="DashboardLiveModeTblINUP" />
-    <FunctionImport Name="DeleteDupWorkOrdersFromDDLList" />
-    <FunctionImport Name="DeleteExtraRowsHMI" />
-    <FunctionImport Name="DeleteReocrdsFromDDL" />
-    <FunctionImport Name="GetCheckboxesForUser" ReturnType="Collection(i_facility_shaktiModel.GetCheckboxesForUser_Result)">
-      <Parameter Name="roleId" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="GetDashboardMenus" ReturnType="Collection(i_facility_shaktiModel.GetDashboardMenus_Result)">
-      <Parameter Name="roleId" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="GetMenuStyles" ReturnType="Collection(i_facility_shaktiModel.GetMenuStyles_Result)" />
-    <FunctionImport Name="GetSideMenubar" ReturnType="Collection(i_facility_shaktiModel.GetSideMenubar_Result)">
-      <Parameter Name="roleId" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="GetUserMenus" ReturnType="Collection(i_facility_shaktiModel.GetUserMenus_Result)" />
-    <FunctionImport Name="HMIUpdationofMonthYearWeek">
-      <Parameter Name="V_Date" Mode="In" Type="DateTime" />
-      <Parameter Name="V_HMIID" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="liveDataDelAfterMaovedToHistorin" />
-    <FunctionImport Name="LossAndBreakDown">
-      <Parameter Name="breakDownId" Mode="In" Type="Int32" />
-      <Parameter Name="startTime" Mode="In" Type="DateTime" />
-      <Parameter Name="endTime" Mode="In" Type="DateTime" />
-      <Parameter Name="breakDownAndLossCode" Mode="In" Type="Int32" />
-      <Parameter Name="machineId" Mode="In" Type="Int32" />
-      <Parameter Name="shift" Mode="In" Type="String" />
-      <Parameter Name="doneWithRow" Mode="In" Type="Int32" />
-      <Parameter Name="correctedDate" Mode="In" Type="String" />
-      <Parameter Name="entryTime" Mode="In" Type="DateTime" />
-      <Parameter Name="messageCodeId" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="LossEntryUpdationofMonthYearWeek">
-      <Parameter Name="V_Date" Mode="In" Type="DateTime" />
-      <Parameter Name="V_LossID" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="ManualLossUpdationofMonthYearWeek">
-      <Parameter Name="V_Date" Mode="In" Type="DateTime" />
-      <Parameter Name="V_MLossID" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="ModeUpdationofMonthYearWeek">
-      <Parameter Name="V_Date" Mode="In" Type="DateTime" />
-      <Parameter Name="V_ModeID" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="OperationLogDelAfterFewdays" />
-    <FunctionImport Name="parameters_masterDelAfterFewDays" />
-    <FunctionImport Name="SP_UtilData">
-      <Parameter Name="Cdate" Mode="In" Type="DateTime" />
-      <Parameter Name="MachineID" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <EntitySet Name="menus" EntityType="i_facility_shaktiModel.menu" />
   </EntityContainer>
-  <ComplexType Name="GetCheckboxesForUser_Result">
-    <Property Type="Int32" Name="MenuId" Nullable="true" />
-    <Property Type="String" Name="MenuName" Nullable="true" MaxLength="100" />
-    <Property Type="Boolean" Name="MenuStatus" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="GetDashboardMenus_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="MenuName" Nullable="true" MaxLength="200" />
-    <Property Type="String" Name="MenuUrl" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="ImageUrl" Nullable="true" MaxLength="200" />
-    <Property Type="Int32" Name="MenuId" Nullable="true" />
-    <Property Type="String" Name="ColourDiv" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="Style" Nullable="true" MaxLength="100" />
-    <Property Type="Int32" Name="IsDeleted" Nullable="true" />
-    <Property Type="DateTime" Name="CreatedOn" Nullable="true" />
-    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
-    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" />
-    <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
-    <Property Type="Int32" Name="Id1" Nullable="true" />
-    <Property Type="Int32" Name="MenuId1" Nullable="true" />
-    <Property Type="Int32" Name="RoleId" Nullable="true" />
-    <Property Type="Boolean" Name="MenuStatus" Nullable="true" />
-    <Property Type="Int32" Name="IsDeleted1" Nullable="true" />
-    <Property Type="DateTime" Name="CreatedOn1" Nullable="true" />
-    <Property Type="Int32" Name="CreatedBy1" Nullable="true" />
-    <Property Type="DateTime" Name="ModifiedOn1" Nullable="true" />
-    <Property Type="Int32" Name="ModifiedBy1" Nullable="true" />
-    <Property Type="Int32" Name="Id2" Nullable="true" />
-    <Property Type="String" Name="MenuName1" Nullable="true" MaxLength="100" />
-    <Property Type="Int32" Name="IsDashboard" Nullable="true" />
-    <Property Type="Int32" Name="IsSideMenubar" Nullable="true" />
-    <Property Type="Int32" Name="DisplayOrder" Nullable="true" />
-    <Property Type="Int32" Name="IsDeleted2" Nullable="true" />
-    <Property Type="DateTime" Name="CreatedOn2" Nullable="true" />
-    <Property Type="Int32" Name="CreatedBy2" Nullable="true" />
-    <Property Type="DateTime" Name="ModifiedOn2" Nullable="true" />
-    <Property Type="Int32" Name="ModifiedBy2" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="GetMenuStyles_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="styleName" Nullable="true" MaxLength="100" />
-    <Property Type="Int32" Name="isDeleted" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="GetSideMenubar_Result">
-    <Property Type="Int32" Name="MenuId" Nullable="true" />
-    <Property Type="String" Name="MenuName" Nullable="true" MaxLength="45" />
-    <Property Type="Int32" Name="DisplayOrder" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="GetUserMenus_Result">
-    <Property Type="Int32" Name="Id" Nullable="false" />
-    <Property Type="String" Name="MenuName" Nullable="true" MaxLength="100" />
-  </ComplexType>
-  <EntityType Name="menu">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MenuName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="IsDashboard" Type="Int32" />
-    <Property Name="IsSideMenubar" Type="Int32" />
-    <Property Name="DisplayOrder" Type="Int32" />
-    <Property Name="IsDeleted" Type="Int32" />
-    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
-    <Property Name="CreatedBy" Type="Int32" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-    <Property Name="ModifiedBy" Type="Int32" />
-  </EntityType>
 </Schema>

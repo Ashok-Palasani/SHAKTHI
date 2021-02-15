@@ -74,7 +74,7 @@
                                             if (Convert.ToString(item.GWCodesLevel1ID) != null)
                                             {
                                                 int losscodeid = Convert.ToInt32(item.GWCodesLevel1ID);
-                                                SRKSDemo.Server_Model.i_facility_shaktiEntities1 db = new SRKSDemo.Server_Model.i_facility_shaktiEntities1();
+                                                SRKSDemo.Server_Model.i_facility_shaktiEntities db = new SRKSDemo.Server_Model.i_facility_shaktiEntities();
                                                 var lossdetailsDesc = db.tblgenericworkcodes.Where(m => m.IsDeleted == 0 && m.GenericWorkID == losscodeid).Select(m => m.GenericWorkCode).SingleOrDefault();
                                                 <td style="width: auto; font-family: Helvetica; font-size: 85%">
                                                     @lossdetailsDesc
@@ -93,7 +93,7 @@
                                             if (Convert.ToString(item.GWCodesLevel1ID) != null)
                                             {
                                                 int losscodeid = Convert.ToInt32(item.GWCodesLevel1ID);
-                                                SRKSDemo.Server_Model.i_facility_shaktiEntities1 db = new SRKSDemo.Server_Model.i_facility_shaktiEntities1();
+                                                SRKSDemo.Server_Model.i_facility_shaktiEntities db = new SRKSDemo.Server_Model.i_facility_shaktiEntities();
                                                 var lossdetailsDesc = db.tblgenericworkcodes.Where(m => m.IsDeleted == 0 && m.GenericWorkID == losscodeid).Select(m => m.GenericWorkCode).SingleOrDefault();
                                                 <td style="width: auto; font-family: Helvetica; font-size: 85%">
                                                     @lossdetailsDesc
@@ -102,7 +102,7 @@
                                             if (Convert.ToString(item.GWCodesLevel2ID) != null)
                                             {
                                                 int losscodeid1 = Convert.ToInt32(item.GWCodesLevel2ID);
-                                                SRKSDemo.Server_Model.i_facility_shaktiEntities1 db1 = new SRKSDemo.Server_Model.i_facility_shaktiEntities1();
+                                                SRKSDemo.Server_Model.i_facility_shaktiEntities db1 = new SRKSDemo.Server_Model.i_facility_shaktiEntities();
                                                 var lossdetailsDesc1 = db1.tblgenericworkcodes.Where(m => m.IsDeleted == 0 && m.GenericWorkID == losscodeid1).Select(m => m.GenericWorkCode).SingleOrDefault();
                                                 <td style="width: auto; font-family: Helvetica; font-size: 85%">
                                                     @lossdetailsDesc1

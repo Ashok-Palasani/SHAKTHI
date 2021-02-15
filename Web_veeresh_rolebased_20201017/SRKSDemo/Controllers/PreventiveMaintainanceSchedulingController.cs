@@ -13,7 +13,7 @@ namespace SRKSDemo.Controllers
 {
     public class PreventiveMaintainanceSchedulingController : Controller
     {
-        i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities condb = new i_facility_shaktiEntities();
         public ActionResult Index()
         {
             if ((Session["UserId"] == null) || (Session["UserId"].ToString() == String.Empty))
@@ -470,7 +470,7 @@ namespace SRKSDemo.Controllers
             ViewBag.roleid = Session["RoleID"];
             int UserID = Convert.ToInt32(Session["UserId"]);
             String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 configuration_tblprimitivemaintainancescheduling tblpm = condb.configuration_tblprimitivemaintainancescheduling.Find(id);
                 tblpm.IsDeleted = 1;

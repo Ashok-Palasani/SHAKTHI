@@ -182,6 +182,23 @@
     <NavigationProperty Name="configuration_tblsensorgroup" Relationship="Self.SID_FK_ID" FromRole="configurationtblsensormaster" ToRole="configuration_tblsensorgroup" />
     <NavigationProperty Name="tblunit" Relationship="Self.uid" FromRole="configurationtblsensormaster" ToRole="tblunit" />
   </EntityType>
+  <EntityType Name="dashboard_menus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MenuUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImageUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MenuId" Type="Int32" />
+    <Property Name="ColourDiv" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Style" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+  </EntityType>
   <EntityType Name="frommail">
     <Key>
       <PropertyRef Name="ID" />
@@ -259,6 +276,29 @@
     <Property Name="CCAdd" Type="Int32" Nullable="false" />
     <Property Name="IsDeleted" Type="Int32" Nullable="false" />
     <Property Name="BCCAdd" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="menu_styles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="styleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Int32" />
+  </EntityType>
+  <EntityType Name="menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsDashboard" Type="Int32" />
+    <Property Name="IsSideMenubar" Type="Int32" />
+    <Property Name="DisplayOrder" Type="Int32" />
+    <Property Name="IsDeleted" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
   </EntityType>
   <EntityType Name="message_code_master">
     <Key>
@@ -480,6 +520,7 @@
     <Property Name="Status" Type="Int32" />
     <Property Name="IsPiweb" Type="Int32" />
     <Property Name="Meas_DateTime" Type="DateTime" Precision="3" />
+    <Property Name="OP40" Type="Int32" />
   </EntityType>
   <EntityType Name="sharathtable">
     <Key>
@@ -506,6 +547,24 @@
     <Property Name="ModifiedBy" Type="Int32" />
     <Property Name="IsDeleted" Type="Int32" />
     <Property Name="Duration" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sidebar_menus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubMenuName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="MenuName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="SubMenuURL" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="MenuURL" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="ImageURL" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="MenuId" Type="Int32" />
+    <Property Name="DisplayOrder" Type="Int32" />
+    <Property Name="IsDeleted" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
   </EntityType>
   <EntityType Name="smtpdetail">
     <Key>
@@ -792,6 +851,23 @@
     <Property Name="LossDuration" Type="Int64" Nullable="false" />
     <Property Name="CorrectedDate" Type="DateTime" Precision="0" />
     <Property Name="InsertedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_ProdAndonDisp">
+    <Key>
+      <PropertyRef Name="ProdDashboardID" />
+    </Key>
+    <Property Name="ProdDashboardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MachineID" Type="Int32" Nullable="false" />
+    <Property Name="CorrectedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="WOID" Type="Int32" Nullable="false" />
+    <Property Name="UtilPercent" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="TotalLoss" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="TotalSetup" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="TotalOperatingTime" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="InsertedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Work_Order_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblmachinedetail" Relationship="Self.FK_tbl_ProdAndonDisp_tblmachinedetails" FromRole="tbl_ProdAndonDisp" ToRole="tblmachinedetails" />
+    <NavigationProperty Name="tbllivehmiscreen" Relationship="Self.FK_tbl_ProdAndonDisp_tblworkorderentry" FromRole="tbl_ProdAndonDisp" ToRole="tbllivehmiscreen" />
   </EntityType>
   <EntityType Name="tbl_ProdManMachine">
     <Key>
@@ -1193,6 +1269,7 @@
     <NavigationProperty Name="tblAndonImageTextScheduledDisplays" Relationship="Self.FK_tblAndonImageTextScheduledDisplay_tblcell" FromRole="tblcell" ToRole="tblAndonImageTextScheduledDisplay" />
     <NavigationProperty Name="tblbottelnecks" Relationship="Self.CellID" FromRole="tblcell" ToRole="tblbottelneck" />
     <NavigationProperty Name="tblcellparts" Relationship="Self.CellID_FK" FromRole="tblcell" ToRole="tblcellpart" />
+    <NavigationProperty Name="TblPMSNotification_Master" Relationship="Self.FK_TblPMSNotification_Master_tblcell" FromRole="tblcell" ToRole="TblPMSNotification_Master" />
     <NavigationProperty Name="tblplant" Relationship="Self.tblcell_PlantsId" FromRole="tblcell" ToRole="tblplant" />
     <NavigationProperty Name="tblshop" Relationship="Self.tblcell_ShopId" FromRole="tblcell" ToRole="tblshop" />
     <NavigationProperty Name="tblemailescalations" Relationship="Self.tblemailescalation_CellIDFK" FromRole="tblcell" ToRole="tblemailescalation" />
@@ -1200,7 +1277,6 @@
     <NavigationProperty Name="tblmultipleworkorders" Relationship="Self.tblmultipleworkorder_CellIDtblMWO" FromRole="tblcell" ToRole="tblmultipleworkorder" />
     <NavigationProperty Name="tblrejectreasons" Relationship="Self.tblrejectreason_ibfk_1" FromRole="tblcell" ToRole="tblrejectreason" />
     <NavigationProperty Name="tblshiftplanners" Relationship="Self.tblshiftplanner_CellIDshiftplanner" FromRole="tblcell" ToRole="tblshiftplanner" />
-    <NavigationProperty Name="TblPMSNotification_Master" Relationship="i_facility_shaktiModel.FK_TblPMSNotification_Master_tblcell" FromRole="tblcell" ToRole="TblPMSNotification_Master" />
   </EntityType>
   <EntityType Name="tblcellpart">
     <Key>
@@ -1307,6 +1383,17 @@
     <Property Name="CorrectedDate" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
     <Property Name="IsWOSelected" Type="Int32" />
     <Property Name="BHMIID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblDDLStatu">
+    <Key>
+      <PropertyRef Name="DDLStatusId" />
+    </Key>
+    <Property Name="DDLStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusMessage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="tbldowntimecategory">
     <Key>
@@ -1619,9 +1706,9 @@
     <Property Name="IsBatchStart" Type="Int32" Nullable="false" />
     <Property Name="BatchHMIID" Type="Int32" Nullable="false" />
     <Property Name="prevQty" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_ProdAndonDisp" Relationship="Self.FK_tbl_ProdAndonDisp_tblworkorderentry" FromRole="tbllivehmiscreen" ToRole="tbl_ProdAndonDisp" />
     <NavigationProperty Name="tblmachinedetail" Relationship="Self.FK_tbllivehmiscreen_tblmachinedetails" FromRole="tbllivehmiscreen" ToRole="tblmachinedetails" />
     <NavigationProperty Name="tbllivemultiwoselections" Relationship="Self.fkwoliveHMIID" FromRole="tbllivehmiscreen" ToRole="tbllivemultiwoselection" />
-    <NavigationProperty Name="tbl_ProdAndonDisp" Relationship="i_facility_shaktiModel.FK_tbl_ProdAndonDisp_tblworkorderentry" FromRole="tbllivehmiscreen" ToRole="tbl_ProdAndonDisp" />
   </EntityType>
   <EntityType Name="tbllivelossofentry">
     <Key>
@@ -1884,6 +1971,7 @@
     <NavigationProperty Name="tbl_axisdet" Relationship="Self.tbl_axisdet_AxisMachineIDIdx" FromRole="tblmachinedetails" ToRole="tbl_axisdet" />
     <NavigationProperty Name="tbl_CycleTimeAnalysis" Relationship="Self.FK_tbl_CycleTimeAnalysis_tblmachinedetails" FromRole="tblmachinedetails" ToRole="tbl_CycleTimeAnalysis" />
     <NavigationProperty Name="tbl_OEEDetails" Relationship="Self.FK_tbl_OEEDetails_tbl_MachineDetails" FromRole="tblmachinedetails" ToRole="tbl_OEEDetails" />
+    <NavigationProperty Name="tbl_ProdAndonDisp" Relationship="Self.FK_tbl_ProdAndonDisp_tblmachinedetails" FromRole="tblmachinedetails" ToRole="tbl_ProdAndonDisp" />
     <NavigationProperty Name="tbl_ProdManMachine" Relationship="Self.FK_tbl_ProdManMachine_tblmachinedetails" FromRole="tblmachinedetails" ToRole="tbl_ProdManMachine" />
     <NavigationProperty Name="tbl_ProdOrderLosses" Relationship="Self.FK_tbl_ProdOrderLosses_tblmachinedetails" FromRole="tblmachinedetails" ToRole="tbl_ProdOrderLosses" />
     <NavigationProperty Name="tbl_UtilReport" Relationship="Self.FK_tbl_UtilReport_tblmachinedetails" FromRole="tblmachinedetails" ToRole="tbl_UtilReport" />
@@ -1902,6 +1990,8 @@
     <NavigationProperty Name="tblOperatorDashboards" Relationship="Self.FK_tblOperatorDashboard_tblmachinedetails" FromRole="tblmachinedetails" ToRole="tblOperatorDashboard" />
     <NavigationProperty Name="tblOperatorHeaders" Relationship="Self.FK_tblOperatorHeader_tblmachinedetails" FromRole="tblmachinedetails" ToRole="tblOperatorHeader" />
     <NavigationProperty Name="tblOperatorMachineDetails" Relationship="Self.FK_tblOperatorMachineDetails_tblmachinedetails" FromRole="tblmachinedetails" ToRole="tblOperatorMachineDetails" />
+    <NavigationProperty Name="tblpmsdetails" Relationship="Self.FK_tblpmsdetails_tblmachinedetails" FromRole="tblmachinedetails" ToRole="tblpmsdetails" />
+    <NavigationProperty Name="TblPMSNotification_Master" Relationship="Self.FK_TblPMSNotification_Master_tblmachinedetails1" FromRole="tblmachinedetails" ToRole="TblPMSNotification_Master" />
     <NavigationProperty Name="tblSetupMaints" Relationship="Self.FK_tblSetupMaint_tblmachinedetails" FromRole="tblmachinedetails" ToRole="tblSetupMaint" />
     <NavigationProperty Name="tblShiftUtilReports" Relationship="Self.FK_tblShiftUtilReport_tblmachinedetails" FromRole="tblmachinedetails" ToRole="tblShiftUtilReport" />
     <NavigationProperty Name="tbltoollifeoperators" Relationship="Self.FK_tbltoollifeoperator_tblmachinedetails" FromRole="tblmachinedetails" ToRole="tbltoollifeoperator" />
@@ -1915,9 +2005,6 @@
     <NavigationProperty Name="tblshiftdetails_machinewise" Relationship="Self.tblshiftdetails_machinewise_MachineIDShiftWise" FromRole="tblmachinedetails" ToRole="tblshiftdetails_machinewise" />
     <NavigationProperty Name="tblshiftplanners" Relationship="Self.tblshiftplanner_MachineIDshiftplanner" FromRole="tblmachinedetails" ToRole="tblshiftplanner" />
     <NavigationProperty Name="tblusers" Relationship="Self.tblusers_MachineFkforUser" FromRole="tblmachinedetails" ToRole="tblusers" />
-    <NavigationProperty Name="TblPMSNotification_Master" Relationship="i_facility_shaktiModel.FK_TblPMSNotification_Master_tblmachinedetails1" FromRole="tblmachinedetail" ToRole="TblPMSNotification_Master" />
-    <NavigationProperty Name="tblpmsdetails" Relationship="i_facility_shaktiModel.FK_tblpmsdetails_tblmachinedetails" FromRole="tblmachinedetail" ToRole="tblpmsdetail" />
-    <NavigationProperty Name="tbl_ProdAndonDisp" Relationship="i_facility_shaktiModel.FK_tbl_ProdAndonDisp_tblmachinedetails" FromRole="tblmachinedetail" ToRole="tbl_ProdAndonDisp" />
   </EntityType>
   <EntityType Name="tblmailid">
     <Key>
@@ -2037,7 +2124,7 @@
     <Property Name="InsertedBy" Type="Int32" Nullable="false" />
     <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
     <Property Name="ModifiedBy" Type="Int32" />
-    <Property Name="CorrectedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CorrectedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="IsDeleted" Type="Int32" Nullable="false" />
     <Property Name="StartTime" Type="DateTime" Precision="0" />
     <Property Name="EndTime" Type="DateTime" Precision="0" />
@@ -2584,9 +2671,52 @@
     <NavigationProperty Name="tblmultipleworkorders" Relationship="Self.tblmultipleworkorder_PlantIDtblMWO" FromRole="tblplant" ToRole="tblmultipleworkorder" />
     <NavigationProperty Name="tblplant1" Relationship="Self.FK_tblplant_tblplant" FromRole="tblplant" ToRole="tblplant1" />
     <NavigationProperty Name="tblplant2" Relationship="Self.FK_tblplant_tblplant" FromRole="tblplant1" ToRole="tblplant" />
+    <NavigationProperty Name="TblPMSNotification_Master" Relationship="Self.FK_TblPMSNotification_Master_tblplant2" FromRole="tblplant" ToRole="TblPMSNotification_Master" />
     <NavigationProperty Name="tblshiftplanners" Relationship="Self.tblshiftplanner_PlantIDshiftplanner" FromRole="tblplant" ToRole="tblshiftplanner" />
     <NavigationProperty Name="tblshops" Relationship="Self.tblshop_PlantID" FromRole="tblplant" ToRole="tblshop" />
-    <NavigationProperty Name="TblPMSNotification_Master" Relationship="i_facility_shaktiModel.FK_TblPMSNotification_Master_tblplant2" FromRole="tblplant" ToRole="TblPMSNotification_Master" />
+  </EntityType>
+  <EntityType Name="tblpmsdetail">
+    <Key>
+      <PropertyRef Name="pmsid" />
+    </Key>
+    <Property Name="pmsid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MachineID" Type="Int32" Nullable="false" />
+    <Property Name="PMStartDate" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="PMEndDate" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="IsCompleted" Type="Int32" />
+    <Property Name="IsSubmitted" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="IsDeleted" Type="Int32" />
+    <NavigationProperty Name="tblmachinedetail" Relationship="Self.FK_tblpmsdetails_tblmachinedetails" FromRole="tblpmsdetails" ToRole="tblmachinedetails" />
+  </EntityType>
+  <EntityType Name="TblPMSNotification_Master">
+    <Key>
+      <PropertyRef Name="PMSId" />
+    </Key>
+    <Property Name="PMSId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlantID" Type="Int32" />
+    <Property Name="ShopID" Type="Int32" />
+    <Property Name="CellID" Type="Int32" />
+    <Property Name="WorkCenterID" Type="Int32" />
+    <Property Name="ToList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CcList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SMSContactList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="7" />
+    <Property Name="NoOfDaysPrior" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Frequency" Type="Int32" />
+    <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblcell" Relationship="Self.FK_TblPMSNotification_Master_tblcell" FromRole="TblPMSNotification_Master" ToRole="tblcell" />
+    <NavigationProperty Name="tblmachinedetail" Relationship="Self.FK_TblPMSNotification_Master_tblmachinedetails1" FromRole="TblPMSNotification_Master" ToRole="tblmachinedetails" />
+    <NavigationProperty Name="tblplant" Relationship="Self.FK_TblPMSNotification_Master_tblplant2" FromRole="TblPMSNotification_Master" ToRole="tblplant" />
+    <NavigationProperty Name="tblshop" Relationship="Self.FK_TblPMSNotification_Master_tblshop" FromRole="TblPMSNotification_Master" ToRole="tblshop" />
   </EntityType>
   <EntityType Name="tblPrecentColour">
     <Key>
@@ -2989,8 +3119,8 @@
     <NavigationProperty Name="tblmachinedetails" Relationship="Self.tblmachinedetails_ShopIDtblmachinedetails" FromRole="tblshop" ToRole="tblmachinedetails" />
     <NavigationProperty Name="tblmultipleworkorders" Relationship="Self.tblmultipleworkorder_ShopIdtblMWO" FromRole="tblshop" ToRole="tblmultipleworkorder" />
     <NavigationProperty Name="tblplant" Relationship="Self.tblshop_PlantID" FromRole="tblshop" ToRole="tblplant" />
+    <NavigationProperty Name="TblPMSNotification_Master" Relationship="Self.FK_TblPMSNotification_Master_tblshop" FromRole="tblshop" ToRole="TblPMSNotification_Master" />
     <NavigationProperty Name="tblshiftplanners" Relationship="Self.tblshiftplanner_ShopIDshiftplanner" FromRole="tblshop" ToRole="tblshiftplanner" />
-    <NavigationProperty Name="TblPMSNotification_Master" Relationship="i_facility_shaktiModel.FK_TblPMSNotification_Master_tblshop" FromRole="tblshop" ToRole="TblPMSNotification_Master" />
   </EntityType>
   <EntityType Name="tblStdToolLife">
     <Key>
@@ -3379,6 +3509,20 @@
     <Property Name="startTime" Type="DateTime" Precision="3" />
     <Property Name="isdeleted" Type="Int32" />
     <Property Name="CorrectedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="user_menus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuId" Type="Int32" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="MenuStatus" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
   </EntityType>
   <EntityType Name="weekdata">
     <Key>
@@ -3809,6 +3953,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tbl_ProdAndonDisp_tblmachinedetails">
+    <End Role="tblmachinedetails" Type="Self.tblmachinedetail" Multiplicity="1" />
+    <End Role="tbl_ProdAndonDisp" Type="Self.tbl_ProdAndonDisp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblmachinedetails">
+        <PropertyRef Name="MachineID" />
+      </Principal>
+      <Dependent Role="tbl_ProdAndonDisp">
+        <PropertyRef Name="MachineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProdAndonDisp_tblworkorderentry">
+    <End Role="tbllivehmiscreen" Type="Self.tbllivehmiscreen" Multiplicity="1" />
+    <End Role="tbl_ProdAndonDisp" Type="Self.tbl_ProdAndonDisp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbllivehmiscreen">
+        <PropertyRef Name="HMIID" />
+      </Principal>
+      <Dependent Role="tbl_ProdAndonDisp">
+        <PropertyRef Name="WOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tbl_ProdManMachine_tblmachinedetails">
     <End Role="tblmachinedetails" Type="Self.tblmachinedetail" Multiplicity="1" />
     <End Role="tbl_ProdManMachine" Type="Self.tbl_ProdManMachine" Multiplicity="*" />
@@ -4081,6 +4249,18 @@
         <PropertyRef Name="CellID" />
       </Principal>
       <Dependent Role="tblcellpart">
+        <PropertyRef Name="CellID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblPMSNotification_Master_tblcell">
+    <End Role="tblcell" Type="Self.tblcell" Multiplicity="0..1" />
+    <End Role="TblPMSNotification_Master" Type="Self.TblPMSNotification_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblcell">
+        <PropertyRef Name="CellID" />
+      </Principal>
+      <Dependent Role="TblPMSNotification_Master">
         <PropertyRef Name="CellID" />
       </Dependent>
     </ReferentialConstraint>
@@ -4529,6 +4709,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tblpmsdetails_tblmachinedetails">
+    <End Role="tblmachinedetails" Type="Self.tblmachinedetail" Multiplicity="1" />
+    <End Role="tblpmsdetails" Type="Self.tblpmsdetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblmachinedetails">
+        <PropertyRef Name="MachineID" />
+      </Principal>
+      <Dependent Role="tblpmsdetails">
+        <PropertyRef Name="MachineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblPMSNotification_Master_tblmachinedetails1">
+    <End Role="tblmachinedetails" Type="Self.tblmachinedetail" Multiplicity="0..1" />
+    <End Role="TblPMSNotification_Master" Type="Self.TblPMSNotification_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblmachinedetails">
+        <PropertyRef Name="MachineID" />
+      </Principal>
+      <Dependent Role="TblPMSNotification_Master">
+        <PropertyRef Name="WorkCenterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tblSetupMaint_tblmachinedetails">
     <End Role="tblmachinedetails" Type="Self.tblmachinedetail" Multiplicity="1" />
     <End Role="tblSetupMaint" Type="Self.tblSetupMaint" Multiplicity="*" />
@@ -4795,6 +4999,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TblPMSNotification_Master_tblplant2">
+    <End Role="tblplant" Type="Self.tblplant" Multiplicity="0..1" />
+    <End Role="TblPMSNotification_Master" Type="Self.TblPMSNotification_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblplant">
+        <PropertyRef Name="PlantID" />
+      </Principal>
+      <Dependent Role="TblPMSNotification_Master">
+        <PropertyRef Name="PlantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="tblshiftplanner_PlantIDshiftplanner">
     <End Role="tblplant" Type="Self.tblplant" Multiplicity="0..1" />
     <End Role="tblshiftplanner" Type="Self.tblshiftplanner" Multiplicity="*" />
@@ -4818,6 +5034,18 @@
       </Principal>
       <Dependent Role="tblshop">
         <PropertyRef Name="PlantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblPMSNotification_Master_tblshop">
+    <End Role="tblshop" Type="Self.tblshop" Multiplicity="0..1" />
+    <End Role="TblPMSNotification_Master" Type="Self.TblPMSNotification_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblshop">
+        <PropertyRef Name="ShopID" />
+      </Principal>
+      <Dependent Role="TblPMSNotification_Master">
+        <PropertyRef Name="ShopID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -4931,7 +5159,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="i_facility_shaktiEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="i_facility_shaktiEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="alarm_history_master" EntityType="Self.alarm_history_master" />
     <EntitySet Name="configuration_tblpmchecklist" EntityType="Self.configuration_tblpmchecklist" />
     <EntitySet Name="configuration_tblpmcheckpoint" EntityType="Self.configuration_tblpmcheckpoint" />
@@ -4940,12 +5168,15 @@
     <EntitySet Name="configurationtblmachinesensors" EntityType="Self.configurationtblmachinesensor" />
     <EntitySet Name="configurationtblsensordatalinks" EntityType="Self.configurationtblsensordatalink" />
     <EntitySet Name="configurationtblsensormasters" EntityType="Self.configurationtblsensormaster" />
+    <EntitySet Name="dashboard_menus" EntityType="Self.dashboard_menus" />
     <EntitySet Name="frommails" EntityType="Self.frommail" />
     <EntitySet Name="Graph_Data" EntityType="Self.Graph_Data" />
     <EntitySet Name="handle_no_ping" EntityType="Self.handle_no_ping" />
     <EntitySet Name="jobcard_details" EntityType="Self.jobcard_details" />
     <EntitySet Name="LossDetails" EntityType="Self.LossDetail" />
     <EntitySet Name="mailmasters" EntityType="Self.mailmaster" />
+    <EntitySet Name="menu_styles" EntityType="Self.menu_styles" />
+    <EntitySet Name="menus" EntityType="Self.menu" />
     <EntitySet Name="message_code_master" EntityType="Self.message_code_master" />
     <EntitySet Name="message_history_master" EntityType="Self.message_history_master" />
     <EntitySet Name="monthdatas" EntityType="Self.monthdata" />
@@ -4961,6 +5192,7 @@
     <EntitySet Name="QualtiyRaw_piweb" EntityType="Self.QualtiyRaw_piweb" />
     <EntitySet Name="sharathtables" EntityType="Self.sharathtable" />
     <EntitySet Name="shift_master" EntityType="Self.shift_master" />
+    <EntitySet Name="sidebar_menus" EntityType="Self.sidebar_menus" />
     <EntitySet Name="smtpdetails" EntityType="Self.smtpdetail" />
     <EntitySet Name="tbl_autoreport_log" EntityType="Self.tbl_autoreport_log" />
     <EntitySet Name="tbl_autoreportbasedon" EntityType="Self.tbl_autoreportbasedon" />
@@ -4977,6 +5209,7 @@
     <EntitySet Name="tbl_multiwoselection" EntityType="Self.tbl_multiwoselection" />
     <EntitySet Name="tbl_OEEDetails" EntityType="Self.tbl_OEEDetails" />
     <EntitySet Name="tbl_oeereportasdivision" EntityType="Self.tbl_oeereportasdivision" />
+    <EntitySet Name="tbl_ProdAndonDisp" EntityType="Self.tbl_ProdAndonDisp" />
     <EntitySet Name="tbl_ProdManMachine" EntityType="Self.tbl_ProdManMachine" />
     <EntitySet Name="tbl_ProdOrderLosses" EntityType="Self.tbl_ProdOrderLosses" />
     <EntitySet Name="tbl_reportmaster" EntityType="Self.tbl_reportmaster" />
@@ -5002,6 +5235,7 @@
     <EntitySet Name="tbldailyprodstatus" EntityType="Self.tbldailyprodstatu" />
     <EntitySet Name="tbldaytimings" EntityType="Self.tbldaytiming" />
     <EntitySet Name="tblddls" EntityType="Self.tblddl" />
+    <EntitySet Name="tblDDLStatus" EntityType="Self.tblDDLStatu" />
     <EntitySet Name="tbldowntimecategories" EntityType="Self.tbldowntimecategory" />
     <EntitySet Name="tbldowntimedetails" EntityType="Self.tbldowntimedetail" />
     <EntitySet Name="tblemailescalations" EntityType="Self.tblemailescalation" />
@@ -5058,6 +5292,8 @@
     <EntitySet Name="tblpiweb_util" EntityType="Self.tblpiweb_util" />
     <EntitySet Name="tblplannedbreaks" EntityType="Self.tblplannedbreak" />
     <EntitySet Name="tblplants" EntityType="Self.tblplant" />
+    <EntitySet Name="tblpmsdetails" EntityType="Self.tblpmsdetail" />
+    <EntitySet Name="TblPMSNotification_Master" EntityType="Self.TblPMSNotification_Master" />
     <EntitySet Name="tblPrecentColours" EntityType="Self.tblPrecentColour" />
     <EntitySet Name="tblPresentTools" EntityType="Self.tblPresentTool" />
     <EntitySet Name="tblpriorityalarms" EntityType="Self.tblpriorityalarm" />
@@ -5098,6 +5334,7 @@
     <EntitySet Name="tblworeportBackups" EntityType="Self.tblworeportBackup" />
     <EntitySet Name="tblworkorderentries" EntityType="Self.tblworkorderentry" />
     <EntitySet Name="Temp_tblmode" EntityType="Self.Temp_tblmode" />
+    <EntitySet Name="user_menus" EntityType="Self.user_menus" />
     <EntitySet Name="weekdatas" EntityType="Self.weekdata" />
     <EntitySet Name="tbl_livecbmdetails" EntityType="Self.tbl_livecbmdetails" />
     <EntitySet Name="tbl_livetblsensorvalue" EntityType="Self.tbl_livetblsensorvalue" />
@@ -5226,6 +5463,14 @@
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
       <End Role="tbl_OEEDetails" EntitySet="tbl_OEEDetails" />
     </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProdAndonDisp_tblmachinedetails" Association="Self.FK_tbl_ProdAndonDisp_tblmachinedetails">
+      <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
+      <End Role="tbl_ProdAndonDisp" EntitySet="tbl_ProdAndonDisp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProdAndonDisp_tblworkorderentry" Association="Self.FK_tbl_ProdAndonDisp_tblworkorderentry">
+      <End Role="tbllivehmiscreen" EntitySet="tbllivehmiscreens" />
+      <End Role="tbl_ProdAndonDisp" EntitySet="tbl_ProdAndonDisp" />
+    </AssociationSet>
     <AssociationSet Name="FK_tbl_ProdManMachine_tblmachinedetails" Association="Self.FK_tbl_ProdManMachine_tblmachinedetails">
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
       <End Role="tbl_ProdManMachine" EntitySet="tbl_ProdManMachine" />
@@ -5317,6 +5562,10 @@
     <AssociationSet Name="CellID_FK" Association="Self.CellID_FK">
       <End Role="tblcell" EntitySet="tblcells" />
       <End Role="tblcellpart" EntitySet="tblcellparts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblPMSNotification_Master_tblcell" Association="Self.FK_TblPMSNotification_Master_tblcell">
+      <End Role="tblcell" EntitySet="tblcells" />
+      <End Role="TblPMSNotification_Master" EntitySet="TblPMSNotification_Master" />
     </AssociationSet>
     <AssociationSet Name="tblcell_PlantsId" Association="Self.tblcell_PlantsId">
       <End Role="tblplant" EntitySet="tblplants" />
@@ -5466,6 +5715,14 @@
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
       <End Role="tblOperatorMachineDetails" EntitySet="tblOperatorMachineDetails" />
     </AssociationSet>
+    <AssociationSet Name="FK_tblpmsdetails_tblmachinedetails" Association="Self.FK_tblpmsdetails_tblmachinedetails">
+      <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
+      <End Role="tblpmsdetails" EntitySet="tblpmsdetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblPMSNotification_Master_tblmachinedetails1" Association="Self.FK_TblPMSNotification_Master_tblmachinedetails1">
+      <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
+      <End Role="TblPMSNotification_Master" EntitySet="TblPMSNotification_Master" />
+    </AssociationSet>
     <AssociationSet Name="FK_tblSetupMaint_tblmachinedetails" Association="Self.FK_tblSetupMaint_tblmachinedetails">
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
       <End Role="tblSetupMaint" EntitySet="tblSetupMaints" />
@@ -5554,6 +5811,10 @@
       <End Role="tblplant" EntitySet="tblplants" />
       <End Role="tblplant1" EntitySet="tblplants" />
     </AssociationSet>
+    <AssociationSet Name="FK_TblPMSNotification_Master_tblplant2" Association="Self.FK_TblPMSNotification_Master_tblplant2">
+      <End Role="tblplant" EntitySet="tblplants" />
+      <End Role="TblPMSNotification_Master" EntitySet="TblPMSNotification_Master" />
+    </AssociationSet>
     <AssociationSet Name="tblshiftplanner_PlantIDshiftplanner" Association="Self.tblshiftplanner_PlantIDshiftplanner">
       <End Role="tblplant" EntitySet="tblplants" />
       <End Role="tblshiftplanner" EntitySet="tblshiftplanners" />
@@ -5561,6 +5822,10 @@
     <AssociationSet Name="tblshop_PlantID" Association="Self.tblshop_PlantID">
       <End Role="tblplant" EntitySet="tblplants" />
       <End Role="tblshop" EntitySet="tblshops" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblPMSNotification_Master_tblshop" Association="Self.FK_TblPMSNotification_Master_tblshop">
+      <End Role="tblshop" EntitySet="tblshops" />
+      <End Role="TblPMSNotification_Master" EntitySet="TblPMSNotification_Master" />
     </AssociationSet>
     <AssociationSet Name="tblrejectqty_ibfk_1" Association="Self.tblrejectqty_ibfk_1">
       <End Role="tblrejectreason" EntitySet="tblrejectreasons" />
@@ -5598,180 +5863,5 @@
       <End Role="tblshop" EntitySet="tblshops" />
       <End Role="tblshiftplanner" EntitySet="tblshiftplanners" />
     </AssociationSet>
-    <EntitySet Name="TblPMSNotification_Master" EntityType="i_facility_shaktiModel.TblPMSNotification_Master" />
-    <AssociationSet Name="FK_TblPMSNotification_Master_tblcell" Association="i_facility_shaktiModel.FK_TblPMSNotification_Master_tblcell">
-      <End Role="tblcell" EntitySet="tblcells" />
-      <End Role="TblPMSNotification_Master" EntitySet="TblPMSNotification_Master" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TblPMSNotification_Master_tblmachinedetails1" Association="i_facility_shaktiModel.FK_TblPMSNotification_Master_tblmachinedetails1">
-      <End Role="tblmachinedetail" EntitySet="tblmachinedetails" />
-      <End Role="TblPMSNotification_Master" EntitySet="TblPMSNotification_Master" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TblPMSNotification_Master_tblplant2" Association="i_facility_shaktiModel.FK_TblPMSNotification_Master_tblplant2">
-      <End Role="tblplant" EntitySet="tblplants" />
-      <End Role="TblPMSNotification_Master" EntitySet="TblPMSNotification_Master" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TblPMSNotification_Master_tblshop" Association="i_facility_shaktiModel.FK_TblPMSNotification_Master_tblshop">
-      <End Role="tblshop" EntitySet="tblshops" />
-      <End Role="TblPMSNotification_Master" EntitySet="TblPMSNotification_Master" />
-    </AssociationSet>
-    <EntitySet Name="tblpmsdetails" EntityType="i_facility_shaktiModel.tblpmsdetail" />
-    <AssociationSet Name="FK_tblpmsdetails_tblmachinedetails" Association="i_facility_shaktiModel.FK_tblpmsdetails_tblmachinedetails">
-      <End Role="tblmachinedetail" EntitySet="tblmachinedetails" />
-      <End Role="tblpmsdetail" EntitySet="tblpmsdetails" />
-    </AssociationSet>
-    <EntitySet Name="tbl_ProdAndonDisp" EntityType="i_facility_shaktiModel.tbl_ProdAndonDisp" />
-    <AssociationSet Name="FK_tbl_ProdAndonDisp_tblmachinedetails" Association="i_facility_shaktiModel.FK_tbl_ProdAndonDisp_tblmachinedetails">
-      <End Role="tblmachinedetail" EntitySet="tblmachinedetails" />
-      <End Role="tbl_ProdAndonDisp" EntitySet="tbl_ProdAndonDisp" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tbl_ProdAndonDisp_tblworkorderentry" Association="i_facility_shaktiModel.FK_tbl_ProdAndonDisp_tblworkorderentry">
-      <End Role="tbllivehmiscreen" EntitySet="tbllivehmiscreens" />
-      <End Role="tbl_ProdAndonDisp" EntitySet="tbl_ProdAndonDisp" />
-    </AssociationSet>
   </EntityContainer>
-  <EntityType Name="TblPMSNotification_Master">
-    <Key>
-      <PropertyRef Name="PMSId" />
-    </Key>
-    <Property Name="PMSId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PlantID" Type="Int32" />
-    <Property Name="ShopID" Type="Int32" />
-    <Property Name="CellID" Type="Int32" />
-    <Property Name="WorkCenterID" Type="Int32" />
-    <Property Name="ToList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="CcList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="SMSContactList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="IsDeleted" Type="Int32" Nullable="false" />
-    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
-    <Property Name="CreatedBy" Type="Int32" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="ModifiedBy" Type="Int32" />
-    <Property Name="DeletedDate" Type="DateTime" Precision="7" />
-    <Property Name="NoOfDaysPrior" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Frequency" Type="Int32" />
-    <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblcell" Relationship="i_facility_shaktiModel.FK_TblPMSNotification_Master_tblcell" FromRole="TblPMSNotification_Master" ToRole="tblcell" />
-    <NavigationProperty Name="tblmachinedetail" Relationship="i_facility_shaktiModel.FK_TblPMSNotification_Master_tblmachinedetails1" FromRole="TblPMSNotification_Master" ToRole="tblmachinedetail" />
-    <NavigationProperty Name="tblplant" Relationship="i_facility_shaktiModel.FK_TblPMSNotification_Master_tblplant2" FromRole="TblPMSNotification_Master" ToRole="tblplant" />
-    <NavigationProperty Name="tblshop" Relationship="i_facility_shaktiModel.FK_TblPMSNotification_Master_tblshop" FromRole="TblPMSNotification_Master" ToRole="tblshop" />
-  </EntityType>
-  <Association Name="FK_TblPMSNotification_Master_tblcell">
-    <End Type="i_facility_shaktiModel.tblcell" Role="tblcell" Multiplicity="0..1" />
-    <End Type="i_facility_shaktiModel.TblPMSNotification_Master" Role="TblPMSNotification_Master" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblcell">
-        <PropertyRef Name="CellID" />
-      </Principal>
-      <Dependent Role="TblPMSNotification_Master">
-        <PropertyRef Name="CellID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TblPMSNotification_Master_tblmachinedetails1">
-    <End Type="i_facility_shaktiModel.tblmachinedetail" Role="tblmachinedetail" Multiplicity="0..1" />
-    <End Type="i_facility_shaktiModel.TblPMSNotification_Master" Role="TblPMSNotification_Master" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblmachinedetail">
-        <PropertyRef Name="MachineID" />
-      </Principal>
-      <Dependent Role="TblPMSNotification_Master">
-        <PropertyRef Name="WorkCenterID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TblPMSNotification_Master_tblplant2">
-    <End Type="i_facility_shaktiModel.tblplant" Role="tblplant" Multiplicity="0..1" />
-    <End Type="i_facility_shaktiModel.TblPMSNotification_Master" Role="TblPMSNotification_Master" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblplant">
-        <PropertyRef Name="PlantID" />
-      </Principal>
-      <Dependent Role="TblPMSNotification_Master">
-        <PropertyRef Name="PlantID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TblPMSNotification_Master_tblshop">
-    <End Type="i_facility_shaktiModel.tblshop" Role="tblshop" Multiplicity="0..1" />
-    <End Type="i_facility_shaktiModel.TblPMSNotification_Master" Role="TblPMSNotification_Master" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblshop">
-        <PropertyRef Name="ShopID" />
-      </Principal>
-      <Dependent Role="TblPMSNotification_Master">
-        <PropertyRef Name="ShopID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="tblpmsdetail">
-    <Key>
-      <PropertyRef Name="pmsid" />
-    </Key>
-    <Property Name="pmsid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MachineID" Type="Int32" Nullable="false" />
-    <Property Name="PMStartDate" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-    <Property Name="PMEndDate" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-    <Property Name="IsCompleted" Type="Int32" />
-    <Property Name="IsSubmitted" Type="Int32" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-    <Property Name="ModifiedBy" Type="Int32" />
-    <Property Name="IsDeleted" Type="Int32" />
-    <NavigationProperty Name="tblmachinedetail" Relationship="i_facility_shaktiModel.FK_tblpmsdetails_tblmachinedetails" FromRole="tblpmsdetail" ToRole="tblmachinedetail" />
-  </EntityType>
-  <Association Name="FK_tblpmsdetails_tblmachinedetails">
-    <End Type="i_facility_shaktiModel.tblmachinedetail" Role="tblmachinedetail" Multiplicity="1" />
-    <End Type="i_facility_shaktiModel.tblpmsdetail" Role="tblpmsdetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblmachinedetail">
-        <PropertyRef Name="MachineID" />
-      </Principal>
-      <Dependent Role="tblpmsdetail">
-        <PropertyRef Name="MachineID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="tbl_ProdAndonDisp">
-    <Key>
-      <PropertyRef Name="ProdDashboardID" />
-    </Key>
-    <Property Name="ProdDashboardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MachineID" Type="Int32" Nullable="false" />
-    <Property Name="CorrectedDate" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="WOID" Type="Int32" Nullable="false" />
-    <Property Name="UtilPercent" Type="Decimal" Precision="6" Scale="2" />
-    <Property Name="TotalLoss" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
-    <Property Name="TotalSetup" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
-    <Property Name="TotalOperatingTime" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
-    <Property Name="InsertedOn" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Work_Order_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblmachinedetail" Relationship="i_facility_shaktiModel.FK_tbl_ProdAndonDisp_tblmachinedetails" FromRole="tbl_ProdAndonDisp" ToRole="tblmachinedetail" />
-    <NavigationProperty Name="tbllivehmiscreen" Relationship="i_facility_shaktiModel.FK_tbl_ProdAndonDisp_tblworkorderentry" FromRole="tbl_ProdAndonDisp" ToRole="tbllivehmiscreen" />
-  </EntityType>
-  <Association Name="FK_tbl_ProdAndonDisp_tblmachinedetails">
-    <End Type="i_facility_shaktiModel.tblmachinedetail" Role="tblmachinedetail" Multiplicity="1" />
-    <End Type="i_facility_shaktiModel.tbl_ProdAndonDisp" Role="tbl_ProdAndonDisp" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblmachinedetail">
-        <PropertyRef Name="MachineID" />
-      </Principal>
-      <Dependent Role="tbl_ProdAndonDisp">
-        <PropertyRef Name="MachineID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tbl_ProdAndonDisp_tblworkorderentry">
-    <End Type="i_facility_shaktiModel.tbllivehmiscreen" Role="tbllivehmiscreen" Multiplicity="1" />
-    <End Type="i_facility_shaktiModel.tbl_ProdAndonDisp" Role="tbl_ProdAndonDisp" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tbllivehmiscreen">
-        <PropertyRef Name="HMIID" />
-      </Principal>
-      <Dependent Role="tbl_ProdAndonDisp">
-        <PropertyRef Name="WOID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>

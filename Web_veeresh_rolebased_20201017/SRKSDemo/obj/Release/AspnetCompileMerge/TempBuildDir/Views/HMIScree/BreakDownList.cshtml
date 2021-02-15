@@ -86,7 +86,7 @@
 
                                         @*write query to get data.*@
                                         @{
-                                            SRKSDemo.Server_Model.i_facility_shaktiEntities1 db6 = new SRKSDemo.Server_Model.i_facility_shaktiEntities1();
+                                            SRKSDemo.Server_Model.i_facility_shaktiEntities db6 = new SRKSDemo.Server_Model.i_facility_shaktiEntities();
                                             var dte = db6.tbllossescodes.Where(m => m.LossCodeID == item.BreakDownCode).SingleOrDefault();
 
                                             if (Convert.ToInt32(dte.LossCodesLevel) == 1)
@@ -104,7 +104,7 @@
                                                 if (Convert.ToString(dte.LossCodesLevel1ID) != null)
                                                 {
                                                     int losscodeid = Convert.ToInt32(dte.LossCodesLevel1ID);
-                                                    SRKSDemo.Server_Model.i_facility_shaktiEntities1 db = new SRKSDemo.Server_Model.i_facility_shaktiEntities1();
+                                                    SRKSDemo.Server_Model.i_facility_shaktiEntities db = new SRKSDemo.Server_Model.i_facility_shaktiEntities();
                                                     var lossdetailsDesc = db.tbllossescodes.Where(m => m.LossCodeID == losscodeid).Select(m => m.LossCode).SingleOrDefault();
                                                     <td style="width: auto; font-family: Helvetica; font-size: 85%">
                                                         @lossdetailsDesc
@@ -122,7 +122,7 @@
                                                 if (Convert.ToString(dte.LossCodesLevel1ID) != null)
                                                 {
                                                     int losscodeid = Convert.ToInt32(dte.LossCodesLevel1ID);
-                                                    SRKSDemo.Server_Model.i_facility_shaktiEntities1 db = new SRKSDemo.Server_Model.i_facility_shaktiEntities1();
+                                                    SRKSDemo.Server_Model.i_facility_shaktiEntities db = new SRKSDemo.Server_Model.i_facility_shaktiEntities();
                                                     var lossdetailsDesc = db.tbllossescodes.Where(m => m.LossCodeID == losscodeid).Select(m => m.LossCode).SingleOrDefault();
                                                     <td style="width: auto; font-family: Helvetica; font-size: 85%">
                                                         @lossdetailsDesc
@@ -131,7 +131,7 @@
                                                 if (Convert.ToString(dte.LossCodesLevel2ID) != null)
                                                 {
                                                     int losscodeid1 = Convert.ToInt32(dte.LossCodesLevel2ID);
-                                                    SRKSDemo.Server_Model.i_facility_shaktiEntities1 db1 = new SRKSDemo.Server_Model.i_facility_shaktiEntities1();
+                                                    SRKSDemo.Server_Model.i_facility_shaktiEntities db1 = new SRKSDemo.Server_Model.i_facility_shaktiEntities();
                                                     var lossdetailsDesc1 = db1.tbllossescodes.Where(m => m.LossCodeID == losscodeid1).Select(m => m.LossCode).SingleOrDefault();
                                                     <td style="width: auto; font-family: Helvetica; font-size: 85%">
                                                         @lossdetailsDesc1

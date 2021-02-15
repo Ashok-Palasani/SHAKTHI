@@ -13,7 +13,7 @@ namespace SRKSDemo.Controllers
 {
     public class PMSEntryScreenController : Controller
     {
-         i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1();
+         i_facility_shaktiEntities condb = new i_facility_shaktiEntities();
         // GET: PMSEntryScreen
         public ActionResult Index()
         {
@@ -256,7 +256,7 @@ namespace SRKSDemo.Controllers
         }
         public JsonResult FetchMachine(int CID)
         {
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 var MachineData = (from row in condb.tblmachinedetails
                                    where row.IsDeleted == 0 && row.CellID == CID

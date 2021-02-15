@@ -12,13 +12,11 @@ namespace SRKSDemo.Server_Model
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Data.Entity.Core.Objects;
-    using System.Linq;
     
-    public partial class i_facility_shaktiEntities1 : DbContext
+    public partial class i_facility_shaktiEntities : DbContext
     {
-        public i_facility_shaktiEntities1()
-            : base("name=i_facility_shaktiEntities1")
+        public i_facility_shaktiEntities()
+            : base("name=i_facility_shaktiEntities")
         {
         }
     
@@ -43,6 +41,7 @@ namespace SRKSDemo.Server_Model
         public virtual DbSet<LossDetail> LossDetails { get; set; }
         public virtual DbSet<mailmaster> mailmasters { get; set; }
         public virtual DbSet<menu_styles> menu_styles { get; set; }
+        public virtual DbSet<menu> menus { get; set; }
         public virtual DbSet<message_code_master> message_code_master { get; set; }
         public virtual DbSet<message_history_master> message_history_master { get; set; }
         public virtual DbSet<monthdata> monthdatas { get; set; }
@@ -205,198 +204,5 @@ namespace SRKSDemo.Server_Model
         public virtual DbSet<tbl_livecbmdetails> tbl_livecbmdetails { get; set; }
         public virtual DbSet<tbl_livetblsensorvalue> tbl_livetblsensorvalue { get; set; }
         public virtual DbSet<tblAndonDisplayRotate> tblAndonDisplayRotates { get; set; }
-        public virtual DbSet<menu> menus { get; set; }
-    
-        public virtual int DashboardLiveHMIMWOSTblINUP()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DashboardLiveHMIMWOSTblINUP");
-        }
-    
-        public virtual int DashboardLiveLossManualTblINUP()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DashboardLiveLossManualTblINUP");
-        }
-    
-        public virtual int DashboardLiveModeTblINUP()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DashboardLiveModeTblINUP");
-        }
-    
-        public virtual int DeleteDupWorkOrdersFromDDLList()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteDupWorkOrdersFromDDLList");
-        }
-    
-        public virtual int DeleteExtraRowsHMI()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteExtraRowsHMI");
-        }
-    
-        public virtual int DeleteReocrdsFromDDL()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteReocrdsFromDDL");
-        }
-    
-        public virtual ObjectResult<GetCheckboxesForUser_Result> GetCheckboxesForUser(Nullable<int> roleId)
-        {
-            var roleIdParameter = roleId.HasValue ?
-                new ObjectParameter("roleId", roleId) :
-                new ObjectParameter("roleId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetCheckboxesForUser_Result>("GetCheckboxesForUser", roleIdParameter);
-        }
-    
-        public virtual ObjectResult<GetDashboardMenus_Result> GetDashboardMenus(Nullable<int> roleId)
-        {
-            var roleIdParameter = roleId.HasValue ?
-                new ObjectParameter("roleId", roleId) :
-                new ObjectParameter("roleId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetDashboardMenus_Result>("GetDashboardMenus", roleIdParameter);
-        }
-    
-        public virtual ObjectResult<GetMenuStyles_Result> GetMenuStyles()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetMenuStyles_Result>("GetMenuStyles");
-        }
-    
-        public virtual ObjectResult<GetSideMenubar_Result> GetSideMenubar(Nullable<int> roleId)
-        {
-            var roleIdParameter = roleId.HasValue ?
-                new ObjectParameter("roleId", roleId) :
-                new ObjectParameter("roleId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetSideMenubar_Result>("GetSideMenubar", roleIdParameter);
-        }
-    
-        public virtual ObjectResult<GetUserMenus_Result> GetUserMenus()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetUserMenus_Result>("GetUserMenus");
-        }
-    
-        public virtual int HMIUpdationofMonthYearWeek(Nullable<System.DateTime> v_Date, Nullable<int> v_HMIID)
-        {
-            var v_DateParameter = v_Date.HasValue ?
-                new ObjectParameter("V_Date", v_Date) :
-                new ObjectParameter("V_Date", typeof(System.DateTime));
-    
-            var v_HMIIDParameter = v_HMIID.HasValue ?
-                new ObjectParameter("V_HMIID", v_HMIID) :
-                new ObjectParameter("V_HMIID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HMIUpdationofMonthYearWeek", v_DateParameter, v_HMIIDParameter);
-        }
-    
-        public virtual int liveDataDelAfterMaovedToHistorin()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("liveDataDelAfterMaovedToHistorin");
-        }
-    
-        public virtual int LossAndBreakDown(Nullable<int> breakDownId, Nullable<System.DateTime> startTime, Nullable<System.DateTime> endTime, Nullable<int> breakDownAndLossCode, Nullable<int> machineId, string shift, Nullable<int> doneWithRow, string correctedDate, Nullable<System.DateTime> entryTime, Nullable<int> messageCodeId)
-        {
-            var breakDownIdParameter = breakDownId.HasValue ?
-                new ObjectParameter("breakDownId", breakDownId) :
-                new ObjectParameter("breakDownId", typeof(int));
-    
-            var startTimeParameter = startTime.HasValue ?
-                new ObjectParameter("startTime", startTime) :
-                new ObjectParameter("startTime", typeof(System.DateTime));
-    
-            var endTimeParameter = endTime.HasValue ?
-                new ObjectParameter("endTime", endTime) :
-                new ObjectParameter("endTime", typeof(System.DateTime));
-    
-            var breakDownAndLossCodeParameter = breakDownAndLossCode.HasValue ?
-                new ObjectParameter("breakDownAndLossCode", breakDownAndLossCode) :
-                new ObjectParameter("breakDownAndLossCode", typeof(int));
-    
-            var machineIdParameter = machineId.HasValue ?
-                new ObjectParameter("machineId", machineId) :
-                new ObjectParameter("machineId", typeof(int));
-    
-            var shiftParameter = shift != null ?
-                new ObjectParameter("shift", shift) :
-                new ObjectParameter("shift", typeof(string));
-    
-            var doneWithRowParameter = doneWithRow.HasValue ?
-                new ObjectParameter("doneWithRow", doneWithRow) :
-                new ObjectParameter("doneWithRow", typeof(int));
-    
-            var correctedDateParameter = correctedDate != null ?
-                new ObjectParameter("correctedDate", correctedDate) :
-                new ObjectParameter("correctedDate", typeof(string));
-    
-            var entryTimeParameter = entryTime.HasValue ?
-                new ObjectParameter("entryTime", entryTime) :
-                new ObjectParameter("entryTime", typeof(System.DateTime));
-    
-            var messageCodeIdParameter = messageCodeId.HasValue ?
-                new ObjectParameter("messageCodeId", messageCodeId) :
-                new ObjectParameter("messageCodeId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("LossAndBreakDown", breakDownIdParameter, startTimeParameter, endTimeParameter, breakDownAndLossCodeParameter, machineIdParameter, shiftParameter, doneWithRowParameter, correctedDateParameter, entryTimeParameter, messageCodeIdParameter);
-        }
-    
-        public virtual int LossEntryUpdationofMonthYearWeek(Nullable<System.DateTime> v_Date, Nullable<int> v_LossID)
-        {
-            var v_DateParameter = v_Date.HasValue ?
-                new ObjectParameter("V_Date", v_Date) :
-                new ObjectParameter("V_Date", typeof(System.DateTime));
-    
-            var v_LossIDParameter = v_LossID.HasValue ?
-                new ObjectParameter("V_LossID", v_LossID) :
-                new ObjectParameter("V_LossID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("LossEntryUpdationofMonthYearWeek", v_DateParameter, v_LossIDParameter);
-        }
-    
-        public virtual int ManualLossUpdationofMonthYearWeek(Nullable<System.DateTime> v_Date, Nullable<int> v_MLossID)
-        {
-            var v_DateParameter = v_Date.HasValue ?
-                new ObjectParameter("V_Date", v_Date) :
-                new ObjectParameter("V_Date", typeof(System.DateTime));
-    
-            var v_MLossIDParameter = v_MLossID.HasValue ?
-                new ObjectParameter("V_MLossID", v_MLossID) :
-                new ObjectParameter("V_MLossID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ManualLossUpdationofMonthYearWeek", v_DateParameter, v_MLossIDParameter);
-        }
-    
-        public virtual int ModeUpdationofMonthYearWeek(Nullable<System.DateTime> v_Date, Nullable<int> v_ModeID)
-        {
-            var v_DateParameter = v_Date.HasValue ?
-                new ObjectParameter("V_Date", v_Date) :
-                new ObjectParameter("V_Date", typeof(System.DateTime));
-    
-            var v_ModeIDParameter = v_ModeID.HasValue ?
-                new ObjectParameter("V_ModeID", v_ModeID) :
-                new ObjectParameter("V_ModeID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ModeUpdationofMonthYearWeek", v_DateParameter, v_ModeIDParameter);
-        }
-    
-        public virtual int OperationLogDelAfterFewdays()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("OperationLogDelAfterFewdays");
-        }
-    
-        public virtual int parameters_masterDelAfterFewDays()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("parameters_masterDelAfterFewDays");
-        }
-    
-        public virtual int SP_UtilData(Nullable<System.DateTime> cdate, Nullable<int> machineID)
-        {
-            var cdateParameter = cdate.HasValue ?
-                new ObjectParameter("Cdate", cdate) :
-                new ObjectParameter("Cdate", typeof(System.DateTime));
-    
-            var machineIDParameter = machineID.HasValue ?
-                new ObjectParameter("MachineID", machineID) :
-                new ObjectParameter("MachineID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_UtilData", cdateParameter, machineIDParameter);
-        }
     }
 }

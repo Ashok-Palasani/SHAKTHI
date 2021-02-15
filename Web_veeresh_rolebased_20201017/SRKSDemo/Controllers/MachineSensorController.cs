@@ -10,7 +10,7 @@ namespace SRKSDemo.Controllers
 {
     public class MachineSensorController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         // GET: MachineSensor
         public ActionResult IndexMachineSensor()
         {
@@ -21,7 +21,7 @@ namespace SRKSDemo.Controllers
             ViewBag.Logout = Session["Username"].ToString().ToUpper();
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
-            //using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            //using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             //{
             sensormachinemodel pa = new sensormachinemodel();
             configurationtblmachinesensor mp = new configurationtblmachinesensor();
@@ -84,7 +84,7 @@ namespace SRKSDemo.Controllers
             ViewBag.Logout = Session["Username"].ToString().ToUpper();
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 configurationtblmachinesensor tblmc = db.configurationtblmachinesensors.Find(id);
                 if (tblmc == null)
@@ -112,7 +112,7 @@ namespace SRKSDemo.Controllers
             string sensorName = db.configuration_tblsensorgroup.Where(m => m.SID == tblmc.machinesensor.Sid).Select(m => m.SensorGroupName).FirstOrDefault();
             string macname = db.tblmachinedetails.Where(m => m.MachineID == tblmc.machinesensor.MachineId).Select(m => m.MachineName).FirstOrDefault();
             int msid = tblmc.machinesensor.MSID;
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var doesThisExist = db.configurationtblmachinesensors.Where(m => m.IsDeleted == 0 && m.MSID != msid && m.Sid == tblmc.machinesensor.Sid && m.MachineId == tblmc.machinesensor.MachineId && m.Sid == tblmc.machinesensor.Sid).ToList();
                 if (doesThisExist.Count == 0)
@@ -144,7 +144,7 @@ namespace SRKSDemo.Controllers
 
         //public JsonResult FetchMachine(int SID)
         //{
-        //    using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //    using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //    {
         //        var SensorData = (from row in db.configuration_tblSensorgroup
         //                        where row.IsDeleted == 0 && row.SID == SID
@@ -154,7 +154,7 @@ namespace SRKSDemo.Controllers
         //}
         public JsonResult GetmachinesensorById(int Id)
         {
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var Data = db.configurationtblmachinesensors.Where(m => m.MSID == Id).Select(m => new { ipaddress = m.IPAddress, portno = m.PortNo });
                 return Json(Data, JsonRequestBehavior.AllowGet);
@@ -171,7 +171,7 @@ namespace SRKSDemo.Controllers
             String Username = Session["Username"].ToString();
             int UserID1 = id;
             int UserID = Convert.ToInt32(Session["UserId"]);
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var tblpm = db.configurationtblmachinesensors.Where(m => m.MSID == id).FirstOrDefault();
                 //tblpmchecklist tblpm = db.tblpmchecklists.Find(id);

@@ -27,7 +27,7 @@ namespace SRKSDemo.Controllers
 {
     public class ReportsController : Controller
     {
-        i_facility_shaktiEntities1 Serverdb = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities Serverdb = new i_facility_shaktiEntities();
         private IConnectionFactory _conn;
         private Dao obj1 = new Dao();
         private Dao1 obj2 = new Dao1();
@@ -9703,7 +9703,7 @@ namespace SRKSDemo.Controllers
                 Response.Flush();
                 Response.Close();
             }
-            using (i_facility_shaktiEntities1 Serverdb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities Serverdb = new i_facility_shaktiEntities())
             {
 
 
@@ -11554,7 +11554,7 @@ namespace SRKSDemo.Controllers
                     int MachineIdleMinData = Convert.ToInt32(Serverdb.tblmachinedetails.Where(m => m.MachineID == MachineIDS && m.IsDeleted == 0).Select(m => m.MachineIdleMin).FirstOrDefault());
                     MachineIdleMinData = MachineIdleMinData * 60;
                     DateTime st = Convert.ToDateTime(startDateTime);
-                    var MinorLossList = Serverdb.tblmodes.Where(m => m.IsDeleted == 0 && m.MachineID == MachineIDS && m.CorrectedDate == st && m.IsCompleted == 1 && m.DurationInSec < MachineIdleMinData && m.LossCodeID != null).Select(m => m.DurationInSec).ToList();
+                    var MinorLossList = Serverdb.tblmodes.Where(m => m.IsDeleted == 0 && m.MachineID == MachineIDS && m.CorrectedDate == st.ToString() && m.IsCompleted == 1 && m.DurationInSec < MachineIdleMinData && m.LossCodeID != null).Select(m => m.DurationInSec).ToList();
                     foreach (int LossMin in MinorLossList)
                     {
                         MinorLoss = MinorLoss + LossMin;
@@ -12420,7 +12420,7 @@ namespace SRKSDemo.Controllers
             //3rd get CellName or -
             //4th get MachineName.
 
-            using (i_facility_shaktiEntities1 dbMac = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbMac = new i_facility_shaktiEntities())
             {
                 var machineData = dbMac.tblmachinedetails.Where(m => m.MachineID == MachineID).FirstOrDefault();
                 int PlantID = Convert.ToInt32(machineData.PlantID);
@@ -12495,6 +12495,335 @@ namespace SRKSDemo.Controllers
             return durationList;
         }
 
+        public ActionResult TCFLossReportUser()
+        {
+            if ((Session["UserId"] == null) || (Session["UserId"].ToString() == String.Empty))
+            {
+                return RedirectToAction("Login", "Login", null);
+            }
+            ViewBag.Logout = Session["Username"];
+            ViewBag.roleid = Session["RoleID"];
+
+            ViewData["PlantID"] = new SelectList(Serverdb.tblplants.Where(m => m.IsDeleted == 0), "PlantID", "PlantName");
+            ViewData["ShopID"] = new SelectList(Serverdb.tblshops.Where(m => m.IsDeleted == 0 && m.PlantID == 999), "ShopID", "ShopName");
+            ViewData["CellID"] = new SelectList(Serverdb.tblcells.Where(m => m.IsDeleted == 0 && m.PlantID == 999), "CellID", "CellName");
+            ViewData["MachineID"] = new SelectList(Serverdb.tblmachinedetails.Where(m => m.IsDeleted == 0 && m.PlantID == 999), "MachineID", "MachineDisplayName");
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult TCFLossReportUser(i_facilitylibrary.DAL.tblreportholder report, string PlantID, String FromDate, String ToDate, string ShopID = null, string CellID = null, string MachineID = null)
+        {
+            //generateIdleReportExcel(FromDate, ToDate, PlantID, ShopID, CellID, MachineID);
+            TCFLossReportUserExcel(report.FromDate.ToString(), report.ToDate.ToString(), PlantID, ShopID, CellID, MachineID);
+            ViewData["PlantID"] = new SelectList(Serverdb.tblplants.Where(m => m.IsDeleted == 0), "PlantID", "PlantName");
+            ViewData["ShopID"] = new SelectList(Serverdb.tblshops.Where(m => m.IsDeleted == 0 && m.PlantID == 999), "ShopID", "ShopName");
+            ViewData["CellID"] = new SelectList(Serverdb.tblcells.Where(m => m.IsDeleted == 0 && m.PlantID == 999), "CellID", "CellName");
+            ViewData["MachineID"] = new SelectList(Serverdb.tblmachinedetails.Where(m => m.IsDeleted == 0 && m.PlantID == 999), "MachineID", "MachineDisplayName");
+
+            return View();
+        }
+        public ActionResult TCFLossReportUserExcel(string startDate, string EndtDate, string PlantID, string ShopID = null, string CellID = null, string WorkCenterID = null)
+        {
+            ReportsDao obj = new ReportsDao();
+            Dao obj1 = new Dao();
+            Dao1 obj2 = new Dao1();
+            _conn = new ConnectionFactory();
+            obj1 = new Dao(_conn);
+            obj2 = new Dao1(_conn);
+            obj = new ReportsDao(_conn);
+            DateTime frda = DateTime.Now;
+
+            DateTime frmDate = Convert.ToDateTime(startDate);
+            DateTime toDate = Convert.ToDateTime(EndtDate);
+
+            FileInfo templateFile = new FileInfo(@"C:\TataReport\NewTemplates\TL_Report.xlsx");
+            ExcelPackage templatep = new ExcelPackage(templateFile);
+            ExcelWorksheet Templatews = templatep.Workbook.Worksheets[1];
+
+            String FileDir = @"C:\TataReport\ReportsList\" + System.DateTime.Now.ToString("yyyy-MM-dd");
+            //String FileDir = @"C:\inetpub\ContiAndonWebApp\Reports\" + System.DateTime.Now.ToString("yyyy");
+
+            bool exists = System.IO.Directory.Exists(FileDir);
+
+            if (!exists)
+                System.IO.Directory.CreateDirectory(FileDir);
+
+            FileInfo newFile = new FileInfo(System.IO.Path.Combine(FileDir, "TL_Report" + frda.ToString("yyyy-MM-dd") + ".xlsx")); //+ " to " + toda.ToString("yyyy-MM-dd") 
+            if (newFile.Exists)
+            {
+                try
+                {
+                    newFile.Delete();  // ensures we create a new workbook
+                    newFile = new FileInfo(System.IO.Path.Combine(FileDir, "TL_Report" + frda.ToString("yyyy-MM-dd") + ".xlsx")); //" to " + toda.ToString("yyyy-MM-dd") + 
+                }
+                catch
+                {
+                    TempData["Excelopen"] = "Excel with same date is already open, please close it and try to generate!!!!";
+                    //return View();
+                }
+            }
+            //Using the File for generation and populating it
+            ExcelPackage p = null;
+            p = new ExcelPackage(newFile);
+            ExcelWorksheet worksheet = null;
+
+            //Creating the WorkSheet for populating
+            try
+            {
+                worksheet = p.Workbook.Worksheets.Add(System.DateTime.Now.ToString("dd-MM-yyyy"), Templatews);
+            }
+            catch { }
+
+            if (worksheet == null)
+            {
+                worksheet = p.Workbook.Worksheets.Add(System.DateTime.Now.ToString("dd-MM-yyyy"), Templatews);
+            }
+
+            int sheetcount = p.Workbook.Worksheets.Count;
+            p.Workbook.Worksheets.MoveToStart(sheetcount);
+
+            worksheet.Cells.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+            worksheet.Cells.Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+
+            worksheet.Cells["C6"].Value = frmDate.ToString("dd-MM-yyyy");
+            worksheet.Cells["E6"].Value = toDate.ToString("dd-MM-yyyy");
+
+            string FDate = frmDate.ToString("yyyy-MM-dd");
+            string TDate = toDate.ToString("yyyy-MM-dd");
+
+            string lowestLevel = null;
+            int MacCount = 0;
+            int plantId = 0, shopId = 0, cellId = 0, wcId = 0;
+            if (string.IsNullOrEmpty(WorkCenterID))
+            {
+                if (string.IsNullOrEmpty(CellID))
+                {
+                    if (string.IsNullOrEmpty(ShopID))
+                    {
+                        if (string.IsNullOrEmpty(PlantID))
+                        { //donothing 
+                        }
+                        else
+                        {
+                            lowestLevel = "Plant";
+                            plantId = Convert.ToInt32(PlantID);
+                        }
+                    }
+                    else
+                    {
+                        lowestLevel = "Shop";
+                        shopId = Convert.ToInt32(ShopID);
+                    }
+                }
+                else
+                {
+                    lowestLevel = "Cell";
+                    cellId = Convert.ToInt32(CellID);
+                }
+            }
+            else
+            {
+                lowestLevel = "WorkCentre";
+                wcId = Convert.ToInt32(WorkCenterID);
+            }
+
+            DataTable dataHolder = new DataTable();
+            MsqlConnection mc = new MsqlConnection();
+            mc.open();
+            string sql1 = null;
+            if (lowestLevel == "Plant")
+            {
+                //sql1 = "SELECT MachineID,StartDateTime,EndDateTime,MessageCodeID,CorrectedDate,EntryTime,Shift FROM tbllossofentry WHERE DoneWithRow = 1 AND CorrectedDate>='" + FDate + "' AND CorrectedDate<='" + TDate + "' and MachineID in (select MachineID from tblmachinedetails where PlantID = " + plantId + "  and ((InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and IsDeleted = 0) or   ( case when (IsDeleted = 1) then ( InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and DeletedDate >= '" + frmDate + "' ) end) ))  ORDER BY LossID ASC";
+
+                //sql1 = "SELECT MachineID,StartDateTime,EndDateTime,MessageCodeID,CorrectedDate,EntryTime,Shift FROM tbllivelossofentry WHERE DoneWithRow = 1 AND CorrectedDate>='" + FDate + "' AND CorrectedDate<='" + TDate + "' and MachineID in (select MachineID from tblmachinedetails where PlantID = " + plantId + "  and ((InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and IsDeleted = 0) or   ((IsDeleted = 1) and ( InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and DeletedDate >= '" + frmDate + "' )) ))  ORDER BY LossID ASC";
+                sql1 = "SELECT MachineId,StartDateTime,EndDateTime,MessageCodeId,CorrectedDate,userName FROM tbltcflossofentry WHERE ApprovalLevel = 2 AND CorrectedDate>='" + FDate + "' AND CorrectedDate<='" + TDate + "' and MachineID in (select MachineID from tblmachinedetails where PlantID = " + plantId + "  and ((InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and IsDeleted = 0) or   ((IsDeleted = 1) and ( InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and DeletedDate >= '" + frmDate + "' )) ))  ORDER BY Ncid ASC";
+            }
+            else if (lowestLevel == "Shop")
+            {
+                //sql1 = "SELECT MachineID,StartDateTime,EndDateTime,MessageCodeID,CorrectedDate,EntryTime,Shift FROM tbllossofentry WHERE DoneWithRow = 1 AND CorrectedDate>='" + FDate + "' AND CorrectedDate<='" + TDate + "' and MachineID in (select MachineID from tblmachinedetails where ShopID = " + shopId + "  and ((InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and IsDeleted = 0) or   ( case when (IsDeleted = 1) then ( InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and DeletedDate >= '" + frmDate + "' ) end) ))  ORDER BY LossID ASC";
+
+                // sql1 = "SELECT MachineID,StartDateTime,EndDateTime,MessageCodeID,CorrectedDate,EntryTime,Shift FROM tbllivelossofentry WHERE DoneWithRow = 1 AND CorrectedDate>='" + FDate + "' AND CorrectedDate<='" + TDate + "' and MachineID in (select MachineID from tblmachinedetails where ShopID = " + shopId + "  and ((InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and IsDeleted = 0) or   ((IsDeleted = 1) and ( InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and DeletedDate >= '" + frmDate + "' ) ) ))  ORDER BY LossID ASC";
+                sql1 = "SELECT MachineId,StartDateTime,EndDateTime,MessageCodeId,CorrectedDate,userName FROM tbltcflossofentry WHERE ApprovalLevel = 2 AND CorrectedDate>='" + FDate + "' AND CorrectedDate<='" + TDate + "' and MachineID in (select MachineID from tblmachinedetails where ShopID = " + shopId + "  and ((InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and IsDeleted = 0) or   ((IsDeleted = 1) and ( InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and DeletedDate >= '" + frmDate + "' ) ) ))  ORDER BY Ncid ASC";
+            }
+            else if (lowestLevel == "Cell")
+            {
+                //sql1 = "SELECT MachineID,StartDateTime,EndDateTime,MessageCodeID,CorrectedDate,EntryTime,Shift FROM tbllossofentry WHERE DoneWithRow = 1 AND CorrectedDate>='" + FDate + "' AND CorrectedDate<='" + TDate + "' and MachineID in (select MachineID from tblmachinedetails where CellID = " + cellId + "  and ((InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and IsDeleted = 0) or   ( case when (IsDeleted = 1) then ( InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and DeletedDate >= '" + frmDate + "' ) end) ))  ORDER BY LossID ASC";
+
+                //sql1 = "SELECT MachineID,StartDateTime,EndDateTime,MessageCodeID,CorrectedDate,EntryTime,Shift FROM tbllivelossofentry WHERE DoneWithRow = 1 AND CorrectedDate>='" + FDate + "' AND CorrectedDate<='" + TDate + "' and MachineID in (select MachineID from tblmachinedetails where CellID = " + cellId + "  and ((InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and IsDeleted = 0) or   ((IsDeleted = 1) and ( InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and DeletedDate >= '" + frmDate + "' )) ))  ORDER BY LossID ASC";
+                sql1 = "SELECT MachineId,StartDateTime,EndDateTime,MessageCodeId,CorrectedDate,userName FROM tbltcflossofentry WHERE ApprovalLevel = 2 AND CorrectedDate>='" + FDate + "' AND CorrectedDate<='" + TDate + "' and MachineID in (select MachineID from tblmachinedetails where CellID = " + cellId + "  and ((InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and IsDeleted = 0) or   ((IsDeleted = 1) and ( InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and DeletedDate >= '" + frmDate + "' )) ))  ORDER BY Ncid ASC";
+            }
+            else if (lowestLevel == "WorkCentre")
+            {
+                //sql1 = "SELECT MachineID,StartDateTime,EndDateTime,MessageCodeID,CorrectedDate,EntryTime,Shift FROM tbllossofentry WHERE DoneWithRow = 1 AND CorrectedDate>='" + FDate + "' AND CorrectedDate<='" + TDate + "' and MachineID in (select MachineID from tblmachinedetails where MachineID = " + wcId + "  and ((InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and IsDeleted = 0) or   ( case when (IsDeleted = 1) then ( InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and DeletedDate >= '" + frmDate + "' ) end) ))  ORDER BY LossID ASC";
+
+                //sql1 = "SELECT MachineID,StartDateTime,EndDateTime,MessageCodeID,CorrectedDate,EntryTime,Shift FROM tbllivelossofentry WHERE DoneWithRow = 1 AND CorrectedDate>='" + FDate + "' AND CorrectedDate<='" + TDate + "' and MachineID in (select MachineID from tblmachinedetails where MachineID = " + wcId + "  and ((InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and IsDeleted = 0) or   ( (IsDeleted = 1) and ( InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and DeletedDate >= '" + frmDate + "' )) ))  ORDER BY LossID ASC";
+                sql1 = "SELECT MachineId,StartDateTime,EndDateTime,MessageCodeId,CorrectedDate,userName FROM tbltcflossofentry WHERE ApprovalLevel = 2 AND CorrectedDate>='" + FDate + "' AND CorrectedDate<='" + TDate + "' and MachineID in (select MachineID from tblmachinedetails where MachineID = " + wcId + "  and ((InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and IsDeleted = 0) or   ( (IsDeleted = 1) and ( InsertedOn <= '" + toDate.ToString("yyyy-MM-dd HH:mm:ss") + "' and DeletedDate >= '" + frmDate + "' )) ))  ORDER BY Ncid ASC";
+            }
+
+            SqlDataAdapter da1 = new SqlDataAdapter(sql1, mc.msqlConnection);
+            da1.Fill(dataHolder);
+            mc.close();
+            if (dataHolder.Rows.Count != 0)
+            {
+                var Col = 'B';
+                int Row = 8;
+                int Sno = 1;
+                for (int i = 0; i < dataHolder.Rows.Count; i++)
+                {
+                    int MachineID = Convert.ToInt32(dataHolder.Rows[i][0]);
+                    List<string> HierarchyData = GetHierarchyData(MachineID);
+
+                    worksheet.Cells["B" + Row].Value = Sno;
+                    worksheet.Cells["C" + Row].Value = HierarchyData[0]; //Plant Name
+                    worksheet.Cells["D" + Row].Value = HierarchyData[1]; // Shop Name
+                    worksheet.Cells["E" + Row].Value = HierarchyData[2]; //Cell Name
+                    worksheet.Cells["F" + Row].Value = HierarchyData[3]; //Cell Name
+
+
+
+                    // worksheet.Cells["F" + Row].Value = MachineID; //wc no
+                    //worksheet.Cells["G" + Row].Value = HierarchyData[3]; //WC Name
+
+                    if (string.IsNullOrEmpty(dataHolder.Rows[i][1].ToString()) == false)
+                    {
+                        DateTime startdate = Convert.ToDateTime(dataHolder.Rows[i][1]);
+                        worksheet.Cells["K" + Row].Value = startdate.ToString("yyyy-MM-dd HH:mm:ss");
+                    }
+                    if (string.IsNullOrEmpty(dataHolder.Rows[i][2].ToString()) == false)
+                    {
+                        DateTime Enddate = Convert.ToDateTime(dataHolder.Rows[i][2]);
+                        worksheet.Cells["L" + Row].Value = Enddate.ToString("yyyy-MM-dd HH:mm:ss");
+                    }
+                    //if (string.IsNullOrEmpty(dataHolder.Rows[i][5].ToString()) == false)
+                    //{
+                    //    DateTime EntryTime = Convert.ToDateTime(dataHolder.Rows[i][5]);
+                    //    worksheet.Cells["F" + Row].Value = EntryTime.ToString("yyyy-MM-dd HH:mm:ss");
+                    //}
+                    if (string.IsNullOrEmpty(dataHolder.Rows[i][1].ToString()) == false && string.IsNullOrEmpty(dataHolder.Rows[i][2].ToString()) == false)
+                    {
+                        DateTime StartTime = DateTime.Now;
+                        StartTime = Convert.ToDateTime(dataHolder.Rows[i][1]);
+                        DateTime EndTime = DateTime.Now;
+                        EndTime = Convert.ToDateTime(dataHolder.Rows[i][2]);
+
+                        TimeSpan ts = EndTime.Subtract(StartTime);
+                        int H = ts.Hours;
+                        int M = ts.Minutes;
+                        int S = ts.Seconds;
+                        string Hs = null, Ms = null, Ss = null;
+                        if (H < 10)
+                        {
+                            Hs = "0" + H;
+                        }
+                        else
+                        {
+                            Hs = H.ToString();
+                        }
+                        if (M < 10)
+                        {
+                            Ms = "0" + M;
+                        }
+                        else
+                        {
+                            Ms = M.ToString();
+                        }
+                        if (S < 10)
+                        {
+                            Ss = "0" + S;
+                        }
+                        else
+                        {
+                            Ss = S.ToString();
+                        }
+
+                        string time = Hs + " : " + Ms + " : " + Ss;
+                        //double Duration = EndTime.Subtract(StartTime).TotalMinutes;
+                        //worksheet.Cells["I" + Row].Value = Math.Round(Duration, 2);
+                        worksheet.Cells["M" + Row].Value = time;
+
+
+                        //double Duration = EndTime.Subtract(StartTime).TotalMinutes;
+                        //worksheet.Cells["I" + Row].Value = Math.Round(Duration, 2);
+                    }
+                    if (string.IsNullOrEmpty(dataHolder.Rows[i][3].ToString()) == false)
+                    {
+                        int msgcd = Convert.ToInt32(dataHolder.Rows[i][3]);
+                        var a = obj1.GetLossDet1(msgcd);
+                        //var a = db.tbllossescodes.Where(m => m.LossCodeID == msgcd).FirstOrDefault();
+
+                        if (a.LossCodesLevel == 1)
+                        {
+                            if (a.LossCode == "999")
+                            {
+                                worksheet.Cells["H" + Row].Value = a.MessageType;
+                            }
+                            else
+                            {
+                                worksheet.Cells["H" + Row].Value = a.LossCode;
+                            }
+                        }
+                        else if (a.LossCodesLevel == 2)
+                        {
+                            int lossid = Convert.ToInt32(a.LossCodesLevel1ID);
+                            var level1data = obj1.GetLossDet1(lossid);
+                            //var level1data = db.tbllossescodes.Where(m => m.LossCodeID == lossid).FirstOrDefault();
+                            worksheet.Cells["H" + Row].Value = level1data.LossCode;
+                            worksheet.Cells["I" + Row].Value = a.LossCode;
+                        }
+                        else if (a.LossCodesLevel == 3)
+                        {
+                            int lossid2 = Convert.ToInt32(a.LossCodesLevel1ID);
+                            int lossid3 = Convert.ToInt32(a.LossCodesLevel2ID);
+                            var level1data = obj1.GetLossDet1(lossid2);
+                            var level2data = obj1.GetLossDet1(lossid3);
+                            //var level1data = db.tbllossescodes.Where(m => m.LossCodeID == lossid2).FirstOrDefault();
+                            //var level2data = db.tbllossescodes.Where(m => m.LossCodeID == lossid3).FirstOrDefault();
+                            worksheet.Cells["H" + Row].Value = level1data.LossCode;
+                            worksheet.Cells["I" + Row].Value = level2data.LossCode;
+                            worksheet.Cells["J" + Row].Value = a.LossCode;
+                        }
+                    }
+                    if (string.IsNullOrEmpty(dataHolder.Rows[i][5].ToString()) == false)
+                    {
+                        worksheet.Cells["N" + Row].Value = dataHolder.Rows[i][5].ToString();
+                    }
+                    //else
+                    //    worksheet.Cells["N" + Row].Value = "-";
+                    Row++;
+                    Sno++;
+                }
+            }
+            int noOfRows = 8 + dataHolder.Rows.Count + 2;
+            worksheet.Cells["B8:B" + noOfRows].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+            worksheet.Cells["C8:C" + noOfRows].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+            worksheet.Cells["D8:E" + noOfRows].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+            worksheet.Cells["F8:H" + noOfRows].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+            worksheet.Cells["I8:J" + noOfRows].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+            worksheet.Cells["C6"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+            ExcelRange r1, r2, r3;
+            worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+            p.Save();
+            //Downloding Excel
+            string path1 = System.IO.Path.Combine(FileDir, "TL_Report" + frda.ToString("yyyy-MM-dd") + ".xlsx");
+            System.IO.FileInfo file1 = new System.IO.FileInfo(path1);
+            string Outgoingfile = "TL_Report" + frda.ToString("yyyy-MM-dd") + ".xlsx";
+            if (file1.Exists)
+            {
+                Response.Clear();
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.AddHeader("Content-Disposition", "attachment; filename=" + Outgoingfile);
+                Response.AddHeader("Content-Length", file1.Length.ToString());
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                Response.WriteFile(file1.FullName);
+                Response.Flush();
+                Response.Close();
+            }
+            return View();
+        }
 
         public List<KeyValuePair<int, double>> GetAllBreakdownDurationSeconds(int machineID, string CorrectedDate)
         {
@@ -13056,7 +13385,7 @@ namespace SRKSDemo.Controllers
             //3rd get CellName or -
             //4th get MachineName.
 
-            using (i_facility_shaktiEntities1 dbMac = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbMac = new i_facility_shaktiEntities())
             {
                 var machineData = dbMac.tblmachinedetails.Where(m => m.MachineID == MachineID).FirstOrDefault();
                 int PlantID = Convert.ToInt32(machineData.PlantID);
@@ -13542,7 +13871,7 @@ namespace SRKSDemo.Controllers
             int duration = 0;
             //var msgs2 = new List<tblplannedbreak>();
 
-            using (i_facility_shaktiEntities1 db1 = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
             {
                 int? msgs2 = db1.tblplannedbreaks.Where(m => m.IsDeleted == 0).Sum(m => m.BreakDuration);
                 duration = Convert.ToInt32(msgs2);

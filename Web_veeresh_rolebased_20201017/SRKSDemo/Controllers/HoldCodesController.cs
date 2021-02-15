@@ -19,7 +19,7 @@ namespace i_facility.Controllers
 {
     public class HoldCodesController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         public ActionResult Index()
         {
             if ((Session["UserId"] == null) || (Session["UserId"].ToString() == String.Empty))

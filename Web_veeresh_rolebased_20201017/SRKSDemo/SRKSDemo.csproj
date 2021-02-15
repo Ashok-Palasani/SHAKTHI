@@ -325,21 +325,6 @@
     <Compile Include="Server Model\frommail.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Server Model\GetCheckboxesForUser_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Server Model\GetDashboardMenus_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Server Model\GetMenuStyles_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Server Model\GetSideMenubar_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Server Model\GetUserMenus_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Server Model\Graph_Data.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -6049,6 +6034,7 @@
     <Content Include="Views\Menu\SubMenusList.cshtml" />
     <Content Include="Views\User\UserManagement.cshtml" />
     <Content Include="Views\Shared\_LayoutForRole.cshtml" />
+    <Content Include="Views\Reports\UtilizationReportL.cshtml" />
     <EntityDeploy Include="Server Model\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -6056,7 +6042,7 @@
     <Content Include="Server Model\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="Views\Reports\UtilizationReportL.cshtml" />
+    <Content Include="Views\Reports\TCFLossReportUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -12,7 +12,7 @@ namespace SRKSDemo.Controllers
 {
     public class PmCheckListController : Controller
     {
-        i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities condb = new i_facility_shaktiEntities();
         public ActionResult Index()
         {
             if ((Session["UserId"] == null) || (Session["UserId"].ToString() == String.Empty))
@@ -75,7 +75,7 @@ namespace SRKSDemo.Controllers
             ViewBag.Logout = Session["Username"].ToString().ToUpper();
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 var pmd = condb.configuration_tblpmchecklist.Where(m => m.pmcid == id).Select(m => m.pmcpID).FirstOrDefault();
                 var tblpm = condb.configuration_tblpmchecklist.Where(m => m.pmcid == id).FirstOrDefault();
@@ -102,7 +102,7 @@ namespace SRKSDemo.Controllers
         public string update(int plant, int shop, int cell, string value, string frequency, int pmcpid, int pmcid, string checklist, string How)
         {
             string res = "";
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 var tblpc = condb.configuration_tblpmchecklist.Find(pmcid);
 
@@ -127,7 +127,7 @@ namespace SRKSDemo.Controllers
         public string update1(int plant, int shop, int cell, string value, string frequency, int pmcpid, int pmcid, string checklist, string How)
         {
             string res = "";
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 var tblpc = condb.configuration_tblpmchecklist.Find(pmcid);
 
@@ -164,7 +164,7 @@ namespace SRKSDemo.Controllers
             ViewBag.roleid = Session["RoleID"];
             int UserID = Convert.ToInt32(Session["UserId"]);
             String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 var tblpm = condb.configuration_tblpmchecklist.Where(m => m.pmcid == id).FirstOrDefault();
                 tblpm.Isdeleted = 1;
@@ -189,7 +189,7 @@ namespace SRKSDemo.Controllers
         }
         public JsonResult FetchCheckPoint(int CID)
         {
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 var checkPointData = (from row in condb.configuration_tblpmcheckpoint
                                       where row.Isdeleted == 0 && row.CellID == CID
@@ -199,7 +199,7 @@ namespace SRKSDemo.Controllers
         }
         public JsonResult FetchCell(int SID)
         {
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 var checkPointData = (from row in condb.tblcells
                                       where row.IsDeleted == 0 && row.ShopID == SID
@@ -209,7 +209,7 @@ namespace SRKSDemo.Controllers
         }
         public JsonResult FetchShop(int PID)
         {
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 var checkPointData = (from row in condb.tblshops
                                       where row.IsDeleted == 0 && row.PlantID == PID

@@ -16,7 +16,7 @@ namespace SRKSDemo.Controllers
     //[CustomFilters]
     public class ShiftPlannerController : Controller
     {
-        i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities condb = new i_facility_shaktiEntities();
        string databaseName=ConfigurationManager.AppSettings["dbName"];
         GetShift sd = new GetShift();
         // GET: ShiftPlanner

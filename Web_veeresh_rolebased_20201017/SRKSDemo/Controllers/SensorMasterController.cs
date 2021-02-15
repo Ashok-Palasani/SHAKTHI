@@ -9,7 +9,7 @@ namespace SRKSDemo.Controllers
 {
     public class SensorMasterController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 
         // GET: SensorMaster
         public ActionResult Index()
@@ -120,7 +120,7 @@ namespace SRKSDemo.Controllers
             ViewBag.Logout = Session["Username"].ToString().ToUpper();
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 configurationtblsensormaster tblmc = db.configurationtblsensormasters.Find(id);
                 if (tblmc == null)
@@ -226,7 +226,7 @@ namespace SRKSDemo.Controllers
             String Username = Session["Username"].ToString();
             int UserID1 = id;
             int UserID = Convert.ToInt32(Session["UserId"]);
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var tblpm = db.configurationtblsensormasters.Where(m => m.SMID == id).FirstOrDefault();
                 //tblpmchecklist tblpm = db.tblpmchecklists.Find(id);

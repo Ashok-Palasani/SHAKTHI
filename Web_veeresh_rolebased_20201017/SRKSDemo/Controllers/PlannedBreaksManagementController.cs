@@ -11,7 +11,7 @@ namespace SRKSDemo.Controllers
     public class PlannedBreaksManagementController : Controller
     {
         // GET: PlannerBreaksManagement
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         public ActionResult Index()
         {
             if ((Session["UserId"] == null) || (Session["UserId"].ToString() == String.Empty))

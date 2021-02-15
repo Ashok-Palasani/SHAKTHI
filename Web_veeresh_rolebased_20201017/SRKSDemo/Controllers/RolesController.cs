@@ -10,7 +10,7 @@ namespace SRKSDemo.Controllers
 {
     public class RolesController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         // GET: Roles
         public ActionResult Index()
         {
@@ -62,7 +62,7 @@ namespace SRKSDemo.Controllers
                 tblrole.Role.CreatedOn = System.DateTime.Now;
                 tblrole.Role.IsDeleted = 0;
 
-                using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                 {
                     db.tblroles.Add(tblrole.Role);
                     db.SaveChanges();
@@ -90,7 +90,7 @@ namespace SRKSDemo.Controllers
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
             //id = -1;
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 tblrole tblrole = db.tblroles.Find(id);
                 //if (tblrole == null)
@@ -122,7 +122,7 @@ namespace SRKSDemo.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                    using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                     {
                         var RoleData = db.tblroles.Find(tblrole.Role.Role_ID);
                         RoleData.RoleName = tblrole.Role.RoleName;
@@ -157,7 +157,7 @@ namespace SRKSDemo.Controllers
             String Username = Session["Username"].ToString();
             int UserID1 = id;
 
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 tblrole tblrole = db.tblroles.Find(id);
                 tblrole.IsDeleted = 1;

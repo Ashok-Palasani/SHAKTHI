@@ -62,7 +62,7 @@
             @if (ViewBag.roleid == 3)
             {
                 int macID = Convert.ToInt32(Session["MachineID"]);
-                SRKSDemo.Server_Model.i_facility_shaktiEntities1 db = new SRKSDemo.Server_Model.i_facility_shaktiEntities1();
+                SRKSDemo.Server_Model.i_facility_shaktiEntities db = new SRKSDemo.Server_Model.i_facility_shaktiEntities();
                 var isNormalWC = db.tblmachinedetails.Where(m => m.MachineID == macID).Select(m => m.IsNormalWC).SingleOrDefault();
                 if (isNormalWC == 0)
                 {

@@ -499,6 +499,7 @@
     <Property Name="Status" Type="int" />
     <Property Name="IsPiweb" Type="int" />
     <Property Name="Meas_DateTime" Type="datetime" />
+    <Property Name="OP40" Type="int" />
   </EntityType>
   <EntityType Name="sharathtable">
     <Key>
@@ -2010,7 +2011,7 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
     <Property Name="InsertedBy" Type="int" Nullable="false" />
     <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="ModifiedBy" Type="int" />
-    <Property Name="CorrectedDate" Type="date" Nullable="false" />
+    <Property Name="CorrectedDate" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="IsDeleted" Type="int" Nullable="false" />
     <Property Name="StartTime" Type="datetime2" Precision="0" />
     <Property Name="EndTime" Type="datetime2" Precision="0" />
@@ -3441,18 +3442,6 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
       </Principal>
       <Dependent Role="tbl_OEEDetails">
         <PropertyRef Name="MachineID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tbl_ProdAndonDisp_tbl_ProdAndonDisp">
-    <End Role="tbl_ProdAndonDisp" Type="Self.tbl_ProdAndonDisp" Multiplicity="1" />
-    <End Role="tbl_ProdAndonDisp1" Type="Self.tbl_ProdAndonDisp" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="tbl_ProdAndonDisp">
-        <PropertyRef Name="ProdDashboardID" />
-      </Principal>
-      <Dependent Role="tbl_ProdAndonDisp1">
-        <PropertyRef Name="ProdDashboardID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -4914,58 +4903,6 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="DashboardLiveHMIMWOSTblINUP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="DashboardLiveLossManualTblINUP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="DashboardLiveModeTblINUP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="DeleteDupWorkOrdersFromDDLList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="DeleteExtraRowsHMI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="DeleteReocrdsFromDDL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="GetCheckboxesForUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="roleId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="GetDashboardMenus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="roleId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="GetMenuStyles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="GetSideMenubar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="roleId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="GetUserMenus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="HMIUpdationofMonthYearWeek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="V_Date" Type="date" Mode="In" />
-    <Parameter Name="V_HMIID" Type="int" Mode="In" />
-  </Function>
-  <Function Name="liveDataDelAfterMaovedToHistorin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="LossAndBreakDown" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="breakDownId" Type="int" Mode="In" />
-    <Parameter Name="startTime" Type="datetime" Mode="In" />
-    <Parameter Name="endTime" Type="datetime" Mode="In" />
-    <Parameter Name="breakDownAndLossCode" Type="int" Mode="In" />
-    <Parameter Name="machineId" Type="int" Mode="In" />
-    <Parameter Name="shift" Type="nvarchar" Mode="In" />
-    <Parameter Name="doneWithRow" Type="int" Mode="In" />
-    <Parameter Name="correctedDate" Type="nvarchar" Mode="In" />
-    <Parameter Name="entryTime" Type="datetime" Mode="In" />
-    <Parameter Name="messageCodeId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="LossEntryUpdationofMonthYearWeek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="V_Date" Type="date" Mode="In" />
-    <Parameter Name="V_LossID" Type="int" Mode="In" />
-  </Function>
-  <Function Name="ManualLossUpdationofMonthYearWeek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="V_Date" Type="date" Mode="In" />
-    <Parameter Name="V_MLossID" Type="int" Mode="In" />
-  </Function>
-  <Function Name="ModeUpdationofMonthYearWeek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="V_Date" Type="date" Mode="In" />
-    <Parameter Name="V_ModeID" Type="int" Mode="In" />
-  </Function>
-  <Function Name="OperationLogDelAfterFewdays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="parameters_masterDelAfterFewDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="SP_UtilData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Cdate" Type="date" Mode="In" />
-    <Parameter Name="MachineID" Type="int" Mode="In" />
-  </Function>
   <EntityContainer Name="i_facility_shaktiModelStoreContainer">
     <EntitySet Name="alarm_history_master" EntityType="Self.alarm_history_master" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="configuration_tblpmchecklist" EntityType="Self.configuration_tblpmchecklist" Schema="dbo" store:Type="Tables" />
@@ -5219,10 +5156,6 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
     <AssociationSet Name="FK_tbl_OEEDetails_tbl_MachineDetails" Association="Self.FK_tbl_OEEDetails_tbl_MachineDetails">
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
       <End Role="tbl_OEEDetails" EntitySet="tbl_OEEDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tbl_ProdAndonDisp_tbl_ProdAndonDisp" Association="Self.FK_tbl_ProdAndonDisp_tbl_ProdAndonDisp">
-      <End Role="tbl_ProdAndonDisp" EntitySet="tbl_ProdAndonDisp" />
-      <End Role="tbl_ProdAndonDisp1" EntitySet="tbl_ProdAndonDisp" />
     </AssociationSet>
     <AssociationSet Name="FK_tbl_ProdAndonDisp_tblmachinedetails" Association="Self.FK_tbl_ProdAndonDisp_tblmachinedetails">
       <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />

@@ -16,7 +16,7 @@ namespace SRKSDemo.Controllers
 {
     public class ToolLifeManagementController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         // GET: ToolLifeManagement
         public ActionResult Index()
         {
@@ -164,7 +164,7 @@ namespace SRKSDemo.Controllers
         public JsonResult GetToolLifeManagementdata(int Id)
         {
             ViewBag.id = Id;
-            i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+            i_facility_shaktiEntities db = new i_facility_shaktiEntities();
             var Data = db.tblStdToolLives.Where(m => m.IsDeleted == false && m.StdToolLifeId == Id).Select(m => new { StdToolLifeIdV = m.StdToolLifeId, FGCodeV = m.FGCode,ToolNum=m.ToolNo, OPNo = m.OperationNo, CTCodeV = m.CTCode, ToolNameV = m.ToolName, StdToolLifeV = m.StdToolLife });
             return Json(Data, JsonRequestBehavior.AllowGet);
         }
@@ -297,7 +297,7 @@ namespace SRKSDemo.Controllers
                         bool check = ValidationCheckForInsertion(PartName, OpNo,ToolNo);
                         if (check == true)
                         {
-                            using (i_facility_shaktiEntities1 db1 = new i_facility_shaktiEntities1())
+                            using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
                             {
                              
                                 if (string.IsNullOrEmpty(PartName) || string.IsNullOrEmpty(OpNo) || string.IsNullOrEmpty(ToolNo) || string.IsNullOrEmpty(CTCode) || string.IsNullOrEmpty(StdTooolLife))

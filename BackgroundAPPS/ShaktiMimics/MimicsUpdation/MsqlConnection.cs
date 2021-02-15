@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data.SqlClient;
 
 namespace MimicsUpdation 
@@ -6,12 +7,20 @@ namespace MimicsUpdation
     class MsqlConnection : IDisposable
     {
         //Server
-        static String ServerName = @"TCP:192.168.0.3,1433";
-        static String username = "sa";
-        static String password = "Shakti$piweb";
-        static String port = "3306";
-        static String DB = "i_facility_shakti";
+        //static String ServerName = @"TCP:192.168.0.3,1433";
+        //static String username = "sa";
+        //static String password = "Shakti$piweb";
+        //static String port = "3306";
+        //static String DB = "i_facility_shakti";
 
+        public static String ServerName = @"" + ConfigurationManager.AppSettings["ServerName"]; //SIEMENS\SQLEXPRESS
+        public static String username = ConfigurationManager.AppSettings["username"]; //sa
+                                                                                      //static String password = "srks4$";//server
+        public static String password = ConfigurationManager.AppSettings["password"];
+        public static String port = "3306";
+        public static String DB = ConfigurationManager.AppSettings["DB"];// i_facility_tsal //Common
+        public static String Schema = ConfigurationManager.AppSettings["Schema"];  //Schema Name
+        public static String DatabaseName = ConfigurationManager.AppSettings["DbName"];
 
         ////Local
         //static String ServerName = @"PAVANKUMARV013\SQL2017EXPDELL";

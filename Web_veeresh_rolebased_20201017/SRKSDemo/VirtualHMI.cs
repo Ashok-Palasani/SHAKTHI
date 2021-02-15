@@ -16,7 +16,7 @@ namespace SRKSDemo
 
     public class VirtualHMI:IDisposable
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 
         ushort port;
         String ip;
@@ -947,7 +947,7 @@ namespace SRKSDemo
 
     public class AlarmHMI
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 
         ushort port;
         String ip;
@@ -1227,7 +1227,7 @@ namespace SRKSDemo
 
     public class OpMsgHMI
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 
         ushort port;
         String ip;
@@ -1412,7 +1412,7 @@ namespace SRKSDemo
 
     public class VirtualHMIHDN
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 
         ushort port;
         String ip;

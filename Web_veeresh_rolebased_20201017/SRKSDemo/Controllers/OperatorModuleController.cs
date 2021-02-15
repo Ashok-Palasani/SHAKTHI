@@ -17,7 +17,7 @@ namespace i_facility.Controllers
 {
     public class OperatorModuleController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         // GET: OperatorModule
         public ActionResult Index()
         {
@@ -214,7 +214,7 @@ namespace i_facility.Controllers
         public JsonResult Operatordata(int Id)
         {
             ViewBag.id = Id;
-            i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+            i_facility_shaktiEntities db = new i_facility_shaktiEntities();
             var Data = db.tbloperatordetails.Where(m => m.isDeleted == 0 && m.OPID == Id).Select(m => new { OPID = m.OPID, Dept = m.Dept, OperatorName = m.OperatorName, OperatorID = m.OperatorID });
             return Json(Data, JsonRequestBehavior.AllowGet);
         }
@@ -468,7 +468,7 @@ namespace i_facility.Controllers
                         bool check = ValidationCheckForInsertion(OperatorID);
                         if (check == true)
                         {
-                            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                             {
 
                                 if (string.IsNullOrEmpty(Dept) || string.IsNullOrEmpty(OperatorName) || OperatorID == null)
@@ -537,7 +537,7 @@ namespace i_facility.Controllers
                         bool check = ValidationCheckForInsertion(OperatorID);
                         if (check == true)
                         {
-                            using (i_facility_shaktiEntities1 db1 = new i_facility_shaktiEntities1())
+                            using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
                             {
 
                                 if (string.IsNullOrEmpty(Dept) || string.IsNullOrEmpty(OperatorName) || OperatorID == null)
@@ -584,7 +584,7 @@ namespace i_facility.Controllers
                         }
                         else
                         {
-                            using (i_facility_shaktiEntities1 db1 = new i_facility_shaktiEntities1())
+                            using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
                             {
 
                                 if (string.IsNullOrEmpty(Dept) || string.IsNullOrEmpty(OperatorName) || OperatorID == null)
@@ -657,7 +657,7 @@ namespace i_facility.Controllers
                         bool check = ValidationCheckForInsertion(OperatorID);
                         if (check == true)
                         {
-                            using (i_facility_shaktiEntities1 db1 = new i_facility_shaktiEntities1())
+                            using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
                             {
 
                                 if (string.IsNullOrEmpty(Dept) || string.IsNullOrEmpty(OperatorName) || OperatorID == null)
@@ -706,7 +706,7 @@ namespace i_facility.Controllers
                         else
                         {
                             var OPTDet = db.tbloperatordetails.Where(m => m.isDeleted == 0 && m.OperatorID == OperatorID).FirstOrDefault();
-                            using (i_facility_shaktiEntities1 db1 = new i_facility_shaktiEntities1())
+                            using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
                             {
 
                                 if (string.IsNullOrEmpty(Dept) || string.IsNullOrEmpty(OperatorName) || OperatorID == null)

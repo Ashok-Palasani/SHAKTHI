@@ -12,7 +12,7 @@ namespace SRKSDemo.Controllers
 
     public class ShiftDetailsController : Controller
     {
-        i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities condb = new i_facility_shaktiEntities();
 
         public ActionResult Index()
         {
@@ -142,7 +142,7 @@ namespace SRKSDemo.Controllers
                 error = "Shift Name already exists for this ShiftMethod.";
                 TempData["toaster_error"] = error;
 
-                using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+                using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
                 {
                     var todeletedata = condb.tblshiftdetails.Where(m => m.IsDeleted == 0 && m.ShiftMethodID == ShiftMethod1).ToList();
                     foreach (var row in todeletedata)
@@ -217,7 +217,7 @@ namespace SRKSDemo.Controllers
                 {
                     if (rowscount < noofshifts)
                     {
-                        using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+                        using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
                         {
                             // calculate duration
                             int duration = 0;
@@ -248,7 +248,7 @@ namespace SRKSDemo.Controllers
                                 int shiftid = shift.ShiftDetailsID;
                                 int oldcreatedby = 0;
                                 DateTime oldcreatedon = DateTime.Now;
-                                using (i_facility_shaktiEntities1 condb1 = new i_facility_shaktiEntities1())
+                                using (i_facility_shaktiEntities condb1 = new i_facility_shaktiEntities())
                                 {
                                     var getShiftId = condb1.tblshiftdetails.Where(m => m.IsDeleted == 0 && m.ShiftDetailsID == shiftid).SingleOrDefault();
                                     getShiftId.IsShiftDetailsEdited = 1;

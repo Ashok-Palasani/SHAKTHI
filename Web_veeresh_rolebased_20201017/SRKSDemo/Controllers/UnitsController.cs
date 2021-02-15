@@ -14,7 +14,7 @@ namespace i_facility.Controllers
     {
         //
         // GET: /Units/
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         string Controller = "Units";
         string Action = null;
         public ActionResult Index()

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="i_facility_shaktiModelStoreContainer" CdmEntityContainer="i_facility_shaktiEntities1">
+  <EntityContainerMapping StorageEntityContainer="i_facility_shaktiModelStoreContainer" CdmEntityContainer="i_facility_shaktiEntities">
     <EntitySetMapping Name="alarm_history_master">
       <EntityTypeMapping TypeName="i_facility_shaktiModel.alarm_history_master">
         <MappingFragment StoreEntitySet="alarm_history_master">
@@ -170,6 +170,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="dashboard_menus">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.dashboard_menus">
+        <MappingFragment StoreEntitySet="dashboard_menus">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+          <ScalarProperty Name="MenuUrl" ColumnName="MenuUrl" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+          <ScalarProperty Name="ColourDiv" ColumnName="ColourDiv" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="frommails">
       <EntityTypeMapping TypeName="i_facility_shaktiModel.frommail">
         <MappingFragment StoreEntitySet="frommail">
@@ -251,6 +269,31 @@
           <ScalarProperty Name="CCAdd" ColumnName="CCAdd" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="BCCAdd" ColumnName="BCCAdd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="menu_styles">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.menu_styles">
+        <MappingFragment StoreEntitySet="menu_styles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="styleName" ColumnName="styleName" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="menus">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.menu">
+        <MappingFragment StoreEntitySet="menus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+          <ScalarProperty Name="IsDashboard" ColumnName="IsDashboard" />
+          <ScalarProperty Name="IsSideMenubar" ColumnName="IsSideMenubar" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -485,6 +528,7 @@
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="IsPiweb" ColumnName="IsPiweb" />
           <ScalarProperty Name="Meas_DateTime" ColumnName="Meas_DateTime" />
+          <ScalarProperty Name="OP40" ColumnName="OP40" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -513,6 +557,25 @@
           <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="Duration" ColumnName="Duration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sidebar_menus">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.sidebar_menus">
+        <MappingFragment StoreEntitySet="sidebar_menus">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="SubMenuName" ColumnName="SubMenuName" />
+          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+          <ScalarProperty Name="SubMenuURL" ColumnName="SubMenuURL" />
+          <ScalarProperty Name="MenuURL" ColumnName="MenuURL" />
+          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -797,6 +860,22 @@
           <ScalarProperty Name="LossDuration" ColumnName="LossDuration" />
           <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
           <ScalarProperty Name="InsertedOn" ColumnName="InsertedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ProdAndonDisp">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_ProdAndonDisp">
+        <MappingFragment StoreEntitySet="tbl_ProdAndonDisp">
+          <ScalarProperty Name="ProdDashboardID" ColumnName="ProdDashboardID" />
+          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+          <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
+          <ScalarProperty Name="WOID" ColumnName="WOID" />
+          <ScalarProperty Name="UtilPercent" ColumnName="UtilPercent" />
+          <ScalarProperty Name="TotalLoss" ColumnName="TotalLoss" />
+          <ScalarProperty Name="TotalSetup" ColumnName="TotalSetup" />
+          <ScalarProperty Name="TotalOperatingTime" ColumnName="TotalOperatingTime" />
+          <ScalarProperty Name="InsertedOn" ColumnName="InsertedOn" />
+          <ScalarProperty Name="Work_Order_No" ColumnName="Work_Order_No" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1294,6 +1373,18 @@
           <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
           <ScalarProperty Name="IsWOSelected" ColumnName="IsWOSelected" />
           <ScalarProperty Name="BHMIID" ColumnName="BHMIID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDDLStatus">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblDDLStatu">
+        <MappingFragment StoreEntitySet="tblDDLStatus">
+          <ScalarProperty Name="DDLStatusId" ColumnName="DDLStatusId" />
+          <ScalarProperty Name="StatusMessage" ColumnName="StatusMessage" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -2513,6 +2604,46 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tblpmsdetails">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblpmsdetail">
+        <MappingFragment StoreEntitySet="tblpmsdetails">
+          <ScalarProperty Name="pmsid" ColumnName="pmsid" />
+          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+          <ScalarProperty Name="PMStartDate" ColumnName="PMStartDate" />
+          <ScalarProperty Name="PMEndDate" ColumnName="PMEndDate" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="IsSubmitted" ColumnName="IsSubmitted" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblPMSNotification_Master">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.TblPMSNotification_Master">
+        <MappingFragment StoreEntitySet="TblPMSNotification_Master">
+          <ScalarProperty Name="PMSId" ColumnName="PMSId" />
+          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+          <ScalarProperty Name="ShopID" ColumnName="ShopID" />
+          <ScalarProperty Name="CellID" ColumnName="CellID" />
+          <ScalarProperty Name="WorkCenterID" ColumnName="WorkCenterID" />
+          <ScalarProperty Name="ToList" ColumnName="ToList" />
+          <ScalarProperty Name="CcList" ColumnName="CcList" />
+          <ScalarProperty Name="SMSContactList" ColumnName="SMSContactList" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="NoOfDaysPrior" ColumnName="NoOfDaysPrior" />
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tblPrecentColours">
       <EntityTypeMapping TypeName="i_facility_shaktiModel.tblPrecentColour">
         <MappingFragment StoreEntitySet="tblPrecentColour">
@@ -3292,6 +3423,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="user_menus">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.user_menus">
+        <MappingFragment StoreEntitySet="user_menus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="MenuStatus" ColumnName="MenuStatus" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="weekdatas">
       <EntityTypeMapping TypeName="i_facility_shaktiModel.weekdata">
         <MappingFragment StoreEntitySet="weekdata">
@@ -3345,62 +3491,6 @@
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
           <ScalarProperty Name="CellID" ColumnName="CellID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TblPMSNotification_Master">
-      <EntityTypeMapping TypeName="i_facility_shaktiModel.TblPMSNotification_Master">
-        <MappingFragment StoreEntitySet="TblPMSNotification_Master">
-          <ScalarProperty Name="Unit" ColumnName="Unit" />
-          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
-          <ScalarProperty Name="NoOfDaysPrior" ColumnName="NoOfDaysPrior" />
-          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
-          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-          <ScalarProperty Name="SMSContactList" ColumnName="SMSContactList" />
-          <ScalarProperty Name="CcList" ColumnName="CcList" />
-          <ScalarProperty Name="ToList" ColumnName="ToList" />
-          <ScalarProperty Name="WorkCenterID" ColumnName="WorkCenterID" />
-          <ScalarProperty Name="CellID" ColumnName="CellID" />
-          <ScalarProperty Name="ShopID" ColumnName="ShopID" />
-          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
-          <ScalarProperty Name="PMSId" ColumnName="PMSId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblpmsdetails">
-      <EntityTypeMapping TypeName="i_facility_shaktiModel.tblpmsdetail">
-        <MappingFragment StoreEntitySet="tblpmsdetails">
-          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="IsSubmitted" ColumnName="IsSubmitted" />
-          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
-          <ScalarProperty Name="PMEndDate" ColumnName="PMEndDate" />
-          <ScalarProperty Name="PMStartDate" ColumnName="PMStartDate" />
-          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
-          <ScalarProperty Name="pmsid" ColumnName="pmsid" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tbl_ProdAndonDisp">
-      <EntityTypeMapping TypeName="i_facility_shaktiModel.tbl_ProdAndonDisp">
-        <MappingFragment StoreEntitySet="tbl_ProdAndonDisp">
-          <ScalarProperty Name="Work_Order_No" ColumnName="Work_Order_No" />
-          <ScalarProperty Name="InsertedOn" ColumnName="InsertedOn" />
-          <ScalarProperty Name="TotalOperatingTime" ColumnName="TotalOperatingTime" />
-          <ScalarProperty Name="TotalSetup" ColumnName="TotalSetup" />
-          <ScalarProperty Name="TotalLoss" ColumnName="TotalLoss" />
-          <ScalarProperty Name="UtilPercent" ColumnName="UtilPercent" />
-          <ScalarProperty Name="WOID" ColumnName="WOID" />
-          <ScalarProperty Name="CorrectedDate" ColumnName="CorrectedDate" />
-          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
-          <ScalarProperty Name="ProdDashboardID" ColumnName="ProdDashboardID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

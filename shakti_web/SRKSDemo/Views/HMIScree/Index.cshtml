@@ -739,14 +739,14 @@
                                                                     Mon = 1;
                                                                     IsStarted = 1;
                                                                     <td style="width: auto; text-align: center; font-family: Helvetica; font-size: 85%">
-                                                                        @Html.TextBoxFor(m => m[r].Delivered_Qty, new { @id = "cjtextbox8", @name = "cjtextbox8", @class = "j_int autosave j_length cjtextbox8", @maxlength = 9, @readonly = "readonly", @style = "background-color:lightblue" })
+                                                                        @Html.TextBoxFor(m => m[r].Delivered_Qty, new { @id = "cjtextbox8", @name = "cjtextbox8", @class = "j_int autosave j_length cjtextbox8", @maxlength = 9 })
                                                                     </td>
                                                                 }
                                                                 else
                                                                 {
 
                                                                     <td style="width: auto; text-align: center; font-family: Helvetica; font-size: 85%">
-                                                                        @Html.TextBoxFor(m => m[r].Delivered_Qty, new { @id = "cjtextbox8", @name = "cjtextbox8", @class = "j_int autosave j_length cjtextbox8", @maxlength = 9, @disabled = "disabled", @readonly = "readonly", @style = "background-color:lightblue" })
+                                                                        @Html.TextBoxFor(m => m[r].Delivered_Qty, new { @id = "cjtextbox8", @name = "cjtextbox8", @class = "j_int autosave j_length cjtextbox8", @maxlength = 9, @disabled = "disabled" })
                                                                     </td>
                                                                 }
                                                                 @*@if (Model[r].Date != null)
@@ -1454,8 +1454,8 @@ if (parseInt('@Session["SubmitClicked"]') == 1) {
     $(".ddlClass").prop("disabled", true);
     $('#reworkdiv').prop("disabled", true);
     $('#reworkorder').prop("disabled", true);
-    //$('.cjtextbox8').prop("readonly", false);
-    //$('.cjtextbox8').prop("disabled", false);
+    $('.cjtextbox8').prop("readonly", false);
+    $('.cjtextbox8').prop("disabled", false);
 }
 
     @*if (parseInt('@Session["Started"]') == 1)

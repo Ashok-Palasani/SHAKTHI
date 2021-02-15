@@ -19,7 +19,7 @@ namespace i_facility.Controllers
 {
     public class IdleCodesController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         public ActionResult Index()
         {
             if ((Session["UserId"] == null) || (Session["UserId"].ToString() == String.Empty))
@@ -982,7 +982,7 @@ namespace i_facility.Controllers
                                             db.Entry(LossDup).State = EntityState.Modified;
                                             db.SaveChanges();
 
-                                            using (i_facility_shaktiEntities1 dbloss = new i_facility_shaktiEntities1())
+                                            using (i_facility_shaktiEntities dbloss = new i_facility_shaktiEntities())
                                             {
                                                 // Change all sublevels level1 ID to the new one
                                                 //now query for new row.
@@ -1132,7 +1132,7 @@ namespace i_facility.Controllers
                                                     continue;
                                                 }
 
-                                                using (i_facility_shaktiEntities1 dbloss = new i_facility_shaktiEntities1())
+                                                using (i_facility_shaktiEntities dbloss = new i_facility_shaktiEntities())
                                                 {
                                                     //Delete if loss exists with same codename and Details
                                                     var LossDup = dbloss.tbllossescodes.Where(m => m.LossCode == codename && m.LossCodesLevel == 2 && m.MessageType == messageType && m.LossCodesLevel1ID == LossCodesLevel1ID && m.IsDeleted == 0).FirstOrDefault();
@@ -1377,7 +1377,7 @@ namespace i_facility.Controllers
                                                         db.Entry(LossDup).State = EntityState.Modified;
                                                         db.SaveChanges();
 
-                                                        using (i_facility_shaktiEntities1 dbloss = new i_facility_shaktiEntities1())
+                                                        using (i_facility_shaktiEntities dbloss = new i_facility_shaktiEntities())
                                                         {
                                                         // Change all sublevels level1 ID to the new one
                                                         //now query for new row.

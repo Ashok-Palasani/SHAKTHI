@@ -11,7 +11,7 @@ namespace SRKSDemo.Controllers
 {
     public class PmCheckPointController : Controller
     {
-        i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities condb = new i_facility_shaktiEntities();
         // GET: PmCheckPoint
         public ActionResult Index()
         {
@@ -69,7 +69,7 @@ namespace SRKSDemo.Controllers
             ViewBag.Logout = Session["Username"].ToString().ToUpper();
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 var tblpm = condb.configuration_tblpmcheckpoint.Where(m => m.pmcpID == id && m.Isdeleted == 0).FirstOrDefault();
                 if (tblpm == null)
@@ -109,7 +109,7 @@ namespace SRKSDemo.Controllers
 
         public JsonResult GetcheckpointById(int Id)
         {
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 var Data = condb.configuration_tblpmcheckpoint.Where(m => m.CellID == Id).Select(m => new { pmcpid = m.pmcpID, plant = m.PlantID, shop = m.ShopID, cell = m.CellID, typeofcheckpoint = m.TypeofCheckpoint, frequency = m.frequency, value = m.Value, checklist = m.CheckList, how = m.How });
                 return Json(Data, JsonRequestBehavior.AllowGet);
@@ -118,7 +118,7 @@ namespace SRKSDemo.Controllers
 
         public JsonResult FetchCell(int SID)
         {
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 var CellData = (from row in condb.tblcells
                                 where row.IsDeleted == 0 && row.ShopID == SID
@@ -139,7 +139,7 @@ namespace SRKSDemo.Controllers
             //Getting all the details of that particular id in PMCheckPoint table
             configuration_tblpmcheckpoint tblmc = condb.configuration_tblpmcheckpoint.Find(id);
 
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 //Getting all the details of that particular id in PMCheckList table
                 var data = condb.configuration_tblpmcheckpoint.Where(m => m.pmcpID == id && m.Isdeleted == 0).ToList();

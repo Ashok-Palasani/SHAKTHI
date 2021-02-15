@@ -15,7 +15,7 @@ namespace SRKSDemo.Controllers
     // Look for the class "UnIdentifiedLossCorrection" in Model folder
     public class UnIdentifiedLossEntryController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         public ActionResult Index(string PlantID = null, string CDate = null, string ShopID = null, string CellID = null, string WorkCenterID = null)
         {
             if ((Session["UserId"] == null) || (Session["UserId"].ToString() == String.Empty))

@@ -10,7 +10,7 @@ namespace SRKSDemo.Controllers
 {
     public class CellsController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 
         //Gettimg Machine category list
         public ActionResult CellsList()
@@ -58,7 +58,7 @@ namespace SRKSDemo.Controllers
             string cellname = tblp.Cells.ToString();
           // var shop= tblp.Cells.ShopID;
             var PlantId = tblp.Cells.PlantID;
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var doesThisShopExists = db.tblcells.Where(m => m.IsDeleted == 0 && m.PlantID == Plant && m.ShopID == shop && m.CellName == cellname).ToList();
                 if (doesThisShopExists.Count == 0)
@@ -94,7 +94,7 @@ namespace SRKSDemo.Controllers
             //ViewBag.Logout = Session["Username"].ToString().ToUpper();
             //ViewBag.roleid = Session["RoleID"];
             //String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 tblcell tblmc = db.tblcells.Find(Id);
                 if (tblmc == null)
@@ -122,7 +122,7 @@ namespace SRKSDemo.Controllers
             //Cell name validation
             string cellname = objcell.Cells.CellName.ToString();
             int cellid = objcell.Cells.CellID;
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var doesThisdeptExists = db.tblcells.Where(m => m.IsDeleted == 0 && m.PlantID == Plant && m.ShopID == shop && m.CellName == cellname && m.CellID != cellid).ToList();
                 if (doesThisdeptExists.Count == 0)
@@ -169,7 +169,7 @@ namespace SRKSDemo.Controllers
             // ActiveLogStorage Obj = new ActiveLogStorage();
             //Obj.SaveActiveLog(Action, Controller, Username, UserID, CompleteModificationdetail);
             //End
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 tblcell tblmc = db.tblcells.Find(id);
                 int mcahineid = tblmc.CellID;

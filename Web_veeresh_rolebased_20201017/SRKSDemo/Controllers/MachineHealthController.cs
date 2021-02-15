@@ -12,7 +12,7 @@ namespace SRKSDemo.Controllers
 
     public class MachineHealthController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         // GET: MachineHealth
         public ActionResult Index()
         {
@@ -84,7 +84,7 @@ namespace SRKSDemo.Controllers
         {
             string res = "";
             List<cbmparametermodel> cbmlist = new List<cbmparametermodel>();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var sensordata = (from sensor in db.configurationtblmachinesensors
                                   where sensor.MachineId == MID

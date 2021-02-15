@@ -9,7 +9,7 @@ namespace SRKSDemo.ReportsCalcClass
 {
     public class OEEReportData
     {
-        i_facility_shaktiEntities1 Serverdb = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities Serverdb = new i_facility_shaktiEntities();
 
         public OEEReportData()
         {

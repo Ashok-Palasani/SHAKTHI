@@ -12,7 +12,7 @@ namespace SRKSDemo.Controllers
 {
     public class IMTEXDashboardController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         // GET: Dashboard
         public ActionResult Index()
         {
@@ -83,7 +83,7 @@ namespace SRKSDemo.Controllers
                     //{
                     // var getWoLossList1 = db.tblmodes.Where(m => m.CorrectedDate == correctedDate1.Date && m.LossCodeID == LossRow.LossCodeID && m.IsCompleted==1 ).OrderBy(m=>new { m.ModeID,m.StartTime}).ToList();
 
-                    var getmodes = db.tblmodes.Where(m => m.CorrectedDate == correctedDate1.Date && m.IsCompleted == 1 && m.ModeTypeEnd==1 && m.IsPiWeb==0 ).OrderBy(m => new { m.ModeID, m.StartTime }).ToList();
+                    var getmodes = db.tblmodes.Where(m => m.CorrectedDate == (correctedDate1.Date).ToString() && m.IsCompleted == 1 && m.ModeTypeEnd==1 && m.IsPiWeb==0 ).OrderBy(m => new { m.ModeID, m.StartTime }).ToList();
 
                     var TotalLossDuration = getmodes.Where(m => m.ModeType == "IDLE").Sum(m => m.DurationInSec).ToString();
                     decimal TotalLossDura = Convert.ToDecimal(TotalLossDuration);
@@ -448,7 +448,7 @@ namespace SRKSDemo.Controllers
             decimal PowerOffTime = 0;
             decimal PowerONTime = 0;
             MachineTime objmachine = new MachineTime();
-            var GetModeDurations = db.tblmodes.Where(m => m.MachineID == MachineID && m.CorrectedDate == correctedDate.Date && m.IsCompleted == 1 && m.ModeTypeEnd == 1).ToList();
+            var GetModeDurations = db.tblmodes.Where(m => m.MachineID == MachineID && m.CorrectedDate == (correctedDate.Date).ToString() && m.IsCompleted == 1 && m.ModeTypeEnd == 1).ToList();
             foreach (var ModeRow in GetModeDurations)
             {
                 if (ModeRow.ModeType == "PROD")

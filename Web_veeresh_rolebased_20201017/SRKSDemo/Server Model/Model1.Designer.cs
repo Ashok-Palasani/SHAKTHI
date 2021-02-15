@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\ShaktiBuild_16-10-2020\SHAKTIWEBAPP-master\SRKSDemo\Server Model\Model1.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Github_Ashok\Shakti_latest\Web_veeresh_rolebased_20201017\SRKSDemo\Server Model\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

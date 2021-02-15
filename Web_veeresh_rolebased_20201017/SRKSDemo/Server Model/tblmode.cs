@@ -21,7 +21,7 @@ namespace SRKSDemo.Server_Model
         public int InsertedBy { get; set; }
         public Nullable<System.DateTime> ModifiedOn { get; set; }
         public Nullable<int> ModifiedBy { get; set; }
-        public System.DateTime CorrectedDate { get; set; }
+        public string CorrectedDate { get; set; }
         public int IsDeleted { get; set; }
         public Nullable<System.DateTime> StartTime { get; set; }
         public Nullable<System.DateTime> EndTime { get; set; }

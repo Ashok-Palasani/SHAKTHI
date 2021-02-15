@@ -6,7 +6,7 @@ namespace SRKSDemo.Controllers
 {
     public class ToolLifeController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 
         // GET: ToolLife
         public ActionResult Index(int PlantID = 0, int ShopID = 0, int CellID = 0, int WorkCenterID = 0)

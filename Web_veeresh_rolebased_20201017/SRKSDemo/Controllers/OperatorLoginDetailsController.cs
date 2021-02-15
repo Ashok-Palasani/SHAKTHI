@@ -12,7 +12,7 @@ namespace SRKSDemo.Controllers
     public class OperatorLoginDetailsController : Controller
     {
 
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         // GET: OperatorLoginDetails
 
         public ActionResult Index()
@@ -37,7 +37,7 @@ namespace SRKSDemo.Controllers
         public ActionResult CreateOperatorLogin()
         {
 
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 ViewBag.Roles = new SelectList(db.tblroles.Where(m => m.IsDeleted == 0 && (m.Role_ID == 6 || m.Role_ID == 9)), "Role_ID", "RoleName").ToList();
                 ViewBag.machineDetails = new SelectList(db.tblmachinedetails.Where(m => m.IsDeleted == 0), "MachineID", "MachineName").ToList();
@@ -53,7 +53,7 @@ namespace SRKSDemo.Controllers
             String Username = Session["Username"].ToString();
 
             //shop name validation
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var operatorCheck = db.tblOperatorLoginDetails.Where(m => m.operatorId == OperatorLogin.operatorId).FirstOrDefault();
                 if (operatorCheck == null)
@@ -108,7 +108,7 @@ namespace SRKSDemo.Controllers
             ViewBag.Logout = Session["Username"].ToString().ToUpper();
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 tblOperatorLoginDetail operatorLoginDetail = db.tblOperatorLoginDetails.Find(Id);
                 if (operatorLoginDetail == null)
@@ -134,7 +134,7 @@ namespace SRKSDemo.Controllers
             String Username = Session["Username"].ToString();
             int UserID = Convert.ToInt32(Session["UserID"]);
 
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var operatorCheck = db.tblOperatorLoginDetails.Where(m => m.operatorId == OperatorLogin.operatorId).FirstOrDefault();
                 if (operatorCheck != null)
@@ -200,7 +200,7 @@ namespace SRKSDemo.Controllers
             //ViewBag.IsConfigMenu = 0;
 
 
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 tblOperatorLoginDetail obj = db.tblOperatorLoginDetails.Find(id);
                 obj.isDeleted = 1;

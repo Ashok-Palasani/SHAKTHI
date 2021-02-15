@@ -13,7 +13,7 @@ namespace UnitWorksCCS.Controllers
     public class DailyProdStatusController : Controller
     {
         // GET: DailyProdStatus
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         string databaseName = ConfigurationManager.AppSettings["dbName"];
         public ActionResult Index()
         {

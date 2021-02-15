@@ -12,7 +12,7 @@ namespace SRKSDemo.Controllers
 {
     public class MachineStatusReportController : Controller
     {
-        i_facility_shaktiEntities1 Serverdb = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities Serverdb = new i_facility_shaktiEntities();
         string databaseName = ConfigurationManager.AppSettings["dbName"];
         // GET: MachineStatusReport
         [HttpGet]

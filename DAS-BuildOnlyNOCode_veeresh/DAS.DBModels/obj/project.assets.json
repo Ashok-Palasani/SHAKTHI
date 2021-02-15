@@ -5015,11 +5015,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Aswini\\shakthi\\DAS-BuildOnlyNOCode_veeresh_20201019\\DAS-BuildOnlyNOCode_veeresh\\DAS.DBModels\\DAS.DBModels.csproj",
+      "projectUniqueName": "D:\\Github_Ashok\\Shakti_latest\\DAS-BuildOnlyNOCode_veeresh\\DAS.DBModels\\DAS.DBModels.csproj",
       "projectName": "DAS.DBModels",
-      "projectPath": "D:\\Aswini\\shakthi\\DAS-BuildOnlyNOCode_veeresh_20201019\\DAS-BuildOnlyNOCode_veeresh\\DAS.DBModels\\DAS.DBModels.csproj",
+      "projectPath": "D:\\Github_Ashok\\Shakti_latest\\DAS-BuildOnlyNOCode_veeresh\\DAS.DBModels\\DAS.DBModels.csproj",
       "packagesPath": "C:\\Users\\pavan\\.nuget\\packages\\",
-      "outputPath": "D:\\Aswini\\shakthi\\DAS-BuildOnlyNOCode_veeresh_20201019\\DAS-BuildOnlyNOCode_veeresh\\DAS.DBModels\\obj\\",
+      "outputPath": "D:\\Github_Ashok\\Shakti_latest\\DAS-BuildOnlyNOCode_veeresh\\DAS.DBModels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

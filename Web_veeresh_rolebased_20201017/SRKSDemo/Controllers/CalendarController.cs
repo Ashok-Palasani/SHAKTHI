@@ -14,7 +14,7 @@ namespace SRKSDemo.Controllers
     public class CalendarController : Controller
     {
 
-        i_facility_shaktiEntities1 Serverdb = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities Serverdb = new i_facility_shaktiEntities();
         public ActionResult Calendar()
         {
             if ((Session["UserId"] == null) || (Session["UserId"].ToString() == String.Empty))

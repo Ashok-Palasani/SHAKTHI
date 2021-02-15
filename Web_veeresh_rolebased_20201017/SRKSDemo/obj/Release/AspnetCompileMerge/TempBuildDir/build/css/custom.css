@@ -15117,10 +15117,20 @@ ul.social li {
         margin-top: 0
     }
 
+
+
 .widget {
+    min-width: 100%;
+    max-width: 100%
+}
+
+
+/*.widget {
     min-width: 250px;
     max-width: 310px
-}
+}*/
+
+
 
 .widget_tally_box .btn-group button {
     text-align: center

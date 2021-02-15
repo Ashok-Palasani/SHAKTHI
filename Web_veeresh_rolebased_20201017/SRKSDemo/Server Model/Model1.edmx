@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="i_facility_shaktiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="i_facility_shaktiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="alarm_history_master">
           <Key>
             <PropertyRef Name="AlarmID" />
@@ -504,6 +504,7 @@
           <Property Name="Status" Type="int" />
           <Property Name="IsPiweb" Type="int" />
           <Property Name="Meas_DateTime" Type="datetime" />
+          <Property Name="OP40" Type="int" />
         </EntityType>
         <EntityType Name="sharathtable">
           <Key>
@@ -2015,7 +2016,7 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
           <Property Name="InsertedBy" Type="int" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
           <Property Name="ModifiedBy" Type="int" />
-          <Property Name="CorrectedDate" Type="date" Nullable="false" />
+          <Property Name="CorrectedDate" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="IsDeleted" Type="int" Nullable="false" />
           <Property Name="StartTime" Type="datetime2" Precision="0" />
           <Property Name="EndTime" Type="datetime2" Precision="0" />
@@ -3446,18 +3447,6 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
             </Principal>
             <Dependent Role="tbl_OEEDetails">
               <PropertyRef Name="MachineID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tbl_ProdAndonDisp_tbl_ProdAndonDisp">
-          <End Role="tbl_ProdAndonDisp" Type="Self.tbl_ProdAndonDisp" Multiplicity="1" />
-          <End Role="tbl_ProdAndonDisp1" Type="Self.tbl_ProdAndonDisp" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="tbl_ProdAndonDisp">
-              <PropertyRef Name="ProdDashboardID" />
-            </Principal>
-            <Dependent Role="tbl_ProdAndonDisp1">
-              <PropertyRef Name="ProdDashboardID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4919,58 +4908,6 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="DashboardLiveHMIMWOSTblINUP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="DashboardLiveLossManualTblINUP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="DashboardLiveModeTblINUP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="DeleteDupWorkOrdersFromDDLList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="DeleteExtraRowsHMI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="DeleteReocrdsFromDDL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="GetCheckboxesForUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="roleId" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetDashboardMenus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="roleId" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetMenuStyles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="GetSideMenubar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="roleId" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetUserMenus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="HMIUpdationofMonthYearWeek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="V_Date" Type="date" Mode="In" />
-          <Parameter Name="V_HMIID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="liveDataDelAfterMaovedToHistorin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="LossAndBreakDown" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="breakDownId" Type="int" Mode="In" />
-          <Parameter Name="startTime" Type="datetime" Mode="In" />
-          <Parameter Name="endTime" Type="datetime" Mode="In" />
-          <Parameter Name="breakDownAndLossCode" Type="int" Mode="In" />
-          <Parameter Name="machineId" Type="int" Mode="In" />
-          <Parameter Name="shift" Type="nvarchar" Mode="In" />
-          <Parameter Name="doneWithRow" Type="int" Mode="In" />
-          <Parameter Name="correctedDate" Type="nvarchar" Mode="In" />
-          <Parameter Name="entryTime" Type="datetime" Mode="In" />
-          <Parameter Name="messageCodeId" Type="int" Mode="In" />
-        </Function>
-        <Function Name="LossEntryUpdationofMonthYearWeek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="V_Date" Type="date" Mode="In" />
-          <Parameter Name="V_LossID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="ManualLossUpdationofMonthYearWeek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="V_Date" Type="date" Mode="In" />
-          <Parameter Name="V_MLossID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="ModeUpdationofMonthYearWeek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="V_Date" Type="date" Mode="In" />
-          <Parameter Name="V_ModeID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="OperationLogDelAfterFewdays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="parameters_masterDelAfterFewDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="SP_UtilData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Cdate" Type="date" Mode="In" />
-          <Parameter Name="MachineID" Type="int" Mode="In" />
-        </Function>
         <EntityContainer Name="i_facility_shaktiModelStoreContainer">
           <EntitySet Name="alarm_history_master" EntityType="Self.alarm_history_master" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="configuration_tblpmchecklist" EntityType="Self.configuration_tblpmchecklist" Schema="dbo" store:Type="Tables" />
@@ -5224,10 +5161,6 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
           <AssociationSet Name="FK_tbl_OEEDetails_tbl_MachineDetails" Association="Self.FK_tbl_OEEDetails_tbl_MachineDetails">
             <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
             <End Role="tbl_OEEDetails" EntitySet="tbl_OEEDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tbl_ProdAndonDisp_tbl_ProdAndonDisp" Association="Self.FK_tbl_ProdAndonDisp_tbl_ProdAndonDisp">
-            <End Role="tbl_ProdAndonDisp" EntitySet="tbl_ProdAndonDisp" />
-            <End Role="tbl_ProdAndonDisp1" EntitySet="tbl_ProdAndonDisp" />
           </AssociationSet>
           <AssociationSet Name="FK_tbl_ProdAndonDisp_tblmachinedetails" Association="Self.FK_tbl_ProdAndonDisp_tblmachinedetails">
             <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
@@ -5714,7 +5647,8 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
             <End Role="tblmachineallocation" EntitySet="tblmachineallocation" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="i_facility_shaktiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -6003,6 +5937,21 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
           <Property Name="styleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="isDeleted" Type="Int32" />
         </EntityType>
+        <EntityType Name="menu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsDashboard" Type="Int32" />
+          <Property Name="IsSideMenubar" Type="Int32" />
+          <Property Name="DisplayOrder" Type="Int32" />
+          <Property Name="IsDeleted" Type="Int32" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="Int32" />
+        </EntityType>
         <EntityType Name="message_code_master">
           <Key>
             <PropertyRef Name="MessageCodeID" />
@@ -6223,6 +6172,7 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
           <Property Name="Status" Type="Int32" />
           <Property Name="IsPiweb" Type="Int32" />
           <Property Name="Meas_DateTime" Type="DateTime" Precision="3" />
+          <Property Name="OP40" Type="Int32" />
         </EntityType>
         <EntityType Name="sharathtable">
           <Key>
@@ -6568,8 +6518,6 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
           <Property Name="TotalOperatingTime" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
           <Property Name="InsertedOn" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Work_Order_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tbl_ProdAndonDisp1" Relationship="Self.FK_tbl_ProdAndonDisp_tbl_ProdAndonDisp" FromRole="tbl_ProdAndonDisp" ToRole="tbl_ProdAndonDisp1" />
-          <NavigationProperty Name="tbl_ProdAndonDisp2" Relationship="Self.FK_tbl_ProdAndonDisp_tbl_ProdAndonDisp" FromRole="tbl_ProdAndonDisp1" ToRole="tbl_ProdAndonDisp" />
           <NavigationProperty Name="tblmachinedetail" Relationship="Self.FK_tbl_ProdAndonDisp_tblmachinedetails" FromRole="tbl_ProdAndonDisp" ToRole="tblmachinedetails" />
           <NavigationProperty Name="tbllivehmiscreen" Relationship="Self.FK_tbl_ProdAndonDisp_tblworkorderentry" FromRole="tbl_ProdAndonDisp" ToRole="tbllivehmiscreen" />
         </EntityType>
@@ -7828,7 +7776,7 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
           <Property Name="InsertedBy" Type="Int32" Nullable="false" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
           <Property Name="ModifiedBy" Type="Int32" />
-          <Property Name="CorrectedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CorrectedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IsDeleted" Type="Int32" Nullable="false" />
           <Property Name="StartTime" Type="DateTime" Precision="0" />
           <Property Name="EndTime" Type="DateTime" Precision="0" />
@@ -9657,18 +9605,6 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tbl_ProdAndonDisp_tbl_ProdAndonDisp">
-          <End Role="tbl_ProdAndonDisp" Type="Self.tbl_ProdAndonDisp" Multiplicity="1" />
-          <End Role="tbl_ProdAndonDisp1" Type="Self.tbl_ProdAndonDisp" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="tbl_ProdAndonDisp">
-              <PropertyRef Name="ProdDashboardID" />
-            </Principal>
-            <Dependent Role="tbl_ProdAndonDisp1">
-              <PropertyRef Name="ProdDashboardID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_tbl_ProdAndonDisp_tblmachinedetails">
           <End Role="tblmachinedetails" Type="Self.tblmachinedetail" Multiplicity="1" />
           <End Role="tbl_ProdAndonDisp" Type="Self.tbl_ProdAndonDisp" Multiplicity="*" />
@@ -10875,7 +10811,7 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="i_facility_shaktiEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="i_facility_shaktiEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="alarm_history_master" EntityType="Self.alarm_history_master" />
           <EntitySet Name="configuration_tblpmchecklist" EntityType="Self.configuration_tblpmchecklist" />
           <EntitySet Name="configuration_tblpmcheckpoint" EntityType="Self.configuration_tblpmcheckpoint" />
@@ -10892,6 +10828,7 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
           <EntitySet Name="LossDetails" EntityType="Self.LossDetail" />
           <EntitySet Name="mailmasters" EntityType="Self.mailmaster" />
           <EntitySet Name="menu_styles" EntityType="Self.menu_styles" />
+          <EntitySet Name="menus" EntityType="Self.menu" />
           <EntitySet Name="message_code_master" EntityType="Self.message_code_master" />
           <EntitySet Name="message_history_master" EntityType="Self.message_history_master" />
           <EntitySet Name="monthdatas" EntityType="Self.monthdata" />
@@ -11177,10 +11114,6 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
           <AssociationSet Name="FK_tbl_OEEDetails_tbl_MachineDetails" Association="Self.FK_tbl_OEEDetails_tbl_MachineDetails">
             <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
             <End Role="tbl_OEEDetails" EntitySet="tbl_OEEDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tbl_ProdAndonDisp_tbl_ProdAndonDisp" Association="Self.FK_tbl_ProdAndonDisp_tbl_ProdAndonDisp">
-            <End Role="tbl_ProdAndonDisp" EntitySet="tbl_ProdAndonDisp" />
-            <End Role="tbl_ProdAndonDisp1" EntitySet="tbl_ProdAndonDisp" />
           </AssociationSet>
           <AssociationSet Name="FK_tbl_ProdAndonDisp_tblmachinedetails" Association="Self.FK_tbl_ProdAndonDisp_tblmachinedetails">
             <End Role="tblmachinedetails" EntitySet="tblmachinedetails" />
@@ -11582,133 +11515,13 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
             <End Role="tblshop" EntitySet="tblshops" />
             <End Role="tblshiftplanner" EntitySet="tblshiftplanners" />
           </AssociationSet>
-          <FunctionImport Name="DashboardLiveHMIMWOSTblINUP" />
-          <FunctionImport Name="DashboardLiveLossManualTblINUP" />
-          <FunctionImport Name="DashboardLiveModeTblINUP" />
-          <FunctionImport Name="DeleteDupWorkOrdersFromDDLList" />
-          <FunctionImport Name="DeleteExtraRowsHMI" />
-          <FunctionImport Name="DeleteReocrdsFromDDL" />
-          <FunctionImport Name="GetCheckboxesForUser" ReturnType="Collection(i_facility_shaktiModel.GetCheckboxesForUser_Result)">
-          <Parameter Name="roleId" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="GetDashboardMenus" ReturnType="Collection(i_facility_shaktiModel.GetDashboardMenus_Result)">
-          <Parameter Name="roleId" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="GetMenuStyles" ReturnType="Collection(i_facility_shaktiModel.GetMenuStyles_Result)" />
-          <FunctionImport Name="GetSideMenubar" ReturnType="Collection(i_facility_shaktiModel.GetSideMenubar_Result)">
-          <Parameter Name="roleId" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="GetUserMenus" ReturnType="Collection(i_facility_shaktiModel.GetUserMenus_Result)" />
-          <FunctionImport Name="HMIUpdationofMonthYearWeek">
-            <Parameter Name="V_Date" Mode="In" Type="DateTime" />
-            <Parameter Name="V_HMIID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="liveDataDelAfterMaovedToHistorin" />
-          <FunctionImport Name="LossAndBreakDown">
-            <Parameter Name="breakDownId" Mode="In" Type="Int32" />
-            <Parameter Name="startTime" Mode="In" Type="DateTime" />
-            <Parameter Name="endTime" Mode="In" Type="DateTime" />
-            <Parameter Name="breakDownAndLossCode" Mode="In" Type="Int32" />
-            <Parameter Name="machineId" Mode="In" Type="Int32" />
-            <Parameter Name="shift" Mode="In" Type="String" />
-            <Parameter Name="doneWithRow" Mode="In" Type="Int32" />
-            <Parameter Name="correctedDate" Mode="In" Type="String" />
-            <Parameter Name="entryTime" Mode="In" Type="DateTime" />
-            <Parameter Name="messageCodeId" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="LossEntryUpdationofMonthYearWeek">
-            <Parameter Name="V_Date" Mode="In" Type="DateTime" />
-            <Parameter Name="V_LossID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="ManualLossUpdationofMonthYearWeek">
-            <Parameter Name="V_Date" Mode="In" Type="DateTime" />
-            <Parameter Name="V_MLossID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="ModeUpdationofMonthYearWeek">
-            <Parameter Name="V_Date" Mode="In" Type="DateTime" />
-            <Parameter Name="V_ModeID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="OperationLogDelAfterFewdays" />
-          <FunctionImport Name="parameters_masterDelAfterFewDays" />
-          <FunctionImport Name="SP_UtilData">
-            <Parameter Name="Cdate" Mode="In" Type="DateTime" />
-            <Parameter Name="MachineID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <EntitySet Name="menus" EntityType="i_facility_shaktiModel.menu" />
         </EntityContainer>
-        <ComplexType Name="GetCheckboxesForUser_Result">
-          <Property Type="Int32" Name="MenuId" Nullable="true" />
-          <Property Type="String" Name="MenuName" Nullable="true" MaxLength="100" />
-          <Property Type="Boolean" Name="MenuStatus" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="GetDashboardMenus_Result">
-          <Property Type="Int32" Name="id" Nullable="false" />
-          <Property Type="String" Name="MenuName" Nullable="true" MaxLength="200" />
-          <Property Type="String" Name="MenuUrl" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="ImageUrl" Nullable="true" MaxLength="200" />
-          <Property Type="Int32" Name="MenuId" Nullable="true" />
-          <Property Type="String" Name="ColourDiv" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="Style" Nullable="true" MaxLength="100" />
-          <Property Type="Int32" Name="IsDeleted" Nullable="true" />
-          <Property Type="DateTime" Name="CreatedOn" Nullable="true" />
-          <Property Type="Int32" Name="CreatedBy" Nullable="true" />
-          <Property Type="DateTime" Name="ModifiedOn" Nullable="true" />
-          <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
-          <Property Type="Int32" Name="Id1" Nullable="true" />
-          <Property Type="Int32" Name="MenuId1" Nullable="true" />
-          <Property Type="Int32" Name="RoleId" Nullable="true" />
-          <Property Type="Boolean" Name="MenuStatus" Nullable="true" />
-          <Property Type="Int32" Name="IsDeleted1" Nullable="true" />
-          <Property Type="DateTime" Name="CreatedOn1" Nullable="true" />
-          <Property Type="Int32" Name="CreatedBy1" Nullable="true" />
-          <Property Type="DateTime" Name="ModifiedOn1" Nullable="true" />
-          <Property Type="Int32" Name="ModifiedBy1" Nullable="true" />
-          <Property Type="Int32" Name="Id2" Nullable="true" />
-          <Property Type="String" Name="MenuName1" Nullable="true" MaxLength="100" />
-          <Property Type="Int32" Name="IsDashboard" Nullable="true" />
-          <Property Type="Int32" Name="IsSideMenubar" Nullable="true" />
-          <Property Type="Int32" Name="DisplayOrder" Nullable="true" />
-          <Property Type="Int32" Name="IsDeleted2" Nullable="true" />
-          <Property Type="DateTime" Name="CreatedOn2" Nullable="true" />
-          <Property Type="Int32" Name="CreatedBy2" Nullable="true" />
-          <Property Type="DateTime" Name="ModifiedOn2" Nullable="true" />
-          <Property Type="Int32" Name="ModifiedBy2" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="GetMenuStyles_Result">
-          <Property Type="Int32" Name="id" Nullable="false" />
-          <Property Type="String" Name="styleName" Nullable="true" MaxLength="100" />
-          <Property Type="Int32" Name="isDeleted" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="GetSideMenubar_Result">
-          <Property Type="Int32" Name="MenuId" Nullable="true" />
-          <Property Type="String" Name="MenuName" Nullable="true" MaxLength="45" />
-          <Property Type="Int32" Name="DisplayOrder" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="GetUserMenus_Result">
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="String" Name="MenuName" Nullable="true" MaxLength="100" />
-        </ComplexType>
-        <EntityType Name="menu">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MenuName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="IsDashboard" Type="Int32" />
-          <Property Name="IsSideMenubar" Type="Int32" />
-          <Property Name="DisplayOrder" Type="Int32" />
-          <Property Name="IsDeleted" Type="Int32" />
-          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
-          <Property Name="CreatedBy" Type="Int32" />
-          <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="ModifiedBy" Type="Int32" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="i_facility_shaktiModelStoreContainer" CdmEntityContainer="i_facility_shaktiEntities1">
+        <EntityContainerMapping StorageEntityContainer="i_facility_shaktiModelStoreContainer" CdmEntityContainer="i_facility_shaktiEntities">
           <EntitySetMapping Name="alarm_history_master">
             <EntityTypeMapping TypeName="i_facility_shaktiModel.alarm_history_master">
               <MappingFragment StoreEntitySet="alarm_history_master">
@@ -11989,6 +11802,22 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="menus">
+            <EntityTypeMapping TypeName="i_facility_shaktiModel.menu">
+              <MappingFragment StoreEntitySet="menus">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+                <ScalarProperty Name="IsDashboard" ColumnName="IsDashboard" />
+                <ScalarProperty Name="IsSideMenubar" ColumnName="IsSideMenubar" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="message_code_master">
             <EntityTypeMapping TypeName="i_facility_shaktiModel.message_code_master">
               <MappingFragment StoreEntitySet="message_code_master">
@@ -12220,6 +12049,7 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="IsPiweb" ColumnName="IsPiweb" />
                 <ScalarProperty Name="Meas_DateTime" ColumnName="Meas_DateTime" />
+                <ScalarProperty Name="OP40" ColumnName="OP40" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -15182,109 +15012,6 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
                 <ScalarProperty Name="CellID" ColumnName="CellID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="DashboardLiveHMIMWOSTblINUP" FunctionName="i_facility_shaktiModel.Store.DashboardLiveHMIMWOSTblINUP" />
-          <FunctionImportMapping FunctionImportName="DashboardLiveLossManualTblINUP" FunctionName="i_facility_shaktiModel.Store.DashboardLiveLossManualTblINUP" />
-          <FunctionImportMapping FunctionImportName="DashboardLiveModeTblINUP" FunctionName="i_facility_shaktiModel.Store.DashboardLiveModeTblINUP" />
-          <FunctionImportMapping FunctionImportName="DeleteDupWorkOrdersFromDDLList" FunctionName="i_facility_shaktiModel.Store.DeleteDupWorkOrdersFromDDLList" />
-          <FunctionImportMapping FunctionImportName="DeleteExtraRowsHMI" FunctionName="i_facility_shaktiModel.Store.DeleteExtraRowsHMI" />
-          <FunctionImportMapping FunctionImportName="DeleteReocrdsFromDDL" FunctionName="i_facility_shaktiModel.Store.DeleteReocrdsFromDDL" />
-          <FunctionImportMapping FunctionImportName="GetCheckboxesForUser" FunctionName="i_facility_shaktiModel.Store.GetCheckboxesForUser">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="i_facility_shaktiModel.GetCheckboxesForUser_Result">
-                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
-                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
-                <ScalarProperty Name="MenuStatus" ColumnName="MenuStatus" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetDashboardMenus" FunctionName="i_facility_shaktiModel.Store.GetDashboardMenus">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="i_facility_shaktiModel.GetDashboardMenus_Result">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
-                <ScalarProperty Name="MenuUrl" ColumnName="MenuUrl" />
-                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
-                <ScalarProperty Name="ColourDiv" ColumnName="ColourDiv" />
-                <ScalarProperty Name="Style" ColumnName="Style" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="Id1" ColumnName="Id1" />
-                <ScalarProperty Name="MenuId1" ColumnName="MenuId1" />
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="MenuStatus" ColumnName="MenuStatus" />
-                <ScalarProperty Name="IsDeleted1" ColumnName="IsDeleted1" />
-                <ScalarProperty Name="CreatedOn1" ColumnName="CreatedOn1" />
-                <ScalarProperty Name="CreatedBy1" ColumnName="CreatedBy1" />
-                <ScalarProperty Name="ModifiedOn1" ColumnName="ModifiedOn1" />
-                <ScalarProperty Name="ModifiedBy1" ColumnName="ModifiedBy1" />
-                <ScalarProperty Name="Id2" ColumnName="Id2" />
-                <ScalarProperty Name="MenuName1" ColumnName="MenuName1" />
-                <ScalarProperty Name="IsDashboard" ColumnName="IsDashboard" />
-                <ScalarProperty Name="IsSideMenubar" ColumnName="IsSideMenubar" />
-                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-                <ScalarProperty Name="IsDeleted2" ColumnName="IsDeleted2" />
-                <ScalarProperty Name="CreatedOn2" ColumnName="CreatedOn2" />
-                <ScalarProperty Name="CreatedBy2" ColumnName="CreatedBy2" />
-                <ScalarProperty Name="ModifiedOn2" ColumnName="ModifiedOn2" />
-                <ScalarProperty Name="ModifiedBy2" ColumnName="ModifiedBy2" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetMenuStyles" FunctionName="i_facility_shaktiModel.Store.GetMenuStyles">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="i_facility_shaktiModel.GetMenuStyles_Result">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="styleName" ColumnName="styleName" />
-                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetSideMenubar" FunctionName="i_facility_shaktiModel.Store.GetSideMenubar">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="i_facility_shaktiModel.GetSideMenubar_Result">
-                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
-                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
-                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetUserMenus" FunctionName="i_facility_shaktiModel.Store.GetUserMenus">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="i_facility_shaktiModel.GetUserMenus_Result">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="HMIUpdationofMonthYearWeek" FunctionName="i_facility_shaktiModel.Store.HMIUpdationofMonthYearWeek" />
-          <FunctionImportMapping FunctionImportName="liveDataDelAfterMaovedToHistorin" FunctionName="i_facility_shaktiModel.Store.liveDataDelAfterMaovedToHistorin" />
-          <FunctionImportMapping FunctionImportName="LossAndBreakDown" FunctionName="i_facility_shaktiModel.Store.LossAndBreakDown" />
-          <FunctionImportMapping FunctionImportName="LossEntryUpdationofMonthYearWeek" FunctionName="i_facility_shaktiModel.Store.LossEntryUpdationofMonthYearWeek" />
-          <FunctionImportMapping FunctionImportName="ManualLossUpdationofMonthYearWeek" FunctionName="i_facility_shaktiModel.Store.ManualLossUpdationofMonthYearWeek" />
-          <FunctionImportMapping FunctionImportName="ModeUpdationofMonthYearWeek" FunctionName="i_facility_shaktiModel.Store.ModeUpdationofMonthYearWeek" />
-          <FunctionImportMapping FunctionImportName="OperationLogDelAfterFewdays" FunctionName="i_facility_shaktiModel.Store.OperationLogDelAfterFewdays" />
-          <FunctionImportMapping FunctionImportName="parameters_masterDelAfterFewDays" FunctionName="i_facility_shaktiModel.Store.parameters_masterDelAfterFewDays" />
-          <FunctionImportMapping FunctionImportName="SP_UtilData" FunctionName="i_facility_shaktiModel.Store.SP_UtilData" />
-          <EntitySetMapping Name="menus">
-            <EntityTypeMapping TypeName="i_facility_shaktiModel.menu">
-              <MappingFragment StoreEntitySet="menus">
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-                <ScalarProperty Name="IsSideMenubar" ColumnName="IsSideMenubar" />
-                <ScalarProperty Name="IsDashboard" ColumnName="IsDashboard" />
-                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

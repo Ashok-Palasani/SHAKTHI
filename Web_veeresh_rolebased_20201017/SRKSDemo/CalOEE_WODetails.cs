@@ -11,7 +11,7 @@ namespace SRKSDemo
 {
     public class CalOEE_WODetails
     {
-        private i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        private i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 
         public void CalculateOEEForYesterday(DateTime? StartDate, DateTime? EndDate)
         {
@@ -122,7 +122,7 @@ namespace SRKSDemo
                             DTLosses.Columns.Add("LossDuration", typeof(int));
 
 
-                            using (i_facility_shaktiEntities1 dbLoss = new i_facility_shaktiEntities1())
+                            using (i_facility_shaktiEntities dbLoss = new i_facility_shaktiEntities())
                             {
                                 var lossData = dbLoss.tbllossofentries.Where(m => m.CorrectedDate == todayAsCorrectedDate && m.MachineID == MachineID).ToList();
                                 foreach (var row in lossData)
@@ -277,10 +277,10 @@ namespace SRKSDemo
             //    }
             //}
 
-            using (i_facility_shaktiEntities1 dbLoss = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbLoss = new i_facility_shaktiEntities())
             {
                 DateTime st = Convert.ToDateTime(dateString);
-                var MinorLossSummation = dbLoss.tblmodes.Where(m => m.MachineID == MachineID && m.CorrectedDate == st && m.ColorCode == Colour && m.DurationInSec < 120).Sum(m => m.DurationInSec);
+                var MinorLossSummation = dbLoss.tblmodes.Where(m => m.MachineID == MachineID && m.CorrectedDate == st.ToString() && m.ColorCode == Colour && m.DurationInSec < 120).Sum(m => m.DurationInSec);
                 minorloss = Convert.ToDouble(MinorLossSummation);
             }
             return minorloss;
@@ -305,10 +305,10 @@ namespace SRKSDemo
             //    count[0] = Convert.ToInt32(OP.Rows[0][0]);
             //}
 
-            using (i_facility_shaktiEntities1 dbLoss = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbLoss = new i_facility_shaktiEntities())
             {
                 DateTime st = Convert.ToDateTime(CorrectedDate);
-                var blah = dbLoss.tblmodes.Where(m => m.MachineID == MachineID && m.CorrectedDate == st && m.ColorCode == Colour).Sum(m => m.DurationInSec);
+                var blah = dbLoss.tblmodes.Where(m => m.MachineID == MachineID && m.CorrectedDate == st.ToString() && m.ColorCode == Colour).Sum(m => m.DurationInSec);
                 count = Convert.ToDouble(blah);
             }
             return count;
@@ -330,7 +330,7 @@ namespace SRKSDemo
                 return -1;
             }
             //getting all setup's sublevels ids.
-            using (i_facility_shaktiEntities1 dbLoss = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbLoss = new i_facility_shaktiEntities())
             {
                 var SettingIDs = dbLoss.tbllossescodes.Where(m => m.LossCodesLevel1ID == setupid || m.LossCodesLevel2ID == setupid).Select(m => m.LossCodeID).ToList();
 
@@ -355,7 +355,7 @@ namespace SRKSDemo
             //string contribute = "ROA";
             //getting all ROA sublevels ids. Only those of IDLE.
 
-            using (i_facility_shaktiEntities1 dbLoss = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbLoss = new i_facility_shaktiEntities())
             {
                 var SettingIDs = dbLoss.tbllossescodes.Where(m => m.ContributeTo == contribute && (m.MessageType != "PM" || m.MessageType != "BREAKDOWN")).Select(m => m.LossCodeID).ToList();
 
@@ -375,7 +375,7 @@ namespace SRKSDemo
             //{
             //}
             double LossTime = 0;
-            using (i_facility_shaktiEntities1 dbLoss = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbLoss = new i_facility_shaktiEntities())
             {
                 var BreakdownData = dbLoss.tblbreakdowns.Where(m => m.MachineID == MachineID && m.CorrectedDate == UsedDateForExcel && m.DoneWithRow == 1).ToList();
                 foreach (var row in BreakdownData)
@@ -474,7 +474,7 @@ namespace SRKSDemo
             #region OLD 2017-02-10
             //List<string> OccuredWOs = new List<string>();
             ////To Extract Single WorkOrder Cutting Time
-            //using (i_facility_shaktiEntities1 dbhmi = new i_facility_shaktiEntities1())
+            //using (i_facility_shaktiEntities dbhmi = new i_facility_shaktiEntities())
             //{
             //    var PartsDataAll = dbhmi.tblhmiscreens.Where(m => m.CorrectedDate == UsedDateForExcel && m.MachineID == MachineID && m.IsMultiWO == 0 && m.isWorkOrder == 0 && (m.isWorkInProgress == 1 || m.isWorkInProgress == 0)).OrderByDescending(m => m.HMIID).ToList();
             //    if (PartsDataAll.Count == 0)
@@ -582,7 +582,7 @@ namespace SRKSDemo
             //    }
             //}
             ////To Extract Multi WorkOrder Cutting Time
-            //using (i_facility_shaktiEntities1 dbhmi = new i_facility_shaktiEntities1())
+            //using (i_facility_shaktiEntities dbhmi = new i_facility_shaktiEntities())
             //{
             //    var PartsDataAll = dbhmi.tblhmiscreens.Where(m => m.CorrectedDate == UsedDateForExcel && m.MachineID == MachineID && m.IsMultiWO == 1 && m.isWorkOrder == 0 && (m.isWorkInProgress == 1 || m.isWorkInProgress == 0)).ToList();
             //    if (PartsDataAll.Count == 0)
@@ -691,7 +691,7 @@ namespace SRKSDemo
             #endregion
 
             //new Code 2017-03-08
-            using (i_facility_shaktiEntities1 dbhmi = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbhmi = new i_facility_shaktiEntities())
             {
                 var PartsDataAll = dbhmi.tblhmiscreens.Where(m => m.CorrectedDate == UsedDateForExcel && m.MachineID == MachineID && m.isWorkOrder == 0 && (m.isWorkInProgress == 1 || m.isWorkInProgress == 0)).OrderByDescending(m => m.PartNo).ThenByDescending(m => m.OperationNo).ToList();
                 if (PartsDataAll.Count == 0)
@@ -779,7 +779,7 @@ namespace SRKSDemo
         public double GetScrapQtyTimeOfWO(string UsedDateForExcel, int MachineID)
         {
             double SQT = 0;
-            using (i_facility_shaktiEntities1 dbhmi = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbhmi = new i_facility_shaktiEntities())
             {
                 var PartsData = dbhmi.tblhmiscreens.Where(m => m.CorrectedDate == UsedDateForExcel && m.MachineID == MachineID && (m.isWorkInProgress == 1 || m.isWorkInProgress == 0) && m.isWorkOrder == 0).ToList();
                 foreach (var row in PartsData)
@@ -823,7 +823,7 @@ namespace SRKSDemo
         public double GetScrapQtyTimeOfRWO(string UsedDateForExcel, int MachineID)
         {
             double SQT = 0;
-            using (i_facility_shaktiEntities1 dbhmi = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbhmi = new i_facility_shaktiEntities())
             {
                 var PartsData = dbhmi.tblhmiscreens.Where(m => m.CorrectedDate == UsedDateForExcel && m.MachineID == MachineID && (m.isWorkInProgress == 1 || m.isWorkInProgress == 0) && m.isWorkOrder == 1).ToList();
                 foreach (var row in PartsData)
@@ -1962,7 +1962,7 @@ namespace SRKSDemo
         public double GetScrapQtyTimeOfWO(string UsedDateForExcel, DateTime StartTime, DateTime EndTime, int MachineID, int HMIID)
         {
             double SQT = 0;
-            using (i_facility_shaktiEntities1 dbhmi = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbhmi = new i_facility_shaktiEntities())
             {
                 var PartsData = dbhmi.tblhmiscreens.Where(m => m.HMIID == HMIID).FirstOrDefault();
                 if (PartsData != null)
@@ -1987,7 +1987,7 @@ namespace SRKSDemo
         public double GetScrapQtyTimeOfRWO(string UsedDateForExcel, DateTime StartTime, DateTime EndTime, int MachineID, int HMIID)
         {
             double SQT = 0;
-            using (i_facility_shaktiEntities1 dbhmi = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbhmi = new i_facility_shaktiEntities())
             {
                 var PartsData = dbhmi.tblhmiscreens.Where(m => m.HMIID == HMIID).FirstOrDefault();
                 if (PartsData != null)
@@ -2004,7 +2004,7 @@ namespace SRKSDemo
         public double GetSummationOfSCTvsPPForWO(int HMIID)
         {
             double SummationofTime = 0;
-            using (i_facility_shaktiEntities1 dbhmi = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbhmi = new i_facility_shaktiEntities())
             {
                 var PartsDataAll = dbhmi.tblhmiscreens.Where(m => m.HMIID == HMIID && m.isWorkOrder == 0 && (m.isWorkInProgress == 1 || m.isWorkInProgress == 0)).OrderByDescending(m => m.PartNo).ThenByDescending(m => m.OperationNo).ToList();
                 if (PartsDataAll.Count == 0)

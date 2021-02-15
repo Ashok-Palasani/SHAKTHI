@@ -13,7 +13,7 @@ namespace SRKSDemo.Controllers
 {
     public class OperatorEntryModelController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         // GET: OperatorEntryModel
         public ActionResult Index()
         {
@@ -1228,7 +1228,7 @@ namespace SRKSDemo.Controllers
                             tm.MacMode = mode.MacMode;
                             tm.InsertedBy = Convert.ToInt32(Session["UserID"]);
                             tm.InsertedOn = StartNow;
-                            tm.CorrectedDate = correctedDate;
+                            tm.CorrectedDate = correctedDate.ToString();
                             tm.IsDeleted = 0;
                             tm.StartTime = StartNow;
                             tm.ColorCode = "YELLOW";

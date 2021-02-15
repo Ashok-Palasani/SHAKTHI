@@ -20,7 +20,7 @@ namespace SRKSDemo.Controllers
             ViewBag.UserName = Session["Username"];
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
-            i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+            i_facility_shaktiEntities db = new i_facility_shaktiEntities();
             ModulesModel ma = new ModulesModel();
             tblmodule mo = new tblmodule();
             ma.Modules = mo;
@@ -59,7 +59,7 @@ namespace SRKSDemo.Controllers
             tblModule.Modules.InsertedOn = System.DateTime.Now;
             tblModule.Modules.IsDeleted = 0;
 
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var DupModule = db.tblmodules.Where(m => m.IsDeleted == 0 && m.Module == tblModule.Modules.Module).FirstOrDefault();
                 if (DupModule == null)
@@ -96,7 +96,7 @@ namespace SRKSDemo.Controllers
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
 
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 tblmodule tblModule = db.tblmodules.Find(id);
                 if (tblModule == null)
@@ -124,7 +124,7 @@ namespace SRKSDemo.Controllers
 
             if (ModelState.IsValid)
             {
-                using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                 {
                     var DupModule = db.tblmodules.Where(m => m.IsDeleted == 0 && m.Module == tblModule.Modules.Module && m.ModuleId != tblModule.Modules.ModuleId).FirstOrDefault();
                     if (DupModule == null)
@@ -173,7 +173,7 @@ namespace SRKSDemo.Controllers
 
             int UserID1 = Convert.ToInt32(Session["UserID"].ToString());
 
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 tblmodule tblModule = db.tblmodules.Find(id);
                 tblModule.IsDeleted = 1;
@@ -198,7 +198,7 @@ namespace SRKSDemo.Controllers
 
         public JsonResult GetModuleById(int Id)
         {
-            i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+            i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 
             var Data = db.tblmodules.Where(m => m.ModuleId == Id).Select(m => new { Module = m.Module, ModuleDesc = m.ModuleDesc, ModuleDisplay = m.ModuleDispName });
 

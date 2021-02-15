@@ -11,7 +11,7 @@ namespace SRKSDemo.Controllers
     public class ShopsController : Controller
     {
 
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
        
         public ActionResult ShopList()
         {
@@ -47,7 +47,7 @@ namespace SRKSDemo.Controllers
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
 
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 ViewBag.Plant = new SelectList(db.tblplants.Where(m => m.IsDeleted == 0), "PlantID", "PlantName").ToList();
                 return View();
@@ -68,7 +68,7 @@ namespace SRKSDemo.Controllers
             String Username = Session["Username"].ToString();
 
             //shop name validation
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 string shopname = shop.Shops.ShopName.ToString();
                 var doesThisShopExists = db.tblshops.Where(m => m.IsDeleted == 0 && m.PlantID == shop.Shops.PlantID && m.ShopName == shopname).ToList();
@@ -101,7 +101,7 @@ namespace SRKSDemo.Controllers
             ViewBag.Logout = Session["Username"].ToString().ToUpper();
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 tblshop dept = db.tblshops.Find(Id);
                 if (dept == null)
@@ -129,7 +129,7 @@ namespace SRKSDemo.Controllers
             //shop name validation
             string deptname = shop.Shops.ShopName.ToString();
             int shopid = shop.Shops.ShopID;
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var doesThisdeptExists = db.tblshops.Where(m => m.IsDeleted == 0 && m.PlantID == shop.Shops.PlantID && m.ShopName == deptname && m.ShopID != shopid).ToList();
                 if (doesThisdeptExists.Count == 0)
@@ -170,7 +170,7 @@ namespace SRKSDemo.Controllers
             //ViewBag.IsConfigMenu = 0;
 
 
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 tblshop shop = db.tblshops.Find(id);
                 shop.IsDeleted = 1;

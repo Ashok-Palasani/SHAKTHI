@@ -9,7 +9,7 @@ namespace SRKSDemo
 {
     public class PreviousOperationCancel
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 
         public void PreviousHHIDDLUpdation(int machineId, string correctedDate)
         {

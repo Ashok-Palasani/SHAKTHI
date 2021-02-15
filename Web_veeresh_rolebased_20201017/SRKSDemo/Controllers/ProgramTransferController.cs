@@ -13,7 +13,7 @@ namespace SRKSDemo.Controllers
 {
     public class ProgramTransferController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         //
         // GET: /ProgramTransfer/
 
@@ -203,7 +203,7 @@ namespace SRKSDemo.Controllers
         public JsonResult CheckEndStatus()
         {
             string retValue = "";
-            using (i_facility_shaktiEntities1 dbpupload = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbpupload = new i_facility_shaktiEntities())
             {
                 int macID = Convert.ToInt32(Session["MachineID"]);
                 int pthistroyID = 0;
@@ -310,7 +310,7 @@ namespace SRKSDemo.Controllers
             string viewName = "_Product";
             object model = null;
 
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 model = db.tblmachinedetails.Where(o => o.CellID == CellID)
                           .OrderBy(o => o.CellID).ToList();
@@ -538,7 +538,7 @@ namespace SRKSDemo.Controllers
 
     public class DownloadNCProg
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 
         static object ip;   // "192.168.0.1" or "CNC-1.FACTORY"
         static ushort port;            //  FOCAS1/Ethernet or FOCAS2/Ethernet (TCP) function
@@ -924,7 +924,7 @@ namespace SRKSDemo.Controllers
                     retValue = retallclibhndl3.ToString();
                 }
 
-                using (i_facility_shaktiEntities1 redb = new i_facility_shaktiEntities1())
+                using (i_facility_shaktiEntities redb = new i_facility_shaktiEntities())
                 {
                     var RecordToUpdate = redb.tblprogramtransferhistories.Find(pthID);
                     if (RecordToUpdate != null)

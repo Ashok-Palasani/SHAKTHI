@@ -211,6 +211,40 @@ namespace i_facilitylibrary.DAO
             return machine;
         }
 
+        public tblmachinedetail GetMachineDetailsqty(int MachineID)
+        {
+            tblmachinedetail machine = new tblmachinedetail();
+            try
+            {
+                Repository<tblmachinedetail> lista = new Repository<tblmachinedetail>();
+
+                string qry = "SELECT * FROM " + databaseName + ".[tblmachinedetails] WHERE MachineID =" + MachineID + " and Isdeleted =0 and IsNormalWC =0"; 
+                machine = lista.GetFirstOrDefault(qry, _connectionFactory.GetConnection);
+            }
+            catch (Exception ex)
+            {
+                IntoFile(ex.ToString());
+            }
+            return machine;
+        }
+
+        public tbllivehmiscreen GetLivehmidateforparam(int MachineID)
+        {
+            tbllivehmiscreen LiveHMI = new tbllivehmiscreen();
+            try
+            {
+                Repository<tbllivehmiscreen> lista = new Repository<tbllivehmiscreen>();
+
+                string qry = "SELECT Date from " + databaseName + ".[tbllivehmiscreen] WHERE MachineID=" + MachineID + " order by HMIID desc ";
+                LiveHMI = lista.GetFirstOrDefault(qry, _connectionFactory.GetConnection);
+            }
+            catch (Exception ex)
+            {
+                IntoFile(ex.ToString());
+            }
+            return LiveHMI;
+        }
+
         public tbllivehmiscreen GetLiveHMIDetails(int MachineID)
         {
             tbllivehmiscreen LiveHMI = new tbllivehmiscreen();
@@ -502,6 +536,7 @@ namespace i_facilitylibrary.DAO
             return liveHMI;
         }
 
+        
         public tblddl GetddlDetails1(int DDLID)
         {
             tblddl ddl = new tblddl();
@@ -722,6 +757,24 @@ namespace i_facilitylibrary.DAO
                 Repository<tbllivehmiscreen> lista = new Repository<tbllivehmiscreen>();
 
                 string qry = "UPDATE " + databaseName + ".[tbllivehmiscreen] set isWorkOrder = 1 WHERE HMIID =" + HMIID + "";
+                res = lista.update(qry, _connectionFactory.GetConnection);
+            }
+            catch (Exception ex)
+            {
+                IntoFile(ex.ToString());
+            }
+            return res;
+        }
+
+        public int UpdateLiveHMIScreenDetailsparaqty(int Machineid,int Yield/*, int HMIID*/)
+       {
+            int res = 0;
+            try
+            {
+                Repository<tbllivehmiscreen> lista = new Repository<tbllivehmiscreen>();
+
+                string qry = "UPDATE " + databaseName + ".[tbllivehmiscreen] set Delivered_Qty = "+ Yield +" WHERE Machineid = " + Machineid + " and Date is not null and Time is Null ";
+                IntoFile("UpdateLiveHMIScreenDetailsparaqty:" + qry);
                 res = lista.update(qry, _connectionFactory.GetConnection);
             }
             catch (Exception ex)
@@ -1274,7 +1327,7 @@ namespace i_facilitylibrary.DAO
                 Repository<tbllivelossofentry> lista = new Repository<tbllivelossofentry>();
 
                 string qry = "UPDATE " + databaseName + ".[tbllivelossofentry] set EntryTime = '" + EntryTime + "',EndDateTime ='" + EndDateTime + "',MachineID =" + machid + ",Shift ='" + shift + "',MessageCodeID = " + MessageCodeID + ",MessageDesc ='" + MessageDesc + "',MessageCode = '" + MessageCode + "',IsUpdate =" + IsUpdate + ",DoneWithRow =" + DoneWithRow + ",IsStart = " + IsStart + " ,IsScreen=" + IsScreen + ",ForRefresh =" + ForRefresh + " WHERE LossID =" + LossID;
-                //IntoFile("Update: the previous record when isupdate and donewithrow is 0:" + qry);
+                IntoFile("Update: the previous record when isupdate and donewithrow is 0:" + qry);
                 res = lista.update(qry, _connectionFactory.GetConnection);
             }
             catch (Exception ex)

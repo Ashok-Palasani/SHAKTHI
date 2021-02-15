@@ -15,7 +15,7 @@ namespace SRKSDemo.Controllers
     public class MachineStatusController : Controller
     {
         // GET: /AllMachineStatus/
-        private i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        private i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         string databaseName = ConfigurationManager.AppSettings["dbName"];
         public ActionResult Index()
         {

@@ -14,7 +14,7 @@ namespace SRKSDemo.Controllers
 {
     public class OEEDashboardController : Controller
     {
-        private i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        private i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         private string databaseName = ConfigurationManager.AppSettings["databasename"];
         private IConnectionFactory _conn;
         private Dao obj1 = new Dao();
@@ -5199,7 +5199,7 @@ namespace SRKSDemo.Controllers
         {
             double qualitydata = 0;
 
-            using (i_facility_shaktiEntities1 dbhmi = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbhmi = new i_facility_shaktiEntities())
             {
                 List<tblhmiscreen> PartsData = dbhmi.tblhmiscreens.Where(m => m.CorrectedDate == UsedDateForExcel && m.MachineID == MachineID && (m.isWorkInProgress == 1 || m.isWorkInProgress == 0) && m.isWorkOrder == 0).ToList();
                 if (scpid == 3)
@@ -5226,7 +5226,7 @@ namespace SRKSDemo.Controllers
                     int DeliveredQty = 0;
 
                     tblQuality_Piweb qulaity_row = new tblQuality_Piweb();
-                    using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                    using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                     {
                         qulaity_row = db.tblQuality_Piweb.Where(m => m.PartNumber == partno && m.OperationNum == operationno && m.MachineID == machinedata && m.CorrectedDate == UsedDateForExcel).FirstOrDefault();
                     }
@@ -5279,7 +5279,7 @@ namespace SRKSDemo.Controllers
             int qualitydata = 0;
 
 
-            using (i_facility_shaktiEntities1 dbhmi = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbhmi = new i_facility_shaktiEntities())
             {
                 List<tbllivehmiscreen> PartsData = dbhmi.tbllivehmiscreens.Where(m => m.CorrectedDate == UsedDateForExcel && m.MachineID == MachineID && (m.isWorkInProgress == 1 || m.isWorkInProgress == 0) && m.isWorkOrder == 0).ToList();
                 foreach (tbllivehmiscreen row in PartsData)
@@ -5290,7 +5290,7 @@ namespace SRKSDemo.Controllers
                     int DeliveredQty = 0;
 
                     tblQuality_Piweb qulaity_row = new tblQuality_Piweb();
-                    using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                    using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                     {
                         qulaity_row = db.tblQuality_Piweb.Where(m => m.PartNumber == partno && m.OperationNum == operationno && m.MachineID == MachineID && m.CorrectedDate == UsedDateForExcel).FirstOrDefault();
                     }
@@ -5328,7 +5328,7 @@ namespace SRKSDemo.Controllers
             int duration = 0;
             //var msgs2 = new List<tblplannedbreak>();
 
-            using (i_facility_shaktiEntities1 db1 = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
             {
                 int? msgs2 = db1.tblplannedbreaks.Where(m => m.IsDeleted == 0).Sum(m => m.BreakDuration);
                 duration = Convert.ToInt32(msgs2);

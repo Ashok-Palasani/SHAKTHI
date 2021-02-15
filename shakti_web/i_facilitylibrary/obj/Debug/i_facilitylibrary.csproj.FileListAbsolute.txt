@@ -51,3 +51,12 @@ D:\Github_Ashok\Shakti\shakti_web\i_facilitylibrary\obj\Debug\i_facilitylibrary.
 D:\Github_Ashok\Shakti\shakti_web\i_facilitylibrary\obj\Debug\i_facilitylibrary.csproj.CopyComplete
 D:\Github_Ashok\Shakti\shakti_web\i_facilitylibrary\obj\Debug\i_facilitylibrary.dll
 D:\Github_Ashok\Shakti\shakti_web\i_facilitylibrary\obj\Debug\i_facilitylibrary.pdb
+D:\Github_Ashok\Shakti_latest\shakti_web\i_facilitylibrary\bin\Debug\i_facilitylibrary.dll
+D:\Github_Ashok\Shakti_latest\shakti_web\i_facilitylibrary\bin\Debug\i_facilitylibrary.pdb
+D:\Github_Ashok\Shakti_latest\shakti_web\i_facilitylibrary\bin\Debug\Dapper.dll
+D:\Github_Ashok\Shakti_latest\shakti_web\i_facilitylibrary\bin\Debug\Dapper.xml
+D:\Github_Ashok\Shakti_latest\shakti_web\i_facilitylibrary\obj\Debug\i_facilitylibrary.csprojAssemblyReference.cache
+D:\Github_Ashok\Shakti_latest\shakti_web\i_facilitylibrary\obj\Debug\i_facilitylibrary.csproj.CoreCompileInputs.cache
+D:\Github_Ashok\Shakti_latest\shakti_web\i_facilitylibrary\obj\Debug\i_facilitylibrary.csproj.CopyComplete
+D:\Github_Ashok\Shakti_latest\shakti_web\i_facilitylibrary\obj\Debug\i_facilitylibrary.dll
+D:\Github_Ashok\Shakti_latest\shakti_web\i_facilitylibrary\obj\Debug\i_facilitylibrary.pdb

@@ -7,7 +7,7 @@ namespace SRKSDemo.ReportsCalcClass
 {
     public class ProdDetAndon
     {
-        i_facility_shaktiEntities1 Serverdb = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities Serverdb = new i_facility_shaktiEntities();
 
         public ProdDetAndon()
         {
@@ -1030,16 +1030,16 @@ namespace SRKSDemo.ReportsCalcClass
             decimal PowerOffTime = 0;
             string Corrected = correctedDate.ToString("yyyy-MM-dd");
             var GetModDet = new Graph_Data();
-            using (i_facility_shaktiEntities1 Serverdb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities Serverdb = new i_facility_shaktiEntities())
             {
                 GetModDet = Serverdb.Graph_Data.Where(m => m.MachineID == machineID && m.CorrectedDate == Corrected).FirstOrDefault();
             }
             if (GetModDet == null)
             {
                 var GetModeDurations = new List<tblmode>();
-                using (i_facility_shaktiEntities1 Serverdb = new i_facility_shaktiEntities1())
+                using (i_facility_shaktiEntities Serverdb = new i_facility_shaktiEntities())
                 {
-                    GetModeDurations = Serverdb.tblmodes.Where(m => m.MachineID == machineID && m.CorrectedDate == correctedDate.Date && m.IsCompleted == 1).ToList();
+                    GetModeDurations = Serverdb.tblmodes.Where(m => m.MachineID == machineID && m.CorrectedDate == (correctedDate.Date).ToString() && m.IsCompleted == 1).ToList();
                 }
                 OperatingTime = Convert.ToDecimal(GetModeDurations.Where(m => m.ModeType == "PROD").ToList().Sum(m => m.DurationInSec));
                 PowerOffTime = Convert.ToDecimal(GetModeDurations.Where(m => m.ModeType == "POWEROFF").ToList().Sum(m => m.DurationInSec));
@@ -1061,7 +1061,7 @@ namespace SRKSDemo.ReportsCalcClass
                         obj.MachineID = machineID;
                         obj.losscodeid = (int)row.LossCodeID;
                         obj.Duration = Convert.ToInt32(lossduration);
-                        using (i_facility_shaktiEntities1 Serverdb = new i_facility_shaktiEntities1())
+                        using (i_facility_shaktiEntities Serverdb = new i_facility_shaktiEntities())
                         {
                             Serverdb.LossDetails.Add(obj);
                             Serverdb.SaveChanges();
@@ -1083,7 +1083,7 @@ namespace SRKSDemo.ReportsCalcClass
                     //gdobj.ScrapQty = ScrapQty;
                     //gdobj.YeildQty = Yield_Qty;
                     //gdobj.PerformanceFactor = PerformanceFactor;
-                    using (i_facility_shaktiEntities1 Serverdb = new i_facility_shaktiEntities1())
+                    using (i_facility_shaktiEntities Serverdb = new i_facility_shaktiEntities())
                     {
                         Serverdb.Graph_Data.Add(gdobj);
                         Serverdb.SaveChanges();

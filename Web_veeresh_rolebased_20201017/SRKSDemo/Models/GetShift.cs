@@ -13,7 +13,7 @@ namespace SRKSDemo
 {
     public class GetShift
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         string dbName = ConfigurationManager.AppSettings["dbName"];
 
         public bool IsThisPlanInAction(int id)

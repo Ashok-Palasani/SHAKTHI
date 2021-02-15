@@ -61,3 +61,12 @@ D:\Github_Ashok\Shakti\Web_veeresh_20201017\SHAKTIWEBAPP-master\i_facilitylibrar
 D:\Github_Ashok\Shakti\Web_veeresh_20201017\SHAKTIWEBAPP-master\i_facilitylibrary\obj\Release\i_facilitylibrary.csproj.CopyComplete
 D:\Github_Ashok\Shakti\Web_veeresh_20201017\SHAKTIWEBAPP-master\i_facilitylibrary\obj\Release\i_facilitylibrary.dll
 D:\Github_Ashok\Shakti\Web_veeresh_20201017\SHAKTIWEBAPP-master\i_facilitylibrary\obj\Release\i_facilitylibrary.pdb
+D:\Github_Ashok\Shakti_latest\Web_veeresh_rolebased_20201017\i_facilitylibrary\bin\Release\i_facilitylibrary.dll
+D:\Github_Ashok\Shakti_latest\Web_veeresh_rolebased_20201017\i_facilitylibrary\bin\Release\i_facilitylibrary.pdb
+D:\Github_Ashok\Shakti_latest\Web_veeresh_rolebased_20201017\i_facilitylibrary\bin\Release\Dapper.dll
+D:\Github_Ashok\Shakti_latest\Web_veeresh_rolebased_20201017\i_facilitylibrary\bin\Release\Dapper.xml
+D:\Github_Ashok\Shakti_latest\Web_veeresh_rolebased_20201017\i_facilitylibrary\obj\Release\i_facilitylibrary.csprojAssemblyReference.cache
+D:\Github_Ashok\Shakti_latest\Web_veeresh_rolebased_20201017\i_facilitylibrary\obj\Release\i_facilitylibrary.csproj.CoreCompileInputs.cache
+D:\Github_Ashok\Shakti_latest\Web_veeresh_rolebased_20201017\i_facilitylibrary\obj\Release\i_facilitylibrary.csproj.CopyComplete
+D:\Github_Ashok\Shakti_latest\Web_veeresh_rolebased_20201017\i_facilitylibrary\obj\Release\i_facilitylibrary.dll
+D:\Github_Ashok\Shakti_latest\Web_veeresh_rolebased_20201017\i_facilitylibrary\obj\Release\i_facilitylibrary.pdb

@@ -10,7 +10,7 @@ namespace SRKSDemo.Controllers
 {
     public class SensorGroupController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         // GET: SensorGroup
         public ActionResult IndexSensorGroup()
         {
@@ -22,7 +22,7 @@ namespace SRKSDemo.Controllers
             ViewBag.Logout = Session["Username"].ToString().ToUpper();
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 sensormodel pa = new sensormodel();
                 configuration_tblsensorgroup mp = new configuration_tblsensorgroup();
@@ -55,7 +55,7 @@ namespace SRKSDemo.Controllers
             String Username = Session["Username"].ToString();
             string sensorName = tblp.sensorgroup.SensorGroupName.ToString();
 
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var doesThisExist = db.configuration_tblsensorgroup.Where(m => m.IsDeleted == 0 && m.SensorGroupName == sensorName).ToList();
                 if (doesThisExist.Count == 0)
@@ -85,7 +85,7 @@ namespace SRKSDemo.Controllers
             ViewBag.Logout = Session["Username"].ToString().ToUpper();
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 configuration_tblsensorgroup tblmc = db.configuration_tblsensorgroup.Find(id);
                 if (tblmc == null)
@@ -110,7 +110,7 @@ namespace SRKSDemo.Controllers
             int UserID = Convert.ToInt32(Session["UserID"]);
             string sensorName = tblmc.sensorgroup.SensorGroupName.ToString();
             int sid = tblmc.sensorgroup.SID;
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var doesThisPlantExist = db.configuration_tblsensorgroup.Where(m => m.IsDeleted == 0 && m.SensorGroupName == sensorName && m.SID != sid).ToList();
                 if (doesThisPlantExist.Count == 0)
@@ -134,7 +134,7 @@ namespace SRKSDemo.Controllers
         }
         public JsonResult GetSensorById(int Id)
         {
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var Data = db.configuration_tblsensorgroup.Where(m => m.SID == Id).Select(m => new { sensorname = m.SensorGroupName, sensordesc = m.SensorDesc });
                 return Json(Data, JsonRequestBehavior.AllowGet);
@@ -151,7 +151,7 @@ namespace SRKSDemo.Controllers
             String Username = Session["Username"].ToString();
             int UserID1 = id;
             int UserID = Convert.ToInt32(Session["UserId"]);
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var tblpm = db.configuration_tblsensorgroup.Where(m => m.SID == id).FirstOrDefault();
                 //tblpmchecklist tblpm = db.tblpmchecklists.Find(id);

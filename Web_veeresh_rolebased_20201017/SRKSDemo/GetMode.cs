@@ -11,8 +11,8 @@ namespace SRKSDemo
     public class GetMode
     {
         //Tab Connection
-       // i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
-        SRKSDemo.Server_Model.i_facility_shaktiEntities1 Serverdb = new SRKSDemo.Server_Model.i_facility_shaktiEntities1();
+       // i_facility_shaktiEntities db = new i_facility_shaktiEntities();
+        SRKSDemo.Server_Model.i_facility_shaktiEntities Serverdb = new SRKSDemo.Server_Model.i_facility_shaktiEntities();
 
         //Server Connection
         //titandmgEntities1 dbServ = new titandmgEntities1();
@@ -97,7 +97,7 @@ namespace SRKSDemo
 
             message.InsertedBy = 1;
             message.InsertedOn = Convert.ToDateTime(datetime.ToString("yyyy-MM-dd HH:mm:ss"));
-            message.CorrectedDate = correctedDate;
+            message.CorrectedDate = correctedDate.ToString();
 
             Serverdb.tblmodes.Add(message);
             Serverdb.SaveChanges();

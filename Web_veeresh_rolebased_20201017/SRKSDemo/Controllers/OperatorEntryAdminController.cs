@@ -12,7 +12,7 @@ namespace SRKSDemo.Controllers
 
       
         //public CCSOEEServerEntities _ServerContext = new CCSOEEServerEntities();
-        public i_facility_shaktiEntities1 _ServerContext = new i_facility_shaktiEntities1();
+        public i_facility_shaktiEntities _ServerContext = new i_facility_shaktiEntities();
 
         public ActionResult SelectMachineAdmin(int PlantID = 0, int ShopID = 0, int CellID = 0, int WorkCenterID = 0)
         {

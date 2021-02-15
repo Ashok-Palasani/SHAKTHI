@@ -16,7 +16,7 @@ namespace SRKSDemo.Controllers
 {
     public class MultiWorkOrderController : Controller
     {
-        private i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        private i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 
         public ActionResult Index()
         {
@@ -792,7 +792,7 @@ namespace SRKSDemo.Controllers
                             {
                                 try
                                 {
-                                    using (i_facility_shaktiEntities1 dbmwo = new i_facility_shaktiEntities1())
+                                    using (i_facility_shaktiEntities dbmwo = new i_facility_shaktiEntities())
                                     {
                                         var DuplicateData = dbmwo.tblmultipleworkorders.Where(m => m.MultipleWOName == MultiWOName && m.IsDeleted == 0).FirstOrDefault();
                                         if (DuplicateData != null)
@@ -943,7 +943,7 @@ namespace SRKSDemo.Controllers
                             {
                                 try
                                 {
-                                    using (i_facility_shaktiEntities1 dbmwo = new i_facility_shaktiEntities1())
+                                    using (i_facility_shaktiEntities dbmwo = new i_facility_shaktiEntities())
                                     {
                                         var DuplicateData = dbmwo.tblmultipleworkorders.Where(m => m.MultipleWOName == MultiWOName && m.IsDeleted == 0).FirstOrDefault();
                                         if (DuplicateData != null)

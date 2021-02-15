@@ -17,7 +17,7 @@ namespace SRKSDemo
     public class ProgramTransfer
     {
         #region Variables
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 
         ushort port;
         String ip;
@@ -729,7 +729,7 @@ namespace SRKSDemo
                     retValue = retallclibhndl3.ToString();
                 }
 
-                using (i_facility_shaktiEntities1 redb = new i_facility_shaktiEntities1())
+                using (i_facility_shaktiEntities redb = new i_facility_shaktiEntities())
                 {
                     var RecordToUpdate = redb.tblprogramtransferhistories.Find(pthID);
                     if (RecordToUpdate != null)

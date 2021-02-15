@@ -90,7 +90,7 @@
                                         {
                                             if (Convert.ToString(item.LossCodesLevel1ID) != null)
                                             {
-                                                SRKSDemo.Server_Model.i_facility_shaktiEntities1 db = new SRKSDemo.Server_Model.i_facility_shaktiEntities1();
+                                                SRKSDemo.Server_Model.i_facility_shaktiEntities db = new SRKSDemo.Server_Model.i_facility_shaktiEntities();
                                                 int losscodeid = Convert.ToInt32(item.LossCodesLevel1ID);
                                                 var lossdetailsDesc = db.tbllossescodes.Where(m => m.IsDeleted == 0 && m.LossCodeID == losscodeid).Select(m => m.LossCode).FirstOrDefault();
                                                 <td style="width: auto; font-family: Helvetica; font-size: 85%">
@@ -108,7 +108,7 @@
                                         {
                                             if (Convert.ToString(item.LossCodesLevel1ID) != null)
                                             {
-                                                SRKSDemo.Server_Model.i_facility_shaktiEntities1 db = new SRKSDemo.Server_Model.i_facility_shaktiEntities1();
+                                                SRKSDemo.Server_Model.i_facility_shaktiEntities db = new SRKSDemo.Server_Model.i_facility_shaktiEntities();
                                                 int losscodeid = Convert.ToInt32(item.LossCodesLevel1ID);
                                                 var lossdetailsDesc = db.tbllossescodes.Where(m => m.IsDeleted == 0 && m.LossCodeID == losscodeid).Select(m => m.LossCode).FirstOrDefault();
                                                 <td style="width: auto; font-family: Helvetica; font-size: 85%">

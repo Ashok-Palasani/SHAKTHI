@@ -10,7 +10,7 @@ namespace SRKSDemo.Controllers
 {
     public class PlantController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         public ActionResult Index()
         {
             if ((Session["UserId"] == null) || (Session["UserId"].ToString() == String.Empty))
@@ -20,7 +20,7 @@ namespace SRKSDemo.Controllers
             ViewBag.Logout = Session["Username"].ToString().ToUpper();
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 PlantModel pa = new PlantModel();
                 tblplant mp = new tblplant();
@@ -56,7 +56,7 @@ namespace SRKSDemo.Controllers
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
             string plantName = tblp.Plant.PlantName.ToString();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var doesThisPlantExist = db.tblplants.Where(m => m.IsDeleted == 0 && m.PlantName == plantName).ToList();
                 if (doesThisPlantExist.Count == 0)
@@ -87,7 +87,7 @@ namespace SRKSDemo.Controllers
             ViewBag.Logout = Session["Username"].ToString().ToUpper();
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 tblplant tblmc = db.tblplants.Find(id);
                 if (tblmc == null)
@@ -112,7 +112,7 @@ namespace SRKSDemo.Controllers
             int UserID = Convert.ToInt32(Session["UserID"]);
             string plantName = tblmc.Plant.PlantName.ToString();
             int plantid = tblmc.Plant.PlantID;
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var doesThisPlantExist = db.tblplants.Where(m => m.IsDeleted == 0 && m.PlantName == plantName && m.PlantID != plantid).ToList();
                 if (doesThisPlantExist.Count == 0)

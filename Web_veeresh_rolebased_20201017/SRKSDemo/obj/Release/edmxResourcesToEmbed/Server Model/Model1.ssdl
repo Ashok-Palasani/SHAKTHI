@@ -161,6 +161,23 @@
     <Property Name="sensorlimitHigh" Type="int" />
     <Property Name="parametertypeid" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="dashboard_menus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MenuName" Type="varchar" MaxLength="200" />
+    <Property Name="MenuUrl" Type="varchar" MaxLength="100" />
+    <Property Name="ImageUrl" Type="varchar" MaxLength="200" />
+    <Property Name="MenuId" Type="int" />
+    <Property Name="ColourDiv" Type="varchar" MaxLength="100" />
+    <Property Name="Style" Type="varchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="int" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
   <EntityType Name="frommail">
     <Key>
       <PropertyRef Name="ID" />
@@ -238,6 +255,29 @@
     <Property Name="CCAdd" Type="int" Nullable="false" />
     <Property Name="IsDeleted" Type="int" Nullable="false" />
     <Property Name="BCCAdd" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="menu_styles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="styleName" Type="varchar" MaxLength="100" />
+    <Property Name="isDeleted" Type="int" />
+  </EntityType>
+  <EntityType Name="menus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MenuName" Type="varchar" MaxLength="100" />
+    <Property Name="IsDashboard" Type="int" />
+    <Property Name="IsSideMenubar" Type="int" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="IsDeleted" Type="int" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
+    <Property Name="ModifiedBy" Type="int" />
   </EntityType>
   <EntityType Name="message_code_master">
     <Key>
@@ -459,6 +499,7 @@
     <Property Name="Status" Type="int" />
     <Property Name="IsPiweb" Type="int" />
     <Property Name="Meas_DateTime" Type="datetime" />
+    <Property Name="OP40" Type="int" />
   </EntityType>
   <EntityType Name="sharathtable">
     <Key>
@@ -485,6 +526,24 @@
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="IsDeleted" Type="int" />
     <Property Name="Duration" Type="int" />
+  </EntityType>
+  <EntityType Name="sidebar_menus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubMenuName" Type="varchar" MaxLength="45" />
+    <Property Name="MenuName" Type="varchar" MaxLength="45" />
+    <Property Name="SubMenuURL" Type="varchar" MaxLength="45" />
+    <Property Name="MenuURL" Type="varchar" MaxLength="45" />
+    <Property Name="ImageURL" Type="varchar" MaxLength="45" />
+    <Property Name="MenuId" Type="int" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="IsDeleted" Type="int" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="45" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
+    <Property Name="ModifiedBy" Type="int" />
   </EntityType>
   <EntityType Name="smtpdetails">
     <Key>
@@ -1292,6 +1351,17 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
     <Property Name="IsWOSelected" Type="int" />
     <Property Name="BHMIID" Type="int" />
   </EntityType>
+  <EntityType Name="tblDDLStatus">
+    <Key>
+      <PropertyRef Name="DDLStatusId" />
+    </Key>
+    <Property Name="DDLStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusMessage" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="tbldowntimecategory">
     <Key>
       <PropertyRef Name="DTC_ID" />
@@ -1941,7 +2011,7 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
     <Property Name="InsertedBy" Type="int" Nullable="false" />
     <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="ModifiedBy" Type="int" />
-    <Property Name="CorrectedDate" Type="date" Nullable="false" />
+    <Property Name="CorrectedDate" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="IsDeleted" Type="int" Nullable="false" />
     <Property Name="StartTime" Type="datetime2" Precision="0" />
     <Property Name="EndTime" Type="datetime2" Precision="0" />
@@ -3228,6 +3298,20 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
     <Property Name="startTime" Type="datetime" />
     <Property Name="isdeleted" Type="int" />
     <Property Name="CorrectedDate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="user_menus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MenuId" Type="int" />
+    <Property Name="RoleId" Type="int" />
+    <Property Name="MenuStatus" Type="bit" />
+    <Property Name="IsDeleted" Type="int" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
+    <Property Name="ModifiedBy" Type="int" />
   </EntityType>
   <EntityType Name="weekdata">
     <Key>
@@ -4828,12 +4912,15 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
     <EntitySet Name="configurationtblmachinesensor" EntityType="Self.configurationtblmachinesensor" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="configurationtblsensordatalink" EntityType="Self.configurationtblsensordatalink" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="configurationtblsensormaster" EntityType="Self.configurationtblsensormaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dashboard_menus" EntityType="Self.dashboard_menus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="frommail" EntityType="Self.frommail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Graph_Data" EntityType="Self.Graph_Data" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="handle_no_ping" EntityType="Self.handle_no_ping" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="jobcard_details" EntityType="Self.jobcard_details" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LossDetails" EntityType="Self.LossDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mailmaster" EntityType="Self.mailmaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="menu_styles" EntityType="Self.menu_styles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="menus" EntityType="Self.menus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="message_code_master" EntityType="Self.message_code_master" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="message_history_master" EntityType="Self.message_history_master" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="monthdata" EntityType="Self.monthdata" Schema="dbo" store:Type="Tables" />
@@ -4849,6 +4936,7 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
     <EntitySet Name="QualtiyRaw_piweb" EntityType="Self.QualtiyRaw_piweb" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sharathtable" EntityType="Self.sharathtable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="shift_master" EntityType="Self.shift_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sidebar_menus" EntityType="Self.sidebar_menus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="smtpdetails" EntityType="Self.smtpdetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_autoreport_log" EntityType="Self.tbl_autoreport_log" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_autoreportbasedon" EntityType="Self.tbl_autoreportbasedon" Schema="dbo" store:Type="Tables" />
@@ -4891,6 +4979,7 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
     <EntitySet Name="tbldailyprodstatus" EntityType="Self.tbldailyprodstatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbldaytiming" EntityType="Self.tbldaytiming" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblddl" EntityType="Self.tblddl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDDLStatus" EntityType="Self.tblDDLStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbldowntimecategory" EntityType="Self.tbldowntimecategory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbldowntimedetails" EntityType="Self.tbldowntimedetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblemailescalation" EntityType="Self.tblemailescalation" Schema="dbo" store:Type="Tables" />
@@ -4989,6 +5078,7 @@ warning 6002: The table/view 'i_facility_shakti.dbo.tblAndonDisplayRotate' does 
     <EntitySet Name="tblworeportBackup" EntityType="Self.tblworeportBackup" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblworkorderentry" EntityType="Self.tblworkorderentry" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Temp_tblmode" EntityType="Self.Temp_tblmode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_menus" EntityType="Self.user_menus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="weekdata" EntityType="Self.weekdata" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_livecbmdetails" EntityType="Self.tbl_livecbmdetails" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 

@@ -17,7 +17,7 @@ namespace SRKSDemo.Controllers
 {
     public class DashboardController : Controller
     {
-        private i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        private i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         private IConnectionFactory _conn;
         private Dao obj1 = new Dao();
         private Dao1 obj2 = new Dao1();
@@ -89,7 +89,7 @@ namespace SRKSDemo.Controllers
             //string correctedDate = "2019-05-24";
             DateTime correctDate = Convert.ToDateTime(correctedDate);
             List<tblmachinedetail> machineDetailsList = new List<tblmachinedetail>();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 machineDetailsList = db.tblmachinedetails.Where(m => m.IsDeleted == 0).OrderByDescending(m => m.InsertedOn).ToList();
             }
@@ -97,7 +97,7 @@ namespace SRKSDemo.Controllers
             {
                 int MID = machineDetails.MachineID;
                 List<tbllivemode> livemodeData = new List<tbllivemode>();
-                using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                 {
                     livemodeData = db.tbllivemodes.Where(m => m.MachineID == MID && m.CorrectedDate == correctDate && m.IsDeleted == 0).ToList();
                 }
@@ -169,7 +169,7 @@ namespace SRKSDemo.Controllers
             string correctedDate = GetCorrectedDate();
             DateTime correctDate = Convert.ToDateTime(correctedDate);
             List<tblmachinedetail> machineDetailsList = new List<tblmachinedetail>();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 machineDetailsList = db.tblmachinedetails.Where(m => m.IsDeleted == 0).OrderByDescending(m => m.InsertedOn).ToList();
             }
@@ -177,7 +177,7 @@ namespace SRKSDemo.Controllers
             {
                 int MID = machineDetails.MachineID;
                 List<tbllivemode> livemodeData = new List<tbllivemode>();
-                using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                 {
                     livemodeData = db.tbllivemodes.Where(m => m.MachineID == MID && m.CorrectedDate == correctDate && m.IsDeleted == 0).ToList();
                 }
@@ -248,7 +248,7 @@ namespace SRKSDemo.Controllers
         //    string res = "";                      // string correctedDate = "2018-08-23";
 
         //    DateTime correctedDate1 = Convert.ToDateTime(correctedDate);
-        //    using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //    using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //    {
 
         //        int c = 0;
@@ -315,7 +315,7 @@ namespace SRKSDemo.Controllers
             string res = "";                      // string correctedDate = "2018-08-23";
 
             DateTime correctedDate1 = Convert.ToDateTime(correctedDate);
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
 
                 int c = 0;
@@ -396,7 +396,7 @@ namespace SRKSDemo.Controllers
             List<MachineUtilizationModel> machineUtilizationList = new List<MachineUtilizationModel>();
             List<tblmachinedetail> machinedetails = new List<tblmachinedetail>();
             //var celldet = new List<tblcell>();
-            //using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            //using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             //{
             //string correctedDate = "2017-11-18";
             string correctedDate = GetCorrectedDate();
@@ -409,7 +409,7 @@ namespace SRKSDemo.Controllers
                 StartTime1 = StartTime1.AddDays(-1);
                 //fromdate = fromdate.AddDays(-1);
             }
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 //celldet = db.tblcells.Where(m => m.IsDeleted == 0).ToList();
                 machinedetails = db.tblmachinedetails.Where(m => m.IsDeleted == 0).OrderByDescending(m => m.InsertedOn).ToList();
@@ -529,7 +529,7 @@ namespace SRKSDemo.Controllers
 
             List<tblmachinedetail> machineDetails = new List<tblmachinedetail>();
             List<tblshop> shopdet = new List<tblshop>();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 machineDetails = db.tblmachinedetails.Where(m => m.IsDeleted == 0).ToList();
 
@@ -632,7 +632,7 @@ namespace SRKSDemo.Controllers
         //    QualityPercentage = 0;
         //    PerformancePercentage = 0;
         //    OEEPercentage = 0;
-        //    using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //    using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //    {
         //        List<tbllivehmiscreen> rawdata = new List<tbllivehmiscreen>();
         //        List<tbllivehmiscreen> scrap = db.tbllivehmiscreens.Where(m => m.MachineID == machineId && m.CorrectedDate == correctdate).OrderByDescending(m => m.HMIID).ToList();  //workorder entry
@@ -647,7 +647,7 @@ namespace SRKSDemo.Controllers
         //                // Mode details
         //                minorstoppage = Convert.ToInt32(machine.MachineIdleMin) * 60; // in sec
         //                List<tbllivemode> GetModeDurations = new List<tbllivemode>();
-        //                //using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //                //using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //                //{
         //                GetModeDurations = db.tbllivemodes.Where(m => m.MachineID == machineID && m.CorrectedDate == correctedDate.Date && m.IsCompleted == 1).ToList();
         //                // }
@@ -685,7 +685,7 @@ namespace SRKSDemo.Controllers
         //                    }
         //                }
         //                List<tbllivemode> GetModeDurationsRunning = new List<tbllivemode>();
-        //                //using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //                //using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //                //{
         //                GetModeDurationsRunning = db.tbllivemodes.Where(m => m.MachineID == machineID && m.CorrectedDate == correctedDate.Date && m.IsCompleted == 0).ToList();
         //                // }
@@ -1614,7 +1614,7 @@ namespace SRKSDemo.Controllers
             tbldaytiming starttime = new tbldaytiming();
             List<parameters_master> parametermasterlistAll = new List<parameters_master>();
             List<parameters_master> parametermasterlist = new List<parameters_master>();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 machineDet = db.tblmachinedetails.Where(m => m.IsDeleted == 0 && m.IsNormalWC == 0 && m.MachineID == machineId).ToList();
             }
@@ -1644,7 +1644,7 @@ namespace SRKSDemo.Controllers
                 bottleneckMachineID = bottleneckmachine.MachineID;
             }
 
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 starttime = db.tbldaytimings.Where(m => m.IsDeleted == 0).FirstOrDefault(); //.Select(m => m.StartTime)
             }
@@ -1656,7 +1656,7 @@ namespace SRKSDemo.Controllers
             DateTime Et = Convert.ToDateTime(EndTime);
 
             // Based on 1st Machine
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 parametermasterlistAll = db.parameters_master.Where(m => m.CorrectedDate == CorrectedDate.Date && m.InsertedOn >= St && m.InsertedOn <= Et).ToList();
             }
@@ -1706,7 +1706,7 @@ namespace SRKSDemo.Controllers
             DateTime St = Convert.ToDateTime(StartTime);
             DateTime Et = Convert.ToDateTime(EndTime);
             List<parameters_master> parametermasterlist = new List<parameters_master>();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 parametermasterlist = db.parameters_master.Where(m => m.MachineID == MachineID && m.CorrectedDate == CorrectedDate.Date && m.InsertedOn >= St && m.InsertedOn <= Et).ToList();
             }
@@ -1724,7 +1724,7 @@ namespace SRKSDemo.Controllers
         {
             string res = "";
             List<AlarmList> AlarmList = new List<AlarmList>();
-            //using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            //using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             //{
             //string correctedDate = "2018-08-23";
             string correctedDate = GetCorrectedDate();
@@ -1732,7 +1732,7 @@ namespace SRKSDemo.Controllers
             string correctdate = correctedDate;
             DateTime CorrectedDate = Convert.ToDateTime(correctedDate);
             List<tblmachinedetail> machdet = new List<tblmachinedetail>();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 machdet = db.tblmachinedetails.Where(m => m.IsDeleted == 0).OrderBy(m => m.MachineID).ToList();
             }
@@ -1740,7 +1740,7 @@ namespace SRKSDemo.Controllers
             {
                 List<tblmachinedetail> machineslist = new List<tblmachinedetail>();
                 List<alarm_history_master> alaramhistory = new List<alarm_history_master>();
-                //using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                //using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                 //{
                 //    //machineslist = db.tblmachinedetails.Where(m => m.IsDeleted == 0 && m.IsNormalWC == 0 && m.CellID == row.CellID).ToList();
                 //}
@@ -1750,7 +1750,7 @@ namespace SRKSDemo.Controllers
                 string machineName = row.MachineDisplayName;
                 List<tblalarmdetail> alarmsdetails = db.tblalarmdetails.Where(a => a.IsDeleted == 0).OrderBy(m => m.AlarmDesc).ToList();
                 String MainCorrectedDate = CorrectedDate.ToString("yyyy-MM-dd");
-                using (i_facility_shaktiEntities1 db1 = new i_facility_shaktiEntities1())
+                using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
                 {
                     //var alaramhistory = obj2.GetAlaramDetails(machineId, MainCorrectedDate);
                     alaramhistory = db1.alarm_history_master.Where(m => m.CorrectedDate == MainCorrectedDate && m.MachineID == machineId).Distinct().OrderBy(m => m.CorrectedDate).ToList();
@@ -1769,7 +1769,7 @@ namespace SRKSDemo.Controllers
 
                     //foreach (tblalarmdetail alarm in alarmsdetails)
                     //{
-                    //    using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                    //    using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                     //    {
                     //        String MainCorrectedDate = CorrectedDate.ToString("yyyy-MM-dd");
                     //        string alarmNo = @alarm.AlarmDesc.ToString();
@@ -1804,7 +1804,7 @@ namespace SRKSDemo.Controllers
             string correctdate = correctedDate;
             DateTime CorrectedDate = Convert.ToDateTime(correctedDate);
             //var machdet = new List<tblmachinedetail>();
-            //using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            //using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             //{
             tblmachinedetail machdet = db.tblmachinedetails.Where(m => m.IsDeleted == 0 && m.MachineID == cellId).OrderBy(m => m.MachineID).FirstOrDefault();
             //}
@@ -1818,7 +1818,7 @@ namespace SRKSDemo.Controllers
             List<tblpriorityalarm> alarmsdetails = db.tblpriorityalarms.Where(a => a.IsDeleted == 0).OrderBy(m => m.AlarmID).ToList();
             foreach (tblpriorityalarm alarm in alarmsdetails)
             {
-                using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                 {
                     string alarmNo = alarm.AlarmNumber.ToString();
                     alaramhistory = db.alarm_history_master.Where(m => m.AlarmNo == alarmNo && m.MachineID == machineId && m.CorrectedDate == CorrectedDate.ToString("yyyy-MM-dd")).OrderByDescending(m => m.AlarmNo).ToList();
@@ -1852,7 +1852,7 @@ namespace SRKSDemo.Controllers
         //public string GetTarget_Actual(int cellid)
         //{
         //    string res = "";
-        //    //using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //    //using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //    //{
         //    string[] backgroundcolr;
         //    string[] borderColor;
@@ -1866,7 +1866,7 @@ namespace SRKSDemo.Controllers
         //    tblmachinedetail machdet = new tblmachinedetail();
         //    tblmachinedetail machineDet = new tblmachinedetail();
         //    List<tblpartscountandcutting> partDetails = new List<tblpartscountandcutting>();
-        //    using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //    using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //    {
         //        machdet = db.tblmachinedetails.Where(m => m.IsDeleted == 0 && m.MachineID == cellid).OrderBy(m => m.MachineID).FirstOrDefault();
         //    }
@@ -1896,14 +1896,14 @@ namespace SRKSDemo.Controllers
         //        string EndTime = CorrectedDate.AddDays(1).ToString("yyyy-MM-dd HH:mm:ss");
         //        DateTime St = Convert.ToDateTime(StartTime);
         //        DateTime Et = Convert.ToDateTime(EndTime);
-        //        using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //        using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //        {
         //            machineDet = db.tblmachinedetails.Where(m => m.IsDeleted == 0 && m.IsNormalWC == 0 && m.MachineID == machineDet.MachineID && m.IsBottelNeck == 1).FirstOrDefault();
         //        }
         //        if (machineDet != null)
         //        {
         //            int MachineID = machineDet.MachineID;
-        //            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //            {
         //                partDetails = db.tblpartscountandcuttings.Where(m => m.MachineID == MachineID && m.CorrectedDate == CorrectedDate.Date && m.Isdeleted == 0 && m.StartTime >= St && m.EndTime <= Et).OrderBy(m => m.StartTime).ToList(); //.Select(m => new { m.PartCount, m.TargetQuantity, m.StartTime, m.EndTime })
         //            }
@@ -1933,7 +1933,7 @@ namespace SRKSDemo.Controllers
         //public string GetTarget_Actual_Line(int cellid)
         //{
         //    string res = "";
-        //    //using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //    //using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //    //{
         //    string[] backgroundcolr;
         //    string[] borderColor;
@@ -1948,7 +1948,7 @@ namespace SRKSDemo.Controllers
         //    tblmachinedetail machineDet = new tblmachinedetail();
         //    List<tblpartscountandcutting> partDetails = new List<tblpartscountandcutting>();
         //    List<ViewData> finalData = new List<ViewData>();
-        //    using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //    using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //    {
         //        machdet = db.tblmachinedetails.Where(m => m.IsDeleted == 0 && m.MachineID == cellid).OrderBy(m => m.MachineID).FirstOrDefault();
         //    }
@@ -1980,14 +1980,14 @@ namespace SRKSDemo.Controllers
         //        string EndTime = CorrectedDate.AddDays(1).ToString("yyyy-MM-dd HH:mm:ss");
         //        DateTime St = Convert.ToDateTime(StartTime);
         //        DateTime Et = Convert.ToDateTime(EndTime);
-        //        using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //        using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //        {
         //            machineDet = db.tblmachinedetails.Where(m => m.IsDeleted == 0 && m.IsNormalWC == 0 && m.MachineID == machineDet.MachineID && m.IsBottelNeck == 1).FirstOrDefault();
         //        }
         //        if (machineDet != null)
         //        {
         //            int MachineID = machineDet.MachineID;
-        //            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //            {
         //                partDetails = db.tblpartscountandcuttings.Where(m => m.MachineID == MachineID && m.CorrectedDate == CorrectedDate.Date && m.Isdeleted == 0 && m.StartTime >= St && m.EndTime <= Et).OrderBy(m => m.StartTime).ToList(); //.Select(m => new { m.PartCount, m.TargetQuantity, m.StartTime, m.EndTime })
         //            }
@@ -2057,7 +2057,7 @@ namespace SRKSDemo.Controllers
         //    tblmachinedetail machineDet = new tblmachinedetail();
         //    List<tblpartscountandcutting> partDetails = new List<tblpartscountandcutting>();
         //    List<ViewData> finalData = new List<ViewData>();
-        //    using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //    using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //    {
         //        machdet = db.tblmachinedetails.Where(m => m.IsDeleted == 0 && m.MachineID == cellid).OrderBy(m => m.MachineID).FirstOrDefault();
         //    }
@@ -2067,14 +2067,14 @@ namespace SRKSDemo.Controllers
         //        string EndTime = CorrectedDate.AddDays(1).ToString("yyyy-MM-dd HH:mm:ss");
         //        DateTime St = Convert.ToDateTime(StartTime);
         //        DateTime Et = Convert.ToDateTime(EndTime);
-        //        using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //        using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //        {
         //            machineDet = db.tblmachinedetails.Where(m => m.IsDeleted == 0 && m.IsNormalWC == 0 && m.MachineID == machdet.MachineID/* && m.IsLastMachine == 1*/).FirstOrDefault(); //m.IsBottelNeck == 1
         //        }
         //        if (machineDet != null)
         //        {
         //            int MachineID = machineDet.MachineID;
-        //            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //            {
         //                partDetails = db.tblpartscountandcuttings.Where(m => m.MachineID == MachineID && m.CorrectedDate == CorrectedDate.Date && m.Isdeleted == 0 && m.StartTime >= St && m.EndTime <= Et).OrderBy(m => m.StartTime).ToList(); //.Select(m => new { m.PartCount, m.TargetQuantity, m.StartTime, m.EndTime })
         //            }
@@ -2102,7 +2102,7 @@ namespace SRKSDemo.Controllers
         //{
         //    List<TopContributingFactors> contfacList = new List<TopContributingFactors>();
         //    string res = "";
-        //    //using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //    //using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //    //{
         //    List<ContributingFactors> ContributingFactorsList = new List<ContributingFactors>();
         //    string[] backgroundcolr;
@@ -2115,7 +2115,7 @@ namespace SRKSDemo.Controllers
 
         //    DateTime correctedDate1 = Convert.ToDateTime(correctedDate);
         //    List<tblmachinedetail> machdet = new List<tblmachinedetail>();
-        //    using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //    using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //    {
         //        machdet = db.tblmachinedetails.Where(m => m.IsDeleted == 0).OrderBy(m => m.MachineID).ToList();
         //    }
@@ -2128,7 +2128,7 @@ namespace SRKSDemo.Controllers
         //        borderColor = new string[] { val, val, val, val };
         //        backgroundcolr = new string[] { val, val, val, val };
         //        List<tbllivemode> getmodes = new List<tbllivemode>();
-        //        //using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+        //        //using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
         //        //{
         //        getmodes = db.tbllivemodes.Where(m => m.tblmachinedetail.MachineID == machine.MachineID && m.tblmachinedetail.IsLastMachine == 1 && m.CorrectedDate == correctedDate1.Date && m.IsCompleted == 1 && m.ModeTypeEnd == 1 && (m.LossCodeID != null || m.BreakdownID != null)).OrderBy(m => new { m.ModeID, m.StartTime }).ToList();
 
@@ -2273,7 +2273,7 @@ namespace SRKSDemo.Controllers
         {
             List<TopContributingFactors> contfacList = new List<TopContributingFactors>();
             string res = "";
-            //using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            //using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             //{
             List<ContributingFactors> ContributingFactorsList = new List<ContributingFactors>();
             string[] backgroundcolr;
@@ -2287,7 +2287,7 @@ namespace SRKSDemo.Controllers
             DateTime correctedDate1 = Convert.ToDateTime(correctedDate);
             List<tblmachinedetail> machdet = new List<tblmachinedetail>();
             List<int> DistinctLoss = new List<int>();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 machdet = db.tblmachinedetails.Where(m => m.IsDeleted == 0).OrderBy(m => m.MachineID).ToList();
                 DistinctLoss = db.tbllivelossofentries.Where(m => m.CorrectedDate == correctedDate && m.DoneWithRow == 1).Select(m => m.MessageCodeID).Distinct().ToList();
@@ -2295,7 +2295,7 @@ namespace SRKSDemo.Controllers
             int count = 0;
 
             List<tbllivemode> getmodes = new List<tbllivemode>();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 getmodes = db.tbllivemodes.Where(m => m.CorrectedDate == correctedDate1.Date && m.IsCompleted == 1 && m.ModeTypeEnd == 1).OrderBy(m => new { m.ModeID, m.StartTime }).ToList();
             }
@@ -2315,7 +2315,7 @@ namespace SRKSDemo.Controllers
                 String LossDesc = "";
                 double LossDuration = 0;
                 List<tbllivelossofentry> LossRecords = new List<tbllivelossofentry>();
-                using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                 {
                     LossRecords = db.tbllivelossofentries.Where(m => m.CorrectedDate == correctedDate && m.DoneWithRow == 1 && m.MessageCodeID == LossCode).ToList();
                 }
@@ -2380,7 +2380,7 @@ namespace SRKSDemo.Controllers
         {
             List<TopContributingFactors> contfacList = new List<TopContributingFactors>();
             string res = "";
-            //using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            //using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             //{
             List<ContributingFactors> ContributingFactorsList = new List<ContributingFactors>();
             string[] backgroundcolr;
@@ -2399,7 +2399,7 @@ namespace SRKSDemo.Controllers
 
             DateTime correctedDate1 = Convert.ToDateTime(correctedDate);
             List<tblmachinedetail> machdet = new List<tblmachinedetail>();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 machdet = db.tblmachinedetails.Where(m => m.IsDeleted == 0 && m.MachineID == cellid).OrderBy(m => m.MachineID).ToList();
             }
@@ -2412,7 +2412,7 @@ namespace SRKSDemo.Controllers
                 borderColor = new string[] { val, val, val, val };
                 backgroundcolr = new string[] { val, val, val, val };
                 List<tbllivemode> getmodes = new List<tbllivemode>();
-                //using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                //using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                 //{
                 getmodes = db.tbllivemodes.Where(m => m.tblmachinedetail.MachineID == machine.MachineID && m.tblmachinedetail.IsLastMachine == 1 && m.CorrectedDate == correctedDate1.Date && m.IsCompleted == 1 && m.ModeTypeEnd == 1 && (m.LossCodeID != null || m.BreakdownID != null)).OrderBy(m => new { m.ModeID, m.StartTime }).ToList();
                 if (getmodes.Count == 0)
@@ -2574,7 +2574,7 @@ namespace SRKSDemo.Controllers
         {
             double qualitydata = 0;
 
-            using (i_facility_shaktiEntities1 dbhmi = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbhmi = new i_facility_shaktiEntities())
             {
                 List<tblhmiscreen> PartsData = dbhmi.tblhmiscreens.Where(m => m.CorrectedDate == UsedDateForExcel && m.MachineID == MachineID && (m.isWorkInProgress == 1 || m.isWorkInProgress == 0) && m.isWorkOrder == 0).ToList();
                 //if (scpid == 3)
@@ -2601,7 +2601,7 @@ namespace SRKSDemo.Controllers
                     int DeliveredQty = 0;
 
                     tblQuality_Piweb qulaity_row = new tblQuality_Piweb();
-                    using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                    using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                     {
                         qulaity_row = db.tblQuality_Piweb.Where(m => m.PartNumber == partno && m.OperationNum == operationno && m.MachineID == MachineID && m.CorrectedDate == UsedDateForExcel).FirstOrDefault();
                     }
@@ -2654,7 +2654,7 @@ namespace SRKSDemo.Controllers
             int qualitydata = 0;
 
 
-            using (i_facility_shaktiEntities1 dbhmi = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities dbhmi = new i_facility_shaktiEntities())
             {
                 List<tbllivehmiscreen> PartsData = dbhmi.tbllivehmiscreens.Where(m => m.CorrectedDate == UsedDateForExcel && m.MachineID == MachineID && (m.isWorkInProgress == 1 || m.isWorkInProgress == 0) && m.isWorkOrder == 0).ToList();
                 foreach (tbllivehmiscreen row in PartsData)
@@ -2665,7 +2665,7 @@ namespace SRKSDemo.Controllers
                     int DeliveredQty = 0;
 
                     tblQuality_Piweb qulaity_row = new tblQuality_Piweb();
-                    using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                    using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                     {
                         qulaity_row = db.tblQuality_Piweb.Where(m => m.PartNumber == partno && m.OperationNum == operationno && m.MachineID == MachineID && m.CorrectedDate == UsedDateForExcel).FirstOrDefault();
                     }
@@ -2703,7 +2703,7 @@ namespace SRKSDemo.Controllers
             int duration = 0;
             //var msgs2 = new List<tblplannedbreak>();
 
-            using (i_facility_shaktiEntities1 db1 = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
             {
                 int? msgs2 = db1.tblplannedbreaks.Where(m => m.IsDeleted == 0).Sum(m => m.BreakDuration);
                 duration = Convert.ToInt32(msgs2);

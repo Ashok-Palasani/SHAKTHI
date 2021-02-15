@@ -10,7 +10,7 @@ namespace SRKSDemo.ReportsCalcClass
 {
     public class OEEReportCalculations
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 
         public OEEReportCalculations() { }
 
@@ -116,7 +116,7 @@ namespace SRKSDemo.ReportsCalcClass
 
             if (scrap != null)
             {
-                using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                 {
                     scrapqty1 = db.tblrejectqties.Where(m => m.WOID == scrap.HMIID && m.CorrectedDate == correctdate).ToList();
                 }

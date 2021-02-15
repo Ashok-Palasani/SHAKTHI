@@ -12,7 +12,7 @@ namespace SRKSDemo.Controllers
 {
     public class MachinesController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         //getting machine list
         [HttpGet]
         public ActionResult MachineList()
@@ -130,7 +130,7 @@ namespace SRKSDemo.Controllers
             // tblmachine.MachineCategoryID = machinecategory;
             tblmachine.ModifiedBy = UserID;
             tblmachine.ModifiedOn = System.DateTime.Now;
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var duplicateEntry = db.tblmachinedetails.Where(m => m.IsDeleted == 0 && m.PlantID == plant && m.ShopID == dept && m.CellID == tblmachine.CellID && m.MachineName == tblmachine.MachineName && m.MachineID != tblmachine.MachineID).ToList();
                 if (duplicateEntry.Count == 0)

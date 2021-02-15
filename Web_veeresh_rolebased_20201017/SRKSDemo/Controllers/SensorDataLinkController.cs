@@ -9,7 +9,7 @@ namespace SRKSDemo.Controllers
 {
     public class SensorDataLinkController : Controller
     {
-       i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+       i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         // GET: SensorDataLink
         public ActionResult Index()
         {
@@ -20,7 +20,7 @@ namespace SRKSDemo.Controllers
             ViewBag.Logout = Session["Username"].ToString().ToUpper();
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 SensorDataLink pa = new SensorDataLink();
                 configurationtblsensordatalink mp = new configurationtblsensordatalink();
@@ -88,7 +88,7 @@ namespace SRKSDemo.Controllers
             ViewBag.Logout = Session["Username"].ToString().ToUpper();
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 configurationtblsensordatalink tblmc = db.configurationtblsensordatalinks.Find(id);
                 if (tblmc == null)
@@ -116,7 +116,7 @@ namespace SRKSDemo.Controllers
             int UserID = Convert.ToInt32(Session["UserID"]);
             string parameterName = tblmc.sensordatalink.ParameterName.ToString();
             var parameterid = tblmc.sensordatalink.ParameterTypeID;
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var doesThissensorExist = db.configurationtblsensordatalinks.Where(m => m.IsDeleted == 0 && m.ParameterName == parameterName && m.ParameterDesc== tblmc.sensordatalink.ParameterDesc && m.LSL == tblmc.sensordatalink.LSL && m.LogFrequency == tblmc.sensordatalink.LogFrequency && m.IsAxis == tblmc.sensordatalink.IsAxis && m.IsSensor == tblmc.sensordatalink.IsSensor && m.USL == tblmc.sensordatalink.USL &&  m.LogFrequency == tblmc.sensordatalink.LogFrequency && m.ParameterTypeID != parameterid && m.Element == tblmc.sensordatalink.Element && m.SubElement == tblmc.sensordatalink.SubElement&& m.Deterioration == tblmc.sensordatalink.Deterioration).ToList();
                 if (doesThissensorExist.Count == 0)
@@ -152,7 +152,7 @@ namespace SRKSDemo.Controllers
         //Getting all the values stored in database
         public JsonResult GetSensorById(int Id)
         {
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var Data = db.configurationtblsensordatalinks.Where(m => m.ParameterTypeID == Id).Select(m => new { paramname = m.ParameterName, paramdesc = m.ParameterDesc, isaxis = m.IsAxis, issensor = m.IsSensor, lsl= m.LSL, usl = m.USL, logfreq = m.LogFrequency, element = m.Element, subelement = m.SubElement, deterioration = m.Deterioration});
                 return Json(Data, JsonRequestBehavior.AllowGet);
@@ -169,7 +169,7 @@ namespace SRKSDemo.Controllers
             String Username = Session["Username"].ToString();
             int UserID1 = id;
             int UserID = Convert.ToInt32(Session["UserId"]);
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 var tblpm = db.configurationtblsensordatalinks.Where(m => m.ParameterTypeID == id).FirstOrDefault();
                 tblpm.IsDeleted = 1;

@@ -13,7 +13,7 @@
 //{
 //    public class OperatorEntryScreenController : Controller
 //    {
-//        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+//        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 //        #region Index get
 //        public ActionResult Index(int id = 0)
 //        {
@@ -782,7 +782,7 @@
 
 //                        //Logic to check sequence of Submit Based on WONo, PartNo and OpNo.
 //                        //2017-01-21
-//                        using (i_facility_shaktiEntities1 dbHMI = new i_facility_shaktiEntities1())
+//                        using (i_facility_shaktiEntities dbHMI = new i_facility_shaktiEntities())
 //                        {
 //                            string WIPQuery = @"SELECT * from tblworkorderentry where  HMIID IN ( SELECT HMIID from tblworkorderentry where Work_Order_No = '" + woNo + "' and PartNo = '" + partNo + "' and OperationNo = '" + opNo + "' order by HMIID ) group by Work_Order_No,PartNo,OperationNo ";
 //                            var WIP = dbHMI.tblworkorderentries.SqlQuery(WIPQuery).ToList();
@@ -1427,7 +1427,7 @@
 //            //3rd get CellName or -
 //            //4th get MachineName.
 
-//            using (i_facility_shaktiEntities1 dbMac = new i_facility_shaktiEntities1())
+//            using (i_facility_shaktiEntities dbMac = new i_facility_shaktiEntities())
 //            {
 //                var machineData = dbMac.tblmachinedetails.Where(m => m.MachineID == MachineID).FirstOrDefault();
 //                int PlantID = Convert.ToInt32(machineData.PlantID);
@@ -1636,7 +1636,7 @@
 
 //            foreach (var rowOuter in WIPOuter)
 //            {
-//                using (i_facility_shaktiEntities1 dbsimilar = new i_facility_shaktiEntities1())
+//                using (i_facility_shaktiEntities dbsimilar = new i_facility_shaktiEntities())
 //                {
 //                    int HMIId = rowOuter.HMIID;
 //                    #region If its as SingleWO
@@ -1677,7 +1677,7 @@
 //                //Logic to check sequence of JF Based on WONo, PartNo and OpNo.
 //                int OperationNoInt = Convert.ToInt32(opNo);
 
-//                using (i_facility_shaktiEntities1 dbHMI = new i_facility_shaktiEntities1())
+//                using (i_facility_shaktiEntities dbHMI = new i_facility_shaktiEntities())
 //                {
 //                    string WIPQuery1 = @"SELECT * from tblworkorderentry where Prod_Order_No = '" + woNo + "' and PartNo = '" + partNo + "'  and OperationNo != '" + opNo + "' and isWorkInProgress = 2 order by OperationNo ";
 //                    var WIP1 = dbHMI.tblworkorderentries.SqlQuery(WIPQuery1).ToList();
@@ -3051,7 +3051,7 @@
 //        {
 //            string retStatus = "false";
 //            var machineID = Convert.ToInt32(Session["MachineID"]);
-//            using (i_facility_shaktiEntities1 dbloss = new i_facility_shaktiEntities1())
+//            using (i_facility_shaktiEntities dbloss = new i_facility_shaktiEntities())
 //            {
 //                var CurrentStatusData = db.tbllossofentries.Where(m => m.MachineID == machineID).OrderByDescending(m => m.StartDateTime).FirstOrDefault();
 //                if (CurrentStatusData != null)
@@ -3068,7 +3068,7 @@
 //        public JsonResult JsonRemoveWO(int hmiid) // Remove WorkOrder if Its Not Started.
 //        {
 //            string retStatus = "false";
-//            using (i_facility_shaktiEntities1 dbhmi = new i_facility_shaktiEntities1())
+//            using (i_facility_shaktiEntities dbhmi = new i_facility_shaktiEntities())
 //            {
 //                var CurrentStatusData = dbhmi.tblworkorderentries.Where(m => m.HMIID == hmiid).FirstOrDefault();
 //                if (CurrentStatusData != null && CurrentStatusData.WOStart == null)
@@ -3228,7 +3228,7 @@
 //                            //Get hmiids (as comma seperated string) in ascending order based on wono,partno,Opno.
 //                            hmiids = GetOrderedHMIIDs(hmiids);
 
-//                            using (i_facility_shaktiEntities1 dbHMI = new i_facility_shaktiEntities1())
+//                            using (i_facility_shaktiEntities dbHMI = new i_facility_shaktiEntities())
 //                            {
 //                                //string WIPQuery1 = @"SELECT * from tblddl where WorkOrder = '" + wono + "' and MaterialDesc = '" + partno + "'  and OperationNo != '" + opno + "' and IsCompleted = 0 order by OperationNo ";
 //                                var WIP1 = 0;//dbHMI.tblddls.SqlQuery(WIPQuery1).ToList();
@@ -3339,7 +3339,7 @@
 //                            int hmiidiInner = Convert.ToInt32(hmiid1);
 //                            if (hmiidi != ExceptionHMIID)
 //                            {
-//                                using (i_facility_shaktiEntities1 dbhmi = new i_facility_shaktiEntities1())
+//                                using (i_facility_shaktiEntities dbhmi = new i_facility_shaktiEntities())
 //                                {
 //                                    var HMIDataInner = dbhmi.tblworkorderentries.Where(m => m.HMIID == hmiidiInner && m.Prod_Order_No == WoNo && m.PartNo == partNo && m.HMIID != hmiidi).FirstOrDefault();
 //                                    if (HMIDataInner != null)
@@ -3425,7 +3425,7 @@
 //                    int.TryParse(HMIData.Yield_Qty.ToString(), out DelivQty);
 //                    int HMIMacID = HMIData.MachineID;
 
-//                    using (i_facility_shaktiEntities1 dbsimilar = new i_facility_shaktiEntities1())
+//                    using (i_facility_shaktiEntities dbsimilar = new i_facility_shaktiEntities())
 //                    {
 //                        #region If Its as SingleWO
 //                        var SimilarWOData = dbsimilar.tblworkorderentries.Where(m => m.Prod_Order_No == HMIData.Prod_Order_No && m.OperationNo == HMIData.OperationNo && m.PartNo == HMIData.PartNo && m.MachineID != MachineID).ToList();

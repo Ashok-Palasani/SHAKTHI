@@ -15,7 +15,7 @@ namespace SRKSDemo.Controllers
 {
     public class MasterPartsController : Controller
     {
-        private i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        private i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 
         public ActionResult Index(int takeValue = 10, int skipValue = 0, int pageNo = 1)
         {
@@ -367,7 +367,7 @@ namespace SRKSDemo.Controllers
                         PartName = Convert.ToString(ds.Tables[0].Rows[i][0]);
                         OpNo = Convert.ToString(ds.Tables[0].Rows[i][1]);
 
-                        using (i_facility_shaktiEntities1 db1 = new i_facility_shaktiEntities1())
+                        using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
                         {
                             var MasterStdPWTData = db1.tblmasterparts_st_sw.Where(m => m.PartNo == PartName && m.OpNo == OpNo).FirstOrDefault();
                             if (MasterStdPWTData != null)
@@ -514,7 +514,7 @@ namespace SRKSDemo.Controllers
                         PartName = Convert.ToString(ds.Tables[0].Rows[i][0]);
                         OpNo = Convert.ToString(ds.Tables[0].Rows[i][1]);
 
-                        using (i_facility_shaktiEntities1 db1 = new i_facility_shaktiEntities1())
+                        using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
                         {
                             //var MasterStdPWTData = db1.tblmasterparts_st_sw.Where(m => m.PartNo == PartName && m.OpNo == OpNo).FirstOrDefault();
                             //if (MasterStdPWTData != null)

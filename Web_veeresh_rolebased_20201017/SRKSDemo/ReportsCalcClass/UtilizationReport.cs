@@ -11,7 +11,7 @@ namespace SRKSDemo.ReportsCalcClass
 {
     public class UtilizationReport
     {
-      i_facility_shaktiEntities1 Serverdb = new i_facility_shaktiEntities1();
+      i_facility_shaktiEntities Serverdb = new i_facility_shaktiEntities();
 
         public UtilizationReport()
         {

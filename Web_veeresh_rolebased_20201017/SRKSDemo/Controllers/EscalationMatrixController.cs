@@ -19,7 +19,7 @@ namespace SRKSDemo.Controllers
 {
     public class EscalationMatrixController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         string dbName = ConfigurationManager.AppSettings["dbName"];
 
         public ActionResult Index()

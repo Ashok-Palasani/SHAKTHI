@@ -17,7 +17,7 @@ namespace SRKSDemo.Controllers
 {
     public class PartsManagementController : Controller
     {
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
         // GET: PartsManagement
         public ActionResult Index()
         {
@@ -289,7 +289,7 @@ namespace SRKSDemo.Controllers
                         PartName = Convert.ToString(ds.Tables[0].Rows[i][0]);
                         OperationNo = Convert.ToString(ds.Tables[0].Rows[i][1]);
 
-                        using (i_facility_shaktiEntities1 db1 = new i_facility_shaktiEntities1())
+                        using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
                         {
                             var MasterStdPWTData = db1.tblparts.Where(m => m.FGCode == PartName && m.OperationNo == OperationNo).FirstOrDefault();
 
@@ -433,7 +433,7 @@ namespace SRKSDemo.Controllers
                         bool check = ValidationCheckForInsertion(PartName, OperationNo);
                         if (check == true)
                         {
-                            using (i_facility_shaktiEntities1 db1 = new i_facility_shaktiEntities1())
+                            using (i_facility_shaktiEntities db1 = new i_facility_shaktiEntities())
                             {
                                 try
                                 {
@@ -621,7 +621,7 @@ namespace SRKSDemo.Controllers
         public JsonResult GetpartsManagementdata(int Id)
         {
             ViewBag.id = Id;
-            i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+            i_facility_shaktiEntities db = new i_facility_shaktiEntities();
             var Data = db.tblparts.Where(m => m.IsDeleted == 0 && m.PartID == Id).Select(m => new { Pid = m.PartID, partname = m.FGCode, Operationum = m.OperationNo, StdMinorLoss = m.IdealCycleTime, IdealCycleTime = m.IdealCycleTime, UnitDesc = m.UnitDesc, pid = Id });
             return Json(Data, JsonRequestBehavior.AllowGet);
         }

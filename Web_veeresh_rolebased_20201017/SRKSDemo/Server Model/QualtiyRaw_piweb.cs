@@ -27,5 +27,6 @@ namespace SRKSDemo.Server_Model
         public Nullable<int> Status { get; set; }
         public Nullable<int> IsPiweb { get; set; }
         public Nullable<System.DateTime> Meas_DateTime { get; set; }
+        public Nullable<int> OP40 { get; set; }
     }
 }

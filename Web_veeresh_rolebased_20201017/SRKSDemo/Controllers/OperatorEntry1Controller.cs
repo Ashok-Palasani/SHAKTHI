@@ -14,9 +14,9 @@ namespace SRKSDemo.Controllers
 {
     public class OperatorEntry1Controller : Controller
     {
-        public i_facility_shaktiEntities1 _UWcontext = new i_facility_shaktiEntities1();
+        public i_facility_shaktiEntities _UWcontext = new i_facility_shaktiEntities();
         //public CCSOEEServerEntities _ServerContext = new CCSOEEServerEntities();
-        public i_facility_shaktiEntities1 _ServerContext = new i_facility_shaktiEntities1();
+        public i_facility_shaktiEntities _ServerContext = new i_facility_shaktiEntities();
 
         // GET: OperatorEntry
         //public ActionResult SaveSetting(int LossSelect = 0)

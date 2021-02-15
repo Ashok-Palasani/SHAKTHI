@@ -4991,11 +4991,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Aswini\\shakthi\\DAS-BuildOnlyNOCode_veeresh_20201019\\DAS-BuildOnlyNOCode_veeresh\\DAS.Interface\\DAS.Interface.csproj",
+      "projectUniqueName": "D:\\Github_Ashok\\Shakti_latest\\DAS-BuildOnlyNOCode_veeresh\\DAS.Interface\\DAS.Interface.csproj",
       "projectName": "DAS.Interface",
-      "projectPath": "D:\\Aswini\\shakthi\\DAS-BuildOnlyNOCode_veeresh_20201019\\DAS-BuildOnlyNOCode_veeresh\\DAS.Interface\\DAS.Interface.csproj",
+      "projectPath": "D:\\Github_Ashok\\Shakti_latest\\DAS-BuildOnlyNOCode_veeresh\\DAS.Interface\\DAS.Interface.csproj",
       "packagesPath": "C:\\Users\\pavan\\.nuget\\packages\\",
-      "outputPath": "D:\\Aswini\\shakthi\\DAS-BuildOnlyNOCode_veeresh_20201019\\DAS-BuildOnlyNOCode_veeresh\\DAS.Interface\\obj\\",
+      "outputPath": "D:\\Github_Ashok\\Shakti_latest\\DAS-BuildOnlyNOCode_veeresh\\DAS.Interface\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5014,8 +5014,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\Aswini\\shakthi\\DAS-BuildOnlyNOCode_veeresh_20201019\\DAS-BuildOnlyNOCode_veeresh\\DAS.EntityModels\\DAS.EntityModels.csproj": {
-              "projectPath": "D:\\Aswini\\shakthi\\DAS-BuildOnlyNOCode_veeresh_20201019\\DAS-BuildOnlyNOCode_veeresh\\DAS.EntityModels\\DAS.EntityModels.csproj"
+            "D:\\Github_Ashok\\Shakti_latest\\DAS-BuildOnlyNOCode_veeresh\\DAS.EntityModels\\DAS.EntityModels.csproj": {
+              "projectPath": "D:\\Github_Ashok\\Shakti_latest\\DAS-BuildOnlyNOCode_veeresh\\DAS.EntityModels\\DAS.EntityModels.csproj"
             }
           }
         }

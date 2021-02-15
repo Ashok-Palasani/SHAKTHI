@@ -20,7 +20,7 @@ namespace SRKSDemo.Controllers
 {
     public class AndonDisplayController : Controller
     {
-        private i_facility_shaktiEntities1 db= new i_facility_shaktiEntities1();
+        private i_facility_shaktiEntities db= new i_facility_shaktiEntities();
 
        string databaseName=ConfigurationManager.AppSettings["dbName"];
         // GET: AndonDisplay
@@ -1106,7 +1106,7 @@ namespace SRKSDemo.Controllers
             string res = "";                      // string correctedDate = "2018-08-23";
 
             DateTime correctedDate1 = Convert.ToDateTime(correctedDate);
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
 
                 int c = 0;
@@ -1175,7 +1175,7 @@ namespace SRKSDemo.Controllers
             //string correctedDate = "2019-05-24";
             DateTime correctDate = Convert.ToDateTime(correctedDate);
             var machineDetailsList = new List<tblmachinedetail>();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 machineDetailsList = db.tblmachinedetails.Where(m => m.IsDeleted == 0).OrderByDescending(m => m.InsertedOn).ToList();
             }
@@ -1183,7 +1183,7 @@ namespace SRKSDemo.Controllers
             {
                 int MID = machineDetails.MachineID;
                 var livemodeData = new List<tbllivemode>();
-                using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                 {
                     livemodeData = db.tbllivemodes.Where(m => m.MachineID == MID && m.CorrectedDate == correctDate && m.IsDeleted == 0).ToList();
                 }
@@ -1255,7 +1255,7 @@ namespace SRKSDemo.Controllers
             DateTime St = Convert.ToDateTime(StartTime);
             DateTime Et = Convert.ToDateTime(EndTime);
             var parametermasterlist = new List<parameters_master>();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 parametermasterlist = db.parameters_master.Where(m => m.MachineID == MachineID && m.CorrectedDate == CorrectedDate.Date && m.InsertedOn >= St && m.InsertedOn <= Et).ToList();
             }
@@ -1277,7 +1277,7 @@ namespace SRKSDemo.Controllers
             string correctedDate = GetCorrectedDate();
             DateTime correctDate = Convert.ToDateTime(correctedDate);
             var machineDetailsList = new List<tblmachinedetail>();
-            using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
             {
                 machineDetailsList = db.tblmachinedetails.Where(m => m.IsDeleted == 0).OrderByDescending(m => m.InsertedOn).ToList();
             }
@@ -1285,7 +1285,7 @@ namespace SRKSDemo.Controllers
             {
                 int MID = machineDetails.MachineID;
                 var livemodeData = new List<tbllivemode>();
-                using (i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1())
+                using (i_facility_shaktiEntities db = new i_facility_shaktiEntities())
                 {
                     livemodeData = db.tbllivemodes.Where(m => m.MachineID == MID && m.CorrectedDate == correctDate && m.IsDeleted == 0).ToList();
                 }

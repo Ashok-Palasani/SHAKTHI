@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="i_facility_shaktiModelStoreContainer" CdmEntityContainer="i_facility_shaktiEntities1">
+  <EntityContainerMapping StorageEntityContainer="i_facility_shaktiModelStoreContainer" CdmEntityContainer="i_facility_shaktiEntities">
     <EntitySetMapping Name="alarm_history_master">
       <EntityTypeMapping TypeName="i_facility_shaktiModel.alarm_history_master">
         <MappingFragment StoreEntitySet="alarm_history_master">
@@ -281,6 +281,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="menus">
+      <EntityTypeMapping TypeName="i_facility_shaktiModel.menu">
+        <MappingFragment StoreEntitySet="menus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+          <ScalarProperty Name="IsDashboard" ColumnName="IsDashboard" />
+          <ScalarProperty Name="IsSideMenubar" ColumnName="IsSideMenubar" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="message_code_master">
       <EntityTypeMapping TypeName="i_facility_shaktiModel.message_code_master">
         <MappingFragment StoreEntitySet="message_code_master">
@@ -512,6 +528,7 @@
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="IsPiweb" ColumnName="IsPiweb" />
           <ScalarProperty Name="Meas_DateTime" ColumnName="Meas_DateTime" />
+          <ScalarProperty Name="OP40" ColumnName="OP40" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -3474,109 +3491,6 @@
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
           <ScalarProperty Name="CellID" ColumnName="CellID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="DashboardLiveHMIMWOSTblINUP" FunctionName="i_facility_shaktiModel.Store.DashboardLiveHMIMWOSTblINUP" />
-    <FunctionImportMapping FunctionImportName="DashboardLiveLossManualTblINUP" FunctionName="i_facility_shaktiModel.Store.DashboardLiveLossManualTblINUP" />
-    <FunctionImportMapping FunctionImportName="DashboardLiveModeTblINUP" FunctionName="i_facility_shaktiModel.Store.DashboardLiveModeTblINUP" />
-    <FunctionImportMapping FunctionImportName="DeleteDupWorkOrdersFromDDLList" FunctionName="i_facility_shaktiModel.Store.DeleteDupWorkOrdersFromDDLList" />
-    <FunctionImportMapping FunctionImportName="DeleteExtraRowsHMI" FunctionName="i_facility_shaktiModel.Store.DeleteExtraRowsHMI" />
-    <FunctionImportMapping FunctionImportName="DeleteReocrdsFromDDL" FunctionName="i_facility_shaktiModel.Store.DeleteReocrdsFromDDL" />
-    <FunctionImportMapping FunctionImportName="GetCheckboxesForUser" FunctionName="i_facility_shaktiModel.Store.GetCheckboxesForUser">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="i_facility_shaktiModel.GetCheckboxesForUser_Result">
-          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
-          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
-          <ScalarProperty Name="MenuStatus" ColumnName="MenuStatus" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="GetDashboardMenus" FunctionName="i_facility_shaktiModel.Store.GetDashboardMenus">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="i_facility_shaktiModel.GetDashboardMenus_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
-          <ScalarProperty Name="MenuUrl" ColumnName="MenuUrl" />
-          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
-          <ScalarProperty Name="ColourDiv" ColumnName="ColourDiv" />
-          <ScalarProperty Name="Style" ColumnName="Style" />
-          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-          <ScalarProperty Name="Id1" ColumnName="Id1" />
-          <ScalarProperty Name="MenuId1" ColumnName="MenuId1" />
-          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-          <ScalarProperty Name="MenuStatus" ColumnName="MenuStatus" />
-          <ScalarProperty Name="IsDeleted1" ColumnName="IsDeleted1" />
-          <ScalarProperty Name="CreatedOn1" ColumnName="CreatedOn1" />
-          <ScalarProperty Name="CreatedBy1" ColumnName="CreatedBy1" />
-          <ScalarProperty Name="ModifiedOn1" ColumnName="ModifiedOn1" />
-          <ScalarProperty Name="ModifiedBy1" ColumnName="ModifiedBy1" />
-          <ScalarProperty Name="Id2" ColumnName="Id2" />
-          <ScalarProperty Name="MenuName1" ColumnName="MenuName1" />
-          <ScalarProperty Name="IsDashboard" ColumnName="IsDashboard" />
-          <ScalarProperty Name="IsSideMenubar" ColumnName="IsSideMenubar" />
-          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-          <ScalarProperty Name="IsDeleted2" ColumnName="IsDeleted2" />
-          <ScalarProperty Name="CreatedOn2" ColumnName="CreatedOn2" />
-          <ScalarProperty Name="CreatedBy2" ColumnName="CreatedBy2" />
-          <ScalarProperty Name="ModifiedOn2" ColumnName="ModifiedOn2" />
-          <ScalarProperty Name="ModifiedBy2" ColumnName="ModifiedBy2" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="GetMenuStyles" FunctionName="i_facility_shaktiModel.Store.GetMenuStyles">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="i_facility_shaktiModel.GetMenuStyles_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="styleName" ColumnName="styleName" />
-          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="GetSideMenubar" FunctionName="i_facility_shaktiModel.Store.GetSideMenubar">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="i_facility_shaktiModel.GetSideMenubar_Result">
-          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
-          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
-          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="GetUserMenus" FunctionName="i_facility_shaktiModel.Store.GetUserMenus">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="i_facility_shaktiModel.GetUserMenus_Result">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="HMIUpdationofMonthYearWeek" FunctionName="i_facility_shaktiModel.Store.HMIUpdationofMonthYearWeek" />
-    <FunctionImportMapping FunctionImportName="liveDataDelAfterMaovedToHistorin" FunctionName="i_facility_shaktiModel.Store.liveDataDelAfterMaovedToHistorin" />
-    <FunctionImportMapping FunctionImportName="LossAndBreakDown" FunctionName="i_facility_shaktiModel.Store.LossAndBreakDown" />
-    <FunctionImportMapping FunctionImportName="LossEntryUpdationofMonthYearWeek" FunctionName="i_facility_shaktiModel.Store.LossEntryUpdationofMonthYearWeek" />
-    <FunctionImportMapping FunctionImportName="ManualLossUpdationofMonthYearWeek" FunctionName="i_facility_shaktiModel.Store.ManualLossUpdationofMonthYearWeek" />
-    <FunctionImportMapping FunctionImportName="ModeUpdationofMonthYearWeek" FunctionName="i_facility_shaktiModel.Store.ModeUpdationofMonthYearWeek" />
-    <FunctionImportMapping FunctionImportName="OperationLogDelAfterFewdays" FunctionName="i_facility_shaktiModel.Store.OperationLogDelAfterFewdays" />
-    <FunctionImportMapping FunctionImportName="parameters_masterDelAfterFewDays" FunctionName="i_facility_shaktiModel.Store.parameters_masterDelAfterFewDays" />
-    <FunctionImportMapping FunctionImportName="SP_UtilData" FunctionName="i_facility_shaktiModel.Store.SP_UtilData" />
-    <EntitySetMapping Name="menus">
-      <EntityTypeMapping TypeName="i_facility_shaktiModel.menu">
-        <MappingFragment StoreEntitySet="menus">
-          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-          <ScalarProperty Name="IsSideMenubar" ColumnName="IsSideMenubar" />
-          <ScalarProperty Name="IsDashboard" ColumnName="IsDashboard" />
-          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

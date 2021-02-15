@@ -25,8 +25,6 @@ namespace SRKSDemo.Server_Model
         public System.DateTime InsertedOn { get; set; }
         public string Work_Order_No { get; set; }
     
-        public virtual tbl_ProdAndonDisp tbl_ProdAndonDisp1 { get; set; }
-        public virtual tbl_ProdAndonDisp tbl_ProdAndonDisp2 { get; set; }
         public virtual tblmachinedetail tblmachinedetail { get; set; }
         public virtual tbllivehmiscreen tbllivehmiscreen { get; set; }
     }

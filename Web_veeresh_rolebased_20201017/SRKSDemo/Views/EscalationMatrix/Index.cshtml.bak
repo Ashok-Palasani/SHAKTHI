@@ -48,7 +48,7 @@
                                     <td id="escalationName_@id">@Html.DisplayFor(modelItem => item.EMailEscalationName)</td>
                                     <td>@if (Convert.ToInt32(item.ReasonLevel1) != 0)
                                     {
-                                        using (SRKSDemo.ServerModel.i_facility_shaktiEntities1 db = new SRKSDemo.ServerModel.i_facility_shaktiEntities1())
+                                        using (SRKSDemo.ServerModel.i_facility_shaktiEntities db = new SRKSDemo.ServerModel.i_facility_shaktiEntities())
                                         {
                                             var dte = db.tbllossescodes.Where(m => m.LossCodeID == item.ReasonLevel1).Where(m => m.IsDeleted == 0).Select(m => m.LossCode).SingleOrDefault();
                                             @dte
@@ -56,7 +56,7 @@
                                     }</td>
                                     <td>@if (Convert.ToInt32(item.ReasonLevel2) != 0)
                                     {
-                                        using (SRKSDemo.ServerModel.i_facility_shaktiEntities1 db = new SRKSDemo.ServerModel.i_facility_shaktiEntities1())
+                                        using (SRKSDemo.ServerModel.i_facility_shaktiEntities db = new SRKSDemo.ServerModel.i_facility_shaktiEntities())
                                         {
                                             var dte = db.tbllossescodes.Where(m => m.LossCodeID == item.ReasonLevel2).Where(m => m.IsDeleted == 0).Select(m => m.LossCode).SingleOrDefault();
                                             @dte
@@ -64,7 +64,7 @@
                                     }</td>
                                     <td>@if (Convert.ToInt32(item.ReasonLevel3) != 0)
                                     {
-                                        using (SRKSDemo.ServerModel.i_facility_shaktiEntities1 db = new SRKSDemo.ServerModel.i_facility_shaktiEntities1())
+                                        using (SRKSDemo.ServerModel.i_facility_shaktiEntities db = new SRKSDemo.ServerModel.i_facility_shaktiEntities())
                                         {
                                             var dte = db.tbllossescodes.Where(m => m.LossCodeID == item.ReasonLevel3).Where(m => m.IsDeleted == 0).Select(m => m.LossCode).SingleOrDefault();
                                             @dte

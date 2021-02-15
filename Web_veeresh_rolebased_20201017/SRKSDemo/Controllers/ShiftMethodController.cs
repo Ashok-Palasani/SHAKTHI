@@ -13,7 +13,7 @@ namespace SRKSDemo.Controllers
     public class ShiftMethodController : Controller
     {
 
-        i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities condb = new i_facility_shaktiEntities();
         // GET: ShiftMethod                                                                                       c
         public ActionResult Index()
         {
@@ -24,7 +24,7 @@ namespace SRKSDemo.Controllers
             ViewBag.Logout = Session["Username"].ToString().ToUpper();
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 ShiftMethodModel pa = new ShiftMethodModel();
                 tblshiftmethod mp = new tblshiftmethod();
@@ -63,7 +63,7 @@ namespace SRKSDemo.Controllers
             String Username = Session["Username"].ToString();
             int UserID = Convert.ToInt32(Session["UserId"]);
             string var_shiftmethod = objtblshiftMethod.ShiftMethod.ShiftMethodName;
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 var does_shiftmethod_name_Exists = condb.tblshiftmethods.Where(m => m.IsDeleted == 0 && m.ShiftMethodName == var_shiftmethod).ToList();
                 if (does_shiftmethod_name_Exists.Count == 0)
@@ -95,7 +95,7 @@ namespace SRKSDemo.Controllers
             ViewBag.Logout = Session["Username"].ToString().ToUpper();
             ViewBag.roleid = Session["RoleID"];
             String Username = Session["Username"].ToString();
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 tblshiftmethod objshiftmethod2 = condb.tblshiftmethods.Find(id);
                 if (objshiftmethod2 == null)
@@ -120,7 +120,7 @@ namespace SRKSDemo.Controllers
 
             string shiftmethodname = objshiftmethod.ShiftMethod.ShiftMethodName;
             int shiftmethodId = objshiftmethod.ShiftMethod.ShiftMethodID;
-            using (i_facility_shaktiEntities1 condb = new i_facility_shaktiEntities1())
+            using (i_facility_shaktiEntities condb = new i_facility_shaktiEntities())
             {
                 var doesthisExist = condb.tblshiftmethods.Where(m => m.IsDeleted == 0 && m.ShiftMethodName == shiftmethodname && m.ShiftMethodID != shiftmethodId).ToList();
                 if (doesthisExist.Count == 0)

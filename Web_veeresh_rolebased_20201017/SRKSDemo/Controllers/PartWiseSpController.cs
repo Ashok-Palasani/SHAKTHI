@@ -17,7 +17,7 @@ namespace i_facility.Controllers
     public class PartWiseSpController : Controller
     {
 
-        i_facility_shaktiEntities1 db = new i_facility_shaktiEntities1();
+        i_facility_shaktiEntities db = new i_facility_shaktiEntities();
 
         public ActionResult ImportPartWiseSP()
         {
